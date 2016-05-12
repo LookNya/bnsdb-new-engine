@@ -24,7 +24,8 @@ function stamp() {
 cp('node_modules/marked/lib/marked.js', 'edit/www/js/marked.js')
 cp('node_modules/dot/doT.js', 'edit/www/js/doT.js')
 cp('marked_config.js', 'edit/www/js/marked_config.js')
-let www = new nstatic.Server('./edit/www')
+let wwwEdit = new nstatic.Server('./edit/www')
+let www = new nstatic.Server('./www')
 
 let index = dot.template(fs.readFileSync('edit/index.html', 'utf-8'))
 
@@ -83,10 +84,12 @@ http.createServer((req, res) => {
 		}
 	}
 	
-	www.serve(req, res, (error, result) => {
+	wwwEdit.serve(req, res, (error, result) => {
 		if (error && error.status == 404) {
-			res.writeHead(404, { 'Content-Type': 'text/plain' })
-			res.end('404')
+			www.serve(req, res, (error, result) => {
+				res.writeHead(404, { 'Content-Type': 'text/plain' })
+				res.end('404')
+			})
 		}
 	})
 }).listen(PORT, '0.0.0.0', () => {
