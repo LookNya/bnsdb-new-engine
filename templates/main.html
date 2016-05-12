@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{{= it.title }}</title>
+	</head>
+	<body>
+		<div class="header">
+			header ({{= it.path }})
+			<hr>
+			<div class="menu">
+				{{ (function iter(items, level) { }}
+				{{   for (var name in items) { }}
+				{{     var item = items[name]; }}
+				<div class="item level-{{=level}}">
+					<a href="{{=item.pagepath}}">{{= item.path }}</a> {{? item.path == it.path }} + {{?}}
+					{{ iter(item.children, level+1); }}
+				</div>
+				{{   } }}
+				{{ })(it.menu, 0); }}
+			</div>
+
+			<hr>
+			<div class="menu">
+				{{ for (var name in it.menu) { var section=it.menu[name]; }}
+				<div>
+					— <a href="{{=section.pagepath}}">{{= section.name }}</a> {{? section.path == it.path }} + {{?}}
+					{{ for (var subname in section.children) { var subsec=section.children[subname]; }}
+					<div> —— <a href="{{=subsec.pagepath}}">{{= subsec.name }}</a> {{? subsec.path == it.path }} + {{?}}</div>
+					{{ } }}
+				</div>
+				{{ } }}
+			</div>
+		</div>
+		<div>
+			{{= it.content }}
+		</div>
+		<div>footer</div>
+	</body>
+</html>

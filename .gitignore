@@ -1,3 +1,18 @@
+# Бекапы текстового редактора
+*~
+
+# То, что скопируется автоматически
+edit/www/js/marked_config.js
+edit/www/js/marked.js
+edit/www/js/doT.js
+
+# Всякое
+node_modules
+pages_backups
+
+
+# vvv Какая-то подефолтная фигня, не нужная на 90% vvv
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
