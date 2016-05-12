@@ -3,10 +3,10 @@ const fs = require('fs')
 const path = require('path')
 
 exports.mkdir = function(dirname) {
-	let parts = dirname.split(path.sep)
+	let parts = dirname.split('/')
 	let curname = ''
 	for (let i=0; i<parts.length; i++) {
-		curname = path.join(curname, parts[i])
+		curname = path.posix.join(curname, parts[i])
 		if (!fs.existsSync(curname)) fs.mkdirSync(curname)
 	}
 }
