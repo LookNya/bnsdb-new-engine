@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+
+<link href="/css/main.css" rel="stylesheet" />
+
+{{= it.lang }} {{= it.server }} {{= it.path }}
+<button id="send_btn">{{= it.is_new ? 'Create' : 'Update' }}</button>
+
+<br>
+<textarea id="main_area">{{= it.current_text }}</textarea>
+
+<div id="preview_box"></div>
+
+<script src="/js/marked.js"></script>
+<script src="/js/marked_config.js"></script>
+<script src="/js/main.js"></script>
+

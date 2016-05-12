@@ -1,0 +1,18 @@
+body {
+	background-color: gray;
+	margin: 0;
+}
+
+#main_area {
+	width: 50%;
+	height: 100%;
+	font-family: monospace;
+}
+
+#preview_box {
+	width: 50%;
+	height: 100%;
+	overflow-y: scroll;
+	background: white;
+	float: right;
+}
