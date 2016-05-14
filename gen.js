@@ -206,7 +206,7 @@ for (let {server, path, lang, name, ext, filepath, copy_as_is} of files) {
 	let pagepath = is_main || copy_as_is ? `/${path}/` : `/${langserver}/${path}/`
 	let outpath = `${OUT_DIR}${pagepath}${withExt(name, ext=='md'?'html':ext)}`
 
-	if (ext == 'md' || ext == 'html') {
+	if (!copy_as_is && (ext == 'md' || ext == 'html')) {
 		let def = makeDef(main_def)
 		content = dot.template(content, null, def)({lang, server, path, pagepath})
 		let menu = groups[langserver].children
