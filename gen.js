@@ -140,14 +140,14 @@ for (let file of files) {
 		return {
 			blank: true,
 			name, path,
-			get pagepath(){ return `/${lang}-${server}/${this.path}/` },
+			get pagepath(){ return lang+'-'+server == MAIN_LANGSERVER ? `/${this.path}/` : `/${lang}-${server}/${this.path}/` },
 			files: [],
 			children: {}
 		}
 	}
 
 	let langserv = copy_as_is ? '*as-is*' : lang+'-'+server
-	if (!(langserv in groups)) groups[langserv] = blankPage(langserv, '') //{name:langserv, lang, server, files:[], children:{}}
+	if (!(langserv in groups)) groups[langserv] = blankPage(langserv, '')
 
 	let cur_page = groups[langserv]
 	let cur_path = ''

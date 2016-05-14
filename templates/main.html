@@ -30,7 +30,7 @@
 				{{   for (var name in items) { }}
 				{{     var item = items[name]; }}
 				<div class="item level-{{=level}}">
-					<a href="{{=item.pagepath}}">{{= item.path }}</a> {{? item.path == it.path }} + {{?}}
+					<a href="{{=item.pagepath}}">{{= item.path }} {{? item.path == it.path }} + {{?}} {{? item.blank }} (тут пусто) {{?}}</a>
 					{{ iter(item.children, level+1); }}
 				</div>
 				{{   } }}
