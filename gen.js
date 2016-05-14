@@ -11,6 +11,7 @@ const {getMarkedConfig} = require('./marked_config.js')
 
 const OUT_DIR = 'www'
 const PAGES_DIR = 'pages'
+const MAIN_LANGSERVER = 'ru-srv'
 
 // INIT
 const markedConfig = getMarkedConfig(marked)
@@ -180,16 +181,23 @@ console.log('  done\n')
 
 // WRITING WWW
 console.log('processing files...')
+
+function cmp(a,b){ return a==b ? 0 : a<b ? -1 : 1 }
+files.sort((f1, f2) => cmp(f1.lang+'-'+f1.server+'-'+f1.filepath,
+                           f2.lang+'-'+f2.server+'-'+f2.filepath))
+
 for (let {server, path, lang, name, ext, filepath} of files) {
 	let sections = path.split('/')
-	let menu = groups[lang+'-'+server].children
+	let langserver = lang+'-'+server
+	let is_main = langserver == MAIN_LANGSERVER
+	let menu = groups[langserver].children
 	let content = fs.readFileSync(filepath)
 
 	if (ext == 'md' || ext == 'html') content = content.toString()
 
 	if (ext == 'md') content = marked(content, markedConfig)
 
-	let pagepath = `/${lang}-${server}/${path}/`
+	let pagepath = is_main ? `/${path}/` : `/${langserver}/${path}/`
 	let outpath = `${OUT_DIR}${pagepath}${name}.${ext=='md'?'html':ext}`
 
 	if (ext == 'md' || ext == 'html') {
@@ -199,16 +207,9 @@ for (let {server, path, lang, name, ext, filepath} of files) {
 		content = beautify(html, beautify_cfg)
 	}
 
-	console.log(`  writing ${outpath}...`)
+	console.log(`  writing ${is_main?'m':' '} ${outpath}...`)
 	write(outpath, content)
 }
-console.log('  done\n')
-
-
-// WRITING MAIN INDEX
-let main_page = '/ru-qwe/index.html'
-console.log(`copying ${main_page} as main page...`)
-cp(OUT_DIR+main_page, OUT_DIR+'/index.html')
 console.log('  done\n')
 
 
@@ -220,7 +221,7 @@ forEachFile(OUT_DIR, (fname, fullpath) => {
 	if (ext != 'html') return
 
 	let data = fs.readFileSync(fullpath)
-	let res = zlib.gzipSync(data, {level: 9})
+	let res = zlib.gzipSync(data, {level: 5})
 	fs.writeFileSync(fullpath+'.gz', res)
 	sum.before += data.length
 	sum.after += res.length
