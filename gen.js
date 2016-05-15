@@ -12,7 +12,7 @@ const {getMarkedConfig} = require('./marked_config.js')
 const OUT_DIR = 'www'
 const PAGES_DIR = 'pages'
 const MAIN_LANGSERVER = 'ru-srv'
-const COPY_AS_IS = ['CNAME', 'static', 'robots.txt'].map(name => PAGES_DIR+'/'+name)
+const COPY_AS_IS = ['CNAME', 'static', 'robots.txt', '404.html', 'sitemap.xml'].map(name => PAGES_DIR+'/'+name)
 
 function withExt(name, ext) {
 	return ext == null ? name : name+'.'+ext
@@ -28,7 +28,7 @@ dot.templateSettings.strip = false
 function makeDef(mdef) {
 	let attrs = {plus:{/*js:[], css:[], */head:[]}}
 	if (mdef) for (var i in attrs.plus) attrs.plus[i] = mdef.plus[i].slice()
-	
+
 	var def = new Proxy({}, {
 		get: function(proxy, name){ return attrs[name] },
 		has: function(name){ return name in attrs },
@@ -42,7 +42,7 @@ function makeDef(mdef) {
 			}
 		}
 	})
-	
+
 	return def
 }
 
@@ -191,7 +191,7 @@ console.log('processing files...')
 
 function cmp(a,b){ return a==b ? 0 : a<b ? -1 : 1 }
 files.sort((f1, f2) => cmp(f1.lang+'-'+f1.server+'-'+f1.filepath,
-                           f2.lang+'-'+f2.server+'-'+f2.filepath))
+													 f2.lang+'-'+f2.server+'-'+f2.filepath))
 
 for (let {server, path, lang, name, ext, filepath, copy_as_is} of files) {
 	let sections = path.split('/')
