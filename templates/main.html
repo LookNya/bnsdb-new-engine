@@ -14,7 +14,7 @@
 
 		<meta property = "og:description" content = "TODO: тег описания страницы" />
 		<meta property = "description" content = "TODO: тег описания страницы" />
-		
+
 		<script type="text/javascript" src="http://looknya.github.io/aejs/ae_core.js"></script>
 
 		<link rel="shortcut icon" href="/img/favicon.png">
@@ -87,41 +87,36 @@
 			</div>
 		</div>
 		<div class="content">
-
+			{{# def.include('textpage.html') }}
 		</div>
-			header ({{= it.path }})
-			<hr>
-			<div class="menu">
-				{{ for (var name in it.menu) { var section=it.menu[name]; }}
-				<div>
-					— <a href="{{=section.pagepath}}">{{= section.name }}</a> {{? section.path == it.path }} + {{?}}
-					{{ for (var subname in section.children) { var subsec=section.children[subname]; }}
-					<div> —— <a href="{{=subsec.pagepath}}">{{= subsec.name }}</a> {{? subsec.path == it.path }} + {{?}}</div>
-					{{ } }}
-				</div>
+		<div>footer</div>
+
+	</div>
+		header ({{= it.path }})
+		<hr>
+		<div class="menu">
+			{{ for (var name in it.menu) { var section=it.menu[name]; }}
+			<div>
+				— <a href="{{=section.pagepath}}">{{= section.name }}</a> {{? section.path == it.path }} + {{?}}
+				{{ for (var subname in section.children) { var subsec=section.children[subname]; }}
+				<div> —— <a href="{{=subsec.pagepath}}">{{= subsec.name }}</a> {{? subsec.path == it.path }} + {{?}}</div>
 				{{ } }}
 			</div>
-			<div class="menu">
-				{{ (function iter(items, level) { }}
-				{{   for (var name in items) { }}
-				{{     var item = items[name]; }}
-				<div class="item level-{{=level}}">
-					<a href="{{=item.pagepath}}">{{= item.path }} {{? item.path == it.path }} + {{?}} {{? item.blank }} (тут пусто) {{?}}</a>
-					{{ iter(item.children, level+1); }}
-				</div>
-				{{   } }}
-				{{ })(it.menu, 0); }}
+			{{ } }}
+		</div>
+		<div class="menu">
+			{{ (function iter(items, level) { }}
+			{{   for (var name in items) { }}
+			{{     var item = items[name]; }}
+			<div class="item level-{{=level}}">
+				<a href="{{=item.pagepath}}">{{= item.path }} {{? item.path == it.path }} + {{?}} {{? item.blank }} (тут пусто) {{?}}</a>
+				{{ iter(item.children, level+1); }}
 			</div>
-
-			<hr>
+			{{   } }}
+			{{ })(it.menu, 0); }}
 		</div>
-		<div>
-			{{= it.content }}
-		</div>
-		<div>
-			footer
-			{{# def.include('part.html') }}
-		</div>
+		<hr>
+	</div>
 		<!--  fake top-->
 		<div id="fake_top_panel" class="hidden">
 			<div class="ftop_inner">
