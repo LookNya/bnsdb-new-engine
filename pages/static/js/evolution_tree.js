@@ -56,7 +56,7 @@ function generateEvTree(tree){
 					'+ (count ? '<div class="count">'+count+'</div>' : '' )+'\
 					<div class="descr">\
 							<div class="name">'+ item.name +'</div>\
-							<div class="obtainint">'+ item.obtaining +'</div>\
+							<div class="obtaining">'+ item.obtaining +'</div>\
 					</div>\
 				</div>'
 		})

@@ -1,10 +1,14 @@
 .item-card
-	> *
-		box-sizing: border-box
-	padding: 11px
-	border-radius: 7px
+	padding: 14px
+	border-radius: 5px
 	border: 1px solid rgb(207, 207, 207)
-	width: 230px
+	width: 300px
+	box-shadow: 0px 0px 5px 0px rgba(216, 216, 216, 1);
+	background: white;
+	z-index: 1;
+	position: relative;
+	&, > *
+		box-sizing: border-box
 	.name
 		height: 55px
 		padding-left: 11px
@@ -30,3 +34,4 @@
 		margin-bottom: 11px
 	.descr
 		float: left
+		font-size: 14px
