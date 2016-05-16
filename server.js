@@ -24,10 +24,12 @@ function stamp() {
 cp('node_modules/marked/lib/marked.js', 'edit/www/js/marked.js')
 cp('node_modules/dot/doT.js', 'edit/www/js/doT.js')
 cp('marked_config.js', 'edit/www/js/marked_config.js')
+
 let wwwEdit = new nstatic.Server('./edit/www')
 let www = new nstatic.Server('./www')
 
 let index = dot.template(fs.readFileSync('edit/index.html', 'utf-8'))
+
 
 http.createServer((req, res) => {
 	//var url = URL.parse(req.url)
@@ -95,3 +97,17 @@ http.createServer((req, res) => {
 }).listen(PORT, '0.0.0.0', () => {
 	console.log(`Server running at ${PORT}`)
 })
+
+
+if (process.argv.indexOf('--regen-on-input') != -1) {
+	console.log('Press Ctrl+C or Q to exit')
+	var gen = require('./gen.js')
+
+	process.stdin.setRawMode(true)
+	process.stdin.on('data', buf => {
+		if (buf[0] == 3 || buf[0] == 113) process.exit(0)
+		let stt = Date.now()
+		gen.doAll()
+		console.log('Done generating, '+ (Date.now()-stt) +'ms')
+	})
+}

@@ -15,24 +15,25 @@ exports.cp = function(src, dest) {
 	fs.writeFileSync(dest, fs.readFileSync(src))
 }
 
-exports.rmr = function(dirpath) {
-	if (fs.existsSync(dirpath)) exports.forEachFile(dirpath, (fname, fpath) => fs.unlinkSync(fpath))
-}
+/*exports.rmr = function(dirpath) {
+	if (fs.existsSync(dirpath)) exports.forEachFile(dirpath, (fname, fpath, is_dir) => fs[is_dir?'rmdirSync':'unlinkSync'](fpath), true)
+}*/
 
 exports.write = function(filepath, data) {
 	exports.mkdir(path.dirname(filepath))
 	fs.writeFileSync(filepath, data)
 }
 
-exports.forEachFile = function(dirpath, func) {
+exports.forEachFile = function(dirpath, func, with_dirs_after=false) {
 	function iter(dirpath) {
 		let files = fs.readdirSync(dirpath)
 		for (let fname of files) {
 			let filepath = dirpath+'/'+fname
 			if (fs.statSync(filepath).isDirectory()) {
 				iter(filepath)
+				if (with_dirs_after) func(fname, filepath, true)
 			} else {
-				func(fname, filepath)
+				func(fname, filepath, false)
 			}
 		}
 	}
