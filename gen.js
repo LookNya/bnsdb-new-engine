@@ -9,13 +9,14 @@ const marked = require('marked')
 const {mkdir, cp, rmr, write, forEachFile} = require('./utils.js')
 const {getMarkedConfig} = require('./marked_config.js')
 
+
 const OUT_DIR = 'www'
 const PAGES_DIR = 'pages'
 const MAIN_LANGSERVER = 'ru-srv'
 const COPY_AS_IS = ['CNAME', 'static', 'robots.txt', '404.html', 'sitemap.xml'].map(name => PAGES_DIR+'/'+name)
+const DO_NOT_CLEAN = ['.git'].map(name => OUT_DIR+'/'+name)
 
 
-// Global one-time init
 function withExt(name, ext) {
 	return ext == null ? name : name+'.'+ext
 }
@@ -193,7 +194,12 @@ exports.group = function() {
 // CLEANUP
 exports.cleanup = function() {
 	console.log('cleanup...')
-	rmr(OUT_DIR)
+	if (fs.existsSync(OUT_DIR)) {
+		forEachFile(OUT_DIR, (fname, fpath, is_dir) => {
+			for (let prefix of DO_NOT_CLEAN) if (fpath.startsWith(prefix)) return
+			is_dir ? fs.rmdirSync(fpath) : fs.unlinkSync(fpath)
+		}, true)
+	}
 	console.log('  done\n')
 }
 
@@ -261,6 +267,7 @@ exports.doAll = function() {
 	exports.langservers()
 	exports.duplicate()
 	exports.group()
+	exports.cleanup()
 	exports.write()
 	exports.gzip()
 }

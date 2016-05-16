@@ -9,6 +9,7 @@ edit/www/js/doT.js
 # Всякое
 node_modules
 pages_backups
+www
 
 
 # vvv Какая-то подефолтная фигня, не нужная на 90% vvv
