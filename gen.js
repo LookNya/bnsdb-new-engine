@@ -39,13 +39,18 @@ function makeDef(mdef) {
 		set: function(proxy, name, val) {
 			if (name[0] == "+") {
 				var a = attrs.plus[name.substr(1)]
-				if (a) { a.push(val); return }
-				console.warn("Don't know how to add <"+name+">")
+				if (a) a.push(val)
+				else console.warn("Don't know how to add <"+name+">")
 			} else {
 				attrs[name] = val
 			}
+			return true
 		}
 	})
+
+	def.include = function(name) {
+		return fs.readFileSync('templates/'+name, 'utf-8')
+	}
 
 	return def
 }

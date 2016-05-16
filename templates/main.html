@@ -87,8 +87,7 @@
 			</div>
 		</div>
 		<div class="content">
-
-			{{= it.content }}
+			{{# def.include('textpage.html') }}
 		</div>
 		<div>footer</div>
 
@@ -116,10 +115,8 @@
 			{{   } }}
 			{{ })(it.menu, 0); }}
 		</div>
-
 		<hr>
 	</div>
-
 		<!--  fake top-->
 		<div id="fake_top_panel" class="hidden">
 			<div class="ftop_inner">
