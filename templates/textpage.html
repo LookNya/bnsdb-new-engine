@@ -8,7 +8,6 @@
 <div class="page">
 	<div class="page_text f_l">
 		{{= it.content }}
-
 		<div id="page_contents" class="pc_nojs"> <!-- TODO: сгенерировать -->
 				<p>Содержание</p>
 			<ul>
@@ -17,12 +16,12 @@
 				<li><a href="#Топовая PVE бижутерия">Топовая PVE бижутерия</a></li>
 			</ul>
 	 </div>
-
-	<p class="author"> <!-- TODO: сгенерировать -->
-	— Katyasha
-	</p>
-
-	<div class="page_add f_l"><!-- TODO: сгенерировать -->
+	 <p class="author"> <!-- TODO: вытащить из параметров -->
+	 — Katyasha
+	 </p>
+ </div>
+ <!--
+	<div class="page_add f_l"><!-- TODO: сгенерировать, показывать только если есть --><!--
 			<div class="pa_add_body">
 				<div class="pa_add_title">Смотрите также</div>
 				<div class="pa_add_content">
@@ -34,10 +33,11 @@
 				</div>
 			</div>
 	</div>
+-->
 
-	<link rel="stylesheet" href="/static/css/textpages/tables.css" type="text/css"><!-- TODO: сгенерировать -->
+	<link rel="stylesheet" href="/static/css/textpages/tables.css" type="text/css"><!-- TODO: сгенерировать, показывать если не выключено -->
 	<div class="site_contents_table">
-		<table>
+		<table class="regular">
 			<tr>
 				<td colspan="2">
 					Смотрите также
@@ -101,6 +101,7 @@
 		</table>
 	</div>
 	<!--
+	TODO: показывать если не выключено
 	<div class="bottom_adds_wrap">
 		<div class="bottom_adds_content">
 			<div class="adds_desktop">
@@ -125,7 +126,7 @@
 			</div>
 		</div>
 	</div>
-
+TODO: показывать если не выключено
 	<div id="hypercomments_widget"></div>
 	<script type="text/javascript">
 	_hcwp = window._hcwp || [];

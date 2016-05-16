@@ -5,10 +5,10 @@ weaponsDB = {
 			ru: ''
 		},
 		color: 'purple',
-		attack: ,
-		startlvl: ,
-		up: ,
-		
+		attack: 0,
+		startlvl: 0,
+		up: 0,
+
 		icon: '',
 		obtaining: ''
 	},
@@ -21,7 +21,7 @@ weaponsDB = {
 		attack: [13, 67],
 		startlvl: 3,
 		up: 2,
-		
+
 		icon: '',
 		obtaining: 'Дается изначально, покупка у менялы в Изумрудной деревне'
 	},
@@ -33,7 +33,7 @@ weaponsDB = {
 		color: 'blue',
 		attack: 19,
 		startlvl: 6,
-		
+
 		icon: '',
 		obtaining: 'Колесо удачи Бессметного Гандзи'
 	},
@@ -45,7 +45,7 @@ weaponsDB = {
 		color: 'purple',
 		attack: 54,
 		startlvl: 20,
-		
+
 		icon: '',
 		obtaining: 'Гавань Южного братства'
 	},
@@ -69,7 +69,7 @@ weaponsDB = {
 		color: 'blue',
 		attack: 49,
 		startlvl: 22,
-		
+
 		icon: '',
 		obtaining: 'Пещера тьмы'
 	},
@@ -81,7 +81,7 @@ weaponsDB = {
 		color: 'blue',
 		attack: 89,
 		startlvl: 29,
-		
+
 		icon: '',
 		obtaining: 'Колесо удачи золотого великана'
 	},
@@ -93,7 +93,7 @@ weaponsDB = {
 		color: 'purple',
 		attack: [140, 154],
 		startlvl: 20,
-		
+
 		icon: '',
 		obtaining: 'Морф'
 	},
@@ -105,7 +105,7 @@ weaponsDB = {
 		color: 'blue',
 		attack: 90,
 		startlvl: 30,
-		
+
 		icon: '',
 		obtaining: 'У менялы Со Чуна на Постоялом дворе'
 	},
@@ -117,7 +117,7 @@ weaponsDB = {
 		color: 'purple',
 		attack: 160,
 		startlvl: 36,
-		
+
 		icon: '',
 		obtaining: 'Древняя гробница'
 	},
@@ -129,7 +129,7 @@ weaponsDB = {
 		color: 'purple',
 		attack: [165, 179],
 		startlvl: 36,
-		
+
 		icon: '',
 		obtaining: 'Морф'
 	},
@@ -141,7 +141,7 @@ weaponsDB = {
 		color: 'blue',
 		attack: 121,
 		startlvl: 38,
-		
+
 		icon: '',
 		obtaining: 'Колесо удачи на Волчьих холмах'
 	},
@@ -153,7 +153,7 @@ weaponsDB = {
 		color: 'purple',
 		attack: 163,
 		startlvl: 40,
-		
+
 		icon: '',
 		obtaining: 'Босс Ходон'
 	},
@@ -165,7 +165,7 @@ weaponsDB = {
 		color: 'purple',
 		attack: [133, 212],
 		startlvl: 36,
-		
+
 		icon: '',
 		obtaining: 'Морф'
 	},
@@ -177,7 +177,7 @@ weaponsDB = {
 		color: 'blue',
 		attack: 135,
 		startlvl: 40,
-		
+
 		icon: '',
 		obtaining: 'Обитель патриарха'
 	},
@@ -189,7 +189,7 @@ weaponsDB = {
 		color: 'purple',
 		attack: 194,
 		startlvl: 42,
-		
+
 		icon: '',
 		obtaining: 'Колесо удачи в гробнице Гандзи'
 	},
@@ -201,7 +201,7 @@ weaponsDB = {
 		color: 'purple',
 		attack: [230, 250],
 		startlvl: 42,
-		
+
 		icon: '',
 		obtaining: 'Морф'
 	},
@@ -213,7 +213,7 @@ weaponsDB = {
 		color: 'blue',
 		attack: 181,
 		startlvl: 45,
-		
+
 		icon: '',
 		obtaining: 'Гнездо пауков'
 	},
@@ -225,7 +225,7 @@ weaponsDB = {
 		color: 'purple',
 		attack: 194,
 		startlvl: 43,
-		
+
 		icon: '',
 		obtaining: 'Руины линов'
 	},
@@ -237,7 +237,7 @@ weaponsDB = {
 		color: 'purple',
 		attack: [251, 565],
 		startlvl: 42,
-		
+
 		icon: '',
 		obtaining: 'Морф'
 	},
@@ -249,7 +249,7 @@ weaponsDB = {
 		color: 'blue',
 		attack: 181,
 		startlvl: 45,
-		
+
 		icon: '',
 		obtaining: 'У менялы Рю Чоль в Лагере Вольной общины'
 	},
@@ -261,7 +261,7 @@ weaponsDB = {
 		color: 'purple',
 		attack: 242,
 		startlvl: 45,
-		
+
 		icon: '',
 		obtaining: 'Бухта штормов'
 	},

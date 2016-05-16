@@ -5,6 +5,7 @@
 <script src="/static/js/item_cards.js"></script>
 
 <script src="/static/js/idb/weaponsDB.js"></script>
+<script src="/static/js/idb/ingrDB.js"></script>
 <link rel="stylesheet" href="/static/css/evolution-tree.css" type="text/css" />
 <link rel="stylesheet" href="/static/css/item-cards.css" type="text/css" />
 <div class="evol-tree-wrap"></div>

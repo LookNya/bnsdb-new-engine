@@ -52,7 +52,7 @@ function generateEvTree(tree){
 			var item = ingrDB[id]
 			str += '\
 				<div class="item">\
-					<div class="icon" style="background-image: url(http:www.bnsbase.com'+ item.icon +')"></div>\
+					<div class="icon" style="background-image: url('+ item.icon +')"></div>\
 					'+ (count ? '<div class="count">'+count+'</div>' : '' )+'\
 					<div class="descr">\
 							<div class="name">'+ item.name +'</div>\
