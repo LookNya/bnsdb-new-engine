@@ -6,6 +6,7 @@ const zlib = require('zlib')
 const dot = require('dot')
 const beautify = require('js-beautify').html
 const marked = require('marked')
+const stylus = require('stylus')
 const {mkdir, cp, rmr, write, forEachFile} = require('./utils.js')
 const {getMarkedConfig} = require('./marked_config.js')
 
@@ -227,12 +228,14 @@ exports.write = function() {
 		let is_main = langserver == MAIN_LANGSERVER
 		let content = fs.readFileSync(filepath)
 
-		if (ext == 'md' || ext == 'html') content = content.toString()
+		if (ext == 'md' || ext == 'html' || ext == 'styl') content = content.toString()
 
 		if (ext == 'md') content = marked(content, markedConfig)
 
+		if (ext == 'styl') content = stylus.render(content)
+
 		let pagepath = is_main || copy_as_is ? `/${path}/` : `/${langserver}/${path}/`
-		let outpath = `${OUT_DIR}${pagepath}${withExt(name, ext=='md'?'html':ext)}`
+		let outpath = `${OUT_DIR}${pagepath}${withExt(name, ext=='md'?'html':ext=='styl'?'css':ext)}`
 
 		if (!copy_as_is && (ext == 'md' || ext == 'html')) {
 			let def = makeDef(main_def)
@@ -275,7 +278,7 @@ exports.doAll = function() {
 	exports.group()
 	exports.cleanup()
 	exports.write()
-	exports.gzip()
+	//exports.gzip()
 }
 
 
