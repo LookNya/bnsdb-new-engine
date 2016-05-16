@@ -15,6 +15,7 @@ const PAGES_DIR = 'pages'
 const MAIN_LANGSERVER = 'ru-srv'
 const COPY_AS_IS = ['CNAME', 'static', 'robots.txt', '404.html', 'sitemap.xml'].map(name => PAGES_DIR+'/'+name)
 const DO_NOT_CLEAN = ['.git'].map(name => OUT_DIR+'/'+name)
+const GZIP = ['html', 'css', 'js', 'xml', 'txt']
 
 
 function withExt(name, ext) {
@@ -253,8 +254,8 @@ exports.gzip = function() {
 	console.log('gzip\'ing...')
 	let sum = {before: 0, after: 0}
 	forEachFile(OUT_DIR, (fname, fullpath) => {
-		let ext = fname.match(/[^.]*$/)
-		if (ext != 'html') return
+		let ext = fname.match(/[^.]*$/)[0]
+		if (GZIP.indexOf(ext) == -1) return
 
 		let data = fs.readFileSync(fullpath)
 		let res = zlib.gzipSync(data, {level: 5})
