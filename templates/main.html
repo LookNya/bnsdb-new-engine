@@ -118,7 +118,10 @@
 		<div>
 			{{= it.content }}
 		</div>
-		<div>footer</div>
+		<div>
+			footer
+			{{# def.include('part.html') }}
+		</div>
 		<!--  fake top-->
 		<div id="fake_top_panel" class="hidden">
 			<div class="ftop_inner">
