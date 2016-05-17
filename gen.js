@@ -3,6 +3,7 @@
 
 const fs = require('fs')
 const zlib = require('zlib')
+const pathutils = require('path').posix
 const dot = require('dot')
 const beautify = require('js-beautify').html
 const marked = require('marked')
@@ -14,7 +15,7 @@ const {getMarkedConfig} = require('./marked_config.js')
 const OUT_DIR = 'www'
 const PAGES_DIR = 'pages'
 const MAIN_LANGSERVER = 'ru-srv'
-const COPY_AS_IS = ['CNAME', 'static', 'robots.txt', '404.html', 'sitemap.xml'].map(name => PAGES_DIR+'/'+name)
+const COPY_AS_IS = ['CNAME', 'static', 'img', 'robots.txt', '404.html', 'sitemap.xml'].map(name => PAGES_DIR+'/'+name)
 const DO_NOT_CLEAN = ['.git'].map(name => OUT_DIR+'/'+name)
 const GZIP = ['html', 'css', 'js', 'xml', 'txt']
 
@@ -62,6 +63,7 @@ function makeDef(mdef) {
 let files = []
 let langservers = new Set()
 let groups = {}
+let modifTimes = {}
 
 
 // ПОИСК ФАЙЛОВ
@@ -74,7 +76,7 @@ exports.search = function() {
 		if (fullpath.endsWith('~')) return //бекапы текстового редактора, пропускаем
 
 		// index.ru-server.html, название.язык-сервер.формат
-		let m = fullpath.match(/^([\w/]*)\/([^.]*)(?:\.([a-z]{2})-(\w+))?(?:\.(\w+))?$/)
+		let m = fullpath.match(/^([\w/]*)\/(.*?)(?:\.([a-z]{2})-(\w+))?(?:\.(\w+))?$/)
 		if (!m) { console.warn(`${fullpath} has wrong name/path, skipping`); return }
 
 		let [_, path, name, lang, server, ext] = m
@@ -226,31 +228,34 @@ exports.write = function() {
 		let sections = path.split('/')
 		let langserver = lang+'-'+server
 		let is_main = langserver == MAIN_LANGSERVER
-		let content = fs.readFileSync(filepath)
-
-		if (ext == 'md' || ext == 'html' || ext == 'styl') content = content.toString()
-
-		if (ext == 'md') content = marked(content, markedConfig)
-
-		if (ext == 'styl') content = stylus.render(content)
-
 		let pagepath = is_main || copy_as_is ? `/${path}/` : `/${langserver}/${path}/`
-		let outpath = `${OUT_DIR}${pagepath}${withExt(name, ext=='md'?'html':ext=='styl'?'css':ext)}`
+		let outpath = pathutils.normalize(`${OUT_DIR}${pagepath}${withExt(name, ext=='md'?'html':ext=='styl'?'css':ext)}`)
+		let marker = is_main ? 'm' : copy_as_is ? 'c' : ' '
+		let exists = fs.existsSync(outpath)
 
-		if (!copy_as_is && (ext == 'md' || ext == 'html')) {
-			let def = makeDef(main_def)
-			content = dot.template(content, null, def)({lang, server, path, pagepath})
-			let menu = groups[langserver].children
-			let html = main({title: sections[sections.length-1], menu, lang, server, path, pagepath, content})
-			content = beautify(html, beautifyConfig)
-		}
+		let mtime = fs.statSync(filepath).mtime.getTime()
+		if (mtime <= modifTimes[filepath] && exists) continue
+		modifTimes[filepath] = mtime
 
-		if (content instanceof Buffer) {
-			console.log(`  linking ${is_main?'m':copy_as_is?'c':' '} ${outpath}...`)
-			link(outpath, filepath)
-		} else {
-			console.log(`  writing ${is_main?'m':copy_as_is?'c':' '} ${outpath}...`)
+		if (ext == 'md' || ext == 'html' || ext == 'styl') {
+			let content = fs.readFileSync(filepath, 'utf-8')
+			if (ext == 'md') content = marked(content, markedConfig)
+			if (ext == 'styl') content = stylus.render(content)
+
+			if (!copy_as_is && (ext == 'md' || ext == 'html')) {
+				let def = makeDef(main_def)
+				content = dot.template(content, null, def)({lang, server, path, pagepath})
+				let menu = groups[langserver].children
+				let html = main({title: sections[sections.length-1], menu, lang, server, path, pagepath, content})
+				content = beautify(html, beautifyConfig)
+			}
+
+			console.log(`  writing ${marker} ${outpath}`)
 			write(outpath, content)
+		} else {
+			if (exists) fs.unlinkSync(outpath)
+			console.log(`  linking ${marker} ${outpath}`)
+			link(outpath, filepath)
 		}
 	}
 	console.log('  done\n')
@@ -260,10 +265,11 @@ exports.write = function() {
 // GZIP
 exports.gzip = function() {
 	console.log('gzip\'ing...')
+	let skipped = new Set()
 	let sum = {before: 0, after: 0}
 	forEachFile(OUT_DIR, (fname, fullpath) => {
 		let ext = fname.match(/[^.]*$/)[0]
-		if (GZIP.indexOf(ext) == -1) return
+		if (GZIP.indexOf(ext) == -1) {skipped.add(ext); return}
 
 		let data = fs.readFileSync(fullpath)
 		let res = zlib.gzipSync(data, {level: 5})
@@ -271,7 +277,7 @@ exports.gzip = function() {
 		sum.before += data.length
 		sum.after += res.length
 	})
-	console.log(`  done, ${sum.before|0} --> ${sum.after|0} B\n`)
+	console.log(`  done, ${sum.before|0} --> ${sum.after|0} B, skipped: ${Array.from(skipped)}\n`)
 }
 
 
@@ -281,7 +287,7 @@ exports.doAll = function() {
 	exports.langservers()
 	exports.duplicate()
 	exports.group()
-	exports.cleanup()
+	//exports.cleanup()
 	exports.write()
 	//exports.gzip()
 }
@@ -289,5 +295,7 @@ exports.doAll = function() {
 
 // Если скрипт запушен напрямую (не через require)
 if (!module.parent) {
+	exports.cleanup()
 	exports.doAll()
+	exports.gzip()
 }

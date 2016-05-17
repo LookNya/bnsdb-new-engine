@@ -100,13 +100,14 @@ http.createServer((req, res) => {
 
 
 if (process.argv.indexOf('--regen-on-input') != -1) {
-	console.log('Press Ctrl+C or Q to exit')
+	console.log('Press Ctrl+C or Q to exit, R to remove ./www')
 	var gen = require('./gen.js')
 
 	process.stdin.setRawMode(true)
 	process.stdin.on('data', buf => {
 		if (buf[0] == 3 || buf[0] == 113) process.exit(0)
 		let stt = Date.now()
+		if (buf[0] == 114) gen.cleanup()
 		gen.doAll()
 		console.log('Done generating, '+ (Date.now()-stt) +'ms')
 	})
