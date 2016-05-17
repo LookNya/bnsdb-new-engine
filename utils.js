@@ -24,6 +24,11 @@ exports.write = function(filepath, data) {
 	fs.writeFileSync(filepath, data)
 }
 
+exports.link = function(filepath, srcpath) {
+	exports.mkdir(path.dirname(filepath))
+	fs.linkSync(srcpath, filepath)
+}
+
 exports.forEachFile = function(dirpath, func, with_dirs_after=false) {
 	function iter(dirpath) {
 		let files = fs.readdirSync(dirpath)

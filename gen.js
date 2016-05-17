@@ -7,7 +7,7 @@ const dot = require('dot')
 const beautify = require('js-beautify').html
 const marked = require('marked')
 const stylus = require('stylus')
-const {mkdir, cp, rmr, write, forEachFile} = require('./utils.js')
+const {mkdir, cp, rmr, write, link, forEachFile} = require('./utils.js')
 const {getMarkedConfig} = require('./marked_config.js')
 
 
@@ -245,8 +245,13 @@ exports.write = function() {
 			content = beautify(html, beautifyConfig)
 		}
 
-		console.log(`  writing ${is_main?'m':copy_as_is?'c':' '} ${outpath}...`)
-		write(outpath, content)
+		if (content instanceof Buffer) {
+			console.log(`  linking ${is_main?'m':copy_as_is?'c':' '} ${outpath}...`)
+			link(outpath, filepath)
+		} else {
+			console.log(`  writing ${is_main?'m':copy_as_is?'c':' '} ${outpath}...`)
+			write(outpath, content)
+		}
 	}
 	console.log('  done\n')
 }
