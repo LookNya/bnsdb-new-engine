@@ -11,6 +11,9 @@ function generateEvTree(tree){
 		case 'weapon':
 			db = weaponsDB
 			break
+		case 'ring':
+			db = ringsDB
+			break
 	}
 	for(var i=0; i<tree.prototype.length; i++){
 		var row = table.insertRow()

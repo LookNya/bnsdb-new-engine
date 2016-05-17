@@ -1,10 +1,10 @@
-# Морф оружия Пути Хона
+# Морф кольца
 
 ```raw-html
 <script src="/static/js/evolution_tree.js"></script>
 <script src="/static/js/item_cards.js"></script>
 
-<script src="/static/js/idb/weaponsDB.js"></script>
+<script src="/static/js/idb/ringsDB.js"></script>
 <script src="/static/js/idb/ingrDB.js"></script>
 <link rel="stylesheet" href="/static/css/evolution-tree.css" type="text/css" />
 <link rel="stylesheet" href="/static/css/item-cards.css" type="text/css" />
@@ -12,7 +12,7 @@
 <script>
 var tree = {
 	target: 'evol-tree-wrap',
-	type: 'weapon',
+	type: 'ring',
 	prototype:[
 {1:0, 2:[{item: 1}], 3:1}, {1:1, 2:[{item: 2, count: 2}], 3:2},
 {1:3, 2:[{item: 1}], 3:4}, {1:4, 2:[{item: 2, count: 2}], 3:5},

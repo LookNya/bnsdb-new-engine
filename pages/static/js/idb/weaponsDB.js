@@ -1,19 +1,6 @@
 weaponsDB = {
 	0:{
 		name: {
-			en: '',
-			ru: ''
-		},
-		color: 'purple',
-		attack: 0,
-		startlvl: 0,
-		up: 0,
-
-		icon: '',
-		obtaining: ''
-	},
-	1:{
-		name: {
 			en: 'Hongmoon',
 			ru: 'Оружие Пути Хона'
 		},
@@ -25,7 +12,7 @@ weaponsDB = {
 		icon: '',
 		obtaining: 'Дается изначально, покупка у менялы в Изумрудной деревне'
 	},
-	2:{
+	1:{
 		name: {
 			en: 'Stalker',
 			ru: 'Оружие бессмертного гандзи'
@@ -37,7 +24,7 @@ weaponsDB = {
 		icon: '',
 		obtaining: 'Колесо удачи Бессметного Гандзи'
 	},
-	3:{
+	2:{
 		name: {
 			en: 'Blight',
 			ru: 'Оружие отродья'
@@ -49,7 +36,7 @@ weaponsDB = {
 		icon: '',
 		obtaining: 'Гавань Южного братства'
 	},
-	4:{
+	3:{
 		name: {
 			en: 'Awakened Blight',
 			ru: 'Охранное оружие отродья'
@@ -61,7 +48,7 @@ weaponsDB = {
 		icon: '',
 		obtaining: 'Морф'
 	},
-	5:{
+	4:{
 		name: {
 			en: 'Corrupted',
 			ru: 'Оружие Тьмы'
@@ -73,7 +60,7 @@ weaponsDB = {
 		icon: '',
 		obtaining: 'Пещера тьмы'
 	},
-	6:{
+	5:{
 		name: {
 			en: 'Golden Deva',
 			ru: 'Золотое оружие'
@@ -85,7 +72,7 @@ weaponsDB = {
 		icon: '',
 		obtaining: 'Колесо удачи золотого великана'
 	},
-	7:{
+	6:{
 		name: {
 			en: 'True Blight',
 			ru: 'Истинное оружие отродья'
@@ -97,7 +84,7 @@ weaponsDB = {
 		icon: '',
 		obtaining: 'Морф'
 	},
-	8:{
+	7:{
 		name: {
 			en: 'Cinderlands Baotite',
 			ru: 'Оружие Спасителя Великой пустыни'
@@ -109,7 +96,7 @@ weaponsDB = {
 		icon: '',
 		obtaining: 'У менялы Со Чуна на Постоялом дворе'
 	},
-	9:{
+	8:{
 		name: {
 			en: 'Infernal',
 			ru: 'Оружие пламени'
@@ -121,7 +108,7 @@ weaponsDB = {
 		icon: '',
 		obtaining: 'Древняя гробница'
 	},
-	10:{
+	9:{
 		name: {
 			en: 'Awakened Infernal',
 			ru: 'Охранное оружие пламени'
@@ -133,7 +120,7 @@ weaponsDB = {
 		icon: '',
 		obtaining: 'Морф'
 	},
-	8:{
+	10:{
 		name: {
 			en: 'Lycan',
 			ru: 'Оружие демона'
@@ -145,7 +132,7 @@ weaponsDB = {
 		icon: '',
 		obtaining: 'Колесо удачи на Волчьих холмах'
 	},
-	9:{
+	11:{
 		name: {
 			en: 'Hujikar',
 			ru: 'Оружие Ходона'
@@ -157,7 +144,7 @@ weaponsDB = {
 		icon: '',
 		obtaining: 'Босс Ходон'
 	},
-	10:{
+	12:{
 		name: {
 			en: 'True Infernal',
 			ru: 'Истинное оружие пламени'
@@ -169,7 +156,7 @@ weaponsDB = {
 		icon: '',
 		obtaining: 'Морф'
 	},
-	11:{
+	13:{
 		name: {
 			en: 'Imperator',
 			ru: 'Оружие генерала'
@@ -181,7 +168,7 @@ weaponsDB = {
 		icon: '',
 		obtaining: 'Обитель патриарха'
 	},
-	12:{
+	14:{
 		name: {
 			en: 'Profane',
 			ru: 'Оружие усопших'
@@ -193,7 +180,7 @@ weaponsDB = {
 		icon: '',
 		obtaining: 'Колесо удачи в гробнице Гандзи'
 	},
-	13:{
+	15:{
 		name: {
 			en: 'Awakened Profane',
 			ru: 'Охранное оружие усопших'
@@ -205,7 +192,7 @@ weaponsDB = {
 		icon: '',
 		obtaining: 'Морф'
 	},
-	14:{
+	16:{
 		name: {
 			en: 'Dokumo',
 			ru: 'Оружие пауков'
@@ -217,7 +204,7 @@ weaponsDB = {
 		icon: '',
 		obtaining: 'Гнездо пауков'
 	},
-	15:{
+	17:{
 		name: {
 			en: 'Forgotten Brightstone',
 			ru: 'Утраченное оружие линов'
@@ -229,7 +216,7 @@ weaponsDB = {
 		icon: '',
 		obtaining: 'Руины линов'
 	},
-	16:{
+	18:{
 		name: {
 			en: 'True Profane',
 			ru: 'Истинное оружие усопших'
@@ -241,7 +228,7 @@ weaponsDB = {
 		icon: '',
 		obtaining: 'Морф'
 	},
-	17:{
+	19:{
 		name: {
 			en: 'Moonwater Baotite',
 			ru: 'Оружие Спасителя Равнины изобилия'
@@ -253,7 +240,7 @@ weaponsDB = {
 		icon: '',
 		obtaining: 'У менялы Рю Чоль в Лагере Вольной общины'
 	},
-	18:{
+	20:{
 		name: {
 			en: 'Storm Siren',
 			ru: 'Штормовое оружие злодейки'
