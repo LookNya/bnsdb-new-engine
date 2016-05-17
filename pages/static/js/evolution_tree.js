@@ -1,5 +1,6 @@
 
 function generateEvTree(tree){
+	var usedItems = []
 	var wrap = $('.' + tree.target)
 	wrap.classList.add('evol-tree-wrap')
 
@@ -70,8 +71,10 @@ function generateEvTree(tree){
 		cell.innerHTML = str
 	}
 	function genItemCell(cell, iid){
+			var level = 5
+			~usedItems.indexOf(iid) ? level = 10 : usedItems.push(iid)
 			cell.classList.add('item-cell')
 			var item = db[iid]
-			cell.innerHTML = generateItemCard(item, {mode: 'mini'})
+			cell.innerHTML = generateItemCard(item, {mode: 'mini', level: level})
 	}
 }

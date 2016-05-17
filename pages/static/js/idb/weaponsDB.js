@@ -1,255 +1,480 @@
 weaponsDB = {
-	0:{
-		name: {
-			en: 'Hongmoon',
-			ru: 'Оружие Пути Хона'
+"0":{
+	"name": {
+		"en": "Hongmoon",
+		"ru": "Оружие Пути Хона",
 		},
-		color: 'purple',
-		attack: [13, 67],
-		startlvl: 3,
-		up: 2,
-
-		icon: '',
-		obtaining: 'Дается изначально, покупка у менялы в Изумрудной деревне'
+	"startlvl": 3,
+	"attack": [13,67],
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/2.jpg",
+	"obtaining": "",
 	},
-	1:{
-		name: {
-			en: 'Stalker',
-			ru: 'Оружие бессмертного гандзи'
+"1":{
+	"name": {
+		"en": "Stalker",
+		"ru": "Оружие бессмертного гандзи",
 		},
-		color: 'blue',
-		attack: 19,
-		startlvl: 6,
-
-		icon: '',
-		obtaining: 'Колесо удачи Бессметного Гандзи'
+	"startlvl": 6,
+	"attack": 19,
+	"type": "weapon",
+	"icon": "/img/idb/wep/1.jpg",
+	"obtaining": "",
 	},
-	2:{
-		name: {
-			en: 'Blight',
-			ru: 'Оружие отродья'
+"2":{
+	"name": {
+		"en": "Blight",
+		"ru": "Оружие отродья",
 		},
-		color: 'purple',
-		attack: 54,
-		startlvl: 20,
-
-		icon: '',
-		obtaining: 'Гавань Южного братства'
+	"startlvl": 20,
+	"attack": 54,
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/4.jpg",
+	"obtaining": "",
 	},
-	3:{
-		name: {
-			en: 'Awakened Blight',
-			ru: 'Охранное оружие отродья'
+"3":{
+	"name": {
+		"en": "Awakened Blight",
+		"ru": "Охранное оружие отродья",
 		},
-		color: 'purple',
-		attack: [73, 109],
-		startlvl: 20,
-		up: 5,
-		icon: '',
-		obtaining: 'Морф'
+	"startlvl": 20,
+	"attack": [73,109],
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/4.jpg",
+	"obtaining": "",
 	},
-	4:{
-		name: {
-			en: 'Corrupted',
-			ru: 'Оружие Тьмы'
+"4":{
+	"name": {
+		"en": "Corrupted",
+		"ru": "Оружие Тьмы",
 		},
-		color: 'blue',
-		attack: 49,
-		startlvl: 22,
-
-		icon: '',
-		obtaining: 'Пещера тьмы'
+	"startlvl": 22,
+	"attack": 49,
+	"type": "weapon",
+	"icon": "/img/idb/wep/7.jpg",
+	"obtaining": "",
 	},
-	5:{
-		name: {
-			en: 'Golden Deva',
-			ru: 'Золотое оружие'
+"5":{
+	"name": {
+		"en": "Golden Deva",
+		"ru": "Золотое оружие",
 		},
-		color: 'blue',
-		attack: 89,
-		startlvl: 29,
-
-		icon: '',
-		obtaining: 'Колесо удачи золотого великана'
+	"startlvl": 29,
+	"attack": 89,
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/8.jpg",
+	"obtaining": "",
 	},
-	6:{
-		name: {
-			en: 'True Blight',
-			ru: 'Истинное оружие отродья'
+"6":{
+	"name": {
+		"en": "True Blight",
+		"ru": "Истинное оружие отродья",
 		},
-		color: 'purple',
-		attack: [140, 154],
-		startlvl: 20,
-
-		icon: '',
-		obtaining: 'Морф'
+	"startlvl": 20,
+	"attack": [140,154],
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/10.jpg",
+	"obtaining": "",
 	},
-	7:{
-		name: {
-			en: 'Cinderlands Baotite',
-			ru: 'Оружие Спасителя Великой пустыни'
+"7":{
+	"name": {
+		"en": "Cinderlands Baotite",
+		"ru": "Оружие Спасителя Великой пустыни",
 		},
-		color: 'blue',
-		attack: 90,
-		startlvl: 30,
-
-		icon: '',
-		obtaining: 'У менялы Со Чуна на Постоялом дворе'
+	"startlvl": 30,
+	"attack": 90,
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
 	},
-	8:{
-		name: {
-			en: 'Infernal',
-			ru: 'Оружие пламени'
+"8":{
+	"name": {
+		"en": "Infernal",
+		"ru": "Оружие Пламени",
 		},
-		color: 'purple',
-		attack: 160,
-		startlvl: 36,
-
-		icon: '',
-		obtaining: 'Древняя гробница'
+	"startlvl": 36,
+	"attack": 160,
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/14.jpg",
+	"obtaining": "",
 	},
-	9:{
-		name: {
-			en: 'Awakened Infernal',
-			ru: 'Охранное оружие пламени'
+"9":{
+	"name": {
+		"en": "Awakened Infernal",
+		"ru": "Охранное оружие пламени",
 		},
-		color: 'purple',
-		attack: [165, 179],
-		startlvl: 36,
-
-		icon: '',
-		obtaining: 'Морф'
+	"startlvl": 36,
+	"attack": [165,179],
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/18.jpg",
+	"obtaining": "",
 	},
-	10:{
-		name: {
-			en: 'Lycan',
-			ru: 'Оружие демона'
+"10":{
+	"name": {
+		"en": "Lycan",
+		"ru": "Оружие демона",
 		},
-		color: 'blue',
-		attack: 121,
-		startlvl: 38,
-
-		icon: '',
-		obtaining: 'Колесо удачи на Волчьих холмах'
+	"startlvl": 38,
+	"attack": 121,
+	"type": "weapon",
+	"icon": "/img/idb/wep/16.jpg",
+	"obtaining": "",
 	},
-	11:{
-		name: {
-			en: 'Hujikar',
-			ru: 'Оружие Ходона'
+"11":{
+	"name": {
+		"en": "Hujikar",
+		"ru": "Оружие Ходона",
 		},
-		color: 'purple',
-		attack: 163,
-		startlvl: 40,
-
-		icon: '',
-		obtaining: 'Босс Ходон'
+	"startlvl": 40,
+	"attack": 163,
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/1.jpg",
+	"obtaining": "",
 	},
-	12:{
-		name: {
-			en: 'True Infernal',
-			ru: 'Истинное оружие пламени'
+"12":{
+	"name": {
+		"en": "True Infernal",
+		"ru": "Истинное оружие пламени",
 		},
-		color: 'purple',
-		attack: [133, 212],
-		startlvl: 36,
-
-		icon: '',
-		obtaining: 'Морф'
+	"startlvl": 36,
+	"attack": [133,212],
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/12.jpg",
+	"obtaining": "",
 	},
-	13:{
-		name: {
-			en: 'Imperator',
-			ru: 'Оружие генерала'
+"13":{
+	"name": {
+		"en": "Imperator",
+		"ru": "Оружие генерала",
 		},
-		color: 'blue',
-		attack: 135,
-		startlvl: 40,
-
-		icon: '',
-		obtaining: 'Обитель патриарха'
+	"startlvl": 40,
+	"attack": 135,
+	"type": "weapon",
+	"icon": "/img/idb/wep/3.jpg",
+	"obtaining": "",
 	},
-	14:{
-		name: {
-			en: 'Profane',
-			ru: 'Оружие усопших'
+"14":{
+	"name": {
+		"en": "Profane",
+		"ru": "Оружие усопших",
 		},
-		color: 'purple',
-		attack: 194,
-		startlvl: 42,
-
-		icon: '',
-		obtaining: 'Колесо удачи в гробнице Гандзи'
+	"startlvl": 42,
+	"attack": 194,
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/21.jpg",
+	"obtaining": "",
 	},
-	15:{
-		name: {
-			en: 'Awakened Profane',
-			ru: 'Охранное оружие усопших'
+"15":{
+	"name": {
+		"en": "Awakened Profane",
+		"ru": "Охранное оружие усопших",
 		},
-		color: 'purple',
-		attack: [230, 250],
-		startlvl: 42,
-
-		icon: '',
-		obtaining: 'Морф'
+	"startlvl": 42,
+	"attack": [230,250],
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/21.jpg",
+	"obtaining": "",
 	},
-	16:{
-		name: {
-			en: 'Dokumo',
-			ru: 'Оружие пауков'
+"16":{
+	"name": {
+		"en": "Dokumo",
+		"ru": "Оружие пауков",
 		},
-		color: 'blue',
-		attack: 181,
-		startlvl: 45,
-
-		icon: '',
-		obtaining: 'Гнездо пауков'
+	"startlvl": 45,
+	"attack": 181,
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
 	},
-	17:{
-		name: {
-			en: 'Forgotten Brightstone',
-			ru: 'Утраченное оружие линов'
+"17":{
+	"name": {
+		"en": "Forgotten Brightstone",
+		"ru": "Утраченное оружие линов",
 		},
-		color: 'purple',
-		attack: 194,
-		startlvl: 43,
-
-		icon: '',
-		obtaining: 'Руины линов'
+	"startlvl": 43,
+	"attack": 194,
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
 	},
-	18:{
-		name: {
-			en: 'True Profane',
-			ru: 'Истинное оружие усопших'
+"18":{
+	"name": {
+		"en": "True Profane",
+		"ru": "Истинное оружие усопших",
 		},
-		color: 'purple',
-		attack: [251, 565],
-		startlvl: 42,
-
-		icon: '',
-		obtaining: 'Морф'
+	"startlvl": 42,
+	"attack": [251,265],
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
 	},
-	19:{
-		name: {
-			en: 'Moonwater Baotite',
-			ru: 'Оружие Спасителя Равнины изобилия'
+"19":{
+	"name": {
+		"en": "Moonwater Baotite",
+		"ru": "Оружие Спасителя Равнины изобилия",
 		},
-		color: 'blue',
-		attack: 181,
-		startlvl: 45,
-
-		icon: '',
-		obtaining: 'У менялы Рю Чоль в Лагере Вольной общины'
+	"startlvl": 45,
+	"attack": 181,
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
 	},
-	20:{
-		name: {
-			en: 'Storm Siren',
-			ru: 'Штормовое оружие злодейки'
+"20":{
+	"name": {
+		"en": "Storm Siren",
+		"ru": "Штормовое оружие злодейки",
 		},
-		color: 'purple',
-		attack: 242,
-		startlvl: 45,
-
-		icon: '',
-		obtaining: 'Бухта штормов'
+	"startlvl": 45,
+	"attack": 242,
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
+	},
+"21":{
+	"name": {
+		"en": "Awakened Siren",
+		"ru": "Охранное оружие злодейки",
+		},
+	"startlvl": 45,
+	"attack": [266,272],
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
+	},
+"22":{
+	"name": {
+		"en": "Brightstone",
+		"ru": "Оружие линов",
+		},
+	"startlvl": 45,
+	"attack": 181,
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
+	},
+"23":{
+	"name": {
+		"en": "Siren",
+		"ru": "Оружие злодейки",
+		},
+	"startlvl": 45,
+	"attack": 194,
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
+	},
+"24":{
+	"name": {
+		"en": "True Siren",
+		"ru": "Истинное оружие злодейки",
+		},
+	"startlvl": 45,
+	"attack": [273,279],
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
+	},
+"25":{
+	"name": {
+		"en": "Misty Woods Cold Iron",
+		"ru": "Гематитовое оружие Сумрачного леса",
+		},
+	"startlvl": 45,
+	"attack": 181,
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
+	},
+"26":{
+	"name": {
+		"en": "Dark Pirate",
+		"ru": "Опасное оружие пирата",
+		},
+	"startlvl": 45,
+	"attack": 194,
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
+	},
+"27":{
+	"name": {
+		"en": "Awakened Pirate",
+		"ru": "Охранное оружие пирата",
+		},
+	"startlvl": 45,
+	"attack": [280,293],
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
+	},
+"28":{
+	"name": {
+		"en": "Silver Deva",
+		"ru": "Металлическое оружие",
+		},
+	"startlvl": 45,
+	"attack": 194,
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
+	},
+"29":{
+	"name": {
+		"en": "Pirate",
+		"ru": "Оружие пирата",
+		},
+	"startlvl": 45,
+	"attack": 194,
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
+	},
+"30":{
+	"name": {
+		"en": "True Pirate",
+		"ru": "Истинное оружие пирата",
+		},
+	"startlvl": 45,
+	"attack": [294,310],
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
+	},
+"31":{
+	"name": {
+		"en": "Warrior",
+		"ru": "Оружие воина",
+		},
+	"startlvl": 45,
+	"attack": 194,
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
+	},
+"32":{
+	"name": {
+		"en": "Yeti",
+		"ru": "",
+		},
+	"startlvl": 50,
+	"attack": [166,222],
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
+	},
+"33":{
+	"name": {
+		"en": "True Breeze",
+		"ru": "",
+		},
+	"startlvl": 50,
+	"attack": [316,332],
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
+	},
+"34":{
+	"name": {
+		"en": "King",
+		"ru": "",
+		},
+	"startlvl": 49,
+	"attack": 194,
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
+	},
+"35":{
+	"name": {
+		"en": "Scorpio",
+		"ru": "",
+		},
+	"startlvl": 50,
+	"attack": 194,
+	"type": "weapon",
+	"color": "purple",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
+	},
+"36":{
+	"name": {
+		"en": "Awakened Scorpio",
+		"ru": "",
+		},
+	"startlvl": 50,
+	"attack": [334,351],
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
+	},
+"37":{
+	"name": {
+		"en": "Frostscale",
+		"ru": "",
+		},
+	"startlvl": 50,
+	"attack": 194,
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
+	},
+"38":{
+	"name": {
+		"en": "Asura",
+		"ru": "",
+		},
+	"startlvl": 50,
+	"attack": 194,
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
+	},
+"39":{
+	"name": {
+		"en": "True Scorpio",
+		"ru": "",
+		},
+	"startlvl": 50,
+	"attack": [353,372],
+	"color": "purple",
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
+	},
+"40":{
+	"name": {
+		"en": "Alpine",
+		"ru": "",
+		},
+	"startlvl": 50,
+	"attack": 194,
+	"type": "weapon",
+	"icon": "/img/idb/wep/.jpg",
+	"obtaining": "",
 	},
 }
