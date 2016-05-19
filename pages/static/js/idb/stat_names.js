@@ -3,6 +3,10 @@ stat_namesDB = {
 		ru: "точность",
 		en: "accuracy",
 	},
+	atp:{
+		ru: "сила атаки",
+		en: "attack power",
+	},
 	def:{
 		ru: "защита",
 		en: "defence",
@@ -18,6 +22,10 @@ stat_namesDB = {
 	cdef:{
 		ru: "защита от крита",
 		en: "critical defence",
+	},
+	crithd:{
+		ru: "урон от крита",
+		en: "critical hit damage",
 	},
 	prc:{
 		ru: "пробивание",

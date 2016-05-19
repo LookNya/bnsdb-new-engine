@@ -1,6 +1,6 @@
-planesDB = {
+bopaeDB = {
 	1: {
-		name: { 
+		name: {
 			ru: "Скрижаль Легендарного героя равнины",
 			en: "Plain of abundance Legendary Hero bopae"
 		},
@@ -53,7 +53,7 @@ planesDB = {
 		icon: "/img/idb/bp/1.png",
 	},
 	2: {
-		name: { 
+		name: {
 			ru: "Скрижаль Нарю",
 			en: "Naryu bopae"
 		},
@@ -218,7 +218,7 @@ planesDB = {
 		icon: "/img/idb/bp/1.png",
 	},
 	3: {
-		name: { 
+		name: {
 			ru: "Скрижаль Каракатицы",
 			en: "Sea Snake bopae"
 		},
@@ -383,7 +383,7 @@ planesDB = {
 		icon: "/img/idb/bp/2.png",
 	},
 	4: {
-		name: { 
+		name: {
 			ru: "Скрижаль Каракатицы",
 			en: "Sea Snake bopae"
 		},
@@ -548,7 +548,7 @@ planesDB = {
 		icon: "/img/idb/bp/2.png",
 	},
 	5: {
-		name: { 
+		name: {
 			ru: "Скрижаль Акулы",
 			en: "Shark bopae"
 		},
@@ -713,7 +713,7 @@ planesDB = {
 		icon: "/img/idb/bp/3.png",
 	},
 	6: {
-		name: { 
+		name: {
 			ru: "Скрижаль Акулы",
 			en: "Shark bopae"
 		},
@@ -878,7 +878,7 @@ planesDB = {
 		icon: "/img/idb/bp/3.png",
 	},
 	7: {
-		name: { 
+		name: {
 			ru: "Скрижаль Бесконечной Башни",
 			en: "Tower of Mushin bopae"
 		},
@@ -1366,7 +1366,7 @@ planesDB = {
 		icon: "/img/idb/bp/5.png",
 	},
 	10: {
-		name: { 
+		name: {
 			ru: "Скрижаль Лабиринта — защита",
 			en: "Spiral Labyrinth bopae - Defence"
 		},
