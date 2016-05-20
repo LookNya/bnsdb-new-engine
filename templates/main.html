@@ -92,7 +92,7 @@
 		<div>footer</div>
 
 	</div>
-		header ({{= it.path }}) ({{= JSON.stringify(it.config) }})
+		header ({{= it.path }}) ({{= JSON.stringify(it.config) }}) (TOC: {{= it.toc.join(',') }})
 		<hr>
 		<div class="menu">
 			{{ for (var name in it.menu) { var section=it.menu[name]; }}
