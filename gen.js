@@ -256,7 +256,7 @@ exports.write = function() {
 
 			let toc = [], title = null, author = null, adv = false
 			if (ext == 'md') {
-				let tokens = marked.lexer(content, markedConfig)
+				let tokens = marked.lexer(content)
 				toc = tokens.filter(t => t.type=='heading' && t.depth==2).map(t => t.text)
 				for (let t of tokens) if (t.type=='heading' && t.depth==1) {title=t.text; break}
 				content = marked.parser(tokens, markedConfig)
