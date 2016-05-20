@@ -24,15 +24,13 @@ function withExt(name, ext) {
 	return ext == null ? name : name+'.'+ext
 }
 
-function getPageConfig(content, ext) {
+function getPageConfig(content) {
 	let config = {}
-	if (ext == 'md' || ext == 'html') {
-		let m = content.match(/```config\n([\d\D]*?)\n```/)
-		if (m) {
-			let [all, str_cfg] = m
-			config = JSON.parse('{'+str_cfg+'}')
-			content = content.substr(0, m.index) + content.substr(m.index+all.length)
-		}
+	let m = content.match(/```config\n([\d\D]*?)\n```/)
+	if (m) {
+		let [all, str_cfg] = m
+		config = JSON.parse('{'+str_cfg+'}')
+		content = content.substr(0, m.index) + content.substr(m.index+all.length)
 	}
 	return [content, config]
 }
@@ -250,29 +248,34 @@ exports.write = function() {
 		if (mtime <= modifTimes[filepath] && exists) continue
 		modifTimes[filepath] = mtime
 
-		if (ext == 'md' || ext == 'html' || ext == 'styl') {
-			let content = fs.readFileSync(filepath, 'utf-8'), config
-			[content, config] = getPageConfig(content, ext)
+		if (!copy_as_is && (ext == 'md' || ext == 'styl')) {
+			let content = fs.readFileSync(filepath, 'utf-8')
 
-			let toc = [], title = null, author = null, adv = false
+			if (ext == 'styl') {
+				content = stylus.render(content)
+			}
+
 			if (ext == 'md') {
+				let title = null, author = null, adv = false, toc = []
+				let menu = groups[langserver].children
+				let config
+				[content, config] = getPageConfig(content)
+
+				// парсинг маркдауна
 				let tokens = marked.lexer(content)
 				toc = tokens.filter(t => t.type=='heading' && t.depth==2).map(t => t.text)
 				for (let t of tokens) if (t.type=='heading' && t.depth==1) {title=t.text; break}
 				content = marked.parser(tokens, markedConfig)
-			}
-			if (ext == 'styl') content = stylus.render(content)
 
-			if (!copy_as_is && (ext == 'md' || ext == 'html')) {
+				// подготовка параметров для шаблонов
 				let def = makeDef(main_def)
-				let menu = groups[langserver].children
+				let it = {title, author, adv, menu, lang, server, path, pagepath, config, toc}
+				for (let i in config) it[i] = config[i]
 
-				let params = {title, author, adv, menu, lang, server, path, pagepath, config, toc}
-				for (let i in config) params[i] = config[i]
-
-				content = dot.template(content, null, def)(params)
-				params.content = content
-				let html = main(params)
+				// шаблонизация
+				content = dot.template(content, null, def)(it)
+				it.content = content
+				let html = main(it)
 				content = beautify(html, beautifyConfig)
 			}
 
