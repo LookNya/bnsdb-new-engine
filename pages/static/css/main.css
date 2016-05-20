@@ -8,8 +8,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -18,7 +18,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	vertical-align: baseline;
 }
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -51,13 +51,13 @@ a{
 	color: #1568C4;
 }
 a:visited {
-    color: rgb(119, 37, 151);
+		color: rgb(119, 37, 151);
 }
 a:hover {
-    color: #1568C4;
+		color: #1568C4;
 }
 a:active {
-    color: #1568C4;
+		color: #1568C4;
 }
 .page a[href*="map"], .wepPopup a[href*="map"]{
 	position: relative;
@@ -87,7 +87,7 @@ a:active {
 	color:white!important;
 }
 .morf_line a:visited {
-   color: #1568C4;
+	 color: #1568C4;
 }
 .morf_line .id_text a{
 	border-bottom: 1px dotted #1568C4;
@@ -154,8 +154,8 @@ h4{
 	margin: 0 auto;
 }
 .header_nav{
-	margin-left: 100px;/*ширина левых блоков*/
-	margin-right: 100px;/*.. правых*/
+	margin-left: 100px;/*пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ*/
+	margin-right: 100px;/*.. пїЅпїЅпїЅпїЅпїЅпїЅ*/
 	height: 60px;
 }
 .hb_curr> a{
@@ -165,17 +165,17 @@ h4{
 	color: rgb(255, 232, 0)!important;
 }
 
-/*Обнуляем отступы*/
+/*пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ*/
 #menu  ul, #menu li {
 z-index: 9999;
-    margin:0;
-    padding:0;
-    list-style-type:none;   
+		margin:0;
+		padding:0;
+		list-style-type:none;
 	cursor: pointer;
 }
-/*Задаём параметры блока, содержащего основное меню*/
+/*пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ*/
 #menu {
-    display:block;    
+		display:block;
 }
 #menu a{
 	color: white;
@@ -187,20 +187,20 @@ z-index: 9999;
 #menu a:hover{
 	color: rgb(220, 247, 255);
 }
-/*Задаём стили для разделов меню*/
+/*пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ*/
 #menu > li {
-    display:inline-block;
-    position:relative;
+		display:inline-block;
+		position:relative;
 	padding-right: 3%;
 }
 #menu > li:last-child{
 	padding-right: 0;
 }
-/*Стили для скрытого выпадающего меню*/
+/*пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ*/
 #menu > li > ul {
-    position:absolute;
-    top: 2.5em;
-	left:-20px;   
+		position:absolute;
+		top: 2.5em;
+	left:-20px;
 	line-height: normal;
 	visibility:hidden;
 	opacity:0;
@@ -210,9 +210,9 @@ z-index: 9999;
 	width: 150px;
 }
 #menu > li > ul > li >a{
- 	padding:10px;
+	 padding:10px;
 }
-/*Делаем скрытую часть видимой*/
+/*пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ*/
 #menu > li:hover > ul {
 	visibility:visible;
 	opacity:1;
@@ -337,25 +337,25 @@ z-index: 9999;
 	overflow: hidden;
 }
 .footer_wrap {
-  text-align: justify;
+	text-align: justify;
 }
 .footer_wrap a {
-  position: relative;
-  top: 24px; /* ваше значение line-height */ 
-  display: inline-block;
-  white-space: nowrap;
-  color: rgb(66, 79, 87);
+	position: relative;
+	top: 24px; /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ line-height */
+	display: inline-block;
+	white-space: nowrap;
+	color: rgb(66, 79, 87);
 }
-.footer_wrap:after { /* искусственно добавляем последнюю строчку */ 
-  content: '';
-  display: inline-block;
-  width: 100%;
+.footer_wrap:after { /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+	content: '';
+	display: inline-block;
+	width: 100%;
 }
 .footer_wrap:before {
-  content: '';
-  display: block;
-  width: 100%;
-  margin-bottom: -30px; /* ваше значение line-height */ 
+	content: '';
+	display: block;
+	width: 100%;
+	margin-bottom: -30px; /* пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ line-height */
 }
 /*                                                     fakes */
 #fake_top_panel{
@@ -374,41 +374,41 @@ z-index: 9999;
 	visibility: visible;
 	transition-delay:0s;
 	-webkit-animation: a_ftp_visible .3s; /* Chrome, Safari, Opera */
-    animation: a_ftp_visible .3s;
+		animation: a_ftp_visible .3s;
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes a_ftp_visible {
-    from {
+		from {
 	-moz-transform: translateY(-150px);
-    -ms-transform: translateY(-150px);
-    -webkit-transform: translateY(-150px);
-    -o-transform: translateY(-150px);
-    transform: translateY(-150px);
+		-ms-transform: translateY(-150px);
+		-webkit-transform: translateY(-150px);
+		-o-transform: translateY(-150px);
+		transform: translateY(-150px);
 	}
-    to {
+		to {
 	-moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -webkit-transform: translateY(0);
-    -o-transform: translateY(0);
-    transform: translateY(0);
+		-ms-transform: translateY(0);
+		-webkit-transform: translateY(0);
+		-o-transform: translateY(0);
+		transform: translateY(0);
 	}
 }
 
 /* Standard syntax */
 @keyframes a_ftp_visible {
-    from {
+		from {
 	-moz-transform: translateY(-150px);
-    -ms-transform: translateY(-150px);
-    -webkit-transform: translateY(-150px);
-    -o-transform: translateY(-150px);
-    transform: translateY(-150px);
+		-ms-transform: translateY(-150px);
+		-webkit-transform: translateY(-150px);
+		-o-transform: translateY(-150px);
+		transform: translateY(-150px);
 	}
-    to {
+		to {
 	-moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -webkit-transform: translateY(0);
-    -o-transform: translateY(0);
-    transform: translateY(0);
+		-ms-transform: translateY(0);
+		-webkit-transform: translateY(0);
+		-o-transform: translateY(0);
+		transform: translateY(0);
 	}
 }
 .ftp_hidden{
@@ -452,95 +452,95 @@ z-index: 9999;
 	opacity:0;
 	visibility: hidden;
 	-webkit-animation: a_fpl_hidden .2s; /* Chrome, Safari, Opera */
-    animation: a_fpl_hidden .2s;
+		animation: a_fpl_hidden .2s;
 }
 @-webkit-keyframes a_fpl_hidden {
-    from {
+		from {
 	opacity:1;
 	visibility: visible;
 	-moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -o-transform: translateX(0);
-    transform: translateX(0);
+		-ms-transform: translateX(0);
+		-webkit-transform: translateX(0);
+		-o-transform: translateX(0);
+		transform: translateX(0);
 	}
-    to {
+		to {
 	opacity:0;
 	visibility: hidden;
 	-moz-transform: translateX(-150px);
-    -ms-transform: translateX(-150px);
-    -webkit-transform: translateX(-150px);
-    -o-transform: translateX(-150px);
-    transform: translateX(-150px);
+		-ms-transform: translateX(-150px);
+		-webkit-transform: translateX(-150px);
+		-o-transform: translateX(-150px);
+		transform: translateX(-150px);
 	}
 }
 /* Standard syntax */
 @keyframes a_fpl_hidden {
-    from {
+		from {
 	opacity:1;
 	visibility: visible;
 	-moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -o-transform: translateX(0);
-    transform: translateX(0);
+		-ms-transform: translateX(0);
+		-webkit-transform: translateX(0);
+		-o-transform: translateX(0);
+		transform: translateX(0);
 	}
-    to {
+		to {
 	opacity:0;
 	visibility: hidden;
 	-moz-transform: translateX(-150px);
-    -ms-transform: translateX(-150px);
-    -webkit-transform: translateX(-150px);
-    -o-transform: translateX(-150px);
-    transform: translateX(-150px);
+		-ms-transform: translateX(-150px);
+		-webkit-transform: translateX(-150px);
+		-o-transform: translateX(-150px);
+		transform: translateX(-150px);
 	}
 }
 .fpl_visible{
 	opacity: 1;
 	visibility: visible;
 	-webkit-animation: a_fpl_visible .2s; /* Chrome, Safari, Opera */
-    animation: a_fpl_visible .2s;
+		animation: a_fpl_visible .2s;
 }
 
 @-webkit-keyframes a_fpl_visible {
-    from {
+		from {
 	opacity:0;
 	visibility: hidden;
 	-moz-transform: translateX(-150px);
-    -ms-transform: translateX(-150px);
-    -webkit-transform: translateX(-150px);
-    -o-transform: translateX(-150px);
-    transform: translateX(-150px);
+		-ms-transform: translateX(-150px);
+		-webkit-transform: translateX(-150px);
+		-o-transform: translateX(-150px);
+		transform: translateX(-150px);
 	}
-    to {
+		to {
 	opacity:1;
 	visibility: visible;
 	-moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -o-transform: translateX(0);
-    transform: translateX(0);
+		-ms-transform: translateX(0);
+		-webkit-transform: translateX(0);
+		-o-transform: translateX(0);
+		transform: translateX(0);
 	}
 }
 /* Standard syntax */
 @keyframes a_fpl_visible {
-    from {
+		from {
 	opacity:0;
 	visibility: hidden;
 	-moz-transform: translateX(-150px);
-    -ms-transform: translateX(-150px);
-    -webkit-transform: translateX(-150px);
-    -o-transform: translateX(-150px);
-    transform: translateX(-150px);
+		-ms-transform: translateX(-150px);
+		-webkit-transform: translateX(-150px);
+		-o-transform: translateX(-150px);
+		transform: translateX(-150px);
 	}
-    to {
+		to {
 	opacity:1;
 	visibility: visible;
 	-moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    -o-transform: translateX(0);
-    transform: translateX(0);
+		-ms-transform: translateX(0);
+		-webkit-transform: translateX(0);
+		-o-transform: translateX(0);
+		transform: translateX(0);
 	}
 }
 .fpl_inner>div{
@@ -577,7 +577,7 @@ z-index: 9999;
 	padding-left: 30px;
 }
 .fpl_inner .ul_heading{
-	
+
 	border-bottom: 1px solid rgb(207, 207, 207);
 	padding-left: 0px;
 }
@@ -612,7 +612,7 @@ z-index: 9999;
 	margin: 0 auto;
 	padding: 0px 31px;
 	box-sizing: border-box;
-	
+
 }
 .bottom_adds_content .adds_desktop{
 	text-align: center;
@@ -645,9 +645,8 @@ z-index: 9999;
 .site_contents_table>table{
 	width: 100%;
 }
-.site_contents_table table tr:nth-child(1) {
+.site_contents_table table th{
 	text-align: center;
-	background: #75A8E0;
 }
 .site_contents_table table td{
 	line-height: normal!important;
