@@ -21,7 +21,7 @@
 		<link rel="stylesheet" href="/static/css/main.css" type="text/css" />
 		<link rel="stylesheet" href="/static/css/mobile.css" type="text/css" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-		<title>{{= it.title }}</title>
+		<title>{{= it.title }} — BnS Base: Blade and Soul wiki, лучшие гайды</title>
 	</head>
 	<body>
 		<div class="header">
@@ -44,7 +44,7 @@
 				<div id="mobile_header_wrap">
 					<div class="mh_header">
 						<p><a href="/">BnS Base</a>
-						 — {{= it.path }}
+						 — {{= it.title }}
 						<div id="mh_control" onclick="function(){mobile_header_wrap.classList.toggle('mhw_open')}">►</div>
 					</div>
 					<div class="mh_links">
@@ -122,7 +122,7 @@
 			<div class="ftop_inner">
 				<div class="f_l" onclick="togglePagesList()">&#9776;</div>
 				<div class="f_l">BnS Base</div>
-				<div class="f_l">Бижутерия на 45 уровне</div>
+				<div class="f_l">{{= it.title}}</div>
 			</div>
 		</div>
 
