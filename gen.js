@@ -24,6 +24,24 @@ function withExt(name, ext) {
 	return ext == null ? name : name+'.'+ext
 }
 
+function getPageConfig(content, ext) {
+	let config = {
+		title: null,
+		author: null,
+		adv: false
+	}
+	if (ext == 'md' || ext == 'html') {
+		let m = content.match(/```config\n([\d\D]*?)\n```/)
+		if (m) {
+			let [all, str_cfg] = m
+			let cfg = JSON.parse('{'+str_cfg+'}')
+			for (let i in cfg) config[i] = cfg[i]
+			content = content.substr(0, m.index) + content.substr(m.index+all.length)
+		}
+	}
+	return [content, config]
+}
+
 const markedConfig = getMarkedConfig(marked)
 
 const beautifyConfig = {indent_with_tabs: true, wrap_line_length: 80}
@@ -238,15 +256,17 @@ exports.write = function() {
 		modifTimes[filepath] = mtime
 
 		if (ext == 'md' || ext == 'html' || ext == 'styl') {
-			let content = fs.readFileSync(filepath, 'utf-8')
+			let content = fs.readFileSync(filepath, 'utf-8'), config
+			[content, config] = getPageConfig(content, ext)
+
 			if (ext == 'md') content = marked(content, markedConfig)
 			if (ext == 'styl') content = stylus.render(content)
 
 			if (!copy_as_is && (ext == 'md' || ext == 'html')) {
 				let def = makeDef(main_def)
-				content = dot.template(content, null, def)({lang, server, path, pagepath})
+				content = dot.template(content, null, def)({lang, server, path, pagepath, config})
 				let menu = groups[langserver].children
-				let html = main({title: sections[sections.length-1], menu, lang, server, path, pagepath, content})
+				let html = main({title: sections[sections.length-1], menu, lang, server, path, pagepath, content, config})
 				content = beautify(html, beautifyConfig)
 			}
 
