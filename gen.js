@@ -178,7 +178,7 @@ exports.group = function() {
 			}
 		}
 
-		let langserv = do_not_group ? '*as-is*' : lang+'-'+server
+		let langserv = do_not_group ? '*not-grp*' : lang+'-'+server
 		if (!(langserv in groups)) groups[langserv] = blankPage(langserv, '')
 
 		let cur_page = groups[langserv]
@@ -279,6 +279,7 @@ exports.write = function() {
 				content = beautify(html, beautifyConfig)
 			}
 
+			if (exists) fs.unlinkSync(outpath) //на случай, если после прошлой генерации тут почему-то ссылка
 			console.log(`  writing ${marker} ${outpath}`)
 			write(outpath, content)
 		} else {
