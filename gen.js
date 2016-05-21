@@ -172,13 +172,15 @@ exports.group = function() {
 			return {
 				blank: true,
 				name, path,
+				//lang, server,
 				get pagepath(){ return lang+'-'+server == MAIN_LANGSERVER ? `/${this.path}/` : `/${lang}-${server}/${this.path}/` },
 				files: [],
 				children: {}
+				//do_not_group: false
 			}
 		}
 
-		let langserv = do_not_group ? '*not-grp*' : lang+'-'+server
+		let langserv = lang+'-'+server
 		if (!(langserv in groups)) groups[langserv] = blankPage(langserv, '')
 
 		let cur_page = groups[langserv]
@@ -196,17 +198,25 @@ exports.group = function() {
 		cur_page.files.push(file)
 	}
 
+	function forEachPage(func) {
+		function iter(page, level, parent_res) {
+			let res = func(page, level, parent_res)
+			for (let i in page.children) iter(page.children[i], level+1, res)
+		}
+		for (let ls in groups) iter(groups[ls], 0)
+	}
+
+	/*forEachPage((page, level, parent_do_not_group) => {
+		return page.do_not_group = !!parent_do_not_group || page.files.some(f => f.do_not_group)
+	})*/
+
 	console.log('pages structure:')
-	function iter(page, level) {
+	forEachPage((page, level) => {
 		console.log('- ' + '  '.repeat(level) + page.name + '/')
 		for (let file of page.files) {
 			console.log('- ' + '  '.repeat(level+1) + withExt(file.name, file.ext))
 		}
-		for (let i in page.children) {
-			iter(page.children[i], level+1)
-		}
-	}
-	for (let ls in groups) iter(groups[ls], 0)
+	})
 	console.log('')
 }
 
