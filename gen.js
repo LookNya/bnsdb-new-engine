@@ -15,7 +15,7 @@ const {getMarkedConfig} = require('./marked_config.js')
 const OUT_DIR = 'www'
 const PAGES_DIR = 'pages'
 const MAIN_LANGSERVER = 'ru-srv'
-const COPY_AS_IS = ['CNAME', 'static', 'img', 'robots.txt', '404.html', 'sitemap.xml'].map(name => PAGES_DIR+'/'+name)
+const DO_NOT_GROUP = ['CNAME', 'static', 'img', 'robots.txt', '404.html', 'sitemap.xml'].map(name => PAGES_DIR+'/'+name)
 const DO_NOT_CLEAN = ['.git'].map(name => OUT_DIR+'/'+name)
 const GZIP = ['html', 'css', 'js', 'xml', 'txt']
 
@@ -94,10 +94,10 @@ exports.search = function() {
 		path = path.substr(PAGES_DIR.length+1) // отрезаем префикс `pages/` от пути
 		lang = lang || '*'
 		server = server || '*'
-		let copy_as_is = COPY_AS_IS.some( prefix => fullpath.startsWith(prefix) )
+		let do_not_group = DO_NOT_GROUP.some( prefix => fullpath.startsWith(prefix) )
 
 		files.push({
-			lang, server, path, name, ext, copy_as_is,
+			lang, server, path, name, ext, do_not_group,
 			filepath: fullpath
 		})
 	})
@@ -125,8 +125,8 @@ exports.langservers = function() {
 exports.duplicate = function() {
 	console.log('duplicating pages...')
 	for (let i=0; i<files.length; i++) {
-		let {lang, server, path, name, ext, filepath, copy_as_is} = files[i]
-		if (copy_as_is) continue
+		let {lang, server, path, name, ext, filepath, do_not_group} = files[i]
+		if (do_not_group) continue
 		if (lang != '*' && server != '*') continue
 
 		// убираем сам файл...
@@ -165,7 +165,7 @@ exports.duplicate = function() {
 exports.group = function() {
 	for (let i in groups) delete groups[i]
 	for (let file of files) {
-		let {lang, server, path, copy_as_is} = file
+		let {lang, server, path, do_not_group} = file
 
 		// пустая страница, заполнится (если есть, чем) по мере обработки файлов
 		function blankPage(name, path) {
@@ -178,7 +178,7 @@ exports.group = function() {
 			}
 		}
 
-		let langserv = copy_as_is ? '*as-is*' : lang+'-'+server
+		let langserv = do_not_group ? '*as-is*' : lang+'-'+server
 		if (!(langserv in groups)) groups[langserv] = blankPage(langserv, '')
 
 		let cur_page = groups[langserv]
@@ -235,27 +235,27 @@ exports.write = function() {
 	files.sort((f1, f2) => cmp(f1.lang+'-'+f1.server+'-'+f1.filepath,
 	                           f2.lang+'-'+f2.server+'-'+f2.filepath))
 
-	for (let {server, path, lang, name, ext, filepath, copy_as_is} of files) {
+	for (let {server, path, lang, name, ext, filepath, do_not_group} of files) {
 		let sections = path.split('/')
 		let langserver = lang+'-'+server
 		let is_main = langserver == MAIN_LANGSERVER
-		let pagepath = is_main || copy_as_is ? `/${path}/` : `/${langserver}/${path}/`
+		let pagepath = is_main || do_not_group ? `/${path}/` : `/${langserver}/${path}/`
 		let outpath = pathutils.normalize(`${OUT_DIR}${pagepath}${withExt(name, ext=='md'?'html':ext=='styl'?'css':ext)}`)
-		let marker = is_main ? 'm' : copy_as_is ? 'c' : ' '
+		let marker = is_main ? 'm' : do_not_group ? 's' : ' '
 		let exists = fs.existsSync(outpath)
 
 		let mtime = fs.statSync(filepath).mtime.getTime()
 		if (mtime <= modifTimes[filepath] && exists) continue
 		modifTimes[filepath] = mtime
 
-		if (!copy_as_is && (ext == 'md' || ext == 'styl')) {
+		if (ext == 'md' || ext == 'styl') {
 			let content = fs.readFileSync(filepath, 'utf-8')
 
 			if (ext == 'styl') {
 				content = stylus.render(content)
 			}
 
-			if (ext == 'md') {
+			if (ext == 'md' && !do_not_group) {
 				let title = null, author = null, adv = false, toc = []
 				let menu = groups[langserver].children
 				let config
