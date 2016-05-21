@@ -9,12 +9,13 @@
 		}
 
 		renderer.heading = function(text, level, raw) {
-			return `<h${level}>${text}</h${level}>`
+			return (level==2 ? `<a name="${text}"></a>` : '') + `<h${level}>${text}</h${level}>`
 		}
 
 		return {
 			renderer: renderer,
-			sanitize: true
+			sanitize: true,
+			langPrefix: 'lang-'
 		}
 	}
 })(typeof exports == 'undefined' ? window : exports)
