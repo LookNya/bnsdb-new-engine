@@ -1,4 +1,5 @@
 ```config
+ "short_title": "Фермерство",
  "author": "ErFloria"
 ```
 # Рецепты крафта

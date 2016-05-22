@@ -251,41 +251,75 @@ exports.write = function() {
 	files.sort((f1, f2) => cmp(f1.lang+'-'+f1.server+'-'+f1.filepath,
 	                           f2.lang+'-'+f2.server+'-'+f2.filepath))
 
-	for (let {server, path, lang, name, ext, filepath, do_not_group, page} of files) {
-		let sections = path.split('/')
+	// PHASE 0
+	// Проверка изменения исходника, наличия файла назначение, несколько доп. свойств для файлов
+	for (let file of files) {
+		let {name, ext, filepath, page} = file
+
+		let out_ext = {md:'html', styl:'css'}[ext] || ext
+		let outpath = pathutils.normalize(`${OUT_DIR}${page.pagepath}${withExt(name, out_ext)}`)
+		let out_exists = fs.existsSync(outpath)
+
+		let mtime = fs.statSync(filepath).mtime.getTime()
+		let src_not_modified = mtime <= modifTimes[filepath]
+		modifTimes[filepath] = mtime
+
+		file.outpath = outpath
+		file.out_exists = out_exists
+		file.src_not_modified = src_not_modified
+		file.can_skip = src_not_modified && out_exists
+	}
+
+	// PHASE 1
+	// Парсинг всех md, несколько доп. свойств для страниц и файлов из содержимого этих md
+	for (let file of files) {
+		let {filepath, ext, page, can_skip} = file
+		if (can_skip) continue
+
+		if (ext == 'md') {
+			let content = fs.readFileSync(filepath, 'utf-8')
+			let config
+			[content, config] = getPageConfig(content)
+
+			// парсинг маркдауна
+			let tokens = marked.lexer(content)
+			let toc = tokens.filter(t => t.type=='heading' && t.depth==2).map(t => t.text)
+			let title = null
+			for (let t of tokens) if (t.type=='heading' && t.depth==1) {title=t.text; break}
+			content = marked.parser(tokens, markedConfig)
+
+			page.title = title
+			page.short_title = 'short_title' in config ? config.short_title : title
+			page.toc = toc
+			page.config = config
+			file.content = content
+		}
+	}
+
+	// PHASE 2
+	// Чтение (если ещё не прочитано) и генерация всего
+	for (let {server, lang, path, ext, filepath, do_not_group, page, out_exists, outpath, content, can_skip} of files) {
+		if (can_skip) continue
+
 		let langserver = lang+'-'+server
 		let is_main = page.of_main_langserver
 		let pagepath = page.pagepath
-		let outpath = pathutils.normalize(`${OUT_DIR}${pagepath}${withExt(name, ext=='md'?'html':ext=='styl'?'css':ext)}`)
-		let marker = is_main ? 'm' : do_not_group ? 's' : ' '
-		let exists = fs.existsSync(outpath)
-
-		let mtime = fs.statSync(filepath).mtime.getTime()
-		if (mtime <= modifTimes[filepath] && exists) continue
-		modifTimes[filepath] = mtime
+		let marker = (is_main?'m':' ') + (do_not_group?'s':' ')
 
 		if (ext == 'md' || ext == 'styl') {
-			let content = fs.readFileSync(filepath, 'utf-8')
+			if (content == null) content = fs.readFileSync(filepath, 'utf-8')
 
 			if (ext == 'styl') {
 				content = stylus.render(content)
 			}
 
 			if (ext == 'md' && !do_not_group) {
-				let title = null, author = null, adv = false, toc = []
+				let {title, short_title, toc, config} = page, author = null, adv = false
 				let menu = groups[langserver].children
-				let config
-				[content, config] = getPageConfig(content)
-
-				// парсинг маркдауна
-				let tokens = marked.lexer(content)
-				toc = tokens.filter(t => t.type=='heading' && t.depth==2).map(t => t.text)
-				for (let t of tokens) if (t.type=='heading' && t.depth==1) {title=t.text; break}
-				content = marked.parser(tokens, markedConfig)
 
 				// подготовка параметров для шаблонов
 				let def = makeDef(main_def)
-				let it = {type:'textpage', title, author, adv, menu, lang, server, page, path, pagepath, config, toc}
+				let it = {type:'textpage', title, short_title, author, adv, menu, lang, server, page, path, pagepath, config, toc}
 				for (let i in config) it[i] = config[i]
 
 				// шаблонизация
@@ -295,11 +329,11 @@ exports.write = function() {
 				content = beautify(html, beautifyConfig)
 			}
 
-			if (exists) fs.unlinkSync(outpath) //на случай, если после прошлой генерации тут почему-то ссылка
+			if (out_exists) fs.unlinkSync(outpath) //на случай, если после прошлой генерации тут почему-то ссылка
 			console.log(`  writing ${marker} ${outpath}`)
 			write(outpath, content)
 		} else {
-			if (exists) fs.unlinkSync(outpath)
+			if (out_exists) fs.unlinkSync(outpath)
 			console.log(`  linking ${marker} ${outpath}`)
 			link(outpath, filepath)
 		}

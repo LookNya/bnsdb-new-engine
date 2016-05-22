@@ -1,7 +1,8 @@
 <div class="tiles">
 	{{ for (let name in it.page.children) { }}
-	<a href="{{= it.page.children[name].pagepath }}" style="width:128px; height:64px; outline:1px solid; display:inline-block">
-		<p>{{! name }}</p>
+	{{   let child = it.page.children[name]; }}
+	<a href="{{= child.pagepath }}" style="width:128px; height:64px; outline:1px solid; display:inline-block">
+		<p>{{! child.short_title }}</p>
 	</a>
 	{{ } }}
 </div>
