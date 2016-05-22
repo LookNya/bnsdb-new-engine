@@ -67,6 +67,23 @@ function makeDef(mdef) {
 		return dot.template(content, null, this)(it, this)
 	}
 
+	def.tileGroupsFor = function(page, groups=[]) {
+		let group = {page, tiles:[]}
+		groups.push(group)
+
+		for (let name in page.children) {
+			let child = page.children[name]
+			if (child.type == 'tiles') {
+				this.tileGroupsFor(child, groups)
+			} else {
+				group.tiles.push({page:child})
+			}
+		}
+
+		if (group.tiles.length == 0) groups.splice(groups.indexOf(group), 1)
+		return groups
+	}
+
 	return def
 }
 
@@ -288,8 +305,9 @@ exports.write = function() {
 			for (let t of tokens) if (t.type=='heading' && t.depth==1) {title=t.text; break}
 			content = marked.parser(tokens, markedConfig)
 
-			page.title = title
-			page.short_title = 'short_title' in config ? config.short_title : title
+			page.title = config.title || title
+			page.short_title = config.short_title || page.title
+			page.type = config.type || 'textpage'
 			page.toc = toc
 			page.config = config
 			file.content = content
@@ -314,12 +332,12 @@ exports.write = function() {
 			}
 
 			if (ext == 'md' && !do_not_group) {
-				let {title, short_title, toc, config} = page, author = null, adv = false
+				let {title, short_title, type, toc, config} = page, author = null, adv = false
 				let menu = groups[langserver].children
 
 				// подготовка параметров для шаблонов
 				let def = makeDef(main_def)
-				let it = {type:'textpage', title, short_title, author, adv, menu, lang, server, page, path, pagepath, config, toc}
+				let it = {title, short_title, type, author, adv, menu, lang, server, page, path, pagepath, config, toc}
 				for (let i in config) it[i] = config[i]
 
 				// шаблонизация

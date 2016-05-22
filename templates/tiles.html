@@ -1,9 +1,11 @@
 <div class="tiles">
-	{{ for (let name in it.page.children) { }}
-	{{   let child = it.page.children[name]; }}
-	<a href="{{= child.pagepath }}" style="width:128px; height:64px; outline:1px solid; display:inline-block">
-		<p>{{! child.short_title }}</p>
+	{{~ def.tileGroupsFor(it.page) :group }}
+	<h1>{{! group.page.title }}</h1>
+	{{~ group.tiles :tile }}
+	<a href="{{= tile.page.pagepath }}" style="width:128px; height:64px; outline:1px solid; display:inline-block">
+		<p>{{! tile.page.short_title }}</p>
 	</a>
-	{{ } }}
+	{{~}}
+	{{~}}
 </div>
 {{= it.content }} {{ /*на случай, если ниже надо что-то дописать*/ }}

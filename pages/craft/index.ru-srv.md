@@ -1,8 +1,11 @@
 ```config
-"title": "крафт",
+"title": "Крафт",
 "author": "V0V@N",
+"type": "tiles",
 "adv": true
 ```
+
+\*\*\*test page\*\*\*
 
 # Крафт. Общий обзор
 
