@@ -26,7 +26,7 @@ cp('node_modules/dot/doT.js', 'edit/www/js/doT.js')
 cp('marked_config.js', 'edit/www/js/marked_config.js')
 
 let wwwEdit = new nstatic.Server('./edit/www')
-let www = new nstatic.Server('./www')
+let www = new nstatic.Server('./www', {cache: false, headers: {'Cache-Control': 'no-cache'}})
 
 let index = dot.template(fs.readFileSync('edit/index.html', 'utf-8'))
 
