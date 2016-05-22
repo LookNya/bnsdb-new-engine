@@ -87,7 +87,11 @@
 			</div>
 		</div>
 		<div class="content">
-			{{# def.include('textpage.html') }}
+			{{? it.type == "tiles" }}
+			{{= def.include('tiles.html', it) }}
+			{{??}}
+			{{= def.include('textpage.html', it) }}
+			{{?}}
 		</div>
 		<div>footer</div>
 

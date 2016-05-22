@@ -1,0 +1,8 @@
+<div class="tiles">
+	{{ for (let name in it.page.children) { }}
+	<a href="{{= it.page.children[name].pagepath }}" style="width:128px; height:64px; outline:1px solid; display:inline-block">
+		<p>{{! name }}</p>
+	</a>
+	{{ } }}
+</div>
+{{= it.content }} {{ /*на случай, если ниже надо что-то дописать*/ }}

@@ -62,8 +62,9 @@ function makeDef(mdef) {
 		}
 	})
 
-	def.include = function(name) {
-		return fs.readFileSync('templates/'+name, 'utf-8')
+	def.include = function(name, it) {
+		let content = fs.readFileSync('templates/'+name, 'utf-8')
+		return dot.template(content, null, this)(it, this)
 	}
 
 	return def
@@ -98,7 +99,8 @@ exports.search = function() {
 
 		files.push({
 			lang, server, path, name, ext, do_not_group,
-			filepath: fullpath
+			filepath: fullpath,
+			page: null
 		})
 	})
 	console.log(`  done, ${files.length} found\n`)
@@ -158,7 +160,8 @@ exports.duplicate = function() {
 //     children: {
 //       subpage1: { ... },
 //       subpage2: { ... }
-//     }
+//     },
+//     ...
 //   },
 //   ...
 // }
@@ -172,11 +175,12 @@ exports.group = function() {
 			return {
 				blank: true,
 				name, path,
-				//lang, server,
-				get pagepath(){ return lang+'-'+server == MAIN_LANGSERVER ? `/${this.path}/` : `/${lang}-${server}/${this.path}/` },
+				lang, server,
+				of_main_langserver: lang+'-'+server == MAIN_LANGSERVER,
+				get pagepath(){ return this.of_main_langserver || this.do_not_group ? `/${this.path}/` : `/${lang}-${server}/${this.path}/` },
 				files: [],
-				children: {}
-				//do_not_group: false
+				children: {},
+				do_not_group: false //тут это вычислять неудобно, поэтому в следующем цикле
 			}
 		}
 
@@ -196,6 +200,7 @@ exports.group = function() {
 		cur_page.blank = false
 		cur_page.path = file.path
 		cur_page.files.push(file)
+		file.page = cur_page
 	}
 
 	function forEachPage(func) {
@@ -206,9 +211,10 @@ exports.group = function() {
 		for (let ls in groups) iter(groups[ls], 0)
 	}
 
-	/*forEachPage((page, level, parent_do_not_group) => {
+	// установка флаков `do_not_group`
+	forEachPage((page, level, parent_do_not_group) => {
 		return page.do_not_group = !!parent_do_not_group || page.files.some(f => f.do_not_group)
-	})*/
+	})
 
 	console.log('pages structure:')
 	forEachPage((page, level) => {
@@ -245,11 +251,11 @@ exports.write = function() {
 	files.sort((f1, f2) => cmp(f1.lang+'-'+f1.server+'-'+f1.filepath,
 	                           f2.lang+'-'+f2.server+'-'+f2.filepath))
 
-	for (let {server, path, lang, name, ext, filepath, do_not_group} of files) {
+	for (let {server, path, lang, name, ext, filepath, do_not_group, page} of files) {
 		let sections = path.split('/')
 		let langserver = lang+'-'+server
-		let is_main = langserver == MAIN_LANGSERVER
-		let pagepath = is_main || do_not_group ? `/${path}/` : `/${langserver}/${path}/`
+		let is_main = page.of_main_langserver
+		let pagepath = page.pagepath
 		let outpath = pathutils.normalize(`${OUT_DIR}${pagepath}${withExt(name, ext=='md'?'html':ext=='styl'?'css':ext)}`)
 		let marker = is_main ? 'm' : do_not_group ? 's' : ' '
 		let exists = fs.existsSync(outpath)
@@ -279,13 +285,13 @@ exports.write = function() {
 
 				// подготовка параметров для шаблонов
 				let def = makeDef(main_def)
-				let it = {title, author, adv, menu, lang, server, path, pagepath, config, toc}
+				let it = {type:'textpage', title, author, adv, menu, lang, server, page, path, pagepath, config, toc}
 				for (let i in config) it[i] = config[i]
 
 				// шаблонизация
-				content = dot.template(content, null, def)(it)
+				content = dot.template(content, null, def)(it, def)
 				it.content = content
-				let html = main(it)
+				let html = main(it, def)
 				content = beautify(html, beautifyConfig)
 			}
 
