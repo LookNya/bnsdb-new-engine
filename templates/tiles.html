@@ -1,3 +1,36 @@
+<link rel="stylesheet" href="/static/css/sub_main_page.css" type="text/css">
+<link rel="stylesheet" href="/static/css/tiles.css" type="text/css">
+<link rel="stylesheet" href="/static/css/blockbacks.css" type="text/css">
+
+<div class="blocks">
+	{{~ def.tileGroupsFor(it.page) :group }}
+	<div class="blocks_wrap">
+		<div class="block_line">
+			<h2>{{! group.page.title }}</h2>
+			<div class="tiles">
+				<div class="t_7 bb8"> <!--TODO t_7 to t_{tiles_length}-->
+					{{~ group.tiles :tile }}
+					<div>
+						<a href="{{= tile.page.pagepath }}">
+							<p>{{! tile.page.short_title }}</p>
+						</a>
+					</div>
+					{{~ }}
+				</div>
+			</div>
+			<div class="mobile">
+				{{~ group.tiles :tile }}
+				<a href="{{= tile.page.pagepath }}">
+					{{! tile.page.short_title }}
+				</a>
+				{{~ }}
+			</div>
+		</div>
+	</div>
+	{{~}}
+</div>
+
+
 <div class="tiles">
 	{{~ def.tileGroupsFor(it.page) :group }}
 	<h1>{{! group.page.title }}</h1>

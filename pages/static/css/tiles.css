@@ -1,0 +1,125 @@
+.tiles>div>div {
+		background-size: 980px;
+}
+
+.tiles .t_1>div:nth-child(1){
+	width: 980px;
+	height: 300px;
+}
+
+.tiles .t_2>div:nth-child(1){
+	width: 480px;
+	height: 300px;
+}
+.tiles .t_2>div:nth-child(2){
+	width: 480px;
+	height: 300px;
+	left: 500px;
+	background-position: 500px 0;
+}
+
+.tiles .t_3>div:nth-child(1){
+	width: 480px;
+	height: 300px;
+}
+.tiles .t_3>div:nth-child(2){
+	width: 480px;
+	height: 140px;
+	left: 500px;
+	background-position: 500px 0;
+}
+.tiles .t_3>div:nth-child(3){
+	width: 480px;
+	height: 140px;
+	top: 160px;
+	left: 500px;
+	background-position: 500px 37%;
+}
+
+.tiles .t_4>div{
+	width: 480px;
+	height: 140px;
+}
+.tiles .t_4>div:nth-child(2){
+	top: 160px;
+	background-position: 0 37%;
+}
+.tiles .t_4>div:nth-child(3){
+	left: 500px;
+	background-position: 500px 0;
+}
+.tiles .t_4>div:nth-child(4){
+	top: 160px;
+	left: 500px;
+	background-position: 500px 37%;
+}
+
+.tiles .t_7>div:nth-child(1), .tiles .t_7>div:nth-child(2), .tiles .t_7>div:nth-child(3), .tiles .t_7>div:nth-child(4), .tiles .t_7>div:nth-child(5), .tiles .t_7>div:nth-child(6){
+	width: 262px;
+	height: 140px;
+}
+.tiles .t_7>div:nth-child(7){
+	width: 131px;
+	height: 300px;
+}
+.tiles .t_7>div:nth-child(2){
+	left: 282px;
+	background-position: -262px 0;
+}
+.tiles .t_7>div:nth-child(3){
+	top: 160px;
+	background-position: -262px 37%;
+}
+.tiles .t_7>div:nth-child(4){
+	left: 282px;
+	top: 160px;
+	background-position: 500px 37%;
+}
+.tiles .t_7>div:nth-child(5){
+	left: 564px;
+	background-position: -524 0px;
+}
+.tiles .t_7>div:nth-child(6){
+	left: 564px;
+	top: 160px;
+	background-position: -524 37%;
+}
+.tiles .t_7>div:nth-child(7){
+	left: 846px;
+	background-position: -786px 0;
+}
+
+.t_7_c{
+	height: 1060px!important;
+}
+.tiles .t_7_c>div{
+	width: 480px;
+	height: 250px;
+}
+.tiles .t_7_c>div:nth-child(even){
+	left: 500px;
+	background-position-x: -500px;
+}
+.tiles .t_7_c>div:nth-child(3){
+	background-position: 0% -270px;
+}
+.tiles .t_7_c>div:nth-child(4) {
+	background-position: 0% -270px;
+}
+.tiles .t_7_c>div:nth-child(5) {
+	background-position: 0% -540px;
+}
+.tiles .t_7_c>div:nth-child(6) {
+	background-position: 0% -540px;
+}
+.tiles .t_7_c>div:nth-child(3), .tiles .t_7_c>div:nth-child(4){
+	top: 270px;
+}
+.tiles .t_7_c>div:nth-child(5), .tiles .t_7_c>div:nth-child(6){
+	top: 540px;
+}
+.tiles .t_7_c>div:nth-child(7){
+	width: 980px;
+	top: 810px;
+	background-position: 0 -810px;
+}

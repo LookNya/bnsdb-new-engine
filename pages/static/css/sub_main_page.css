@@ -81,105 +81,6 @@
 .tiles>div>div{
 	position: absolute;
 }
-.tiles .t_1>div:nth-child(1){
-	width: 980px;
-	height: 300px;
-}
-.tiles .t_2>div:nth-child(1){
-	width: 480px;
-	height: 300px;
-}
-.tiles .t_2>div:nth-child(2){
-	width: 480px;
-	height: 300px;
-	left: 500px;
-	background-position: 500px 0;
-}
-.tiles .t_3>div:nth-child(1){
-	width: 480px;
-	height: 300px;
-	
-}
-.tiles .t_3>div:nth-child(2){
-	width: 480px;
-	height: 140px;
-	left: 500px;
-	background-position: 500px 0;
-}
-.tiles .t_3>div:nth-child(3){
-	width: 480px;
-	height: 140px;
-	top: 160px;
-	left: 500px;
-	background-position: 500px 37%;
-}
-.tiles .t_4>div{
-	width: 480px;
-	height: 140px;
-}
-.tiles .t_4>div:nth-child(2){
-	top: 160px;
-	background-position: 0 37%;
-}
-.tiles .t_4>div:nth-child(3){
-	left: 500px;
-	background-position: 500px 0;
-}
-.tiles .t_4>div:nth-child(4){
-	top: 160px;
-	left: 500px;
-	background-position: 500px 37%;
-}
-.tiles .t_7>div:nth-child(1), .tiles .t_7>div:nth-child(2), .tiles .t_7>div:nth-child(3), .tiles .t_7>div:nth-child(4), .tiles .t_7>div:nth-child(5), .tiles .t_7>div:nth-child(6){
-	width: 262px;
-	height: 140px;
-}
-.tiles .t_7>div:nth-child(7){
-	width: 131px;
-	height: 300px;
-}
-.tiles .t_7>div:nth-child(2){
-	left: 282px;
-}
-.tiles .t_7>div:nth-child(3){
-	top: 160px;
-}
-.tiles .t_7>div:nth-child(4){
-	left: 282px;
-	top: 160px;
-}
-.tiles .t_7>div:nth-child(5){
-	left: 564px;
-}
-.tiles .t_7>div:nth-child(6){
-	left: 564px;
-	top: 160px;
-}
-.tiles .t_7>div:nth-child(7){
-	left: 846px;
-}
-
-.t_7_c{
-	height: 1060px!important;
-}
-.tiles .t_7_c>div{
-	width: 480px;
-	height: 250px;
-}
-.tiles .t_7_c>div:nth-child(even){
-	left: 500px;
-}
-.tiles .t_7_c>div:nth-child(3), .tiles .t_7_c>div:nth-child(4){
-	top: 270px;
-}
-.tiles .t_7_c>div:nth-child(5), .tiles .t_7_c>div:nth-child(6){
-	top: 540px;
-}
-.tiles .t_7_c>div:nth-child(7){
-	width: 980px;
-	top: 810px;
-}
-
 /*                                utils*/
 .bl_2, .bl_3{
 	position: relative;
@@ -194,7 +95,7 @@
 	height: 313px;
 	box-sizing: border-box;
 }
-.bl_2>div:nth-child(2){	
+.bl_2>div:nth-child(2){
 	left: 500px;
 }
 .bl_3>div>div{
@@ -202,10 +103,10 @@
 	height: 313px;
 	box-sizing: border-box;
 }
-.bl_3>div:nth-child(2){	
+.bl_3>div:nth-child(2){
 	left: 333px;
 }
-.bl_3>div:nth-child(3){	
+.bl_3>div:nth-child(3){
 	left: 666px;
 }
 .twittblock{
