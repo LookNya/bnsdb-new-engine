@@ -26,7 +26,7 @@ function withExt(name, ext) {
 
 function getPageConfig(content) {
 	let config = {}
-	let m = content.match(/```config\w([\d\D]*?)\w```/)
+	let m = content.match(/```config\W([\d\D]*?)\W```/)
 	if (m) {
 		let [all, str_cfg] = m
 		config = JSON.parse('{'+str_cfg+'}')
@@ -268,7 +268,7 @@ exports.write = function() {
 	// Сортировка файлов по имени, так вывод красивее
 	function cmp(a,b){ return a==b ? 0 : a<b ? -1 : 1 }
 	files.sort((f1, f2) => cmp(f1.lang+'-'+f1.server+'-'+f1.filepath,
-	                           f2.lang+'-'+f2.server+'-'+f2.filepath))
+														 f2.lang+'-'+f2.server+'-'+f2.filepath))
 
 	// Изменился ли хоть один шаблон
 	let templates_changed = false

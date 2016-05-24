@@ -2,7 +2,7 @@
  "author": "ErFloria"
 ```
 # Рецепты крафта
-
+ 
 ``` raw-html
 <link rel="stylesheet" href="/static/css/selector.css" type="text/css">
 

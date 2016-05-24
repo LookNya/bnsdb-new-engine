@@ -54,7 +54,7 @@ function fillPlanes(){
 				'<div>'+
 					'<div>'+
 						'<div>'+'<div class="p_num">1</div>'+genPieceData(data.pieces[0])+'</div>'+
-						'<div><div class="tbnsblogo"><div>BnS Base</div></div></div>'+
+						'<div>'+'<div class="tbnsblogo"><div>BnS Base</div></div></div>'+
 						'<div>'+'<div class="p_num">5</div>'+genPieceData(data.pieces[4])+'</div>'+
 					'</div>'+
 				'</div>'+
