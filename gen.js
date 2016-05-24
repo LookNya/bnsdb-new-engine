@@ -261,12 +261,22 @@ exports.cleanup = function() {
 exports.write = function() {
 	console.log('processing files...')
 
+	// Главный шаблон
 	let main_def = makeDef()
 	let main = dot.template(fs.readFileSync('templates/main.html', 'utf-8'), null, main_def)
 
+	// Сортировка файлов по имени, так вывод красивее
 	function cmp(a,b){ return a==b ? 0 : a<b ? -1 : 1 }
 	files.sort((f1, f2) => cmp(f1.lang+'-'+f1.server+'-'+f1.filepath,
 	                           f2.lang+'-'+f2.server+'-'+f2.filepath))
+
+	// Изменился ли хоть один шаблон
+	let templates_changed = false
+	forEachFile('templates', function(fname, fullpath) {
+		let mtime = fs.statSync(fullpath).mtime.getTime()
+		if (mtime > modifTimes[fullpath]) templates_changed = true
+		modifTimes[fullpath] = mtime
+	})
 
 	// PHASE 0
 	// Проверка изменения исходника, наличия файла назначение, несколько доп. свойств для файлов
@@ -284,7 +294,7 @@ exports.write = function() {
 		file.outpath = outpath
 		file.out_exists = out_exists
 		file.src_not_modified = src_not_modified
-		file.can_skip = src_not_modified && out_exists
+		file.can_skip = src_not_modified && out_exists && !(ext=='md' && templates_changed)
 	}
 
 	// PHASE 1
