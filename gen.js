@@ -26,7 +26,7 @@ function withExt(name, ext) {
 
 function getPageConfig(content) {
 	let config = {}
-	let m = content.match(/```config\n([\d\D]*?)\n```/)
+	let m = content.match(/```config\w([\d\D]*?)\w```/)
 	if (m) {
 		let [all, str_cfg] = m
 		config = JSON.parse('{'+str_cfg+'}')

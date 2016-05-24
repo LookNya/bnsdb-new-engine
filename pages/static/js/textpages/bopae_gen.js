@@ -11,19 +11,22 @@ function fillPlanes(){
 		var plane_data = bopaeDB[plane_id]
 		var result = ''
 		result += ''+
-			'<div class="plane_top">'+
-				'<div class="pt_left f_l">'+
-					'<div class="plane_title"><h2 class="'+ plane_data.color +'">'+ plane_data.name[lang] +'</h2></div>'+
-					'<div class="plane_drop p_descr">'+ plane_data.obtaining +'</div>'
-		if(plane_data.setBonus[0])
-			result+='<div class="plane_set_3 p_descr">'+ genSetData(plane_data.setBonus[0]) +'</div>'
-		if(plane_data.setBonus[1])
-			result+='<div class="plane_set_5 p_descr">'+ genSetData(plane_data.setBonus[1]) +'</div>'
-		if(plane_data.setBonus[2])
-			result+='<div class="plane_set_8 p_descr">'+ genSetData(plane_data.setBonus[2]) +'</div>'
-		result+='</div>'+
-				'<div class="pt_right f_l"><img src="'+plane_data.icon+'"></img></div>'+
-			'</div>'
+				'<div class="plane_top">\
+					<div class="pt_left f_l">\
+						<div class="p-head-wrap">\
+							<div class="p-info f_l">\
+								<div class="plane_title"><h2 class="'+ plane_data.color +'">'+ plane_data.name[lang] +'</h2></div>\
+								<div class="plane_drop p_descr">'+ plane_data.obtaining +'</div>' +
+								(plane_data.setBonus[0] ? '<div class="plane_set_3 p_descr">'+ genSetData(plane_data.setBonus[0]) +'</div>' : '') +
+								(plane_data.setBonus[1] ? '<div class="plane_set_3 p_descr">'+ genSetData(plane_data.setBonus[1]) +'</div>' : '') +
+								(plane_data.setBonus[2] ? '<div class="plane_set_3 p_descr">'+ genSetData(plane_data.setBonus[2]) +'</div>' : '') +
+							'</div>\
+							<div class="p-icon f_l">\
+								<div class="pt_right f_r"><img src="'+plane_data.icon+'"></img></div>\
+							</div>\
+						</div>\
+					</div>\
+				</div>'
 		result += '<div class="plane_table">' + genTable(plane_data) +'</div>'
 		elem.innerHTML = result
 	}
@@ -85,7 +88,7 @@ function fillPlanes(){
 			var statNames = data.mainStatsNames
 			statNames.forEach(function(stat){
 				var localStatName = stat_namesDB[stat][lang]
-				str+='<div class="main_stat">'+localStatName+' '+ data.mainStatsNums[0]+'–'+data.mainStatsNums[1]+'</div>'
+				str+='<div class="main_stat">'+localStatName+' '+ data.mainStatsNums[0]+'–'+data.mainStatsNums[2]+'</div>'
 			})
 
 		}
@@ -93,7 +96,7 @@ function fillPlanes(){
 			var statNames = data.addStatNames
 			statNames.forEach(function(stat){
 				var localStatName = stat_namesDB[stat][lang]
-				str+='<div>'+localStatName+' '+ data.addStatNums[0]+ ( data.addStatNums[2] ? '–'+data.addStatNums[2] : '' )+'</div>'
+				str+='<div>'+localStatName+' '+ data.addStatNums[0]+ ( data.addStatNums[1] ? '–'+data.addStatNums[1] : '' )+'</div>'
 			})
 		}
 		return str

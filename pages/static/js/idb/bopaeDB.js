@@ -30,17 +30,17 @@ bopaeDB ={
 							 5210,
 							 4290
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "def",
 							 "crit",
 							 "acc"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 110,
 							 88
 						],
-						"addStatNames":null,
-						"addStatNums":null
+						"mainStatsNames":null,
+						"mainStatsNums":null
 				 },
 				 {
 						"maxFuse":192,
@@ -49,19 +49,19 @@ bopaeDB ={
 							 3180,
 							 2620
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "def",
 							 "acc",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 115,
 							 92
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "crit"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 269,
 							 228,
 							 188
@@ -74,17 +74,17 @@ bopaeDB ={
 							 5700,
 							 4700
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "def",
 							 "ev",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 120,
 							 96
 						],
-						"addStatNames":null,
-						"addStatNums":null
+						"mainStatsNames":null,
+						"mainStatsNums":null
 				 },
 				 {
 						"maxFuse":210,
@@ -93,19 +93,19 @@ bopaeDB ={
 							 3470,
 							 2860
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "ev",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 125,
 							 100
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "acc"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 294,
 							 249,
 							 205
@@ -118,17 +118,17 @@ bopaeDB ={
 							 6460,
 							 5310
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "ev",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 136,
 							 108
 						],
-						"addStatNames":null,
-						"addStatNums":null
+						"mainStatsNames":null,
+						"mainStatsNums":null
 				 },
 				 {
 						"maxFuse":236,
@@ -137,19 +137,19 @@ bopaeDB ={
 							 3900,
 							 3210
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "ev",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 141,
 							 112
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "def"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 330,
 							 280,
 							 231
@@ -162,17 +162,17 @@ bopaeDB ={
 							 6950,
 							 5720
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "def",
 							 "ev",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 146,
 							 116
 						],
-						"addStatNames":null,
-						"addStatNums":null
+						"mainStatsNames":null,
+						"mainStatsNums":null
 				 },
 				 {
 						"maxFuse":253,
@@ -181,19 +181,19 @@ bopaeDB ={
 							 4190,
 							 3450
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "def",
 							 "acc",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 151,
 							 120
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "crit"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 355,
 							 301,
 							 248
@@ -233,19 +233,19 @@ bopaeDB ={
 							 2940,
 							 3460
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "bl",
 							 "def",
 							 "crit"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 80,
 							 101
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "acc"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 165,
 							 201,
 							 237
@@ -258,19 +258,19 @@ bopaeDB ={
 							 3080,
 							 3630
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "bl",
 							 "def",
 							 "crit"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 84,
 							 106
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "acc"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 174,
 							 211,
 							 249
@@ -283,19 +283,19 @@ bopaeDB ={
 							 3220,
 							 3790
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "acc",
 							 "hp",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 88,
 							 111
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "ev"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 182,
 							 221,
 							 260
@@ -308,19 +308,19 @@ bopaeDB ={
 							 3360,
 							 3950
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "hp",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 116,
 							 92
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "def"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 189,
 							 230,
 							 271
@@ -333,19 +333,19 @@ bopaeDB ={
 							 3640,
 							 3000
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "def",
 							 "crit",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 125,
 							 100
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "ev"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 294,
 							 249,
 							 205
@@ -358,17 +358,17 @@ bopaeDB ={
 							 6370,
 							 5240
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "def",
 							 "crit",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 130,
 							 104
 						],
-						"addStatNames":null,
-						"addStatNums":null
+						"mainStatsNames":null,
+						"mainStatsNums":null
 				 },
 				 {
 						"maxFuse":226,
@@ -377,19 +377,19 @@ bopaeDB ={
 							 3920,
 							 3230
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "def",
 							 "crit",
 							 "acc"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 135,
 							 108
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "bl"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 316,
 							 268,
 							 221
@@ -402,19 +402,19 @@ bopaeDB ={
 							 4060,
 							 3350
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "def",
 							 "hp",
 							 "acc"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 140,
 							 112
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "crit"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 328,
 							 278,
 							 229
@@ -454,19 +454,19 @@ bopaeDB ={
 							 2820,
 							 2320
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "bl",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 94,
 							 75
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "acc"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 219,
 							 186,
 							 153
@@ -479,19 +479,19 @@ bopaeDB ={
 							 2960,
 							 2440
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "acc",
 							 "def"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 98,
 							 78
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "hp"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 230,
 							 195,
 							 161
@@ -504,19 +504,19 @@ bopaeDB ={
 							 3090,
 							 2550
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "acc",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 102,
 							 81
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "bl"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 241,
 							 204,
 							 168
@@ -529,19 +529,19 @@ bopaeDB ={
 							 3230,
 							 2660
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "acc",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 107,
 							 85
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "ev"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 251,
 							 213,
 							 175
@@ -554,19 +554,19 @@ bopaeDB ={
 							 3500,
 							 2880
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "acc",
 							 "def",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 116,
 							 92
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "crit"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 271,
 							 230,
 							 189
@@ -579,19 +579,19 @@ bopaeDB ={
 							 3630,
 							 2990
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "def",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 120,
 							 96
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "acc"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 282,
 							 239,
 							 197
@@ -604,19 +604,19 @@ bopaeDB ={
 							 3760,
 							 3100
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "acc",
 							 "def",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 125,
 							 100
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "crit"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 292,
 							 248,
 							 204
@@ -629,19 +629,19 @@ bopaeDB ={
 							 3900,
 							 3210
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "acc",
 							 "hp",
 							 "def"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 129,
 							 103
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "crit"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 303,
 							 259,
 							 212
@@ -681,19 +681,19 @@ bopaeDB ={
 							 2820,
 							 2320
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "acc",
 							 "def"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 94,
 							 75
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "hp"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 219,
 							 186,
 							 153
@@ -706,19 +706,19 @@ bopaeDB ={
 							 2960,
 							 2440
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "acc",
 							 "def",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 98,
 							 78
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "crit"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 230,
 							 195,
 							 161
@@ -731,19 +731,19 @@ bopaeDB ={
 							 3090,
 							 2550
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "def",
 							 "bl",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 102,
 							 81
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "hp"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 241,
 							 204,
 							 168
@@ -756,19 +756,19 @@ bopaeDB ={
 							 3230,
 							 2660
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "bl",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 107,
 							 85
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "acc"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 251,
 							 213,
 							 175
@@ -781,19 +781,19 @@ bopaeDB ={
 							 3500,
 							 2880
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "bl",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 116,
 							 92
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "hp"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 271,
 							 230,
 							 189
@@ -806,19 +806,19 @@ bopaeDB ={
 							 3630,
 							 2990
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "bl",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 120,
 							 96
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "def"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 282,
 							 239,
 							 197
@@ -831,19 +831,19 @@ bopaeDB ={
 							 3760,
 							 3100
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "def",
 							 "bl",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 125,
 							 100
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "hp"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 292,
 							 248,
 							 204
@@ -856,19 +856,19 @@ bopaeDB ={
 							 3900,
 							 3210
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "acc",
 							 "def",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 129,
 							 103
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "crit"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 303,
 							 259,
 							 212
@@ -908,19 +908,19 @@ bopaeDB ={
 							 2360,
 							 1950
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "acc",
 							 "def"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 74,
 							 59
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "hp"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 173,
 							 147,
 							 121
@@ -933,19 +933,19 @@ bopaeDB ={
 							 2480,
 							 2040
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "acc",
 							 "def",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 77,
 							 61
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "crit"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 182,
 							 154,
 							 127
@@ -958,19 +958,19 @@ bopaeDB ={
 							 2590,
 							 2130
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "def",
 							 "bl",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 81,
 							 64
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "hp"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 190,
 							 161,
 							 133
@@ -983,19 +983,19 @@ bopaeDB ={
 							 2700,
 							 2230
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "bl",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 84,
 							 67
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "acc"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 198,
 							 168,
 							 138
@@ -1008,19 +1008,19 @@ bopaeDB ={
 							 2930,
 							 2410
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "bl",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 91,
 							 72
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "hp"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 215,
 							 182,
 							 150
@@ -1033,19 +1033,19 @@ bopaeDB ={
 							 3040,
 							 2500
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "bl",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 95,
 							 76
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "def"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 223,
 							 189,
 							 156
@@ -1058,19 +1058,19 @@ bopaeDB ={
 							 3150,
 							 2600
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "def",
 							 "bl",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 99,
 							 79
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "hp"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 231,
 							 196,
 							 161
@@ -1083,19 +1083,19 @@ bopaeDB ={
 							 3270,
 							 2690
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "acc",
 							 "def",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 102,
 							 81
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "crit"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 239,
 							 203,
 							 167
@@ -1128,19 +1128,19 @@ bopaeDB ={
 							 4300,
 							 3550
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "def",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 75,
 							 94
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "acc"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 220,
 							 187,
 							 154
@@ -1153,19 +1153,19 @@ bopaeDB ={
 							 4510,
 							 3710
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "def",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 98,
 							 78
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "acc"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 231,
 							 196,
 							 161
@@ -1178,19 +1178,19 @@ bopaeDB ={
 							 4710,
 							 3880
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "acc",
 							 "hp",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 103,
 							 82
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "ev"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 241,
 							 204,
 							 168
@@ -1203,19 +1203,19 @@ bopaeDB ={
 							 4910,
 							 4060
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "hp",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 107,
 							 85
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "def"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 252,
 							 214,
 							 176
@@ -1228,19 +1228,19 @@ bopaeDB ={
 							 5330,
 							 4390
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "def",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 116,
 							 92
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "ev"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 273,
 							 232,
 							 191
@@ -1253,19 +1253,19 @@ bopaeDB ={
 							 5530,
 							 4550
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "def",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 121,
 							 95
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "hp"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 283,
 							 240,
 							 198
@@ -1278,19 +1278,19 @@ bopaeDB ={
 							 5730,
 							 4730
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "acc",
 							 "def"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 125,
 							 100
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "bl"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 294,
 							 249,
 							 205
@@ -1303,19 +1303,19 @@ bopaeDB ={
 							 5950,
 							 4900
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "acc",
 							 "def",
 							 "hp"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 130,
 							 104
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "crit"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 303,
 							 257,
 							 212
@@ -1355,19 +1355,19 @@ bopaeDB ={
 							 2060,
 							 1700
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "acc",
 							 "def"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 68,
 							 54
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "hp"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 160,
 							 136,
 							 112
@@ -1380,19 +1380,19 @@ bopaeDB ={
 							 2160,
 							 1780
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "acc",
 							 "def",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 71,
 							 56
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "crit"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 168,
 							 142,
 							 117
@@ -1405,19 +1405,19 @@ bopaeDB ={
 							 2260,
 							 1860
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "def",
 							 "bl",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 75,
 							 60
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "hp"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 175,
 							 148,
 							 122
@@ -1430,19 +1430,19 @@ bopaeDB ={
 							 2350,
 							 1940
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "bl",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 78,
 							 62
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "acc"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 183,
 							 155,
 							 128
@@ -1455,19 +1455,19 @@ bopaeDB ={
 							 2550,
 							 2100
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "bl",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 84,
 							 67
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "hp"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 199,
 							 169,
 							 139
@@ -1480,19 +1480,19 @@ bopaeDB ={
 							 2650,
 							 2180
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "bl",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 88,
 							 70
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "def"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 206,
 							 175,
 							 144
@@ -1505,19 +1505,19 @@ bopaeDB ={
 							 2750,
 							 2260
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "def",
 							 "bl",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 91,
 							 72
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "hp"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 214,
 							 181,
 							 149
@@ -1530,19 +1530,19 @@ bopaeDB ={
 							 2840,
 							 2340
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "acc",
 							 "def",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 75,
 							 94
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "crit"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 221,
 							 187,
 							 149
@@ -1582,19 +1582,19 @@ bopaeDB ={
 							 2060,
 							 1700
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "bl",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 68,
 							 54
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "acc"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 160,
 							 136,
 							 112
@@ -1607,19 +1607,19 @@ bopaeDB ={
 							 2160,
 							 1780
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "acc",
 							 "def"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 71,
 							 56
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "hp"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 117,
 							 142,
 							 168
@@ -1632,19 +1632,19 @@ bopaeDB ={
 							 2260,
 							 1860
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "acc",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 75,
 							 60
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "bl"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 175,
 							 148,
 							 122
@@ -1657,19 +1657,19 @@ bopaeDB ={
 							 2350,
 							 1940
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "acc",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 78,
 							 62
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "ev"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 183,
 							 155,
 							 128
@@ -1682,19 +1682,19 @@ bopaeDB ={
 							 2550,
 							 2100
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "acc",
 							 "def",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 84,
 							 67
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "crit"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 199,
 							 169,
 							 139
@@ -1707,19 +1707,19 @@ bopaeDB ={
 							 2650,
 							 2180
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "def",
 							 "ev"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 88,
 							 70
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "acc"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 206,
 							 175,
 							 144
@@ -1732,19 +1732,19 @@ bopaeDB ={
 							 2750,
 							 2260
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "acc",
 							 "def",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 91,
 							 72
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "crit"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 214,
 							 181,
 							 149
@@ -1757,19 +1757,19 @@ bopaeDB ={
 							 2840,
 							 2340
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "acc",
 							 "hp",
 							 "def"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 75,
 							 94
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "crit"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 221,
 							 187,
 							 149
@@ -1809,19 +1809,19 @@ bopaeDB ={
 							 1540,
 							 1270
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "def",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 58,
 							 46
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "acc"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 137,
 							 116,
 							 95
@@ -1834,19 +1834,19 @@ bopaeDB ={
 							 1610,
 							 1330
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "def",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 61,
 							 48
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "acc"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 143,
 							 121,
 							 143
@@ -1859,19 +1859,19 @@ bopaeDB ={
 							 1680,
 							 1390
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "acc",
 							 "hp",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 64,
 							 51
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "ev"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 150,
 							 127,
 							 150
@@ -1884,19 +1884,19 @@ bopaeDB ={
 							 1760,
 							 1450
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "hp",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 67,
 							 53
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "def"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 156,
 							 132,
 							 109
@@ -1909,19 +1909,19 @@ bopaeDB ={
 							 1900,
 							 1570
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "def",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 72,
 							 57
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "ev"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 170,
 							 144,
 							 119
@@ -1934,19 +1934,19 @@ bopaeDB ={
 							 3470,
 							 2860
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "def",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 75,
 							 60
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 
 						]
 				 },
@@ -1957,19 +1957,19 @@ bopaeDB ={
 							 2050,
 							 1690
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "acc",
 							 "def"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 78,
 							 62
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "bl"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 182,
 							 154,
 							 127
@@ -1982,19 +1982,19 @@ bopaeDB ={
 							 2120,
 							 1750
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "acc",
 							 "hp",
 							 "def"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 80,
 							 64
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "crit"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 189,
 							 160,
 							 132
@@ -2033,19 +2033,19 @@ bopaeDB ={
 							 500,
 							 430
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "def",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 28,
 							 22
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "acc"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 68,
 							 57
 						]
@@ -2056,19 +2056,19 @@ bopaeDB ={
 							 520,
 							 450
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "def",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 30,
 							 24
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "acc"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 70,
 							 59
 						]
@@ -2079,19 +2079,19 @@ bopaeDB ={
 							 550,
 							 470
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "acc",
 							 "hp",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 31,
 							 24
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "ev"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 74,
 							 62
 						]
@@ -2102,19 +2102,19 @@ bopaeDB ={
 							 570,
 							 490
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "hp",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 31,
 							 24
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "def"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 77,
 							 65
 						]
@@ -2125,19 +2125,19 @@ bopaeDB ={
 							 620,
 							 530
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "def",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 35,
 							 28
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "ev"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 84,
 							 71
 						]
@@ -2148,19 +2148,19 @@ bopaeDB ={
 							 1500,
 							 1280
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "def",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 37,
 							 29
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 
 						]
 				 },
@@ -2170,19 +2170,19 @@ bopaeDB ={
 							 670,
 							 570
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "def",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 38,
 							 30
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "bl"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 90,
 							 76
 						]
@@ -2193,19 +2193,19 @@ bopaeDB ={
 							 690,
 							 590
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "acc",
 							 "hp",
 							 "def"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 39,
 							 31
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							 "crit"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 94,
 							 79
 						]
@@ -2242,21 +2242,21 @@ bopaeDB ={
 						"hp":[
 							 80
 						],
-						"mainStatsNames":[
-							 "crit",
-							 "def",
-							 "bl"
-						],
-						"mainStatsNums":[
-							 5,
-							 4
-						],
 						"addStatNames":[
 							 "crit",
 							 "def",
 							 "bl"
 						],
 						"addStatNums":[
+							 5,
+							 4
+						],
+						"mainStatsNames":[
+							 "crit",
+							 "def",
+							 "bl"
+						],
+						"mainStatsNums":[
 							 19
 						]
 				 },
@@ -2265,21 +2265,21 @@ bopaeDB ={
 						"hp":[
 							 80
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "def",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 5,
 							 4
 						],
-						"addStatNames":[
+						"mainStatsNames":[
 							"crit",
 							"def",
 							"bl"
 						],
-						"addStatNums":[
+						"mainStatsNums":[
 							 20
 						]
 				 },
@@ -2288,21 +2288,21 @@ bopaeDB ={
 						"hp":[
 							 90
 						],
-						"mainStatsNames":[
-							 "acc",
-							 "hp",
-							 "bl"
-						],
-						"mainStatsNums":[
-							 5,
-							 4
-						],
 						"addStatNames":[
 							 "acc",
 							 "hp",
 							 "bl"
 						],
 						"addStatNums":[
+							 5,
+							 4
+						],
+						"mainStatsNames":[
+							 "acc",
+							 "hp",
+							 "bl"
+						],
+						"mainStatsNums":[
 							 20
 						]
 				 },
@@ -2311,21 +2311,21 @@ bopaeDB ={
 						"hp":[
 							 90
 						],
-						"mainStatsNames":[
-							 "crit",
-							 "hp",
-							 "bl"
-						],
-						"mainStatsNums":[
-							 5,
-							 4
-						],
 						"addStatNames":[
 							 "crit",
 							 "hp",
 							 "bl"
 						],
 						"addStatNums":[
+							 5,
+							 4
+						],
+						"mainStatsNames":[
+							 "crit",
+							 "hp",
+							 "bl"
+						],
+						"mainStatsNums":[
 							 21
 						]
 				 },
@@ -2334,21 +2334,21 @@ bopaeDB ={
 						"hp":[
 							 100
 						],
-						"mainStatsNames":[
-							 "crit",
-							 "def",
-							 "bl"
-						],
-						"mainStatsNums":[
-							 5,
-							 4
-						],
 						"addStatNames":[
 							 "crit",
 							 "def",
 							 "bl"
 						],
 						"addStatNums":[
+							 5,
+							 4
+						],
+						"mainStatsNames":[
+							 "crit",
+							 "def",
+							 "bl"
+						],
+						"mainStatsNums":[
 							 23
 						]
 				 },
@@ -2357,31 +2357,22 @@ bopaeDB ={
 						"hp":[
 							 340
 						],
-						"mainStatsNames":[
+						"addStatNames":[
 							 "crit",
 							 "def",
 							 "bl"
 						],
-						"mainStatsNums":[
+						"addStatNums":[
 							 6,
 							 4
 						],
-						"addStatNames":null,
-						"addStatNums":null
+						"mainStatsNames":null,
+						"mainStatsNums":null
 				 },
 				 {
 						"maxFuse":10,
 						"hp":[
 							 110
-						],
-						"mainStatsNames":[
-							 "crit",
-							 "acc",
-							 "def"
-						],
-						"mainStatsNums":[
-							 6,
-							 4
 						],
 						"addStatNames":[
 							 "crit",
@@ -2389,6 +2380,15 @@ bopaeDB ={
 							 "def"
 						],
 						"addStatNums":[
+							 6,
+							 4
+						],
+						"mainStatsNames":[
+							 "crit",
+							 "acc",
+							 "def"
+						],
+						"mainStatsNums":[
 							 25
 						]
 				 },
@@ -2397,21 +2397,21 @@ bopaeDB ={
 						"hp":[
 							 110
 						],
-						"mainStatsNames":[
-							 "crit",
-							 "acc",
-							 "hp"
-						],
-						"mainStatsNums":[
-							 6,
-							 4
-						],
 						"addStatNames":[
 							 "crit",
 							 "acc",
 							 "hp"
 						],
 						"addStatNums":[
+							 6,
+							 4
+						],
+						"mainStatsNames":[
+							 "crit",
+							 "acc",
+							 "hp"
+						],
+						"mainStatsNums":[
 							 26
 						]
 				 }

@@ -2,24 +2,6 @@
 
 ```raw-html
 <link rel="stylesheet" href="/static/css/textpages/bopae.css" type="text/css">
-
-<style>
-.page{
-	padding: 40px;
-	box-sizing: border-box;
-}
-.p_select span{
-	border-bottom: 1px dotted rgb(36, 98, 166);
-	cursor: pointer;
-}
-.p_select span:hover{
-	border-color: rgb(173, 215, 255);
-}
-.p_select span.slctd{
-	border-bottom: 0px dotted blue;
-	background: rgb(173, 215, 255);
-}
-</style>
 <div class="planes_desctop"><TODO: исправить верстку и названия>
 		<a name="Скрижаль Легендарного героя равнины"></a>
 		<div class="for_plane" data-item-id="1">Скрижаль Легендарного героя равнины</div>
