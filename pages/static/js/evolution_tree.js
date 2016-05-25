@@ -7,13 +7,14 @@ function generateEvTree(tree){
 	var table = createEl('table')
 	table.classList.add('evol-table')
 	wrap.appendChild(table)
-	var db = {}
+	var db = {}, type = 'weapon'
 	switch (tree.type) {
 		case 'weapon':
 			db = weaponsDB
 			break
 		case 'ring':
 			db = ringsDB
+			type = 'accessory'
 			break
 	}
 	for(var i=0; i<tree.prototype.length; i++){
@@ -75,6 +76,6 @@ function generateEvTree(tree){
 			~usedItems.indexOf(iid) ? level = 10 : usedItems.push(iid)
 			cell.classList.add('item-cell')
 			var item = db[iid]
-			cell.innerHTML = generateItemCard(item, {mode: 'mini', level: level})
+			cell.innerHTML = generateItemCard(item, {mode: 'mini', level: level, type: type})
 	}
 }

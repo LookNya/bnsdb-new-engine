@@ -6,6 +6,7 @@
 
 <script src="/static/js/idb/ringsDB.js"></script>
 <script src="/static/js/idb/ingrDB.js"></script>
+<script type="text/javascript" src="/static/js/idb/stat_names.js"></script>
 <link rel="stylesheet" href="/static/css/evolution-tree.css" type="text/css" />
 <link rel="stylesheet" href="/static/css/item-cards.css" type="text/css" />
 <div class="evol-tree-wrap"></div>

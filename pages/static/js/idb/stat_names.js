@@ -7,6 +7,10 @@ stat_namesDB = {
 		ru: "сила атаки",
 		en: "attack power",
 	},
+	atk:{
+		ru: "урон",
+		en: "attack",
+	},
 	def:{
 		ru: "защита",
 		en: "defence",
@@ -25,7 +29,7 @@ stat_namesDB = {
 	},
 	crithd:{
 		ru: "урон от крита",
-		en: "critical hit damage",
+		en: "critical hit dmg",
 	},
 	prc:{
 		ru: "пробивание",
@@ -38,5 +42,9 @@ stat_namesDB = {
 	ev:{
 		ru: "уклонение",
 		en: "evasion",
+	},
+	obt:{
+		ru: "подбор",
+		en: "obtaining",
 	}
 }
