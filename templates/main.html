@@ -30,7 +30,7 @@
 				<div class="header_logo f_l"><a href="/">BnS Base</a></div>
 				<div class="header_nav">
 					<ul id="menu" class="level-0">
-						{{ (function iterr(pages, level) { }}
+						{{ (function iter(pages, level) { }}
 						{{   for (var name in pages) { }}
 						{{     let page = pages[name]; }}
 						{{     let is_in_chain = it.pages_chain.indexOf(page)!=-1; }}
@@ -41,7 +41,7 @@
 								{{? page.blank }} 404 {{?}}
 							</a>
 							<ul class="level-{{=level+1}}">
-								{{ iterr(page.children, level+1); }}
+								{{ iter(page.children, level+1); }}
 							</ul>
 						</li>
 						{{   } }}
@@ -134,17 +134,22 @@ toc:         [{{= it.toc.join(', ') }}]
 				</div>
 				<div id="ulwrap" style="overflow-y:scroll">
 					<ul>
-						{{ (function iter(items, level) { }}
-						{{   for (var name in items) { }}
-						{{     var item = items[name]; }}
-						<li class="level-{{=level}}">
-							<a href="{{=item.web_path}}">{{= item.name }}</a>
+						{{ (function iter(pages, level) { }}
+						{{   for (var name in pages) { }}
+						{{     let page = pages[name]; }}
+						{{     let has_children = Object.keys(page.children).length > 0; }}
+						<li {{?has_children}}class="ul_heading" {{?}}>
+							<a href="{{=page.web_path}}">{{= page.short_title }}</a>
 						</li>
-						<ul>
-							{{ iter(item.children, level+1); }}
-						</ul>
+						{{? has_children }}
+						<li>
+							<ul>
+								{{ iter(page.children, level+1); }}
+							</ul>
+						</li>
+						{{?}}
 						{{   } }}
-						{{ })(it.menu, 0); }}
+						{{ })(it.root_page.children, 0); }}
 					</ul>
 				</div>
 			</div>
