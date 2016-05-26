@@ -134,44 +134,26 @@
 	display: none;
 }
 /*                                   tiles */
-.tiles div {
-	position: relative;
+.tiles > div{
 	width: 100%!important;
-	height: 300px;
+	height: auto!important;
 }
-.tiles p{
-	font-size: 4vw!important;
+.tiles > div > div{
+	position: static!important;
+	width: 50%!important;
+	height: 100px!important;
+	float: left;
+	background: none;
 }
-.tiles .t_4>div {
-	width: 48%!important;
+.tiles a{
+	position: relative;
 }
-.tiles .t_4>div:nth-child(3) {
-	left: 50%!important;
-}
-.tiles .t_4>div:nth-child(4) {
-	left: 50%!important;
-}
-.tiles .t_3>div:nth-child(1) {
-	width: 48%!important;
-}
-.tiles .t_3>div:nth-child(2) {
-	width: 48%!important;
-	left: 50%!important;
-}
-.tiles .t_3>div:nth-child(3){
-	width: 48%!important;
-	left: 50%!important;
-}
-.tiles .t_2>div:nth-child(1) {
-	width: 48%!important;
-}
-.tiles .t_2>div:nth-child(2) {
-	width: 48%!important;
-	left: 50%!important;
-}
-
-.tiles .t_7>div{
-	position: static;
+.tiles a p{
+	top: 0;
+	bottom: 5px;
+	left: 5px;
+	right: 5px;
+	text-align: center;
 }
 /*                                   end of tiles */
 .footer{
@@ -204,8 +186,8 @@
 .page h1{
 	font-size: 10vw!important;
 	padding-top: 25px;
-}	
-	
+}
+
 .page_text{
 	padding: 10px!important;
 	width: 100%!important;
@@ -255,7 +237,7 @@
 .page table tr:nth-child(n+2) td{
 	padding-top: 5px;
 	padding-bottom: 5px;
-	
+
 }
 .ca_wrap{
 	width: 100%!important;
