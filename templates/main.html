@@ -94,13 +94,7 @@
 			</div>
 		</div>
 		<div class="content">
-			{{? it.type == "tiles" }}
-			{{= def.include('tiles.html', it) }}
-			{{?? it.type == "glagne" }}
-			{{= def.include('glagne.html', it) }}
-			{{??}}
-			{{= def.include('textpage.html', it) }}
-			{{?}}
+			{{= def.include(it.type+'_page.html', it) }}
 		</div>
 
 		<h2>DEBUG</h2>

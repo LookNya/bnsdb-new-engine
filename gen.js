@@ -321,7 +321,7 @@ exports.write = function() {
 
 			page.title = config.title || title
 			page.short_title = config.short_title || page.title
-			page.type = config.type || 'textpage'
+			page.type = config.type || 'text'
 			page.toc = toc
 			page.config = config
 			file.content = content
