@@ -35,7 +35,7 @@
 						{{     let page = pages[name]; }}
 						{{     let is_in_chain = it.pages_chain.indexOf(page)!=-1; }}
 						<li {{?is_in_chain}}class="hb_curr"{{?}}>
-							<a href="{{=page.pagepath}}">
+							<a href="{{=page.web_path}}">
 								{{= page.short_title }} ({{= page.name }})
 								{{? is_in_chain }} + {{?}}
 								{{? page.blank }} 404 {{?}}
@@ -58,7 +58,7 @@
 						{{ for (var name in it.menu) { var section=it.menu[name]; }}
 						<p>{{= section.name }}</p>
 							{{ for (var subname in section.children) { var subsec=section.children[subname]; }}
-							<a href="{{=subsec.pagepath}}">{{= subsec.name }}</a>
+							<a href="{{=subsec.path}}">{{= subsec.name }}</a>
 							{{ } }}
 						{{ } }}
 					</div>
@@ -108,8 +108,8 @@ short:       {{= it.short_title }}
 type:        {{= it.type }}
 author:      {{= it.author }}
 advs:        {{= it.adv }}
-path:        {{= it.path }}
-pagepath:    {{= it.pagepath }}
+short path:  {{= it.page.short_path }}
+web path:    {{= it.web_path }}
 page:        &lt;{{= it.page.name }}&gt;
 root page:   &lt;{{= it.root_page.name }}&gt;
 pages chain: {{= it.pages_chain.map(p => `&lt;${p.name}&gt;`).join(' &lt;-- ') }}
@@ -138,7 +138,7 @@ toc:         [{{= it.toc.join(', ') }}]
 						{{   for (var name in items) { }}
 						{{     var item = items[name]; }}
 						<li class="level-{{=level}}">
-							<a href="{{=item.pagepath}}">{{= item.name }}</a>
+							<a href="{{=item.web_path}}">{{= item.name }}</a>
 						</li>
 						<ul>
 							{{ iter(item.children, level+1); }}

@@ -108,16 +108,17 @@ exports.search = function() {
 		let m = fullpath.match(/^([\w/]*)\/(.*?)(?:\.([a-z]{2})-(\w+))?(?:\.(\w+))?$/)
 		if (!m) { console.warn(`${fullpath} has wrong name/path, skipping`); return }
 
-		let [_, path, name, lang, server, ext] = m
-		path = path.substr(PAGES_DIR.length+1) // отрезаем префикс `pages/` от пути
+		let [_, short_path, name, lang, server, ext] = m
+		short_path = short_path.substr(PAGES_DIR.length+1) // отрезаем префикс `pages/` от пути
 		lang = lang || '*'
 		server = server || '*'
 		let do_not_group = DO_NOT_GROUP.some( prefix => fullpath.startsWith(prefix) )
 
 		files.push({
-			lang, server, path, name, ext, do_not_group,
+			lang, server, short_path, name, ext, do_not_group,
 			filepath: fullpath,
-			page: null
+			page: null,
+			get path(){ throw new Error('111') }
 		})
 	})
 	console.log(`  done, ${files.length} found\n`)
@@ -144,7 +145,7 @@ exports.langservers = function() {
 exports.duplicate = function() {
 	console.log('duplicating pages...')
 	for (let i=0; i<files.length; i++) {
-		let {lang, server, path, name, ext, filepath, do_not_group} = files[i]
+		let {lang, server, short_path, name, ext, filepath, do_not_group} = files[i]
 		if (do_not_group) continue
 		if (lang != '*' && server != '*') continue
 
@@ -157,7 +158,7 @@ exports.duplicate = function() {
 			let [l, s] = langserver.split('-')
 			if (lang != '*' && lang != l) continue
 			if (server != '*' && server != s) continue
-			files.push({lang:l, server:s, path, name, ext, filepath})
+			files.push({lang:l, server:s, short_path, name, ext, filepath})
 			count++
 		}
 		console.log(`  ${filepath} x${count}`)
@@ -172,7 +173,7 @@ exports.duplicate = function() {
 //   'ru-srv': {
 //     blank: false,
 //     name: 'somepage',
-//     path: 'smth/somepage',
+//     short_path: 'smth/somepage',
 //     files: [...],
 //     children: {
 //       subpage1: { ... },
@@ -185,16 +186,20 @@ exports.duplicate = function() {
 exports.group = function() {
 	for (let i in groups) delete groups[i]
 	for (let file of files) {
-		let {lang, server, path, do_not_group} = file
+		let {lang, server, short_path, do_not_group} = file
 
 		// пустая страница, заполнится (если есть, чем) по мере обработки файлов
-		function blankPage(name, path, parent) {
+		function blankPage(name, short_path, parent) {
 			return {
 				blank: true,
-				name, path, parent,
+				name, short_path, parent,
 				lang, server,
 				of_main_langserver: lang+'-'+server == MAIN_LANGSERVER,
-				get pagepath(){ return this.of_main_langserver || this.do_not_group ? `/${this.path}/` : `/${lang}-${server}/${this.path}/` },
+				get web_path(){
+					return this.of_main_langserver || this.do_not_group
+						? `/${this.short_path}/`
+						: `/${lang}-${server}/${this.short_path}/`
+				},
 				files: [],
 				children: {},
 				do_not_group: false //тут это вычислять неудобно, поэтому в следующем цикле
@@ -206,7 +211,7 @@ exports.group = function() {
 
 		let cur_page = groups[langserv]
 		let cur_path = ''
-		let sections = path=='' ? [] : path.split('/')
+		let sections = short_path=='' ? [] : short_path.split('/')
 
 		for (let section of sections) {
 			cur_path = (cur_path=='' ? '' : cur_path+'/') + section
@@ -215,7 +220,6 @@ exports.group = function() {
 		}
 
 		cur_page.blank = false
-		cur_page.path = file.path
 		cur_page.files.push(file)
 		file.page = cur_page
 	}
@@ -268,7 +272,7 @@ exports.write = function() {
 	// Сортировка файлов по имени, так вывод красивее
 	function cmp(a,b){ return a==b ? 0 : a<b ? -1 : 1 }
 	files.sort((f1, f2) => cmp(f1.lang+'-'+f1.server+'-'+f1.filepath,
-														 f2.lang+'-'+f2.server+'-'+f2.filepath))
+	                           f2.lang+'-'+f2.server+'-'+f2.filepath))
 
 	// Изменился ли хоть один шаблон
 	let templates_changed = false
@@ -284,7 +288,7 @@ exports.write = function() {
 		let {name, ext, filepath, page} = file
 
 		let out_ext = {md:'html', styl:'css'}[ext] || ext
-		let outpath = pathutils.normalize(`${OUT_DIR}${page.pagepath}${withExt(name, out_ext)}`)
+		let outpath = pathutils.normalize(`${OUT_DIR}${page.web_path}${withExt(name, out_ext)}`)
 		let out_exists = fs.existsSync(outpath)
 
 		let mtime = fs.statSync(filepath).mtime.getTime()
@@ -326,12 +330,12 @@ exports.write = function() {
 
 	// PHASE 2
 	// Чтение (если ещё не прочитано) и генерация всего
-	for (let {server, lang, path, ext, filepath, do_not_group, page, out_exists, outpath, content, can_skip} of files) {
+	for (let {server, lang, ext, filepath, do_not_group, page, out_exists, outpath, content, can_skip} of files) {
 		if (can_skip) continue
 
 		let langserver = lang+'-'+server
 		let is_main = page.of_main_langserver
-		let pagepath = page.pagepath
+		let web_path = page.web_path
 		let marker = (is_main?'m':' ') + (do_not_group?'s':' ')
 
 		if (ext == 'md' || ext == 'styl') {
@@ -352,7 +356,7 @@ exports.write = function() {
 
 				// подготовка параметров для шаблонов
 				let def = makeDef(main_def)
-				let it = {title, short_title, type, author, adv, lang, server, root_page, pages_chain, page, path, pagepath, config, toc}
+				let it = {title, short_title, type, author, adv, lang, server, root_page, pages_chain, page, web_path, config, toc}
 				for (let i in config) it[i] = config[i]
 
 				// шаблонизация
