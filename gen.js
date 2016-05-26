@@ -196,9 +196,9 @@ exports.group = function() {
 				lang, server,
 				of_main_langserver: lang+'-'+server == MAIN_LANGSERVER,
 				get web_path(){
-					return this.of_main_langserver || this.do_not_group
-						? `/${this.short_path}/`
-						: `/${lang}-${server}/${this.short_path}/`
+					return pathutils.normalize(this.of_main_langserver || this.do_not_group
+					                           ? `/${this.short_path}/`
+					                           : `/${lang}-${server}/${this.short_path}/`)
 				},
 				files: [],
 				children: {},

@@ -1,0 +1,29 @@
+<div class="blocks">
+	{{~ def.tileGroupsFor(it.page) :group }}
+	<div class="blocks_wrap">
+		<div class="block_line">
+			<h2>{{! group.page.title }}</h2>
+			<div class="tiles">
+				<div class="t_{{! group.tiles.length }} bb8">
+					{{~ group.tiles :tile }}
+					<div>
+						<a href="{{= tile.page.web_path }}">
+							<p>{{! tile.page.short_title }}</p>
+						</a>
+					</div>
+					{{~ }}
+				</div>
+			</div>
+			<!--
+			<div class="mobile">
+				{{~ group.tiles :tile }}
+				<a href="{{= tile.page.web_path }}">
+					{{! tile.page.short_title }}
+				</a>
+				{{~ }}
+			</div>
+			-->
+		</div>
+	</div>
+	{{~}}
+</div>
