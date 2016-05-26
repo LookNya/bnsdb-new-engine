@@ -29,17 +29,23 @@
 			<div class="header_wrap">
 				<div class="header_logo f_l"><a href="/">BnS Base</a></div>
 				<div class="header_nav">
-					<ul id="menu">
-						{{ for (var name in it.menu) { var section=it.menu[name]; }}
-						<li {{? section.path == it.path }} class="hb_curr" {{?}}>
-							<a href="{{=section.pagepath}}" >{{= section.name }}</a>
-							<ul>
-								{{ for (var subname in section.children) { var subsec=section.children[subname]; }}
-								<li><a href="{{=subsec.pagepath}}">{{= subsec.name }}</a></li>
-								{{ } }}
+					<ul id="menu" class="level-0">
+						{{ (function iterr(pages, level) { }}
+						{{   for (var name in pages) { }}
+						{{     let page = pages[name]; }}
+						{{     let is_in_chain = it.pages_chain.indexOf(page)!=-1; }}
+						<li {{?is_in_chain}}class="hb_curr"{{?}}>
+							<a href="{{=page.pagepath}}">
+								{{= page.short_title }} ({{= page.name }})
+								{{? is_in_chain }} + {{?}}
+								{{? page.blank }} 404 {{?}}
+							</a>
+							<ul class="level-{{=level+1}}">
+								{{ iterr(page.children, level+1); }}
 							</ul>
 						</li>
-						{{ } }}
+						{{   } }}
+						{{ })(it.root_page.children, 0); }}
 					</ul>
 				</div>
 				<div id="mobile_header_wrap">
@@ -94,34 +100,23 @@
 			{{= def.include('textpage.html', it) }}
 			{{?}}
 		</div>
-		<div>footer</div>
 
-	</div>
-		header ({{= it.path }}) ({{= JSON.stringify(it.config) }}) (TOC: {{= it.toc.join(',') }})
-		<hr>
-		<div class="menu">
-			{{ for (var name in it.menu) { var section=it.menu[name]; }}
-			<div>
-				— <a href="{{=section.pagepath}}">{{= section.name }}</a> {{? section.path == it.path }} + {{?}}
-				{{ for (var subname in section.children) { var subsec=section.children[subname]; }}
-				<div> —— <a href="{{=subsec.pagepath}}">{{= subsec.name }}</a> {{? subsec.path == it.path }} + {{?}}</div>
-				{{ } }}
-			</div>
-			{{ } }}
-		</div>
-		<div class="menu">
-			{{ (function iter(items, level) { }}
-			{{   for (var name in items) { }}
-			{{     var item = items[name]; }}
-			<div class="item level-{{=level}}">
-				<a href="{{=item.pagepath}}">{{= item.path }} {{? item.path == it.path }} + {{?}} {{? item.blank }} (тут пусто) {{?}}</a>
-				{{ iter(item.children, level+1); }}
-			</div>
-			{{   } }}
-			{{ })(it.menu, 0); }}
-		</div>
-		<hr>
-	</div>
+		<h2>DEBUG</h2>
+		<pre>
+title:       {{= it.title }}
+short:       {{= it.short_title }}
+type:        {{= it.type }}
+author:      {{= it.author }}
+advs:        {{= it.adv }}
+path:        {{= it.path }}
+pagepath:    {{= it.pagepath }}
+page:        &lt;{{= it.page.name }}&gt;
+root page:   &lt;{{= it.root_page.name }}&gt;
+pages chain: {{= it.pages_chain.map(p => `&lt;${p.name}&gt;`).join(' &lt;-- ') }}
+config:      {{= JSON.stringify(it.config) }}
+toc:         [{{= it.toc.join(', ') }}]
+		</pre>
+
 		<!--  fake top-->
 		<div id="fake_top_panel" class="hidden">
 			<div class="ftop_inner">
@@ -146,7 +141,7 @@
 							<a href="{{=item.pagepath}}">{{= item.name }}</a>
 						</li>
 						<ul>
-						{{ iter(item.children, level+1); }}
+							{{ iter(item.children, level+1); }}
 						</ul>
 						{{   } }}
 						{{ })(it.menu, 0); }}
@@ -155,8 +150,8 @@
 			</div>
 		</div>
 		<script>
-			ulwrap.style.height= document.body.clientHeight - 250+'px'
+		 ulwrap.style.height= document.body.clientHeight - 250+'px'
 		</script>
-	<!--  END fake top-->
+		<!--  END fake top-->
 	</body>
 </html>

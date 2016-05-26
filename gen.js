@@ -26,7 +26,7 @@ function withExt(name, ext) {
 
 function getPageConfig(content) {
 	let config = {}
-	let m = content.match(/```config\W([\d\D]*?)\W```/)
+	let m = content.match(/```\s*config\W([\d\D]*?)\W```/)
 	if (m) {
 		let [all, str_cfg] = m
 		config = JSON.parse('{'+str_cfg+'}')
@@ -188,10 +188,10 @@ exports.group = function() {
 		let {lang, server, path, do_not_group} = file
 
 		// пустая страница, заполнится (если есть, чем) по мере обработки файлов
-		function blankPage(name, path) {
+		function blankPage(name, path, parent) {
 			return {
 				blank: true,
-				name, path,
+				name, path, parent,
 				lang, server,
 				of_main_langserver: lang+'-'+server == MAIN_LANGSERVER,
 				get pagepath(){ return this.of_main_langserver || this.do_not_group ? `/${this.path}/` : `/${lang}-${server}/${this.path}/` },
@@ -202,7 +202,7 @@ exports.group = function() {
 		}
 
 		let langserv = lang+'-'+server
-		if (!(langserv in groups)) groups[langserv] = blankPage(langserv, '')
+		if (!(langserv in groups)) groups[langserv] = blankPage(langserv, '', null)
 
 		let cur_page = groups[langserv]
 		let cur_path = ''
@@ -210,7 +210,7 @@ exports.group = function() {
 
 		for (let section of sections) {
 			cur_path = (cur_path=='' ? '' : cur_path+'/') + section
-			if (!(section in cur_page.children)) cur_page.children[section] = blankPage(section, cur_path)
+			if (!(section in cur_page.children)) cur_page.children[section] = blankPage(section, cur_path, cur_page)
 			cur_page = cur_page.children[section]
 		}
 
@@ -337,17 +337,22 @@ exports.write = function() {
 		if (ext == 'md' || ext == 'styl') {
 			if (content == null) content = fs.readFileSync(filepath, 'utf-8')
 
+			let crlf_pos = content.indexOf("\r\n")
+			if (crlf_pos != -1) console.warn(`WARN: ${outpath}: '\\r\\n' found at #${crlf_pos} char, `+
+			                                 `after '${content.substr(crlf_pos-16,16)}'`)
+
 			if (ext == 'styl') {
 				content = stylus.render(content)
 			}
 
 			if (ext == 'md' && !do_not_group) {
 				let {title, short_title, type, toc, config} = page, author = null, adv = false
-				let menu = groups[langserver].children
+				let root_page = groups[langserver]
+				let pages_chain = []; for (let p=page; p!=null; p=p.parent) pages_chain.push(p)
 
 				// подготовка параметров для шаблонов
 				let def = makeDef(main_def)
-				let it = {title, short_title, type, author, adv, menu, lang, server, page, path, pagepath, config, toc}
+				let it = {title, short_title, type, author, adv, lang, server, root_page, pages_chain, page, path, pagepath, config, toc}
 				for (let i in config) it[i] = config[i]
 
 				// шаблонизация
