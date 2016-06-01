@@ -4,11 +4,9 @@
 const fs = require('fs')
 const http = require('http')
 const URL = require('url')
-const path = require('path')
 const nstatic = require('node-static')
-// const querystring = require('querystring') // parse
 const dot = require('dot')
-const {mkdir, cp, write} = require('./utils.js')
+const {cp, write} = require('./utils.js')
 
 const PORT = 9002
 
@@ -35,7 +33,6 @@ http.createServer((req, res) => {
 	//var url = URL.parse(req.url)
 	//console.log(url, req.url, req.method)
 	var url = decodeURI(req.url)
-	var parts = url.split('/')
 	console.log(url, req.url, URL.parse(req.url).query)
 
 	// /edit/ru-srv/some/page/

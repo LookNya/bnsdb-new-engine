@@ -8,7 +8,7 @@ const dot = require('dot')
 const beautify = require('js-beautify').html
 const marked = require('marked')
 const stylus = require('stylus')
-const {mkdir, cp, rmr, write, link, forEachFile} = require('./utils.js')
+const {write, link, forEachFile} = require('./utils.js')
 const {getMarkedConfig} = require('./marked_config.js')
 
 
@@ -117,8 +117,7 @@ exports.search = function() {
 		files.push({
 			lang, server, short_path, name, ext, do_not_group,
 			filepath: fullpath,
-			page: null,
-			get path(){ throw new Error('111') }
+			page: null
 		})
 	})
 	console.log(`  done, ${files.length} found\n`)
@@ -186,7 +185,7 @@ exports.duplicate = function() {
 exports.group = function() {
 	for (let i in groups) delete groups[i]
 	for (let file of files) {
-		let {lang, server, short_path, do_not_group} = file
+		let {lang, server, short_path} = file
 
 		// пустая страница, заполнится (если есть, чем) по мере обработки файлов
 		function blankPage(name, short_path, parent) {

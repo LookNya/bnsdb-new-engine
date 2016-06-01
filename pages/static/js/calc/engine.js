@@ -40,7 +40,7 @@ Tree.prototype._setup_processRawSubsk = function(id, subsk) {
 		
 		['name', 'img'].forEach(function(attr) {
 			if (!(attr in subsk)) this._err("Expected ROOT subskill to have '"+attr+"'.");
-		});
+		}.bind(this));
 		
 		this.root = subsk;
 		this.origRoot = subsk;
