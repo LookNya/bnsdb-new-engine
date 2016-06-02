@@ -349,13 +349,13 @@ exports.write = function() {
 			}
 
 			if (ext == 'md' && !do_not_group) {
-				let {title, short_title, type, toc, config} = page, author = null, adv = false
+				let {title, short_title, type, toc, config} = page, author = null, ads_enabled = true
 				let root_page = groups[langserver]
 				let pages_chain = []; for (let p=page; p!=null; p=p.parent) pages_chain.push(p)
 
 				// подготовка параметров для шаблонов
 				let def = makeDef(main_def)
-				let it = {title, short_title, type, author, adv, lang, server, root_page, pages_chain, page, web_path, config, toc}
+				let it = {title, short_title, type, author, ads_enabled, lang, server, root_page, pages_chain, page, web_path, config, toc}
 				for (let i in config) it[i] = config[i]
 
 				// шаблонизация

@@ -2,7 +2,7 @@
 "title": "Крафт",
 "author": "V0V@N",
 "type": "tiles",
-"adv": true
+"ads_enabled": false
 ```
 
 \*\*\*test page\*\*\*
