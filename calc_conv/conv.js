@@ -10,9 +10,6 @@ let data = JSON.parse(fs.readFileSync("summoner.json"))
 console.log(Object.keys(data))
 
 
-// console.log(data.SkillTrees)
-// console.log(data.SkillTrees[0].nodes)
-
 function known(obj, attrs) {
 	attrs = attrs.split(' ')
 	for (let i in obj) {
@@ -56,26 +53,15 @@ for (let info of data.SkillTooltips) {
 			if (obj.type == "damage") { //TODO: obj.dualScale
 				let min = Math.round((attack - weapon_constant) * obj.scale)
 				let max = Math.round((attack + weapon_constant) * obj.scale)
-				return `${obj._('before') ? obj.before+' deals' : 'Deals'} ${min} ~ ${max} [${obj.scale}] ${obj.oneOf('', 'element')} ${obj.oneOf('', 'ex')} damage ${obj.oneOf('', 'after', 'affter')}`.replace(/\s+/g, ' ').trim()
+				return `${obj._('before') ? obj.before+' deals' : 'Deals'} ${min} ~ ${max} ${obj.oneOf('', 'element')} ${obj.oneOf('', 'ex')} damage ${obj.oneOf('', 'after', 'affter')}`.replace(/\s+/g, ' ').trim()
 			}
 			if (obj.type == "number")
 				return `${obj.before} ${obj.num} ${obj.oneOf('', 'after', 'affter')}`.trim()
 			if (obj.type == "percent")
 				return `${obj.before} ${obj.num}% ${obj.oneOf('', 'after', 'affter')}`.trim()
-			console.warn('!!! unknown obj.type: '+obj.type)
+			console.log('!!! unknown obj.type: '+obj.type)
 			return ''
 		}
-
-		/*if ('condition' in node) {
-		 for (let i=0; i<node.condition.length-1; i++)
-		 if (node.condition[i].or !== "true")
-		 console.warn(`expected all but last conditions to have 'or: "true"' `+
-		 `but condition #${i} is:`, node.condition[i], "node is:", node)
-		 let last_cond = node.condition[node.condition.length-1]
-		 if ('or' in last_cond)
-		 console.warn(`NOT expected last condition to have 'or' attr, `+
-		 `but condition is:`, last_cond, "node is:", node)
-		 }*/
 
 		let ef = {}
 		ef.cost = node.chi
@@ -106,6 +92,29 @@ let skills_data = {}
 let last_tree_id = 0
 let tree_name_by_ext_id = {}
 let last_node_id = 0
+let multiroot_numbers_by_ext_skill_id = {}
+let multiroot_counts_by_ext_tree_id = {}
+let multiroot_tree_ids_by_ext_tree_id = {}
+for (let skill of data.SkillList) {
+	if (skill.treeId == null) continue
+	multiroot_counts_by_ext_tree_id[skill.treeId] = (multiroot_counts_by_ext_tree_id[skill.treeId] || 0) + 1
+}
+for (let id in multiroot_counts_by_ext_tree_id) {
+	if (multiroot_counts_by_ext_tree_id[id] == 1)
+		delete multiroot_counts_by_ext_tree_id[id]
+	else
+		multiroot_counts_by_ext_tree_id[id] = 0
+}
+for (let skill of data.SkillList) {
+	if (!(skill.treeId in multiroot_counts_by_ext_tree_id)) continue
+	if ('disableFlag' in skill) continue
+	multiroot_numbers_by_ext_skill_id[skill._id] = (multiroot_counts_by_ext_tree_id[skill.treeId] ++)
+}
+for (let skill of data.SkillList) {
+	if (!(skill.treeId in multiroot_counts_by_ext_tree_id)) continue
+	if (!('disableFlag' in skill)) continue
+	multiroot_numbers_by_ext_skill_id[skill._id] = (multiroot_counts_by_ext_tree_id[skill.treeId] ++)
+}
 function addTreeNode(tree_id, node_id, params) {
 	let node = {}
 	if (params.name) node.name = params.name
@@ -115,15 +124,27 @@ function addTreeNode(tree_id, node_id, params) {
 	if (params.img) node.img = params.img
 	skills_data[`tree_${tree_id}|${node_id}`] = node
 }
-for (let tree of data.SkillTrees) {
+for (let skill of data.SkillList) {
+	if (skill.treeId == null) continue
+	let tree = data.SkillTrees.find(t => t._id == skill.treeId)
+
 	let tree_id = ++last_tree_id
+	let multiroot_num = multiroot_numbers_by_ext_skill_id[skill._id]
+	if (multiroot_num === undefined) {
+		//
+	} else if (multiroot_num === 0) {
+		tree_id += ".0"
+		multiroot_tree_ids_by_ext_tree_id[tree._id] = tree_id
+	} else {
+		continue
+	}
 
 	let node_id_by_position={}
 	for (let node of tree.nodes) node_id_by_position[node.position] = ++last_node_id
 
-	tree_name_by_ext_id[tree._id] = `tree_${tree_id}`
+	tree_name_by_ext_id[skill._id] = `tree_${tree_id}`
 
-	let params = params_by_ext_tree_id_and_position[tree._id+"|"+0]
+	let params = params_by_ext_tree_id_and_position[skill._id+"|"+0]
 	addTreeNode(tree_id, "root", {
 		name: params.name,
 		effects: params.effects,
@@ -134,7 +155,7 @@ for (let tree of data.SkillTrees) {
 	for (let node of tree.nodes) {
 		let node_id = node_id_by_position[node.position]
 
-		let params = params_by_ext_tree_id_and_position[tree._id+"|"+node.position]
+		let params = params_by_ext_tree_id_and_position[skill._id+"|"+node.position]
 		addTreeNode(tree_id, node_id, {
 			name: params.name,
 			max_lvl: 1, //TODO
@@ -153,30 +174,50 @@ for (let ext_tree_id_and_position in params_by_ext_tree_id_and_position) {
 	console.log(ext_tree_id, ext_position)
  }*/
 for (let skill of data.SkillList) {
-	let ext_tree_id = skill._id
-	if (ext_tree_id in tree_name_by_ext_id) continue
+	if (skill.treeId == null) {
+		let ext_tree_id = skill._id
 
-	let params = params_by_ext_tree_id_and_position[ext_tree_id+"|"+0]
-	let tree_id = ++last_tree_id
-	tree_name_by_ext_id[ext_tree_id] = `tree_${tree_id}`
+		let params = params_by_ext_tree_id_and_position[ext_tree_id+"|"+0]
+		let tree_id = ++last_tree_id
+		tree_name_by_ext_id[ext_tree_id] = `tree_${tree_id}`
 
-	addTreeNode(tree_id, "root", {
-		name: params.name,
-		effects: params.effects,
-		img: "http://local.bnsbase.com/img/sc/a/1.jpg" //TODO
-	})
+		addTreeNode(tree_id, "root", {
+			name: params.name,
+			effects: params.effects,
+			img: "/img/sc/a/1.jpg" //TODO
+		})
+
+		skill.treeId = skill._id
+	} else {
+		let multiroot_num = multiroot_numbers_by_ext_skill_id[skill._id]
+		if (multiroot_num > 0) {
+			let root_tree_id = multiroot_tree_ids_by_ext_tree_id[skill.treeId]
+
+			let params = params_by_ext_tree_id_and_position[skill._id+"|"+(skill.disableFlag||0)]
+			let tree_id = root_tree_id.match(/\d+/)[0] + "." + multiroot_num
+			skill.treeId += "_"+multiroot_num
+			tree_name_by_ext_id[skill._id] = `tree_${tree_id}`
+
+			addTreeNode(tree_id, "root", {
+				name: params.name,
+				effects: params.effects,
+				img: "/img/sc/a/1.jpg" //TODO
+			})
+		}
+	}
 }
 
 
 // skills_list generation
-// TODO: node.subEntry
 let skills_by_keys = {}
 for (let skill of data.SkillList) {
 	if (!(skill.hotkey in skills_by_keys)) skills_by_keys[skill.hotkey] = []
+	known(skill, '_id hotkey name icon treeId minLevel disableFlag '+
+	      'subEntry change') //TODO
 
-	let tree = tree_name_by_ext_id[skill.treeId || skill._id]
+	let tree = tree_name_by_ext_id[skill._id]
 	if (!tree) {
-		console.warn("unknown tree", skill.treeId, "/", skill._id, "in skill", skill)
+		console.log("!!! unknown tree", skill.treeId, "/", skill._id, "in skill", skill)
 		tree = -1
 	}
 
