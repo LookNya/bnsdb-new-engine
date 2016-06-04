@@ -1,0 +1,28 @@
+.content
+	background: white
+.brick-select
+	width: 100%
+	position: relative;
+	&:hover:before
+		position: absolute;
+		content: ''
+		top: 100%
+		height: 200px
+		width: 100%
+		background: grey
+	table
+		table-layout: fixed;
+		width: 100%
+		cursor: pointer;
+		.option
+			background: lightgrey
+			position: relative;
+			label
+				cursor: pointer;
+			&:hover
+				.variants
+					display: block
+			.variants
+				display: none
+				position: absolute;
+				top: 100%

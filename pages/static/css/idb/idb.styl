@@ -1,0 +1,25 @@
+.base
+	width: 1185px
+	margin: 0 auto
+	padding-bottom: 40px
+	position: relative
+	.head
+		position: relative;
+		z-index: 1
+		.butt
+			display: inline-block;
+	.body
+		position: relative;
+		z-index: 0
+		&:empty
+			&:before
+				content: ''
+				position: absolute;
+				top: 158px;
+				left: 50%;
+				margin-left: -188.5px;
+				background: url('/img/sc/nt.png')
+				height: 171px;
+				width: 377px;
+				background-repeat: no-repeat;
+				background-size: cover;
