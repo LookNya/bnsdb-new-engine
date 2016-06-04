@@ -1,0 +1,20 @@
+.round-select
+	display: block;
+	position: relative;
+	border-radius: 3px
+	border: 1px solid #5ca3f1;
+	table
+		table-layout: fixed
+		width: 100%
+		td
+			text-align: center
+			cursor: pointer
+			border-right: 1px solid #5ca3f1;
+			padding: 3px;
+			padding-top: 2px;
+			&:nth-last-child(1)
+				border-right: none
+			&.active
+				background: #5ca3f1;
+				color: white;
+				font-weight: bold;

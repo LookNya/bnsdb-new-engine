@@ -10,7 +10,9 @@
 }
 </style>
 <link rel="stylesheet" href="/static/css/idb/idb.css" type="text/css" />
+<link rel="stylesheet" href="/static/css/idb/item-cards.css" type="text/css" />
 <link rel="stylesheet" href="/static/css/ui/brick-select.css" type="text/css" />
+<link rel="stylesheet" href="/static/css/ui/round-select.css" type="text/css" />
 <link rel="stylesheet" href="/static/css/ui/simple-paginator.css" type="text/css" />
 
 <div class="base">
@@ -95,6 +97,7 @@
 	</div>
 </div>
 <script src="/static/js/idb/idb.js"></script>
+<script src="/static/js/idb/item-cards.js"></script>
 <script src="/static/js/ui/brick-select.js"></script>
 <script src="/static/js/ui/only-num-input.js"></script>
 <script src="/static/js/ui/simple-paginator.js"></script>
