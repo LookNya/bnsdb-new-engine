@@ -1,10 +1,14 @@
 Idb = {
 	init: function(){
 		initEvents(Idb)
+		Idb.el = $('.base')
 
 		new OnlyNumInput($('.lvl-from'))
 		new OnlyNumInput($('.lvl-to'))
+
 		Idb.modesSwitchTo.initial()
+
+		new SimplePaginator(Idb.el.$('.paginator'), 0)
 	}
 }
 Idb.events = {
@@ -51,6 +55,17 @@ Idb.events = {
 		'.full-search-results .close': function(){
 			Idb.modesSwitchTo.prev()
 		}
+	},
+	'custom': {
+		'brick-select:changed': function(e){
+			Idb.modesSwitchTo.catFilter()
+			console.log(e.detail)
+
+			Idb.el.$('.paginator').init(100)
+		},
+		'paginator:base-pages:changed': function(e){
+			console.log(e.detail)
+		}
 	}
 }
 Idb.modesSwitchTo = {
@@ -61,7 +76,8 @@ Idb.modesSwitchTo = {
 		$('.full-search-results').classList.add('hidden')
 		$('.cat-sort').classList.add('hidden')
 		$('.full-search').value = ''
-		
+
+		Idb.el.$('.body .top').classList.add('hidden')
 		Idb.modesSwitchTo._prev = Idb.modesSwitchTo._curr
 		Idb.modesSwitchTo._curr = {'name': 'initial', 'params': ''}
 	},
@@ -69,6 +85,16 @@ Idb.modesSwitchTo = {
 		$('.brick-select').classList.add('hidden')
 		$('.full-search-results').classList.remove('hidden')
 		$('.cat-sort').classList.add('hidden')
+		Idb.el.$('.body .top').classList.remove('hidden')
+
+		Idb.modesSwitchTo._prev = Idb.modesSwitchTo._curr
+		Idb.modesSwitchTo._curr = {'name': 'fullSearchResults', 'params': ''}
+	},
+	catFilter: function(){
+		$('.brick-select').classList.remove('hidden')
+		$('.full-search-results').classList.add('hidden')
+		$('.cat-sort').classList.remove('hidden')
+		Idb.el.$('.body .top').classList.remove('hidden')
 
 		Idb.modesSwitchTo._prev = Idb.modesSwitchTo._curr
 		Idb.modesSwitchTo._curr = {'name': 'fullSearchResults', 'params': ''}

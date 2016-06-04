@@ -1,0 +1,28 @@
+.simple-paginator
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;  
+	> *
+		display: inline-block
+		margin-left: 6px
+	.first,
+	.prevten,
+	.nextTen,
+	.last
+		background: #5ca3f1
+		color: #fff
+		border-radius: 3px
+		padding: 4px
+		cursor: pointer
+		&:hover
+			color: #dcf7ff
+		&:active
+			color: #dcf7ff;
+			background: #4987cb;
+	.pages a
+		margin-left: 6px
+		cursor: pointer
+		&.active
+			font-weight: bold
+			color: #03162b

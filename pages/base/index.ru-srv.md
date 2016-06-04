@@ -11,6 +11,7 @@
 </style>
 <link rel="stylesheet" href="/static/css/idb/idb.css" type="text/css" />
 <link rel="stylesheet" href="/static/css/ui/brick-select.css" type="text/css" />
+<link rel="stylesheet" href="/static/css/ui/simple-paginator.css" type="text/css" />
 
 <div class="base">
 	<h1>
@@ -36,12 +37,12 @@
 				<table class="options">
 					<tr>
 						<td>
-							<div class="option">
+							<div class="option" data-cat="cat">
 								<label>Оружие</label>
 								<div class="variants">
-									<div>Секира</div>
-									<div>Меч</div>
-									<div>Посох</div>
+									<div class="variant" data-subcat="subcat">Секира</div>
+									<div class="variant">Меч</div>
+									<div class="variant">Посох</div>
 								</div>
 							</div>
 						</td>
@@ -49,9 +50,9 @@
 							<div class="option">
 								<label>Бижутерия</label>
 								<div class="variants">
-									<div>Секира</div>
-									<div>Меч</div>
-									<div>Посох</div>
+									<div class="variant">Секира</div>
+									<div class="variant">Меч</div>
+									<div class="variant">Посох</div>
 								</div>
 							</div>
 						</td>
@@ -59,9 +60,9 @@
 							<div class="option">
 								<label>Ингридиенты</label>
 								<div class="variants">
-									<div>Секира</div>
-									<div>Меч</div>
-									<div>Посох</div>
+									<div class="variant">Секира</div>
+									<div class="variant">Меч</div>
+									<div class="variant">Посох</div>
 								</div>
 							</div>
 						</td>
@@ -79,11 +80,24 @@
 			</div>
 		</div>
 	</div>
-	<div class="body"></div>
+	<div class="body">
+		<div class="top">
+			<div class="f_l counter">
+				<label class="title">Предметов всего: </label>
+				<label class="count"></label>
+			</div>
+			<div class="f_r">
+				<div class="paginator" data-name="base-pages"></div>
+			</div>
+			<br clear="all">
+		</div>
+		<div class="bot"></div>
+	</div>
 </div>
 <script src="/static/js/idb/idb.js"></script>
 <script src="/static/js/ui/brick-select.js"></script>
 <script src="/static/js/ui/only-num-input.js"></script>
+<script src="/static/js/ui/simple-paginator.js"></script>
 <script>
 	Idb.init()
 	initBrickSelects()
