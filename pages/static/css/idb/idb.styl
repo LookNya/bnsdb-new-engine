@@ -1,16 +1,71 @@
 .base
-	width: 1185px
+	width: 1145px
 	margin: 0 auto
 	padding-bottom: 40px
 	position: relative
+	h1
+		padding-top: 40px;
+		padding-left: 0px;
+		float: left;
+		font-size: 40px;
 	.head
 		position: relative;
 		z-index: 1
+		font-size: 18px
+		margin-bottom: 18px;
+		input
+			border: 1px solid #5CA3F1
+			padding-left: 7px
+			border-radius: 3px
+			&:focus
+				outline: none;
+				border-color: rgb(73, 135, 203);
+				background: #f7fbff;
 		.butt
 			display: inline-block;
+			background: rgb(92, 163, 241)
+			color: white
+			border-radius: 3px
+			padding-left: 7px
+			cursor: pointer;
+			&:hover
+				color: rgb(220, 247, 255)
+			&:active
+				color: rgb(220, 247, 255);
+				background: rgb(73, 135, 203);
+		.top
+			margin-bottom: 24px;
+			.search > *
+			.filter > *
+				padding-top: 7px
+				padding-right: 7px
+				padding-bottom: 7px
+				vertical-align: middle
+			.search
+				.full-search
+					width: 231px;
+			.filter
+				input
+					width: 33px
+					text-align: center
+		.bot
+			.full-search-results
+				position: relative
+				label
+					font-size: 22px;
+					font-weight: 300;
+				.what
+					font-weight: normal;
+				.close
+					position: absolute;
+					right: 4px
+					top: -6px;
+					cursor: pointer;
+					font-size: 40px;
 	.body
 		position: relative;
 		z-index: 0
+		min-height: 400px;
 		&:empty
 			&:before
 				content: ''

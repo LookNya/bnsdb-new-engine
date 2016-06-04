@@ -4,12 +4,6 @@
 ```
 ```raw-html
 <style>
-h1{
-	padding-top: 40px;
-	padding-left: 22px;
-	float: left;
-	font-size: 40px;
-}
 #hypercomments_widget {
 	padding: 0px!important;
 	margin-left: 17px;
@@ -26,15 +20,14 @@ h1{
 	<div class="head">
 		<div class="top">
 			<div class="search f_l">
-				<label>Поиск по всем предметам: </label>
-				<input>
-				<div class="butt">Искать</div>
+				<label>Поиск по всей базе: </label>
+				<input class="full-search"><div class="butt full-search-butt">Искать</div>
 			</div>
 			<div class="filter f_r">
 				<label>Показать предметы уровнем от </label>
-				<input value = "0">
+				<input value="1" min="1" max="49" class="lvl-from">
 				<label>и до </label>
-				<input value = "50">
+				<input value="50" min="1" max="49" class="lvl-to">
 			</div>
 			<br clear="all">
 		</div>
@@ -74,14 +67,26 @@ h1{
 						</td>
 					</tr>
 				</table>
+				<div class="back"></div>
+			</div>
+			<div class="full-search-results">
+				<label class="title">Результаты поиска по запросу</label>
+				<label class="what"></label>
+				<div class="close">&times;</div>
+			</div>
+			<div class="cat-sort">
+
 			</div>
 		</div>
 	</div>
 	<div class="body"></div>
 </div>
 <script src="/static/js/idb/idb.js"></script>
+<script src="/static/js/ui/brick-select.js"></script>
+<script src="/static/js/ui/only-num-input.js"></script>
 <script>
-Idb.start()
+	Idb.init()
+	initBrickSelects()
 </script>
 
 ```
