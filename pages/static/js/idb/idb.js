@@ -77,6 +77,7 @@ Idb.modesSwitchTo = {
 		$('.cat-sort').classList.add('hidden')
 		$('.full-search').value = ''
 
+		$('.cat-header').classList.add('hidden')
 		Idb.el.$('.body .top').classList.add('hidden')
 		Idb.modesSwitchTo._prev = Idb.modesSwitchTo._curr
 		Idb.modesSwitchTo._curr = {'name': 'initial', 'params': ''}
@@ -87,6 +88,9 @@ Idb.modesSwitchTo = {
 		$('.cat-sort').classList.add('hidden')
 		Idb.el.$('.body .top').classList.remove('hidden')
 
+		$('.cat-header').classList.add('hidden')
+		$('.local-search').value = ''
+
 		Idb.modesSwitchTo._prev = Idb.modesSwitchTo._curr
 		Idb.modesSwitchTo._curr = {'name': 'fullSearchResults', 'params': ''}
 	},
@@ -95,10 +99,11 @@ Idb.modesSwitchTo = {
 		$('.full-search-results').classList.add('hidden')
 		$('.cat-sort').classList.remove('hidden')
 		Idb.el.$('.body .top').classList.remove('hidden')
+		$('.cat-header').classList.remove('hidden')
 		$('.local-search').value = ''
-		
+		$('.full-search').value = ''
 		Idb.modesSwitchTo._prev = Idb.modesSwitchTo._curr
-		Idb.modesSwitchTo._curr = {'name': 'fullSearchResults', 'params': ''}
+		Idb.modesSwitchTo._curr = {'name': 'catFilter', 'params': ''}
 	},
 	prev: function(){
 		var prev = Idb.modesSwitchTo._prev
