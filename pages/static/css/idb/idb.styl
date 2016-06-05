@@ -7,20 +7,22 @@
 		padding-top: 40px;
 		padding-left: 0px;
 		float: left;
-		font-size: 40px;
+		font-size: 48px;
+	h2
+		margin-top: 35px;
+	input
+		border: 1px solid #5CA3F1
+		padding-left: 7px
+		border-radius: 3px
+		&:focus
+			outline: none;
+			border-color: rgb(73, 135, 203);
+			background: #f7fbff;
 	.head
 		position: relative;
 		z-index: 1
 		font-size: 18px
 		margin-bottom: 18px;
-		input
-			border: 1px solid #5CA3F1
-			padding-left: 7px
-			border-radius: 3px
-			&:focus
-				outline: none;
-				border-color: rgb(73, 135, 203);
-				background: #f7fbff;
 		.butt
 			display: inline-block;
 			background: rgb(92, 163, 241)
@@ -67,15 +69,17 @@
 		z-index: 0
 		font-size: 14px;
 		.top
-			.counter
-				position: relative;
-				top: 2px;
 			.count
 				&:empty:after
 					content: '0'
+			input
+				padding-top: 2px;
+				padding-bottom: 3px;
+				margin-left: 2px;
 		.bot
 			position: relative;
 			min-height: 400px;
+			padding-top: 20px;
 			&:empty
 				&:before
 					content: ''
@@ -88,3 +92,5 @@
 					width: 377px;
 					background-repeat: no-repeat;
 					background-size: cover;
+			.item-card:nth-child(5n)
+				margin-left: 0

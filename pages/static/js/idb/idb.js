@@ -95,7 +95,8 @@ Idb.modesSwitchTo = {
 		$('.full-search-results').classList.add('hidden')
 		$('.cat-sort').classList.remove('hidden')
 		Idb.el.$('.body .top').classList.remove('hidden')
-
+		$('.local-search').value = ''
+		
 		Idb.modesSwitchTo._prev = Idb.modesSwitchTo._curr
 		Idb.modesSwitchTo._curr = {'name': 'fullSearchResults', 'params': ''}
 	},

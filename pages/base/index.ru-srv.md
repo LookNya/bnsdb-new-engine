@@ -84,9 +84,11 @@
 	</div>
 	<div class="body">
 		<div class="top">
+			<h2 class="cat-header">Оружие для ассассина</h2>
 			<div class="f_l counter">
 				<label class="title">Предметов всего: </label>
 				<label class="count"></label>
+				<input placeholder="Поиск внутри категории" class="local-search">
 			</div>
 			<div class="f_r">
 				<div class="paginator" data-name="base-pages"></div>
