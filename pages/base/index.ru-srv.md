@@ -39,12 +39,15 @@
 				<table class="options">
 					<tr>
 						<td>
-							<div class="option" data-cat="cat">
+							<div class="option" data-cat="weapons">
 								<label>Оружие</label>
 								<div class="variants">
-									<div class="variant" data-subcat="subcat">Секира</div>
-									<div class="variant">Меч</div>
-									<div class="variant">Посох</div>
+									<div class="variant" data-subcat="fm">Форс-мастер</div>
+									<div class="variant" data-subcat="asn">Ассасин</div>
+									<div class="variant" data-subcat="sum">Призыватель</div>
+									<div class="variant" data-subcat="kfm">Кунг-фу</div>
+									<div class="variant" data-subcat="des">Дестроер</div>
+									<div class="variant" data-subcat="bm">Мастера меча</div>
 								</div>
 							</div>
 						</td>

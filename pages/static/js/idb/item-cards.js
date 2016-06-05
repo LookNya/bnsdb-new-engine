@@ -9,25 +9,16 @@ function ItemCard(item, params){
 	var cardEl = createEl('div')
 	cardEl.data = item
 	cardEl.id = item.id
-
+	var maxLvl = Object.keys(item.params).length
+	var lvlSelector = genLevelSelector()
 	cardEl.classList.add('item-card')
 	cardEl.innerHTML = '\
 		<div class="icon" style="background-image: url('+ item.icon +')"></div>\
-		<div class="name '+ (item.color || 'blue' ) +'">'+ item.name + '&nbsp;' + 5 +'</div>\
-		<br clear="all">\
-			<div class="round-select">\
-				<table>\
-					<tr>\
-						<td>\
-							опция 1\
-						</td>\
-						<td>\
-							кашка\
-						</td>\
-					</tr>\
-				</table>\
-			<div>\
-			<div class="descr">'+
+		<div class="name '+ gradeMap[item.grade] +'">'+ item.name + '&nbsp; <span class="lvl"></span></div>\
+		<br clear="all">' +
+			lvlSelector
+			+
+			'<div class="descr">'+
 			(item.obtaining ? '<div class="obtaining">'     + stat_namesDB.obt  + ': ' + item.obtaining + '</div>' : '') +
 			(item.acc ?       '<div class="acc f_l">'       + stat_namesDB.acc  + ': <b>' + item.acc       + '</b></div>' : '') +
 			(item.atp ?       '<div class="atp f_l">'       + stat_namesDB.atp  + ': <b>' + item.atp       + '</b></div>' : '') +
@@ -43,6 +34,46 @@ function ItemCard(item, params){
 		<br clear="all">\
 	'
 	return cardEl
+
+	function genLevelSelector(){
+		var str = ''
+		switch(maxLvl){
+			case 5:
+			str = '\
+			<div class="round-select">\
+				<table>\
+					<tr>\
+						<td>\
+							1\
+						</td>\
+						<td>\
+							5\
+						</td>\
+					</tr>\
+				</table>\
+			<div>'
+			break
+			case 10:
+			str = '\
+			<div class="round-select">\
+				<table>\
+					<tr>\
+						<td>\
+							1\
+						</td>\
+						<td>\
+							5\
+						</td>\
+						<td>\
+							10\
+						</td>\
+					</tr>\
+				</table>\
+			<div>'
+			break
+		}
+		return str
+	}
 }
 
 
