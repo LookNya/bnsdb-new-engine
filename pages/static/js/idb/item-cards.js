@@ -13,7 +13,7 @@ function ItemCard(item, params){
 	var lvlSelector = genLevelSelector()
 	cardEl.classList.add('item-card')
 	cardEl.innerHTML = '\
-		<div class="icon" style="background-image: url('+ item.icon +')"></div>\
+		<div class="icon" style="background-image: url('+ (item.params[1] ? item.params[1].icon : '') +')"></div>\
 		<div class="name '+ gradeMap[item.grade] +'">'+ item.name + '&nbsp; <span class="lvl"></span></div>\
 		<br clear="all">' +
 			lvlSelector
