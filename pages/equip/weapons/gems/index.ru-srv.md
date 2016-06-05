@@ -20,7 +20,7 @@
 * Камни лучшего качества ломаются на ресурсы с большим шансом
 * Из полученных ресурсов можно скрафтить другой драгоценный камень
 
-Всего доступны 7 видов драгоценных камней, их легко отличить по 
+Всего доступны 7 видов драгоценных камней, их легко отличить по
 
 ```raw-html
 	<div style="margin-bottom: 70px;">
@@ -153,6 +153,7 @@
 	border-radius: 3px;
 	float: left;
 	margin-right: 38px;
+	margin-bottom: 47px;
 }
 .gemImg:after{
 	position: absolute;
@@ -297,7 +298,7 @@ h3:before{
 	function imgOnMouseOut(el){
 		el.classList.remove('playing')
 		var vid = el.dataset.vid
-		document.getElementById(vid).pause()	
+		document.getElementById(vid).pause()
 	}
 </script>
 ```

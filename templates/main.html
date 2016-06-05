@@ -48,20 +48,23 @@
 						{{ })(it.root_page.children, 0); }}
 					</ul>
 				</div>
-				<div id="mobile_header_wrap">
-					<div class="mh_header">
-						<p><a href="/">BnS Base</a>
-						 — {{= it.title }}
-						<div id="mh_control" onclick="function(){mobile_header_wrap.classList.toggle('mhw_open')}">►</div>
-					</div>
-					<div class="mh_links">
-						{{ for (var name in it.menu) { var section=it.menu[name]; }}
-						<p>{{= section.name }}</p>
-							{{ for (var subname in section.children) { var subsec=section.children[subname]; }}
-							<a href="{{=subsec.path}}">{{= subsec.name }}</a>
-							{{ } }}
+			</div>
+			<div id="mobile_header_wrap">
+				<div class="mh_header">
+					<p><a href="/">BnS Base</a>
+					 — {{= it.title }}
+					<div id="mh_control">►</div>
+					<script>
+						mh_control.onclick = function(){$('#mobile_header_wrap').classList.toggle('mhw_open')}
+					</script>
+				</div>
+				<div class="mh_links"> <!-- TODO -->
+					{{ for (var name in it.menu) { var section=it.menu[name]; }}
+					<p>{{= section.name }}</p>
+						{{ for (var subname in section.children) { var subsec=section.children[subname]; }}
+						<a href="{{=subsec.path}}">{{= subsec.name }}</a>
 						{{ } }}
-					</div>
+					{{ } }}
 				</div>
 			</div>
 		</div>
