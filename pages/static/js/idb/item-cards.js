@@ -22,12 +22,12 @@ function ItemCard(item, params){
 			+
 			(item.obtaining ? '<div class="obtaining">'     + stat_namesDB.obt  + ': ' + item.obtaining + '</div>' : '') +
 			'<div class="descr">'+
-			(p['Сила атаки'] ? '<div class="atk f_l">'  + 'Сила атаки'      + ': <b>' + p['Сила атаки'] + '</b></div>' : '') +
-			(p['HP'] ? '<div class="hp f_l">'  + 'Здоровье'      + ': <b>' + p['HP'] + '</b></div>' : '') +
-			(p['Точность'] ?  '<div class="acc f_l">'   + 'Точность'  + ': <b>' + p['Точность']      + '</b></div>' : '') +
+			(p['Сила атаки'] ? '<div class="atk f_l">'  + 'Сила атаки'   + ': <b>' + p['Сила атаки'] + '</b></div>' : '') +
+			(p['HP']         ? '<div class="hp f_l">'   + 'Здоровье'     + ': <b>' + p['HP']         + '</b></div>' : '') +
+			(p['Точность']   ? '<div class="acc f_l">'  + 'Точность'     + ': <b>' + p['Точность']   + '</b></div>' : '') +
 			(item.atp ?       '<div class="atp f_l">'       + stat_namesDB.atp  + ': <b>' + item.atp       + '</b></div>' : '') +
 			(item.def ?       '<div class="def f_l">'       + stat_namesDB.def  + ': <b>' + item.def       + '</b></div>' : '') +
-			(item.crit ?      '<div class="crit f_l">'      + stat_namesDB.crit  + ': <b>' + item.crit     + '</b></div>' : '') +
+			(p['Крит. атака'] ?      '<div class="crit f_l">'      + 'Крит. атака'  + ': <b>' + p['Крит. атака']     + '</b></div>' : '') +
 			(item.cdef ?      '<div class="cdef f_l">'      + stat_namesDB.cdef  + ': <b>' + item.cdef     + '</b></div>' : '') +
 			(item.crithd ?    '<div class="crithd f_l">'    + stat_namesDB.crithd + ': <b>' + item.crithd  + '</b></div>' : '') +
 			(p['Пробивание'] ?       '<div class="prc f_l">'       + 'Пробивание'   + ': <b>' + p['Пробивание']      + '</b></div>' : '') +

@@ -28,9 +28,9 @@
 			</div>
 			<div class="filter f_r">
 				<label>Показать предметы уровнем от </label>
-				<input value="1" min="1" max="49" class="lvl-from">
+				<input value="1" min="1" max="49" class="lvl-from" type="number">
 				<label>и до </label>
-				<input value="50" min="1" max="49" class="lvl-to">
+				<input value="50" min="1" max="50" class="lvl-to" type="number">
 			</div>
 			<br clear="all">
 		</div>
@@ -104,7 +104,6 @@
 <script src="/static/js/idb/idb.js"></script>
 <script src="/static/js/idb/item-cards.js"></script>
 <script src="/static/js/ui/brick-select.js"></script>
-<script src="/static/js/ui/only-num-input.js"></script>
 <script src="/static/js/ui/simple-paginator.js"></script>
 <script>
 	Idb.init()

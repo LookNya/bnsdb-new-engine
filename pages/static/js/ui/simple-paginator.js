@@ -46,24 +46,24 @@ SimplePaginator = function(el, num, step){
 		first.textContent = 'Начало'
 		el.appendChild(first)
 
-		var prevten = createEl('div')
-		prevten.dataset.page = 'prevten'
-		prevten.className = 'prevten'
-		// prevten.textContent = '❰'
-		prevten.textContent = '-10'
-		el.appendChild(prevten)
+		var prevOne = createEl('div')
+		prevOne.dataset.page = 'prevOne'
+		prevOne.className = 'prevOne'
+		prevOne.textContent = '❰'
+		// prevOne.textContent = '-10'
+		el.appendChild(prevOne)
 
 		var pages = createEl('div')
 		pages.className = 'pages'
 		el.appendChild(pages)
 		refreshPages(pages, num, 0)
 
-		var nextTen = createEl('div')
-		nextTen.dataset.page = 'nextTen'
-		nextTen.className = 'nextTen'
-		// nextTen.textContent = '❱'
-		nextTen.textContent = '+10'
-		el.appendChild(nextTen)
+		var nextOne = createEl('div')
+		nextOne.dataset.page = 'nextOne'
+		nextOne.className = 'nextOne'
+		nextOne.textContent = '❱'
+		// nextOne.textContent = '+10'
+		el.appendChild(nextOne)
 
 		var last = createEl('div')
 		last.dataset.page = 'last'
@@ -89,12 +89,12 @@ SimplePaginator = function(el, num, step){
 			case 'first':
 				switchToPage(0)
 			break
-			case 'prevten':
-				var index = +el.currPage - step
+			case 'prevOne':
+				var index = +el.currPage - 1
 				index < 0 ? switchToPage(0) : switchToPage(index)
 			break
-			case 'nextTen':
-				index = +el.currPage + step
+			case 'nextOne':
+				index = +el.currPage + 1
 				index > el.max-1 ? switchToPage(el.max-1) : switchToPage(index)
 			break
 			case 'last':

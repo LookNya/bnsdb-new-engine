@@ -4,9 +4,6 @@ Idb = {
 		initEvents(Idb)
 		Idb.el = $('.base')
 
-		new OnlyNumInput($('.lvl-from'))
-		new OnlyNumInput($('.lvl-to'))
-
 		Idb.modesSwitchTo.initial()
 
 		new SimplePaginator(Idb.el.$('.paginator'), 0)
@@ -18,15 +15,23 @@ Idb.events = {
 			var input = e.target
 			var lvlFrom = input.value
 			var lvlTo = $('.lvl-to').value
+			if(lvlFrom.value > input.getAttribute('max')) lvlFrom.value = input.getAttribute('max')
+			if(lvlFrom.value < input.getAttribute('min')) lvlFrom.value = input.getAttribute('min')
+			if(lvlFrom.value == '') lvlFrom.value = input.getAttribute('min')
 			if(lvlTo == '' || lvlFrom == '') return
 			if(lvlFrom >= lvlTo) $('.lvl-to').value = +lvlFrom + 1
+			Idb.cat.lvlFilter(lvlTo, lvlFrom)
 		},
 		'.lvl-to': function(e){
 			var input = e.target
 			var lvlTo = input.value
 			var lvlFrom = $('.lvl-from').value
+			if(lvlTo.value > input.getAttribute('max')) lvlTo.value = input.getAttribute('max')
+			if(lvlTo.value < input.getAttribute('min')) lvlTo.value = input.getAttribute('min')
+			if(lvlTo.value == '') lvlTo.value = input.getAttribute('min')
 			if(lvlTo == '' || lvlFrom == '') return
 			if(lvlTo <= lvlFrom) $('.lvl-from').value = +lvlTo - 1
+			Idb.cat.lvlFilter(lvlTo, lvlFrom)
 		}
 	},
 	'keydown':{
@@ -108,7 +113,7 @@ Idb.modesSwitchTo = {
 	prev: function(){
 		var prev = Idb.modesSwitchTo._prev
 		Idb.modesSwitchTo[prev.name](prev.params)
-	}
+	},
 }
 // ***********************************************
 Idb.cat = {
@@ -151,6 +156,9 @@ Idb.cat = {
 				body.appendChild(card)
 			}
 		}
+	},
+	lvlFilter: function(lvlTo, lvlFrom){
+
 	}
 }
 // ***********************************************
