@@ -38,20 +38,23 @@
 		background-size: cover
 		opacity: 0.9
 		margin-bottom: 11px
+	.obtaining
+		width: 100%;
+		text-align: left
+		padding-bottom: 6px;
 	.descr
 		float: left
 		font-size: 14px
 		width: 100%
-	&.accessory
-		.descr
-			> div
-				width: 50%
+		line-height: normal;
+		> div
+			width: 50%
+			&:nth-child(2n)
 				text-align: right
 				b
-					display: inline-block
-					text-align: left
-					width: 25px
-			.obtaining
-				width: 100%;
+					padding-right: 0
+			b
+				display: inline-block
 				text-align: left
-				padding-bottom: 6px;
+				padding-right: 10px;
+				max-width: 25px;
