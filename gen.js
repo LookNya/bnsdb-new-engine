@@ -17,7 +17,7 @@ const PAGES_DIR = 'pages'
 const MAIN_LANGSERVER = 'ru-srv'
 const DO_NOT_GROUP = ['CNAME', 'static', 'img', 'robots.txt', '404.html', 'sitemap.xml'].map(name => PAGES_DIR+'/'+name)
 const DO_NOT_CLEAN = ['.git'].map(name => OUT_DIR+'/'+name)
-const GZIP = ['html', 'css', 'js', 'xml', 'txt']
+const GZIP = ['html', 'css', 'js', 'xml', 'txt', 'json']
 
 
 function withExt(name, ext) {
@@ -382,6 +382,7 @@ exports.write = function() {
 exports.gzip = function() {
 	console.log('gzip\'ing...')
 	let skipped = new Set()
+	let processed = new Set()
 	let sum = {before: 0, after: 0}
 	forEachFile(OUT_DIR, (fname, fullpath) => {
 		let ext = fname.match(/[^.]*$/)[0]
@@ -392,8 +393,13 @@ exports.gzip = function() {
 		fs.writeFileSync(fullpath+'.gz', res)
 		sum.before += data.length
 		sum.after += res.length
+		processed.add(ext)
 	})
-	console.log(`  done, ${sum.before|0} --> ${sum.after|0} B, skipped: ${Array.from(skipped)}\n`)
+	console.log(`  done`)
+	console.log(`    processed:  ${Array.from(processed)}`)
+	console.log(`    skipped:    ${Array.from(skipped)}`)
+	console.log(`    compressed: ${sum.before/1024|0} --> ${sum.after/1024|0} KiB`)
+	console.log(``)
 }
 
 
