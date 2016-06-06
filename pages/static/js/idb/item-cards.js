@@ -54,7 +54,7 @@ function ItemCard(item, params){
 						</td>\
 					</tr>\
 				</table>\
-			<div>'
+			</div>'
 			break
 			case 10:
 			str = '\
@@ -72,7 +72,7 @@ function ItemCard(item, params){
 						</td>\
 					</tr>\
 				</table>\
-			<div>'
+			</div>'
 			break
 		}
 		return str
