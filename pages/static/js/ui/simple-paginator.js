@@ -23,6 +23,7 @@ SimplePaginator = function(el, num, step){
 			if(count>step && i+1 != el.max) {
 				var page = createEl('a')
 				page.textContent = '…'
+				page.dataset.page = '-1'
 				pagesEl.appendChild(page)
 
 				var page = createEl('a')

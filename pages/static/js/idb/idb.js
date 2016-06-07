@@ -71,7 +71,13 @@ Idb.events = {
 	},
 	'custom': {
 		'brick-select:changed': function(e){
-			Idb.modesSwitchTo.catFilter(e.detail)
+			if(e.detail.subcat){
+				Idb.modesSwitchTo.catFilter(e.detail)
+			} else{
+				var cat = e.detail.cat
+				if(cat) Idb.el.$('.brick-select [data-cat="'+ cat +'"] .variant').click()
+			}
+
 		},
 		'paginator:base-pages:changed': function(e){
 			var scrolled = document.body.scrollTop
