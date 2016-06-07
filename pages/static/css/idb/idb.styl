@@ -15,7 +15,7 @@
 		padding-left: 7px
 		border-radius: 3px
 		&[type=number]::-webkit-inner-spin-button
-		&[type=number]::-webkit-outer-spin-button 
+		&[type=number]::-webkit-outer-spin-button
 			-webkit-appearance: none;
 			margin: 0;
 		&:focus
@@ -76,6 +76,11 @@
 			.count
 				&:empty:after
 					content: '0'
+			.paginator.fixed
+				position: fixed;
+				top: 3px
+				background: rgba(255, 255, 255, 0.85)
+				z-index: 4
 			input
 				padding-top: 2px;
 				padding-bottom: 3px;

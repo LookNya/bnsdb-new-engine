@@ -15,23 +15,25 @@ Idb.events = {
 			var input = e.target
 			var lvlFrom = input.value
 			var lvlTo = $('.lvl-to').value
+			input.value = parseInt(input.value)
 			if(lvlFrom.value > input.getAttribute('max')) lvlFrom.value = input.getAttribute('max')
 			if(lvlFrom.value < input.getAttribute('min')) lvlFrom.value = input.getAttribute('min')
 			if(lvlFrom.value == '') lvlFrom.value = input.getAttribute('min')
 			if(lvlTo == '' || lvlFrom == '') return
 			if(lvlFrom >= lvlTo) $('.lvl-to').value = +lvlFrom + 1
-			Idb.cat.lvlFilter(lvlTo, lvlFrom)
+			Idb.cat.filter()
 		},
 		'.lvl-to': function(e){
 			var input = e.target
 			var lvlTo = input.value
 			var lvlFrom = $('.lvl-from').value
+			input.value = parseInt(input.value)
 			if(lvlTo.value > input.getAttribute('max')) lvlTo.value = input.getAttribute('max')
 			if(lvlTo.value < input.getAttribute('min')) lvlTo.value = input.getAttribute('min')
 			if(lvlTo.value == '') lvlTo.value = input.getAttribute('min')
 			if(lvlTo == '' || lvlFrom == '') return
 			if(lvlTo <= lvlFrom) $('.lvl-from').value = +lvlTo - 1
-			Idb.cat.lvlFilter(lvlTo, lvlFrom)
+			Idb.cat.filter()
 		}
 	},
 	'keydown':{
@@ -45,6 +47,11 @@ Idb.events = {
 					butt.style.background = ''
 				},200)
 			}
+		},
+	},
+	'keyup': {
+		'.local-search': function(e){
+			Idb.cat.filter()
 		}
 	},
 	'click': {
@@ -67,7 +74,22 @@ Idb.events = {
 			Idb.modesSwitchTo.catFilter(e.detail)
 		},
 		'paginator:base-pages:changed': function(e){
+			var scrolled = document.body.scrollTop
+			if(scrolled > 360) {
+				document.body.scrollTop = 275
+			}
 			Idb.cat.openPage(e.detail.page)
+		},
+		'scroll': function(e){
+			var scrolled = document.body.scrollTop
+			var selector = Idb.el.$('.paginator')
+			var rect = selector.getBoundingClientRect()
+			if(scrolled > 360) {
+				selector.classList.add('fixed')
+				selector.style.left = rect.left + 'px'
+			} else {
+				selector.classList.remove('fixed')
+			}
 		}
 	}
 }
@@ -140,9 +162,8 @@ Idb.cat = {
 	generate: function(data){
 		var data = JSON.parse(data)
 		Idb.cat.rawData = data
-		Idb.cat.data = data
-		Idb.el.$('.paginator').init( Math.ceil(data.length / Idb.cardsPerPage))
-		Idb.cat.openPage(0)
+		Idb.cat.filter()
+		Idb.el.$('.paginator').init( Math.ceil(Idb.cat.data.length / Idb.cardsPerPage))
 	},
 	openPage: function(index){
 		var body = Idb.el.$('.body .bot')
@@ -157,8 +178,24 @@ Idb.cat = {
 			}
 		}
 	},
-	lvlFilter: function(lvlTo, lvlFrom){
-
+	filter: function(){
+		var lvlTo = $('.lvl-to').value
+		var lvlFrom = $('.lvl-from').value
+		Idb.cat.data = []
+		var localSearch = Idb.el.$('.local-search').value
+		if(!Idb.cat.rawData) return
+		Idb.cat.rawData.forEach(function(item){
+			var minLvl = item.player_min_lvl
+			if(minLvl >= lvlFrom &&
+				 minLvl <= lvlTo &&
+				 (localSearch == '' ||
+				~item.name.indexOf(localSearch) ||
+				~item.name.indexOf(Utils.rusify(localSearch))
+				 )
+				) Idb.cat.data.push(item)
+		})
+		Idb.el.$('.count').textContent = Idb.cat.data.length
+		Idb.cat.openPage(0)
 	}
 }
 // ***********************************************
@@ -193,3 +230,17 @@ Model.xhr = function(href, params, onOk, onErr){
 	}
 	xmlhttp.send(null)
 }
+Utils = {}
+Utils.rusify = (function() {
+	var s = "qй wц eу rк tе yн uг iш oщ pз [х ]ъ "+
+					 "aф sы dв fа gп hр jо kл lд ;ж 'э "+
+						"zя xч cс vм bи nт mь ,б .ю /.";
+	var h = {};
+	for (var i=0; i<s.length; i+=3) h[s[i]] = s[i+1];
+
+	return function(str) {
+		return str.toLowerCase().replace(/[A-z\[\];',\.\/]/g, function(l) {
+			return l in h ? h[l] : l;
+		})
+	}
+})();

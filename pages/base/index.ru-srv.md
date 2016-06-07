@@ -28,9 +28,9 @@
 			</div>
 			<div class="filter f_r">
 				<label>Показать предметы уровнем от </label>
-				<input value="1" min="1" max="49" class="lvl-from" type="number">
+				<input value="1" min="1" max="49" class="lvl-from" type="tel">
 				<label>и до </label>
-				<input value="50" min="1" max="50" class="lvl-to" type="number">
+				<input value="50" min="1" max="50" class="lvl-to" type="tel">
 			</div>
 			<br clear="all">
 		</div>
@@ -75,19 +75,19 @@
 				</table>
 				<div class="back"></div>
 			</div>
-			<div class="full-search-results">
+			<div class="full-search-results hidden">
 				<label class="title">Результаты поиска по запросу</label>
 				<label class="what"></label>
 				<div class="close">&times;</div>
 			</div>
-			<div class="cat-sort">
+			<div class="cat-sort hidden">
 
 			</div>
 		</div>
 	</div>
 	<div class="body">
-		<div class="top">
-			<h2 class="cat-header">Оружие для ассассина</h2>
+		<div class="top hidden">
+			<h2 class="cat-header hidden">Оружие для ассассина</h2>
 			<div class="f_l counter">
 				<label class="title">Предметов всего: </label>
 				<label class="count"></label>

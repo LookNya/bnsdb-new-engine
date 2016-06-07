@@ -9,73 +9,81 @@ function ItemCard(item, params){
 	var cardEl = createEl('div')
 	cardEl.data = item
 	cardEl.id = item.id
+	cardEl.showLvl = showLvl
+
 	var maxLvl = Object.keys(item.params).length
-	var lvlSelector = genLevelSelector()
 	var p = item.params[1] || {}
-	console.log(p)
+	var lvlSelector = genLevelSelector()
 	cardEl.classList.add('item-card')
 	cardEl.innerHTML = '\
-		<div class="icon" style="background-image: url('+ (item.params[1] ? item.params[1].icon : '') +')"></div>\
-		<div class="name '+ gradeMap[item.grade] +'">'+ item.name + '&nbsp; <span class="lvl"></span></div>\
+		<div class="icon"></div>\
+		<div class="name '+ gradeMap[item.grade] +'">'+ item.name + '&nbsp;<span class="lvl"></span></div>\
 		<br clear="all">' +
-			lvlSelector
-			+
-			(item.obtaining ? '<div class="obtaining">'     + stat_namesDB.obt  + ': ' + item.obtaining + '</div>' : '') +
-			'<div class="descr">'+
-			(p['Сила атаки'] ? '<div class="atk f_l">'  + 'Сила атаки'   + ': <b>' + p['Сила атаки'] + '</b></div>' : '') +
-			(p['HP']         ? '<div class="hp f_l">'   + 'Здоровье'     + ': <b>' + p['HP']         + '</b></div>' : '') +
-			(p['Точность']   ? '<div class="acc f_l">'  + 'Точность'     + ': <b>' + p['Точность']   + '</b></div>' : '') +
-			(item.atp ?       '<div class="atp f_l">'       + stat_namesDB.atp  + ': <b>' + item.atp       + '</b></div>' : '') +
-			(item.def ?       '<div class="def f_l">'       + stat_namesDB.def  + ': <b>' + item.def       + '</b></div>' : '') +
-			(p['Крит. атака'] ?      '<div class="crit f_l">'      + 'Крит. атака'  + ': <b>' + p['Крит. атака']     + '</b></div>' : '') +
-			(item.cdef ?      '<div class="cdef f_l">'      + stat_namesDB.cdef  + ': <b>' + item.cdef     + '</b></div>' : '') +
-			(item.crithd ?    '<div class="crithd f_l">'    + stat_namesDB.crithd + ': <b>' + item.crithd  + '</b></div>' : '') +
-			(p['Пробивание'] ?       '<div class="prc f_l">'       + 'Пробивание'   + ': <b>' + p['Пробивание']      + '</b></div>' : '') +
-			(p['Блок'] ?        '<div class="bl f_l">'        + 'Блок'    + ': <b>' + p['Блок']       + '</b></div>' : '') +
-			(p['Уклонение'] ? '<div class="ev f_l">'    + 'Уклонение'        + ': <b>' + p['Уклонение'] + '</b></div>' : '') +
-		'</div>\
-		<br clear="all">\
-	'
+		(item.bonuses ? '<div class="bonuses"><p>'+ item.bonuses.join('</p><p>') +'</p></div>': '') +
+		(item.player_min_lvl ? '<div class="min-lvl">Требуемый уровень персонажа: ' + item.player_min_lvl + '</div>' : '') +
+		lvlSelector +
+		(item.obtaining ? '<div class="obtaining">'     + stat_namesDB.obt  + ': ' + item.obtaining + '</div>' : '') +
+		'<div class="descr"></div>'
+	cardEl.addEventListener('click', onCardClick)
+	var tds = cardEl.$$('.round-select td')
+	if(tds.length > 0) {
+		tds[tds.length-1].click()
+	} else {
+		showLvl(1)
+	}
 	return cardEl
-
 	function genLevelSelector(){
 		var str = ''
-		switch(maxLvl){
-			case 5:
+		var p = item.params
+		if(maxLvl != 1){
 			str = '\
 			<div class="round-select">\
 				<table>\
-					<tr>\
-						<td>\
-							1\
-						</td>\
-						<td>\
-							5\
-						</td>\
+					<tr>'
+			for(var i=0; i<13; i++){
+				if(p[i]) str+='<td>'+ i +'</td>'
+			}
+			str += '\
 					</tr>\
 				</table>\
 			</div>'
-			break
-			case 10:
-			str = '\
-			<div class="round-select">\
-				<table>\
-					<tr>\
-						<td>\
-							1\
-						</td>\
-						<td>\
-							5\
-						</td>\
-						<td>\
-							10\
-						</td>\
-					</tr>\
-				</table>\
-			</div>'
-			break
 		}
 		return str
+	}
+	function onCardClick(e){
+		var t = e.target
+		var select = t.$up('.round-select')
+		t = t.$up('td')
+		if(select && t){
+			select.$$('td').classList.remove('active')
+			t.classList.add('active')
+			var lvl = t.textContent
+			cardEl.showLvl(lvl)
+		}
+	}
+	function showLvl(lvl){
+		var item = cardEl.data
+		var descr = cardEl.$('.descr')
+		var lvlEl = cardEl.$('.name .lvl')
+		var icon = cardEl.$('.icon')
+		var p = item.params[lvl] || item.params[Object.keys(item.params)[0]]
+		icon.style.backgroundImage = 'url("'+ p.icon +'")'
+		if(Object.keys(item.params).length > 1){
+			lvlEl.textContent = lvl
+			descr.innerHTML = ''+
+				(p['Сила атаки'] ? '<div class="atk f_l">'  + 'Сила атаки'   + ': <b>' + p['Сила атаки'] + '</b></div>' : '') +
+				(p['HP']         ? '<div class="hp f_l">'   + 'Здоровье'     + ': <b>' + p['HP']         + '</b></div>' : '') +
+				(p['Точность']   ? '<div class="acc f_l">'  + 'Точность'     + ': <b>' + p['Точность']   + '</b></div>' : '') +
+				(item.atp ?       '<div class="atp f_l">'       + stat_namesDB.atp  + ': <b>' + item.atp       + '</b></div>' : '') +
+				(item.def ?       '<div class="def f_l">'       + stat_namesDB.def  + ': <b>' + item.def       + '</b></div>' : '') +
+				(p['Крит. атака'] ?      '<div class="crit f_l">'      + 'Крит. атака'  + ': <b>' + p['Крит. атака']     + '</b></div>' : '') +
+				(item.cdef ?      '<div class="cdef f_l">'      + stat_namesDB.cdef  + ': <b>' + item.cdef     + '</b></div>' : '') +
+				(item.crithd ?    '<div class="crithd f_l">'    + stat_namesDB.crithd + ': <b>' + item.crithd  + '</b></div>' : '') +
+				(p['Пробивание'] ?       '<div class="prc f_l">'       + 'Пробивание'   + ': <b>' + p['Пробивание']      + '</b></div>' : '') +
+				(p['Блок'] ?        '<div class="bl f_l">'        + 'Блок'    + ': <b>' + p['Блок']       + '</b></div>' : '') +
+				(p['Уклонение'] ? '<div class="ev f_l">'    + 'Уклонение'        + ': <b>' + p['Уклонение'] + '</b></div>' : '') +
+				'<br clear="all">'
+		}
 	}
 }
 
