@@ -19,7 +19,7 @@ function ItemCard(item, params){
 		<div class="icon"></div>\
 		<div class="name '+ gradeMap[item.grade] +'">'+ item.name + '&nbsp;<span class="lvl"></span></div>\
 		<br clear="all">' +
-		(item.bonuses ? '<div class="bonuses"><p>'+ item.bonuses.join('</p><p>') +'</p></div>': '') +
+		'<div class="bonuses"></div>' +
 		(item.player_min_lvl ? '<div class="min-lvl">Требуемый уровень персонажа: ' + item.player_min_lvl + '</div>' : '') +
 		lvlSelector +
 		(item.obtaining ? '<div class="obtaining">'     + stat_namesDB.obt  + ': ' + item.obtaining + '</div>' : '') +
@@ -63,6 +63,7 @@ function ItemCard(item, params){
 	}
 	function showLvl(lvl){
 		var item = cardEl.data
+		var bonuses = cardEl.$('.bonuses')
 		var descr = cardEl.$('.descr')
 		var lvlEl = cardEl.$('.name .lvl')
 		var icon = cardEl.$('.icon')
@@ -70,6 +71,7 @@ function ItemCard(item, params){
 		icon.style.backgroundImage = 'url("'+ p.icon +'")'
 		if(Object.keys(item.params).length > 1){
 			lvlEl.textContent = lvl
+			bonuses.innerHTML = (item.bonuses ? '<p>'+ item.bonuses.join('</p><p>') +'</p>': '')
 			descr.innerHTML = ''+
 				(p['Сила атаки'] ? '<div class="atk f_l">'  + 'Сила атаки'   + ': <b>' + p['Сила атаки'] + '</b></div>' : '') +
 				(p['HP']         ? '<div class="hp f_l">'   + 'Здоровье'     + ': <b>' + p['HP']         + '</b></div>' : '') +

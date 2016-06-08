@@ -36,8 +36,8 @@
 						{{     let is_in_chain = it.pages_chain.indexOf(page)!=-1; }}
 						<li {{?is_in_chain}}class="hb_curr"{{?}}>
 							<a href="{{=page.web_path}}">
-								{{= page.short_title }} ({{= page.name }})
-								{{? is_in_chain }} + {{?}}
+								{{= page.short_title }} <!--({{= page.name }})
+								{{? is_in_chain }} + {{?}}-->
 								{{? page.blank }} 404 {{?}}
 							</a>
 							<ul class="level-{{=level+1}}">
