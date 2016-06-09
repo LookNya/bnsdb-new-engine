@@ -1,5 +1,6 @@
-function ItemCard(item, params){
+function ItemCard(item, params, fullList){
 	var gradeMap = [
+		'',
 		'white',
 		'green',
 		'blue',
@@ -10,20 +11,46 @@ function ItemCard(item, params){
 	cardEl.data = item
 	cardEl.id = item.id
 	cardEl.showLvl = showLvl
-
 	var maxLvl = Object.keys(item.params).length
 	var p = item.params[1] || {}
 	var lvlSelector = genLevelSelector()
+	var break_item, breaker = false, breaking = false
+	if(item.break_items){
+		var breaker = findItemByid(fullList, item.break_items[0].id)
+		if(breaker)	{
+			breaker = {
+				name: breaker.name,
+				color: gradeMap[breaker.grade]
+			}
+		} else{
+			breaker = false
+		}
+	}
+	if(item.breaking_items){
+		var breaking = findItemByid(fullList, item.break_items[0].id)
+		if(breaking)	{
+			breaking = {
+				name: breaking.name,
+				color: gradeMap[breaking.grade]
+			}
+		} else{
+			breaking = false
+		}
+	}
 	cardEl.classList.add('item-card')
 	cardEl.innerHTML = '\
 		<div class="icon"></div>\
 		<div class="name '+ gradeMap[item.grade] +'">'+ item.name + '&nbsp;<span class="lvl"></span></div>\
 		<br clear="all">' +
-		'<div class="bonuses"></div>' +
+		'<div class="descr"></div>' +
+		'<div class="bonuses">'+genBonuses(item)+'</div>' +
 		(item.player_min_lvl ? '<div class="min-lvl">Требуемый уровень персонажа: ' + item.player_min_lvl + '</div>' : '') +
-		lvlSelector +
+		(breaker ? '<div class="break">Прорыв: <span class="'+breaker.color+'">'+ breaker.name +'</span></div>' : '') +
+		(breaking ? '<div class="break">Прорывает: <span class="'+breaking.color+'">'+ breaking.name +'</span></div>' : '') +
 		(item.obtaining ? '<div class="obtaining">'     + stat_namesDB.obt  + ': ' + item.obtaining + '</div>' : '') +
-		'<div class="descr"></div>'
+		lvlSelector
+
+
 	cardEl.addEventListener('click', onCardClick)
 	var tds = cardEl.$$('.round-select td')
 	if(tds.length > 0) {
@@ -71,7 +98,7 @@ function ItemCard(item, params){
 		icon.style.backgroundImage = 'url("'+ p.icon +'")'
 		if(Object.keys(item.params).length > 1){
 			lvlEl.textContent = lvl
-			bonuses.innerHTML = (item.bonuses ? '<p>'+ item.bonuses.join('</p><p>') +'</p>': '')
+			bonuses.innerHTML = genBonuses(item, lvl)
 			descr.innerHTML = ''+
 				(p['Сила атаки'] ? '<div class="atk f_l">'  + 'Сила атаки'   + ': <b>' + p['Сила атаки'] + '</b></div>' : '') +
 				(p['HP']         ? '<div class="hp f_l">'   + 'Здоровье'     + ': <b>' + p['HP']         + '</b></div>' : '') +
@@ -87,9 +114,20 @@ function ItemCard(item, params){
 				'<br clear="all">'
 		}
 	}
+	function genBonuses(item, lvl){
+		var lvl = lvl || 1
+		var p = item.params[lvl] || item.params[Object.keys(item.params)[0]]
+		var str = '<p>'+ p.bonuses.join('</p><p>') +'</p>'
+		return str
+	}
+	function findItemByid(array, id){
+		var item
+		array.forEach(function(el){
+			if(el.id == id )item = el
+		})
+		return item
+	}
 }
-
-
 function generateItemCard(item, params){
 	//params = {mode: full(default)\mini, level: 5(default)\10}
 	//returns html

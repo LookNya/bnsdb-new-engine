@@ -48,6 +48,7 @@
 									<div class="variant" data-subcat="kfm">Кунг-фу</div>
 									<div class="variant" data-subcat="des">Дестроер</div>
 									<div class="variant" data-subcat="bm">Мастера меча</div>
+									<div class="variant" data-subcat="lbm">Лин мастер меча</div>
 								</div>
 							</div>
 						</td>

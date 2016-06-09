@@ -79,8 +79,19 @@ SimplePaginator = function(el, num, step){
 		refreshPages(pagesEl, el.max, index)
 		throwEvent('paginator:' + (el.dataset.name ? el.dataset.name+':' : '') + 'changed', {page: +index})
 	}
+	el.openPage = function(index, silent){
+		if(silent){
+			//просто покрасить
+			var pagesEl = this.$('.pages')
+			refreshPages(pagesEl, this.max, index)
+		} else {
+			var pagesEl = this.$('.pages')
+			pagesEl.$('[data-page="'+index+'"]').click()
+		}
+	}
 	el.addEventListener('click', function(e){
 		var t = e.target
+		var el = this
 		if(t.classList.contains('pages') || t.classList.contains('simple-paginator') ) return
 		var index = t.dataset.page
 		switch (index){
@@ -88,23 +99,24 @@ SimplePaginator = function(el, num, step){
 				return
 			break
 			case 'first':
-				switchToPage(0)
+				index = 0
 			break
 			case 'prevOne':
-				var index = +el.currPage - 1
-				index < 0 ? switchToPage(0) : switchToPage(index)
+				index = +el.currPage - 1
+				if(index < 0) index = 0
 			break
 			case 'nextOne':
 				index = +el.currPage + 1
-				index > el.max-1 ? switchToPage(el.max-1) : switchToPage(index)
+				if(index > el.max-1) index = el.max-1
 			break
 			case 'last':
-				switchToPage(el.max-1)
+				index = el.max-1
 			break
 			default:
-				switchToPage(index)
 			break
 		}
+		switchToPage(index)
+		el.currPage = index
 	})
 	if(num) el.init(num)
 }

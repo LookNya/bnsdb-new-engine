@@ -161,6 +161,7 @@ Idb.cat = {
 			'kfm': 'Кунг-фу',
 			'des': 'Дестроера',
 			'bm': 'Мастера меча',
+			'lbm': 'Лин мастер меча',
 		}
 		Idb.el.$('.cat-header').textContent = mapCat[cat] + ' для ' + mapScat[scat]
 		Model.xhr('/json/'+ cat + '/' + scat + '.json', {}, Idb.cat.generate)
@@ -169,34 +170,70 @@ Idb.cat = {
 		var data = JSON.parse(data)
 		Idb.cat.rawData = data
 		Idb.cat.filter()
-		Idb.el.$('.paginator').init( Math.ceil(Idb.cat.data.length / Idb.cardsPerPage))
 	},
 	openPage: function(index){
 		var body = Idb.el.$('.body .bot')
 		body.innerHTML = ''
 		var from = index * Idb.cardsPerPage
 		var to = from + Idb.cardsPerPage
+		var pageData = []
 		for(var i=from; i<to; i++){
 			var item = Idb.cat.data[i]
-			if(item){
-				var card = new ItemCard(item)
-				body.appendChild(card)
+			if(item) pageData.push(item)
+		}
+		var changed = true
+		while(changed){
+			changed = false
+			for(var i=1; i<pageData.length; i++){
+				var po = Object.keys(pageData[i-1].params)//список всех парамсов
+				var co = Object.keys(pageData[i].params)
+				var pp = pageData[i-1].params[po[po.length-1]]//последний парамс из списка
+				var cp = pageData[i].params[co[co.length-1]]
+
+				var prevl = (pp.bonuses || []).length//примерно строк в бонусах
+				var curl = (cp.bonuses || []).length
+				var pok = Object.keys(pp).length -1//сколоко всего записей в парамсах
+				var cok = Object.keys(cp).length -1
+				if(pp.bonuses) pok--
+				if(cp.bonuses) cok--
+				prevl += parseInt(pok/2)//сколько примерно строк добавили статы
+				curl += parseInt(cok/2)
+				if(pageData[i-1].break_items)prevl += 3
+				if(pageData[i].break_items)curl += 3
+				if(po.length>1)prevl++
+				if(co.length>1)curl++
+				prevl += pageData[i-1].grade
+				curl += pageData[i].grade
+				if(prevl < curl){
+					var buff = pageData[i-1]
+					pageData[i-1] = pageData[i]
+					pageData[i] = buff
+					changed = true
+					break
+				}
 			}
 		}
+		for(var i=0; i<pageData.length; i++){
+			var card = new ItemCard(pageData[i], [], Idb.cat.data)
+			body.appendChild(card)
+		}
+		Idb.el.$('.paginator').init( Math.ceil(Idb.cat.data.length / Idb.cardsPerPage))
+		Idb.el.$('.paginator').openPage(index, true)
 	},
 	filter: function(){
 		var lvlTo = $('.lvl-to').value
 		var lvlFrom = $('.lvl-from').value
 		Idb.cat.data = []
-		var localSearch = Idb.el.$('.local-search').value
+		var localSearch = Idb.el.$('.local-search').value.toLowerCase()
 		if(!Idb.cat.rawData) return
 		Idb.cat.rawData.forEach(function(item){
 			var minLvl = item.player_min_lvl
+			var name = item.name.toLowerCase()
 			if(minLvl >= lvlFrom &&
 				 minLvl <= lvlTo &&
 				 (localSearch == '' ||
-				~item.name.indexOf(localSearch) ||
-				~item.name.indexOf(Utils.rusify(localSearch))
+				~name.indexOf(localSearch) ||
+				~name.indexOf(Utils.rusify(localSearch))
 				 )
 				) Idb.cat.data.push(item)
 		})
