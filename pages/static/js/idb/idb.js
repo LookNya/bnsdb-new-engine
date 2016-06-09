@@ -152,7 +152,8 @@ Idb.cat = {
 		var scat = params.subcat || 'fm'
 
 		var mapCat = {
-			'weapons': 'Оружие'
+			'weapons': 'Оружие',
+			'cats': 'Предметы'
 		}
 		var mapScat = {
 			'fm': 'Форс-мастера',
@@ -161,7 +162,9 @@ Idb.cat = {
 			'kfm': 'Кунг-фу',
 			'des': 'Дестроера',
 			'bm': 'Мастера меча',
-			'lbm': 'Лин мастер меча',
+			'lsm': 'Лин мастер меча',
+
+			'all': 'морфа',
 		}
 		Idb.el.$('.cat-header').textContent = mapCat[cat] + ' для ' + mapScat[scat]
 		Model.xhr('/json/'+ cat + '/' + scat + '.json', {}, Idb.cat.generate)
@@ -184,7 +187,10 @@ Idb.cat = {
 		var changed = true
 		while(changed){
 			changed = false
+			if(!pageData) break//не фильтровать, если нечего
+			if(!pageData[0].params) break//не фильтровать предметы морфа
 			for(var i=1; i<pageData.length; i++){
+				if(pageData[i-1].player_min_lvl != pageData[i].palyer_min_lvl) continue //сравнение только внутри уровня
 				var po = Object.keys(pageData[i-1].params)//список всех парамсов
 				var co = Object.keys(pageData[i].params)
 				var pp = pageData[i-1].params[po[po.length-1]]//последний парамс из списка
@@ -227,7 +233,7 @@ Idb.cat = {
 		var localSearch = Idb.el.$('.local-search').value.toLowerCase()
 		if(!Idb.cat.rawData) return
 		Idb.cat.rawData.forEach(function(item){
-			var minLvl = item.player_min_lvl
+			var minLvl = item.player_min_lvl || 1
 			var name = item.name.toLowerCase()
 			if(minLvl >= lvlFrom &&
 				 minLvl <= lvlTo &&

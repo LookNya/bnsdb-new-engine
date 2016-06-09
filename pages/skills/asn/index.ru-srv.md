@@ -1,5 +1,6 @@
 ```config
- "type": "app"
+ "type": "app",
+ "title": "Мастер тени"
 ```
 
 ```raw-html
@@ -24,7 +25,7 @@ h1{
 	<div class="calc_content" id='content'>
 		<div>
 ```
-# Умения ассасина
+# Умения мастера тени
 ```raw-html
 <div class="calc_mode_selector">отобразить как <span class="selected_calc_mode" id="calcmodeCalc">калькулятор умений </span>или <span id="calcmodeBuild">только билд</span></div>
 			<br clear="all" />

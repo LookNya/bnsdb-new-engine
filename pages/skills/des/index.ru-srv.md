@@ -1,5 +1,6 @@
 ```config
- "type": "app"
+ "type": "app",
+ "title": "Мастер секиры"
 ```
 
 ```raw-html

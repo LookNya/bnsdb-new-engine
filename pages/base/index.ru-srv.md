@@ -48,7 +48,7 @@
 									<div class="variant" data-subcat="kfm">Кунг-фу</div>
 									<div class="variant" data-subcat="des">Дестроер</div>
 									<div class="variant" data-subcat="bm">Мастера меча</div>
-									<div class="variant" data-subcat="lbm">Лин мастер меча</div>
+									<div class="variant" data-subcat="lsm">Лин мастер меча</div>
 								</div>
 							</div>
 						</td>
@@ -63,12 +63,10 @@
 							</div>
 						</td>
 						<td>
-							<div class="option">
-								<label>Ингридиенты</label>
+							<div class="option" data-cat="cats">
+								<label>Предметы для морфа</label>
 								<div class="variants">
-									<div class="variant">Секира</div>
-									<div class="variant">Меч</div>
-									<div class="variant">Посох</div>
+									<div class="variant" data-subcat="all">Все</div>
 								</div>
 							</div>
 						</td>
