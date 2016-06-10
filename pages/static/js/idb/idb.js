@@ -3,10 +3,11 @@ Idb = {
 	init: function(){
 		initEvents(Idb)
 		Idb.el = $('.base')
-
 		Idb.modesSwitchTo.initial()
-
 		new SimplePaginator(Idb.el.$('.paginator'), 0)
+		
+		var fData = JSON.parse(localStorage.getItem(['idb-faved-items'])|| '[]')
+		fData.length !=0 ? Idb.el.$('.brick-select .fcounter').textContent = fData.length : Idb.el.$('.brick-select .fcounter').textContent = ''
 	}
 }
 Idb.events = {
