@@ -96,7 +96,30 @@ Idb.events = {
 			} else {
 				selector.classList.remove('fixed')
 			}
-		}
+		},
+		'item-card:faved': function(e){
+			var item = e.detail.item
+			var fData = JSON.parse(localStorage.getItem(['idb-faved-items'])|| '[]')
+			var used = false
+			fData.forEach(function(el){
+				if(el && el.id == item.id &&
+					el.name == item.name) used = true
+			})
+			if(used) return
+			fData.unshift(item)
+			localStorage.setItem(['idb-faved-items'], JSON.stringify(fData))
+			Idb.el.$('.brick-select .fcounter').textContent = fData.length
+		},
+		'item-card:de-faved': function(e){
+			var item = e.detail.item
+			var fData = JSON.parse(localStorage.getItem(['idb-faved-items'])|| '[]')
+			fData.forEach(function(el){
+				if(el && el.id == item.id &&
+					el.name == item.name) fData.remove(el)
+			})
+			localStorage.setItem(['idb-faved-items'], JSON.stringify(fData))
+			fData.length !=0 ? Idb.el.$('.brick-select .fcounter').textContent = fData.length : Idb.el.$('.brick-select .fcounter').textContent = ''
+		},
 	}
 }
 Idb.modesSwitchTo = {
@@ -166,8 +189,16 @@ Idb.cat = {
 
 			'all': 'морфа',
 		}
-		Idb.el.$('.cat-header').textContent = mapCat[cat] + ' для ' + mapScat[scat]
-		Model.xhr('/json/'+ cat + '/' + scat + '.json', {}, Idb.cat.generate)
+		if(cat!='fave'){
+			Idb.el.$('.body .bot').classList.remove('cat-fav')
+			Idb.el.$('.cat-header').textContent = mapCat[cat] + ' для ' + mapScat[scat]
+			Model.xhr('/json/'+ cat + '/' + scat + '.json', {}, Idb.cat.generate)
+		} else{
+			Idb.el.$('.body .bot').classList.add('cat-fav')
+			Idb.el.$('.cat-header').textContent = 'Избранное'
+			var data = localStorage.getItem(['idb-faved-items'])|| '[]'
+			Idb.cat.generate(data)
+		}
 	},
 	generate: function(data){
 		var data = JSON.parse(data)
@@ -186,6 +217,7 @@ Idb.cat = {
 		}
 		var changed = true
 		while(changed){
+			if(pageData.length == 0) break
 			changed = false
 			if(!pageData) break//не фильтровать, если нечего
 			if(!pageData[0].params) break//не фильтровать предметы морфа
@@ -220,7 +252,7 @@ Idb.cat = {
 			}
 		}
 		for(var i=0; i<pageData.length; i++){
-			var card = new ItemCard(pageData[i], [], Idb.cat.data)
+			var card = new ItemCard(pageData[i], ['favable'], Idb.cat.data)
 			body.appendChild(card)
 		}
 		Idb.el.$('.paginator').init( Math.ceil(Idb.cat.data.length / Idb.cardsPerPage))

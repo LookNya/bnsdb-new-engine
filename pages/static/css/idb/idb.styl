@@ -57,6 +57,16 @@
 					width: 33px
 					text-align: center
 		.bot
+			.fcounter
+				display: inline-block;
+				border-radius: 6px;
+				font-size: 14px;
+				background: gold;
+				padding: 2px 6px;
+				font-weight: bold;
+				vertical-align: top;
+				&:empty
+					display: none
 			.full-search-results
 				position: relative
 				label
@@ -103,6 +113,15 @@
 					width: 377px;
 					background-repeat: no-repeat;
 					background-size: cover;
+				&.cat-fav:after
+					content: 'Чтобы добавить предмет в избранное, кликните по его иконке.';
+					position: absolute;
+					top: 73px;
+					left: 50%;
+					margin-left: -311.5px;
+					font-size: 20px;
+					font-style: italic;
+					color: #adafb9;
 			.item-card:nth-child(5)
 			.item-card:nth-child(9)
 			.item-card:nth-child(13)

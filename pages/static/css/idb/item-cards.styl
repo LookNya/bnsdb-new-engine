@@ -15,6 +15,37 @@
 		margin-left: 0
 	&, > *
 		box-sizing: border-box
+	.fave
+		display: none;
+	&.favable
+		.icon
+			&:hover
+				.fave
+					display: block;
+					font-size: 40px;
+					text-align: center;
+					text-shadow: 3px 0px 20px rgb(6, 33, 60);
+					transition: transform 0.1s, color 0.2s, text-shadow 0.1s, font-size 0.03s;
+			.fave
+				display: none;
+				cursor: pointer;
+				font-size: 40px;
+				color: rgba(255, 255, 255, 0.89);
+				transition: transform 0.1s, color 0.2s, text-shadow 0.8s, font-size 0.03s;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				&:active
+					transform: scale(1.2, 1.2);
+	&.faved
+		.icon
+			.fave
+				color: rgba(0, 122, 255, 0.89)
+				display: block
+				font-size: 18px
+				text-align: left;
+				text-shadow: none;
 	.round-select
 		height: 20px;
 		font-size: 10px;

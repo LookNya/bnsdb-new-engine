@@ -70,6 +70,14 @@
 								</div>
 							</div>
 						</td>
+						<td>
+							<div class="option" data-cat="fave">
+								<label>Избранное <span class="fcounter"></span></label>
+								<div class="variants">
+									<div class="variant" data-subcat="all">Все</div>
+								</div>
+							</div>
+						</td>
 					</tr>
 				</table>
 				<div class="back"></div>
