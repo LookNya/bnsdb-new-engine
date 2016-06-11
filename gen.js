@@ -345,7 +345,7 @@ exports.write = function() {
 			                                 `after '${content.substr(crlf_pos-16,16)}'`)
 
 			if (ext == 'styl') {
-				content = stylus.render(content)
+				content = stylus.render(content, {filename: filepath})
 			}
 
 			if (ext == 'md' && !do_not_group) {
