@@ -17,7 +17,7 @@ function ItemCard(item, params, fullList){
 	var p = item.params[1] || {}
 	var lvlSelector = genLevelSelector()
 	var break_item, breaker = false, breaking = false
-	if(item.break_items){
+	if(item.break_items && fullList){
 		var breaker = findItemByid(fullList, item.break_items[0].id)
 		if(breaker)	{
 			breaker = {
@@ -28,7 +28,7 @@ function ItemCard(item, params, fullList){
 			breaker = false
 		}
 	}
-	if(item.breaking_items){
+	if(item.breaking_items && fullList){
 		var breaking = findItemByid(fullList, item.break_items[0].id)
 		if(breaking)	{
 			breaking = {
@@ -131,12 +131,13 @@ function ItemCard(item, params, fullList){
 		return item
 	}
 	//параметры
+	//лайки
 	if(~params.indexOf('favable')){
 		cardEl.classList.add('favable')
 		var fData = JSON.parse(localStorage.getItem(['idb-faved-items']) || '[]')
 		var faved = false
 		fData.forEach(function(el){
-			if(el && el.id == item.id && 
+			if(el && el.id == item.id &&
 				el.name == item.name) faved = true
 		})
 		if(faved) cardEl.classList.add('faved')
@@ -153,6 +154,10 @@ function ItemCard(item, params, fullList){
 			}
 		})
 	}
+	// END лайки
+	// черная
+	if(~params.indexOf('dark'))	cardEl.classList.add('dark')
+	// END черная
 	// END параметры
 	return cardEl
 }

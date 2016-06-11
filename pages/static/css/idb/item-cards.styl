@@ -1,5 +1,6 @@
 .item-card
 	padding: 14px
+	font-size: 14px
 	border-radius: 5px
 	border: 1px solid rgb(207, 207, 207)
 	width: 271px
@@ -15,39 +16,8 @@
 		margin-left: 0
 	&, > *
 		box-sizing: border-box
-	.fave
-		display: none;
-	&.favable
-		.icon
-			&:hover
-				.fave
-					display: block;
-					font-size: 40px;
-					text-align: center;
-					text-shadow: 3px 0px 20px rgb(6, 33, 60);
-					transition: transform 0.1s, color 0.2s, text-shadow 0.1s, font-size 0.03s;
-			.fave
-				display: none;
-				cursor: pointer;
-				font-size: 40px;
-				color: rgba(255, 255, 255, 0.89);
-				transition: transform 0.1s, color 0.2s, text-shadow 0.8s, font-size 0.03s;
-				-webkit-user-select: none;
-				-moz-user-select: none;
-				-ms-user-select: none;
-				user-select: none;
-				&:active
-					transform: scale(1.2, 1.2);
-	&.faved
-		.icon
-			.fave
-				color: rgba(0, 122, 255, 0.89)
-				display: block
-				font-size: 18px
-				text-align: left;
-				text-shadow: none;
 	.round-select
-		height: 20px;
+		height: 21px;
 		font-size: 10px;
 	.name
 		height: 55px
@@ -107,3 +77,66 @@
 				text-align: left
 				padding-right: 10px;
 				max-width: 25px;
+//лайки
+.item-card
+	.fave
+		display: none;
+	&.favable
+		.icon
+			&:hover
+				.fave
+					display: block;
+					font-size: 40px;
+					text-align: center;
+					text-shadow: 3px 0px 20px rgb(6, 33, 60);
+					transition: transform 0.1s, color 0.2s, text-shadow 0.1s, font-size 0.03s;
+			.fave
+				display: none;
+				cursor: pointer;
+				font-size: 40px;
+				color: rgba(255, 255, 255, 0.89);
+				transition: transform 0.1s, color 0.2s, text-shadow 0.8s, font-size 0.03s;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				&:active
+					transform: scale(1.2, 1.2);
+	&.faved
+		.icon
+			.fave
+				color: rgba(0, 122, 255, 0.89)
+				display: block
+				font-size: 18px
+				text-align: left;
+				text-shadow: none;
+//END лайки
+//черная
+.item-card.dark
+	background: #1e3048
+	border: 1px solid #2b4261;
+	box-shadow: 0px 0px 15px 0px #142335;
+	color: #cccccc;
+	.round-select
+		td
+			background: #1c375a;
+			color: #bdbdbd;
+			&.active
+				background: #5ca3f1;
+				color: white
+	.icon
+		background-color: black;
+		border: 3px solid black;
+	.purple
+		color: #c94df7;
+		text-shadow: 1px 1px 1px #330544;
+	.blue
+		color: #0878ef;
+		text-shadow: 1px 1px 1px #330544;
+	.bonuses
+		color: #64d883;
+	.descr
+		b
+			color: white;
+
+//END черная
