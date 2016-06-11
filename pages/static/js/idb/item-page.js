@@ -1,10 +1,15 @@
 Ipa = {
+	el: $('.container .body'),
 	init: function(){
 		//не должно быть так
 		Model.xhr('/json/weapons/sum.json', {}, Ipa.handleRawData)
 
+	},
 	handleRawData: function(data){
+		Ipa.rawData = JSON.parse(data)
 		//не должно быть так
+		Ipa.el.appendChild(new ItemCard(Ipa.rawData[7], ['favable', 'dark'], Ipa.rawData))
+	},
 }
 
 
