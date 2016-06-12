@@ -27,6 +27,8 @@
 		font-weight: 600
 		margin-bottom: 11px
 		line-height: 18px;
+		margin-top: 0;
+		padding-bottom: 0;
 	.name
 	span
 		&.purple
@@ -56,6 +58,8 @@
 	.obtaining
 	.descr
 		margin-bottom: 6px;
+		&:empty
+			display: none
 	.break
 		span
 			font-weight: 600;
@@ -68,8 +72,10 @@
 		width: 100%
 		> div
 			width: 50%
+			float: left
 			&:nth-child(2n)
 				text-align: right
+				float: right
 				b
 					padding-right: 0
 			b
@@ -134,6 +140,8 @@
 	.blue
 		color: #0878ef;
 		text-shadow: 1px 1px 1px #330544;
+	.white
+		color: #e4e4e4;
 	.bonuses
 		color: #64d883;
 	.descr
@@ -141,3 +149,36 @@
 			color: white;
 
 //END черная
+//очень маленькая
+.item-card.tiny
+	box-shadow: none
+	border-radius: 0
+	font-size: 12px
+	margin: 0;
+	padding: 0
+	display: table
+	table-layout: fixed
+	width: 100%
+	border-bottom: 0
+	border-left: 0
+	border-right: 0
+	.icon-wrap
+		width: 83px
+		padding: 14px
+	.stats-wrap
+		padding-right: 14px
+	.icon-wrap
+	.stats-wrap
+		padding-top: 7px
+		padding-bottom: 7px
+		display: table-cell;
+		vertical-align: top;
+	.icon
+		margin-bottom: 0
+	.name
+		font-size: 14px
+		width: 100%;
+		padding-left: 0;
+		height: auto;
+		margin-bottom: 2px;
+//END очень маленькая

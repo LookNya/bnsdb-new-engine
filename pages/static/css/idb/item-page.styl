@@ -4,6 +4,8 @@
 	right: 0
 	bottom: 0
 	position absolute
+	*
+		box-sizing: border-box
 	> .f
 		top: 0
 		left: 0
@@ -34,8 +36,140 @@
 		-moz-filter: blur(5px);
 		-webkit-filter: blur(5px);
 		filter: blur(5px);
+	.body
+		> div
+				display: inline-block
+				vertical-align: top;
+		.item-card
+			margin-left: 0
+		.butt
+			cursor: pointer;
+			cursor: pointer;
+			padding: 14px;
+			border-radius: 5px;
+			text-align: center;
+			width: 271px;
+			&.blue
+				background: #5ca3f1;
+				color: white;
+				box-shadow: 0px 0px 10px 0px rgba(20,56,97,0.5);
+				&:hover
+					color: #dcf7ff
+				&:active
+					color: #dcf7ff;
+					background: #4987cb;
+			&.gold
+				background: #af9405;
+				color: white;
+				box-shadow: 0px 0px 10px 0px rgba(20,56,97,0.5);
+				&:hover
+					color: #fffbc6;
+				&:active
+					color: #fffbc6;
+					background: #98820a;
+			&.transparent
+				color: #f7d215;
+				box-shadow: none
+				padding-top: 0
+				&:hover
+					color: #ffee95;
+				&:active
+					color: #ffee95;
+	.mid
+		padding: 0 20px
+		font-size: 14px
+		width: 320px
+		position: relative;
+		&:empty
+			&:after
+				content: ''
+				position: absolute;
+				background-image: url("/img/idb/vs.png")
+				background-size: cover
+				height: 100px;
+				width: 100px;
+				margin-top: 24%;
+				left: 50%;
+				margin-left: -50px;
+		.for-left
+		.for-right
+			background: #1e3048;
+			border: 1px solid #2b4261;
+			box-shadow: 0px 0px 15px 0px #142335;
+			color: #ccc;
+			border-radius: 5px
+			width: 250px
+		.for-left
+			padding: 14px
+			margin-right: 30px
+			border-bottom-right-radius: 0
+			.s-block
+				float: right;
+				span:nth-child(1)
+					font-weight: bold
+					color: #64d883
+		.for-right
+			margin-left: 30px
+			padding: 14px
+			border-top-left-radius: 0
+			position: relative;
+			.s-block
+				span:nth-last-child(1)
+					font-weight: bold
+					color: #64d883
+			&:before
+				position: absolute;
+				content: ''
+				background: #1e3048;
+				height: 16px;
+				top: -14px;
+				right: 30px;
+				left: 0;
+			&:after
+				position: absolute;
+				content: ''
+				background: #1e3048;
+				height: 8px;
+				top: -10px;
+				right: 100%;
+				left: -21px;
+			.title
+				float: right;
+		.name
+			margin-bottom: 12px;
+			font-size: 16px
+			font-weight: 600;
+			&.purple
+				color: #c94df7;
+				text-shadow: 1px 1px 1px #330544;
+			&.blue
+				color: #0878ef;
+				text-shadow: 1px 1px 1px #330544;
+			&.white
+				color: #e4e4e4;
+		.what
+			font-size: 16px;
+			margin-bottom: 8px;
+		.stats
+			&:empty:after
+				content: "Отсутствуют"
+				color: #d61146;
+		.title
+			color: white;
+		.stat
+			margin-bottom: 4px
+			> div
+				display: inline-block;
+			span:nth-child(1)
+			span:nth-last-child(1)
+				display: inline-block;
+				width: 26px;
+				text-align: center;
+
+
+
 
 
 @media (min-width: 0px) and (max-width: 760px)
-	.body
+	.container.left.butt
 		display: none

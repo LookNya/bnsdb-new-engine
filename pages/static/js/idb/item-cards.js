@@ -9,9 +9,14 @@ function ItemCard(item, params, fullList){
 	]
 	var cardEl = createEl('div')
 	cardEl.item = item
-	cardEl.id = item.id
-	cardEl.showLvl = showLvl
+	cardEl.dataset.id = item.id
 	cardEl.params = params
+	cardEl.showLvl = showLvl
+	cardEl.classList.add('item-card')
+	if(~params.indexOf('tiny')){
+		genTinyCard()
+		return cardEl
+	}
 
 	var maxLvl = Object.keys(item.params).length
 	var p = item.params[1] || {}
@@ -39,12 +44,11 @@ function ItemCard(item, params, fullList){
 			breaking = false
 		}
 	}
-	cardEl.classList.add('item-card')
 	cardEl.innerHTML = '\
 		<div class="icon">\
 			<div class="fave">&#10084;</div>\
 		</div>\
-		<div class="name '+ gradeMap[item.grade] +'">'+ item.name + '&nbsp;<span class="lvl"></span></div>\
+		<h2 class="name '+ gradeMap[item.grade] +'">'+ item.name + '&nbsp;<span class="lvl"></span></h2>\
 		<br clear="all">' +
 		'<div class="descr"></div>' +
 		'<div class="bonuses">'+genBonuses(item)+'</div>' +
@@ -60,7 +64,7 @@ function ItemCard(item, params, fullList){
 	if(tds.length > 0) {
 		tds[tds.length-1].click()
 	} else {
-		showLvl(1)
+		cardEl.showLvl(1)
 	}
 	function genLevelSelector(){
 		var str = ''
@@ -102,20 +106,26 @@ function ItemCard(item, params, fullList){
 		if(Object.keys(item.params).length > 1){
 			lvlEl.textContent = lvl
 			bonuses.innerHTML = genBonuses(item, lvl)
-			descr.innerHTML = ''+
-				(p['Сила атаки'] ? '<div class="atk f_l">'  + 'Сила атаки'   + ': <b>' + p['Сила атаки'] + '</b></div>' : '') +
-				(p['HP']         ? '<div class="hp f_l">'   + 'Здоровье'     + ': <b>' + p['HP']         + '</b></div>' : '') +
-				(p['Точность']   ? '<div class="acc f_l">'  + 'Точность'     + ': <b>' + p['Точность']   + '</b></div>' : '') +
-				(item.atp ?       '<div class="atp f_l">'       + stat_namesDB.atp  + ': <b>' + item.atp       + '</b></div>' : '') +
-				(item.def ?       '<div class="def f_l">'       + stat_namesDB.def  + ': <b>' + item.def       + '</b></div>' : '') +
-				(p['Крит. атака'] ?      '<div class="crit f_l">'      + 'Крит. атака'  + ': <b>' + p['Крит. атака']     + '</b></div>' : '') +
-				(item.cdef ?      '<div class="cdef f_l">'      + stat_namesDB.cdef  + ': <b>' + item.cdef     + '</b></div>' : '') +
-				(item.crithd ?    '<div class="crithd f_l">'    + stat_namesDB.crithd + ': <b>' + item.crithd  + '</b></div>' : '') +
-				(p['Пробивание'] ?       '<div class="prc f_l">'       + 'Пробивание'   + ': <b>' + p['Пробивание']      + '</b></div>' : '') +
-				(p['Блок'] ?        '<div class="bl f_l">'        + 'Блок'    + ': <b>' + p['Блок']       + '</b></div>' : '') +
-				(p['Уклонение'] ? '<div class="ev f_l">'    + 'Уклонение'        + ': <b>' + p['Уклонение'] + '</b></div>' : '') +
-				'<br clear="all">'
 		}
+		descr.innerHTML = genDescr(p)
+		cardEl.throwEvent('item-card:lvl-changed', {lvl: lvl})
+		cardEl.lvl = lvl
+	}
+	function genDescr(p){
+		var str = ''+
+			(p['Сила атаки'] ? '<div class="atk">'  + 'Сила атаки'   + ': <b>' + p['Сила атаки'] + '</b></div>' : '') +
+			(p['HP']         ? '<div class="hp">'   + 'Здоровье'     + ': <b>' + p['HP']         + '</b></div>' : '') +
+			(p['Точность']   ? '<div class="acc">'  + 'Точность'     + ': <b>' + p['Точность']   + '</b></div>' : '') +
+			(item.atp ?       '<div class="atp">'       + stat_namesDB.atp  + ': <b>' + item.atp       + '</b></div>' : '') +
+			(item.def ?       '<div class="def">'       + stat_namesDB.def  + ': <b>' + item.def       + '</b></div>' : '') +
+			(p['Крит. атака'] ?      '<div class="crit">'      + 'Крит. атака'  + ': <b>' + p['Крит. атака']     + '</b></div>' : '') +
+			(item.cdef ?      '<div class="cdef">'      + stat_namesDB.cdef  + ': <b>' + item.cdef     + '</b></div>' : '') +
+			(item.crithd ?    '<div class="crithd">'    + stat_namesDB.crithd + ': <b>' + item.crithd  + '</b></div>' : '') +
+			(p['Пробивание'] ?       '<div class="prc">'       + 'Пробивание'   + ': <b>' + p['Пробивание']      + '</b></div>' : '') +
+			(p['Блок'] ?        '<div class="bl">'        + 'Блок'    + ': <b>' + p['Блок']       + '</b></div>' : '') +
+			(p['Уклонение'] ? '<div class="ev">'    + 'Уклонение'        + ': <b>' + p['Уклонение'] + '</b></div>' : '') +
+			(!~params.indexOf('tiny') ? '<br clear="all">' : '')
+		return str
 	}
 	function genBonuses(item, lvl){
 		var lvl = lvl || 1
@@ -158,6 +168,21 @@ function ItemCard(item, params, fullList){
 	// черная
 	if(~params.indexOf('dark'))	cardEl.classList.add('dark')
 	// END черная
+	// END очень маленькая
+	function genTinyCard(){
+		cardEl.classList.add('tiny')
+		cardEl.innerHTML = '\
+			<div class="icon-wrap"><div class="icon"></div></div>\
+			<div class="stats-wrap">\
+				<div class="name '+ gradeMap[item.grade] +'">'+item.name+'</div>\
+				<div class="stats"></div>\
+			</div>'
+		var p = item.params[Object.keys(item.params).last]
+		cardEl.$('.icon').style.backgroundImage = 'url('+p.icon+')'
+		cardEl.$('.stats').innerHTML = genDescr(p)
+	}
+	// END очень маленькая
 	// END параметры
+	this.el = cardEl
 	return cardEl
 }
