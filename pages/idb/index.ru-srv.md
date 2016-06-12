@@ -50,12 +50,14 @@
 							</div>
 						</td>
 						<td>
-							<div class="option">
+							<div class="option" data-cat="accessories">
 								<label>Бижутерия</label>
 								<div class="variants">
-									<div class="variant">Секира</div>
-									<div class="variant">Меч</div>
-									<div class="variant">Посох</div>
+									<div class="variant" data-subcat="ring">Кольца</div>
+									<div class="variant" data-subcat="earring">Серьги</div>
+									<div class="variant" data-subcat="necklace">Ожерелья</div>
+									<div class="variant" data-subcat="bracelet">Браслеты</div>
+									<div class="variant" data-subcat="belt">Пояса</div>
 								</div>
 							</div>
 						</td>

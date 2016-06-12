@@ -16,7 +16,7 @@
 						<!--Карточка--->
 						<div class="butt blue call-comparison">Сравнить с другим предметом</div>
 					</div>
-					<div class="mid"></div>
+					<div class="mid hidden"></div>
 					<div class="right">
 						<div class="for-card">
 						</div>

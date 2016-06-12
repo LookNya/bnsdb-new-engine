@@ -18,8 +18,10 @@ function ItemCard(item, params, fullList){
 		return cardEl
 	}
 
-	var maxLvl = Object.keys(item.params).length
-	var p = item.params[1] || {}
+	var p
+	if(item.params) p = item.params[Object.keys(item.params)[0]]
+	var maxLvl
+	if(p) maxLvl = Object.keys(item.params).length
 	var lvlSelector = genLevelSelector()
 	var break_item, breaker = false, breaking = false
 	if(item.break_items && fullList){
@@ -50,26 +52,27 @@ function ItemCard(item, params, fullList){
 		</div>\
 		<h2 class="name '+ gradeMap[item.grade] +'">'+ item.name + '&nbsp;<span class="lvl"></span></h2>\
 		<br clear="all">' +
-		'<div class="descr"></div>' +
-		'<div class="bonuses">'+genBonuses(item)+'</div>' +
+		'<div class="descr cf"></div>' +
+		'<div class="bonuses"></div>' +
 		(item.player_min_lvl ? '<div class="min-lvl">Требуемый уровень персонажа: ' + item.player_min_lvl + '</div>' : '') +
 		(breaker ? '<div class="break">Прорыв: <span class="'+breaker.color+'">'+ breaker.name +'</span></div>' : '') +
 		(breaking ? '<div class="break">Прорывает: <span class="'+breaking.color+'">'+ breaking.name +'</span></div>' : '') +
 		(item.obtaining ? '<div class="obtaining">'     + stat_namesDB.obt  + ': ' + item.obtaining + '</div>' : '') +
 		lvlSelector
-
+	var icon = cardEl.$('.icon')
+	icon.style.backgroundImage = 'url("'+ (( p && p.icon) || item.icon) +'")'
 
 	cardEl.addEventListener('click', onCardClick)
 	var tds = cardEl.$$('.round-select td')
 	if(tds.length > 0) {
 		tds[tds.length-1].click()
 	} else {
-		cardEl.showLvl(1)
+		if(p) cardEl.showLvl(1)
 	}
 	function genLevelSelector(){
 		var str = ''
 		var p = item.params
-		if(maxLvl != 1){
+		if(p && maxLvl != 1){
 			str = '\
 			<div class="round-select">\
 				<table>\
@@ -102,7 +105,7 @@ function ItemCard(item, params, fullList){
 		var lvlEl = cardEl.$('.name .lvl')
 		var icon = cardEl.$('.icon')
 		var p = item.params[lvl] || item.params[Object.keys(item.params)[0]]
-		icon.style.backgroundImage = 'url("'+ p.icon +'")'
+		icon.style.backgroundImage = 'url("'+ (p.icon || item.icon) +'")'
 		if(Object.keys(item.params).length > 1){
 			lvlEl.textContent = lvl
 			bonuses.innerHTML = genBonuses(item, lvl)
@@ -113,24 +116,27 @@ function ItemCard(item, params, fullList){
 	}
 	function genDescr(p){
 		var str = ''+
-			(p['Сила атаки'] ? '<div class="atk">'  + 'Сила атаки'   + ': <b>' + p['Сила атаки'] + '</b></div>' : '') +
-			(p['HP']         ? '<div class="hp">'   + 'Здоровье'     + ': <b>' + p['HP']         + '</b></div>' : '') +
-			(p['Точность']   ? '<div class="acc">'  + 'Точность'     + ': <b>' + p['Точность']   + '</b></div>' : '') +
-			(item.atp ?       '<div class="atp">'       + stat_namesDB.atp  + ': <b>' + item.atp       + '</b></div>' : '') +
-			(item.def ?       '<div class="def">'       + stat_namesDB.def  + ': <b>' + item.def       + '</b></div>' : '') +
-			(p['Крит. атака'] ?      '<div class="crit">'      + 'Крит. атака'  + ': <b>' + p['Крит. атака']     + '</b></div>' : '') +
-			(item.cdef ?      '<div class="cdef">'      + stat_namesDB.cdef  + ': <b>' + item.cdef     + '</b></div>' : '') +
-			(item.crithd ?    '<div class="crithd">'    + stat_namesDB.crithd + ': <b>' + item.crithd  + '</b></div>' : '') +
-			(p['Пробивание'] ?       '<div class="prc">'       + 'Пробивание'   + ': <b>' + p['Пробивание']      + '</b></div>' : '') +
-			(p['Блок'] ?        '<div class="bl">'        + 'Блок'    + ': <b>' + p['Блок']       + '</b></div>' : '') +
-			(p['Уклонение'] ? '<div class="ev">'    + 'Уклонение'        + ': <b>' + p['Уклонение'] + '</b></div>' : '') +
-			(!~params.indexOf('tiny') ? '<br clear="all">' : '')
+			(p['Сила атаки'] ? '<div>' + 'Сила атаки'   + ': <b>' + p['Сила атаки']  + '</b></div>' : '') +
+			(p['Атака']      ? '<div>' + 'Сила атаки'   + ': <b>' + p['Атака'] + '</b></div>' : '') +
+			(p['Доп. урон']  ? '<div>' + 'Доп. урон'    + ': <b>' + p['Доп. урон']   + '</b></div>' : '') +
+			(p['HP']         ? '<div>' + 'Здоровье'     + ': <b>' + p['HP']          + '</b></div>' : '') +
+			(p['Макс.HP']    ? '<div>' + 'Макс. ХП'     + ': <b>' + p['Макс.HP']     + '</b></div>' : '') +
+			(p['Регенерация']? '<div>' + 'Регенерация'  + ': <b>' + p['Регенерация'] + '</b></div>' : '') +
+			(p['Восстановление HP']? '<div>' + 'Восстан-ие' + ': <b>' + p['Восстановление HP'] + '</b></div>' : '') +
+			(p['Точность']   ? '<div>' + 'Точность'     + ': <b>' + p['Точность']    + '</b></div>' : '') +
+			(p['Пробивание'] ? '<div>' + 'Пробивание'   + ': <b>' + p['Пробивание']  + '</b></div>' : '') +
+			(p['Блок']       ? '<div>' + 'Блок'         + ': <b>' + p['Блок']        + '</b></div>' : '') +
+			(p['Уклонение']  ? '<div>' + 'Уклонение'    + ': <b>' + p['Уклонение']   + '</b></div>' : '') +
+			(p['Сниж. получ. урона']   ? '<div>'  + 'Сниж. урона' + ': <b>' + p['Сниж. получ. урона']   + '</b></div>' : '') +
+			(p['Повышение крит.урона'] ? '<div>'  + 'Крит.ур. +'  + ': <b>' + p['Повышение крит.урона'] + '</b></div>' : '') +
+			(p['Крит. атака']          ? '<div >' + 'Крит. атака' + ': <b>' + p['Крит. атака']          + '</b></div>' : '')
 		return str
 	}
 	function genBonuses(item, lvl){
 		var lvl = lvl || 1
 		var p = item.params[lvl] || item.params[Object.keys(item.params)[0]]
-		var str = '<p>'+ p.bonuses.join('</p><p>') +'</p>'
+		var str = ''
+		if(p.bonuses) str = '<p>'+ p.bonuses.join('</p><p>') +'</p>'
 		return str
 	}
 	function findItemByid(array, id){

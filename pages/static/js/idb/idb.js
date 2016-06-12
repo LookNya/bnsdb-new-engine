@@ -5,7 +5,7 @@ Idb = {
 		Idb.el = $('.base')
 		Idb.modesSwitchTo.initial()
 		new SimplePaginator(Idb.el.$('.paginator'), 0)
-		
+
 		var fData = JSON.parse(localStorage.getItem(['idb-faved-items'])|| '[]')
 		fData.length !=0 ? Idb.el.$('.brick-select .fcounter').textContent = fData.length : Idb.el.$('.brick-select .fcounter').textContent = ''
 	}
@@ -174,9 +174,9 @@ Idb.cat = {
 	init: function(params){
 		var cat = params.cat
 		var scat = params.subcat || 'fm'
-
 		var mapCat = {
 			'weapons': 'Оружие',
+			'accessories': 'Бижутерия',
 			'cats': 'Предметы'
 		}
 		var mapScat = {
@@ -188,15 +188,24 @@ Idb.cat = {
 			'bm': 'Мастера меча',
 			'lsm': 'Лин мастер меча',
 
+			'ring': 'Кольца',
+			'earring': 'Серьги',
+			'necklace': 'Ожерелья',
+			'bracelet': 'Браслеты',
+			'belt': 'Пояса',
+
 			'all': 'морфа',
 		}
+		if(cat == 'weapons') Idb.el.$('.cat-header').textContent = mapCat[cat] + ' для ' + mapScat[scat]
+		if(cat == 'accessories') Idb.el.$('.cat-header').textContent = mapScat[scat]
+		if(cat == 'fave') Idb.el.$('.cat-header').textContent = 'Избранное'
+		if(cat == 'cats') Idb.el.$('.cat-header').textContent = 'Предметы для морфа'
+
 		if(cat!='fave'){
 			Idb.el.$('.body .bot').classList.remove('cat-fav')
-			Idb.el.$('.cat-header').textContent = mapCat[cat] + ' для ' + mapScat[scat]
 			Model.xhr('/json/'+ cat + '/' + scat + '.json', {}, Idb.cat.generate)
 		} else{
 			Idb.el.$('.body .bot').classList.add('cat-fav')
-			Idb.el.$('.cat-header').textContent = 'Избранное'
 			var data = localStorage.getItem(['idb-faved-items'])|| '[]'
 			Idb.cat.generate(data)
 		}
