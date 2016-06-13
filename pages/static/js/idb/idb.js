@@ -14,25 +14,21 @@ Idb.events = {
 	'change':{
 		'.lvl-from': function(e){
 			var input = e.target
-			var lvlFrom = input.value
-			var lvlTo = $('.lvl-to').value
-			input.value = parseInt(input.value)
-			if(lvlFrom.value > input.getAttribute('max')) lvlFrom.value = input.getAttribute('max')
-			if(lvlFrom.value < input.getAttribute('min')) lvlFrom.value = input.getAttribute('min')
-			if(lvlFrom.value == '') lvlFrom.value = input.getAttribute('min')
-			if(lvlTo == '' || lvlFrom == '') return
+			input.value = parseInt(input.value || input.getAttribute('min'))
+			if(input.value > +input.getAttribute('max')) input.value = +input.getAttribute('max')
+			if(input.value < +input.getAttribute('min')) input.value = +input.getAttribute('min')
+			var lvlFrom = $('.lvl-from').value
+			var lvlTo = input.value
 			if(lvlFrom >= lvlTo) $('.lvl-to').value = +lvlFrom + 1
 			Idb.cat.filter()
 		},
 		'.lvl-to': function(e){
 			var input = e.target
-			var lvlTo = input.value
+			input.value = parseInt(input.value || input.getAttribute('min'))
+			if(input.value > +input.getAttribute('max')) input.value = +input.getAttribute('max')
+			if(input.value < +input.getAttribute('min')) input.value = +input.getAttribute('min')
 			var lvlFrom = $('.lvl-from').value
-			input.value = parseInt(input.value)
-			if(lvlTo.value > input.getAttribute('max')) lvlTo.value = input.getAttribute('max')
-			if(lvlTo.value < input.getAttribute('min')) lvlTo.value = input.getAttribute('min')
-			if(lvlTo.value == '') lvlTo.value = input.getAttribute('min')
-			if(lvlTo == '' || lvlFrom == '') return
+			var lvlTo = input.value
 			if(lvlTo <= lvlFrom) $('.lvl-from').value = +lvlTo - 1
 			Idb.cat.filter()
 		}
@@ -269,16 +265,17 @@ Idb.cat = {
 		Idb.el.$('.paginator').openPage(index, true)
 	},
 	filter: function(){
-		var lvlTo = $('.lvl-to').value
-		var lvlFrom = $('.lvl-from').value
+		var lvlTo = +$('.lvl-to').value
+		var lvlFrom = +$('.lvl-from').value
 		Idb.cat.data = []
 		var localSearch = Idb.el.$('.local-search').value.toLowerCase()
 		if(!Idb.cat.rawData) return
 		Idb.cat.rawData.forEach(function(item){
-			var minLvl = item.player_min_lvl || 1
+			var lvlOk = true
+			var minLvl = item.player_min_lvl
+			if(minLvl && (minLvl < lvlFrom || minLvl > lvlTo) ) lvlOk = false
 			var name = item.name.toLowerCase()
-			if(minLvl >= lvlFrom &&
-				 minLvl <= lvlTo &&
+			if( lvlOk &&
 				 (localSearch == '' ||
 				~name.indexOf(localSearch) ||
 				~name.indexOf(Utils.rusify(localSearch))

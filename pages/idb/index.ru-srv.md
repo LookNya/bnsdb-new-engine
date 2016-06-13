@@ -27,7 +27,7 @@
 				<label>Показать предметы уровнем от </label>
 				<input value="1" min="1" max="49" class="lvl-from" type="tel">
 				<label>и до </label>
-				<input value="50" min="1" max="50" class="lvl-to" type="tel">
+				<input value="50" min="2" max="50" class="lvl-to" type="tel">
 			</div>
 			<br clear="all">
 		</div>
