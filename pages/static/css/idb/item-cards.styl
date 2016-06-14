@@ -28,16 +28,6 @@
 		line-height: 18px;
 		margin-top: 0;
 		padding-bottom: 0;
-	.name
-	span
-		&.purple
-			color: #A800DC
-		&.blue
-			color: #006BDC
-		&.orange
-			color: #f97500
-		&.green
-			color: #00ad00;
 	.name,
 	.icon
 			float: left
@@ -49,6 +39,38 @@
 		background-size: cover
 		opacity: 0.9
 		margin-bottom: 11px
+		position: relative;
+	.slots
+		position: absolute;
+		width: 2px;
+		left: -6px;
+		> div
+			display: inline-block;
+			width: 14px;
+			height: 14px
+			background-size: cover
+		.slot-3
+			background-image: url('/img/idb/slots/slot_3.png')
+		.slot-4
+			background-image: url('/img/idb/slots/slot_4.png')
+		.slot-5
+			background-image: url('/img/idb/slots/slot_5.png')
+		.slot-6
+			background-image: url('/img/idb/slots/slot_6.png')
+		.slot-7
+			background-image: url('/img/idb/slots/slot_7.png')
+		.slot-8
+			background-image: url('/img/idb/slots/slot_8.png')
+	.name
+	span
+		&.purple
+			color: #A800DC
+		&.blue
+			color: #006BDC
+		&.orange
+			color: #f97500
+		&.green
+			color: #00ad00;
 	.bonuses
 		color: #296b29;
 	.min-lvl

@@ -47,8 +47,9 @@ function ItemCard(item, params, fullList){
 		}
 	}
 	cardEl.innerHTML = '\
-		<div class="icon">\
-			<div class="fave">&#10084;</div>\
+		<div class="icon">'+
+			genSlots() +
+			'<div class="fave">&#10084;</div>\
 		</div>\
 		<h2 class="name '+ gradeMap[item.grade] +'">'+ item.name + '&nbsp;<span class="lvl"></span></h2>\
 		<br clear="all">' +
@@ -68,6 +69,18 @@ function ItemCard(item, params, fullList){
 		tds[tds.length-1].click()
 	} else {
 		if(p) cardEl.showLvl(1)
+	}
+	function genSlots(){
+		var str = ''
+		var s = item.slots
+		if(s) {
+			str += '<div class="slots">'
+			s.forEach(function(sl){
+			str += '<div class="slot-'+ sl +'"></div>'
+			})
+			str += '</div>'
+		}
+		return str
 	}
 	function genLevelSelector(){
 		var str = ''
