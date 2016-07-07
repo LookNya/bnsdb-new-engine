@@ -8,7 +8,7 @@ const dot = require('dot')
 const beautify = require('js-beautify').html
 const marked = require('marked')
 const stylus = require('stylus')
-const {write, link, forEachFile} = require('./utils.js')
+const {write, link, forEachFile, Logger} = require('./utils.js')
 const {getMarkedConfig} = require('./marked_config.js')
 
 
@@ -240,8 +240,11 @@ exports.group = function() {
 	console.log('pages structure:')
 	forEachPage((page, level) => {
 		console.log('- ' + '  '.repeat(level) + page.name + '/')
-		for (let file of page.files) {
-			console.log('- ' + '  '.repeat(level+1) + withExt(file.name, file.ext))
+		for (let i=0; i<page.files.length; i++) {
+			let prefix = '- ' + '  '.repeat(level+1)
+			if (i > 5 && page.files.length > 10) {console.log(prefix + '{and '+(page.files.length-i)+' more}'); return}
+			let file = page.files[i]
+			console.log(prefix + withExt(file.name, file.ext))
 		}
 	})
 	console.log('')
@@ -263,7 +266,8 @@ exports.cleanup = function() {
 
 // WRITING WWW
 exports.write = function() {
-	console.log('processing files...')
+	let log = Logger(/^((?:.*?\/){1,3})(.*)(\..*)$/)
+	log('processing files...')
 
 	// Главный шаблон
 	let main_def = makeDef()
@@ -367,21 +371,21 @@ exports.write = function() {
 			}
 
 			if (out_exists) fs.unlinkSync(outpath) //на случай, если после прошлой генерации тут почему-то ссылка
-			console.log(`  writing ${marker} ${outpath}`)
+			log(`  writing ${marker} ${outpath}`)
 			write(outpath, content)
 		} else {
 			if (out_exists) fs.unlinkSync(outpath)
-			console.log(`  linking ${marker} ${outpath}`)
+			log(`  linking ${marker} ${outpath}`)
 			link(outpath, filepath)
 		}
 	}
-	console.log('  done\n')
+	log('  done\n')
 
 
-	console.log(`generating weapon pages...`)
+	log(`generating weapon pages...`)
 	weapon: {
 		if (!fs.existsSync(WEAPONS_JSON)) {
-			console.log(`  no weapons json: ${WEAPONS_JSON}\n`)
+			log(`  no weapons json: ${WEAPONS_JSON}\n`)
 			break weapon
 		}
 
@@ -389,7 +393,7 @@ exports.write = function() {
 		let json_not_modified = mtime <= modifTimes[WEAPONS_JSON+'*']
 		modifTimes[WEAPONS_JSON+'*'] = mtime
 		if (json_not_modified && !templates_changed) {
-			console.log(`  no changes, skipping\n`)
+			log(`  no changes, skipping\n`)
 			break weapon
 		}
 
@@ -405,7 +409,7 @@ exports.write = function() {
 			write(`${OUT_DIR}/${web_path}/index.html`, html)
 		}
 
-		console.log(`  done, ${weapons.length} total\n`)
+		log(`  done, ${weapons.length} total\n`)
 	}
 }
 
