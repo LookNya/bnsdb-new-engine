@@ -18,6 +18,7 @@ const MAIN_LANGSERVER = 'ru-srv'
 const DO_NOT_GROUP = ['CNAME', 'static', 'img', 'robots.txt', '404.html', 'sitemap.xml'].map(name => PAGES_DIR+'/'+name)
 const DO_NOT_CLEAN = ['.git'].map(name => OUT_DIR+'/'+name)
 const GZIP = ['html', 'css', 'js', 'xml', 'txt', 'json']
+const WEAPONS_JSON = PAGES_DIR+'/json/weapons/all.json'
 
 
 function withExt(name, ext) {
@@ -361,8 +362,8 @@ exports.write = function() {
 				// шаблонизация
 				content = dot.template(content, null, def)(it, def)
 				it.content = content
-				let html = main(it, def)
-				content = beautify(html, beautifyConfig)
+				content = main(it, def)
+				//content = beautify(content, beautifyConfig)
 			}
 
 			if (out_exists) fs.unlinkSync(outpath) //на случай, если после прошлой генерации тут почему-то ссылка
@@ -375,6 +376,37 @@ exports.write = function() {
 		}
 	}
 	console.log('  done\n')
+
+
+	console.log(`generating weapon pages...`)
+	weapon: {
+		if (!fs.existsSync(WEAPONS_JSON)) {
+			console.log(`  no weapons json: ${WEAPONS_JSON}\n`)
+			break weapon
+		}
+
+		let mtime = fs.statSync(WEAPONS_JSON).mtime.getTime()
+		let json_not_modified = mtime <= modifTimes[WEAPONS_JSON+'*']
+		modifTimes[WEAPONS_JSON+'*'] = mtime
+		if (json_not_modified && !templates_changed) {
+			console.log(`  no changes, skipping\n`)
+			break weapon
+		}
+
+		let def = makeDef(main_def)
+		let weapons = JSON.parse(fs.readFileSync(WEAPONS_JSON, 'utf-8'))
+		for (let weapon of weapons) {
+			let root_page = groups[MAIN_LANGSERVER]
+			let web_path = `/idb/weapons/${weapon.id}/`
+
+			let it = {title:weapon.name, web_path, root_page, page:{}, pages_chain:[], type:'weapon', toc:[], weapon, content:''}
+			let html = main(it, def)
+			//html = beautify(html, beautifyConfig)
+			write(`${OUT_DIR}/${web_path}/index.html`, html)
+		}
+
+		console.log(`  done, ${weapons.length} total\n`)
+	}
 }
 
 
