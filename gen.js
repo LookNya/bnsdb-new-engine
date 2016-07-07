@@ -18,7 +18,6 @@ const MAIN_LANGSERVER = 'ru-srv'
 const DO_NOT_GROUP = ['CNAME', 'static', 'img', 'robots.txt', '404.html', 'sitemap.xml'].map(name => PAGES_DIR+'/'+name)
 const DO_NOT_CLEAN = ['.git'].map(name => OUT_DIR+'/'+name)
 const GZIP = ['html', 'css', 'js', 'xml', 'txt', 'json']
-const WEAPONS_JSON = PAGES_DIR+'/json/weapons/all.json'
 
 
 function withExt(name, ext) {
@@ -382,35 +381,42 @@ exports.write = function() {
 	log('  done\n')
 
 
-	log(`generating weapon pages...`)
-	weapon: {
-		if (!fs.existsSync(WEAPONS_JSON)) {
-			log(`  no weapons json: ${WEAPONS_JSON}\n`)
-			break weapon
+	;[
+		['weapon', PAGES_DIR+'/json/weapons/all.json'],
+		['cat', PAGES_DIR+'/json/cats/all.json'],
+		['gem', PAGES_DIR+'/json/gems/all.json'],
+		['acc', PAGES_DIR+'/json/accs/all.json'],
+	].forEach(([item_type, json_file_path]) => {
+		console.log(`generating ${item_type} pages...`)
+
+		if (!fs.existsSync(json_file_path)) {
+			console.log(`  no ${item_type} json: ${json_file_path}\n`)
+			return
 		}
 
-		let mtime = fs.statSync(WEAPONS_JSON).mtime.getTime()
-		let json_not_modified = mtime <= modifTimes[WEAPONS_JSON+'*']
-		modifTimes[WEAPONS_JSON+'*'] = mtime
+		let mtime = fs.statSync(json_file_path).mtime.getTime()
+		let json_not_modified = mtime <= modifTimes[json_file_path+'*']
+		modifTimes[json_file_path+'*'] = mtime
 		if (json_not_modified && !templates_changed) {
-			log(`  no changes, skipping\n`)
-			break weapon
+			console.log(`  no changes, skipping\n`)
+			return
 		}
 
 		let def = makeDef(main_def)
-		let weapons = JSON.parse(fs.readFileSync(WEAPONS_JSON, 'utf-8'))
-		for (let weapon of weapons) {
+		let items = JSON.parse(fs.readFileSync(json_file_path, 'utf-8'))
+		for (let item of items) {
 			let root_page = groups[MAIN_LANGSERVER]
-			let web_path = `/idb/weapons/${weapon.id}/`
+			let web_path = `/idb/${item_type}s/${item.id}/`
 
-			let it = {title:weapon.name, web_path, root_page, page:{}, pages_chain:[], type:'weapon', toc:[], weapon, content:''}
+			let it = {title:item.name, web_path, root_page, page:{}, pages_chain:[], type:'item', toc:[], content:'',
+			          item_type, item}
 			let html = main(it, def)
 			//html = beautify(html, beautifyConfig)
 			write(`${OUT_DIR}/${web_path}/index.html`, html)
 		}
 
-		log(`  done, ${weapons.length} total\n`)
-	}
+		console.log(`  done, ${items.length} total\n`)
+	})
 }
 
 
