@@ -178,26 +178,37 @@
 				]
 			}
 		},
-		"break_items": [
-			{
-				"id": 81,
-				"lvl": 1
-			},
-			{
-				"id": 12,
-				"count": 1
-			}
-		],
-		"evol_items": [
-			{
-				"id": 156,
-				"lvl": 1
-			},
-			{
-				"id": 5,
-				"count": 1
-			}
-		]
+		"break_items": {
+			"tools": [
+				{
+					"id": 81
+				}
+			],
+			"cats": [
+				{
+					"id": 12,
+					"count": 1
+				}
+			]
+		},
+		"evol_items": {
+			"tools": [
+				{
+					"id": 156
+				}
+			],
+			"cats": [
+				{
+					"id": 5,
+					"count": 1
+				}
+			],
+			"results": [
+				{
+					"id": 164
+				}
+			]
+		}
 	},
 	{
 		"id": 65,
@@ -843,16 +854,19 @@
 				]
 			}
 		},
-		"break_items": [
-			{
-				"id": 126,
-				"lvl": 5
-			},
-			{
-				"id": 12,
-				"count": 2
-			}
-		]
+		"break_items": {
+			"tools": [
+				{
+					"id": 126
+				}
+			],
+			"cats": [
+				{
+					"id": 12,
+					"count": 2
+				}
+			]
+		}
 	},
 	{
 		"id": 142,
@@ -1181,26 +1195,37 @@
 				]
 			}
 		},
-		"break_items": [
-			{
-				"id": 180,
-				"lvl": 1
-			},
-			{
-				"id": 3,
-				"count": 5
-			}
-		],
-		"evol_items": [
-			{
-				"id": 220,
-				"lvl": 1
-			},
-			{
-				"id": 4,
-				"count": 1
-			}
-		]
+		"break_items": {
+			"tools": [
+				{
+					"id": 180
+				}
+			],
+			"cats": [
+				{
+					"id": 3,
+					"count": 5
+				}
+			]
+		},
+		"evol_items": {
+			"tools": [
+				{
+					"id": 220
+				}
+			],
+			"cats": [
+				{
+					"id": 4,
+					"count": 1
+				}
+			],
+			"results": [
+				{
+					"id": 171
+				}
+			]
+		}
 	},
 	{
 		"id": 171,
@@ -1313,26 +1338,37 @@
 				]
 			}
 		},
-		"break_items": [
-			{
-				"id": 235,
-				"lvl": 1
-			},
-			{
-				"id": 3,
-				"count": 5
-			}
-		],
-		"evol_items": [
-			{
-				"id": 273,
-				"lvl": 1
-			},
-			{
-				"id": 4,
-				"count": 1
-			}
-		]
+		"break_items": {
+			"tools": [
+				{
+					"id": 235
+				}
+			],
+			"cats": [
+				{
+					"id": 3,
+					"count": 5
+				}
+			]
+		},
+		"evol_items": {
+			"tools": [
+				{
+					"id": 273
+				}
+			],
+			"cats": [
+				{
+					"id": 4,
+					"count": 1
+				}
+			],
+			"results": [
+				{
+					"id": 303
+				}
+			]
+		}
 	},
 	{
 		"id": 180,
@@ -2225,26 +2261,37 @@
 				]
 			}
 		},
-		"break_items": [
-			{
-				"id": 376,
-				"lvl": 1
-			},
-			{
-				"id": 9,
-				"count": 5
-			}
-		],
-		"evol_items": [
-			{
-				"id": 408,
-				"lvl": 1
-			},
-			{
-				"id": 6,
-				"count": 1
-			}
-		]
+		"break_items": {
+			"tools": [
+				{
+					"id": 376
+				}
+			],
+			"cats": [
+				{
+					"id": 9,
+					"count": 5
+				}
+			]
+		},
+		"evol_items": {
+			"tools": [
+				{
+					"id": 408
+				}
+			],
+			"cats": [
+				{
+					"id": 6,
+					"count": 1
+				}
+			],
+			"results": [
+				{
+					"id": 310
+				}
+			]
+		}
 	},
 	{
 		"id": 310,
@@ -2348,26 +2395,37 @@
 				]
 			}
 		},
-		"break_items": [
-			{
-				"id": 415,
-				"lvl": 1
-			},
-			{
-				"id": 9,
-				"count": 17
-			}
-		],
-		"evol_items": [
-			{
-				"id": 446,
-				"lvl": 1
-			},
-			{
-				"id": 6,
-				"count": 1
-			}
-		]
+		"break_items": {
+			"tools": [
+				{
+					"id": 415
+				}
+			],
+			"cats": [
+				{
+					"id": 9,
+					"count": 17
+				}
+			]
+		},
+		"evol_items": {
+			"tools": [
+				{
+					"id": 446
+				}
+			],
+			"cats": [
+				{
+					"id": 6,
+					"count": 1
+				}
+			],
+			"results": [
+				{
+					"id": 471
+				}
+			]
+		}
 	},
 	{
 		"id": 317,
@@ -2649,16 +2707,19 @@
 				]
 			}
 		},
-		"break_items": [
-			{
-				"id": 334,
-				"lvl": 5
-			},
-			{
-				"id": 3,
-				"count": 5
-			}
-		]
+		"break_items": {
+			"tools": [
+				{
+					"id": 334
+				}
+			],
+			"cats": [
+				{
+					"id": 3,
+					"count": 5
+				}
+			]
+		}
 	},
 	{
 		"id": 334,
@@ -2835,16 +2896,19 @@
 				]
 			}
 		},
-		"break_items": [
-			{
-				"id": 280,
-				"lvl": 1
-			},
-			{
-				"id": 3,
-				"count": 5
-			}
-		]
+		"break_items": {
+			"tools": [
+				{
+					"id": 280
+				}
+			],
+			"cats": [
+				{
+					"id": 3,
+					"count": 5
+				}
+			]
+		}
 	},
 	{
 		"id": 353,
@@ -3492,26 +3556,37 @@
 				]
 			}
 		},
-		"break_items": [
-			{
-				"id": 631,
-				"lvl": 1
-			},
-			{
-				"id": 9,
-				"count": 10
-			}
-		],
-		"evol_items": [
-			{
-				"id": 568,
-				"lvl": 1
-			},
-			{
-				"id": 6,
-				"count": 1
-			}
-		]
+		"break_items": {
+			"tools": [
+				{
+					"id": 631
+				}
+			],
+			"cats": [
+				{
+					"id": 9,
+					"count": 10
+				}
+			]
+		},
+		"evol_items": {
+			"tools": [
+				{
+					"id": 568
+				}
+			],
+			"cats": [
+				{
+					"id": 6,
+					"count": 1
+				}
+			],
+			"results": [
+				{
+					"id": 478
+				}
+			]
+		}
 	},
 	{
 		"id": 478,
@@ -3624,34 +3699,45 @@
 				]
 			}
 		},
-		"break_items": [
-			{
-				"id": 554,
-				"lvl": 1
-			},
-			{
-				"id": 9,
-				"count": 20
-			}
-		],
-		"evol_items": [
-			{
-				"id": 494,
-				"lvl": 1
-			},
-			{
-				"id": 6,
-				"count": 4
-			},
-			{
-				"id": 8,
-				"count": 70
-			},
-			{
-				"id": 10,
-				"count": 10
-			}
-		]
+		"break_items": {
+			"tools": [
+				{
+					"id": 554
+				}
+			],
+			"cats": [
+				{
+					"id": 9,
+					"count": 20
+				}
+			]
+		},
+		"evol_items": {
+			"tools": [
+				{
+					"id": 494
+				}
+			],
+			"cats": [
+				{
+					"id": 6,
+					"count": 4
+				},
+				{
+					"id": 8,
+					"count": 70
+				},
+				{
+					"id": 10,
+					"count": 10
+				}
+			],
+			"results": [
+				{
+					"id": 533
+				}
+			]
+		}
 	},
 	{
 		"id": 487,
@@ -3955,42 +4041,53 @@
 				]
 			}
 		},
-		"break_items": [
-			{
-				"id": 568,
-				"lvl": 1
-			},
-			{
-				"id": 1,
-				"count": 15
-			},
-			{
-				"id": 14,
-				"count": 7
-			},
-			{
-				"id": 8,
-				"count": 21
-			}
-		],
-		"evol_items": [
-			{
-				"id": 540,
-				"lvl": 1
-			},
-			{
-				"id": 6,
-				"count": 7
-			},
-			{
-				"id": 8,
-				"count": 110
-			},
-			{
-				"id": 10,
-				"count": 10
-			}
-		]
+		"break_items": {
+			"tools": [
+				{
+					"id": 568
+				}
+			],
+			"cats": [
+				{
+					"id": 1,
+					"count": 15
+				},
+				{
+					"id": 14,
+					"count": 7
+				},
+				{
+					"id": 8,
+					"count": 21
+				}
+			]
+		},
+		"evol_items": {
+			"tools": [
+				{
+					"id": 540
+				}
+			],
+			"cats": [
+				{
+					"id": 6,
+					"count": 7
+				},
+				{
+					"id": 8,
+					"count": 110
+				},
+				{
+					"id": 10,
+					"count": 10
+				}
+			],
+			"results": [
+				{
+					"id": 540
+				}
+			]
+		}
 	},
 	{
 		"id": 540,
@@ -4010,46 +4107,57 @@
 				]
 			}
 		},
-		"break_items": [
-			{
-				"id": 511,
-				"lvl": 1
-			},
-			{
-				"id": 1,
-				"count": 15
-			},
-			{
-				"id": 14,
-				"count": 10
-			},
-			{
-				"id": 8,
-				"count": 21
-			}
-		],
-		"evol_items": [
-			{
-				"id": 519,
-				"lvl": 1
-			},
-			{
-				"id": 6,
-				"count": 7
-			},
-			{
-				"id": 2,
-				"count": 21
-			},
-			{
-				"id": 8,
-				"count": 150
-			},
-			{
-				"id": 10,
-				"count": 10
-			}
-		]
+		"break_items": {
+			"tools": [
+				{
+					"id": 511
+				}
+			],
+			"cats": [
+				{
+					"id": 1,
+					"count": 15
+				},
+				{
+					"id": 14,
+					"count": 10
+				},
+				{
+					"id": 8,
+					"count": 21
+				}
+			]
+		},
+		"evol_items": {
+			"tools": [
+				{
+					"id": 519
+				}
+			],
+			"cats": [
+				{
+					"id": 6,
+					"count": 7
+				},
+				{
+					"id": 2,
+					"count": 21
+				},
+				{
+					"id": 8,
+					"count": 150
+				},
+				{
+					"id": 10,
+					"count": 10
+				}
+			],
+			"results": [
+				{
+					"id": 603
+				}
+			]
+		}
 	},
 	{
 		"id": 547,
@@ -4184,20 +4292,23 @@
 				]
 			}
 		},
-		"break_items": [
-			{
-				"id": 617,
-				"lvl": 1
-			},
-			{
-				"id": 1,
-				"count": 30
-			},
-			{
-				"id": 8,
-				"count": 40
-			}
-		]
+		"break_items": {
+			"tools": [
+				{
+					"id": 617
+				}
+			],
+			"cats": [
+				{
+					"id": 1,
+					"count": 30
+				},
+				{
+					"id": 8,
+					"count": 40
+				}
+			]
+		}
 	},
 	{
 		"id": 568,
@@ -4329,50 +4440,61 @@
 				]
 			}
 		},
-		"break_items": [
-			{
-				"id": 582,
-				"lvl": 1
-			},
-			{
-				"id": 1,
-				"count": 9
-			},
-			{
-				"id": 14,
-				"count": 7
-			},
-			{
-				"id": 8,
-				"count": 40
-			}
-		],
-		"evol_items": [
-			{
-				"id": 589,
-				"lvl": 1
-			},
-			{
-				"id": 6,
-				"count": 10
-			},
-			{
-				"id": 2,
-				"count": 25
-			},
-			{
-				"id": 10,
-				"count": 10
-			},
-			{
-				"id": 11,
-				"count": 100
-			},
-			{
-				"id": 8,
-				"count": 230
-			}
-		]
+		"break_items": {
+			"tools": [
+				{
+					"id": 582
+				}
+			],
+			"cats": [
+				{
+					"id": 1,
+					"count": 9
+				},
+				{
+					"id": 14,
+					"count": 7
+				},
+				{
+					"id": 8,
+					"count": 40
+				}
+			]
+		},
+		"evol_items": {
+			"tools": [
+				{
+					"id": 589
+				}
+			],
+			"cats": [
+				{
+					"id": 6,
+					"count": 10
+				},
+				{
+					"id": 2,
+					"count": 25
+				},
+				{
+					"id": 10,
+					"count": 10
+				},
+				{
+					"id": 11,
+					"count": 100
+				},
+				{
+					"id": 8,
+					"count": 230
+				}
+			],
+			"results": [
+				{
+					"id": 610
+				}
+			]
+		}
 	},
 	{
 		"id": 610,
@@ -4478,24 +4600,27 @@
 				]
 			}
 		},
-		"break_items": [
-			{
-				"id": 596,
-				"lvl": 1
-			},
-			{
-				"id": 13,
-				"count": 10
-			},
-			{
-				"id": 1,
-				"count": 21
-			},
-			{
-				"id": 8,
-				"count": 110
-			}
-		]
+		"break_items": {
+			"tools": [
+				{
+					"id": 596
+				}
+			],
+			"cats": [
+				{
+					"id": 13,
+					"count": 10
+				},
+				{
+					"id": 1,
+					"count": 21
+				},
+				{
+					"id": 8,
+					"count": 110
+				}
+			]
+		}
 	},
 	{
 		"id": 617,
@@ -5521,20 +5646,23 @@
 				]
 			}
 		},
-		"break_items": [
-			{
-				"id": 749,
-				"lvl": 5
-			},
-			{
-				"id": 1,
-				"count": 20
-			},
-			{
-				"id": 8,
-				"count": 19
-			}
-		]
+		"break_items": {
+			"tools": [
+				{
+					"id": 749
+				}
+			],
+			"cats": [
+				{
+					"id": 1,
+					"count": 20
+				},
+				{
+					"id": 8,
+					"count": 19
+				}
+			]
+		}
 	},
 	{
 		"id": 749,
@@ -5741,20 +5869,23 @@
 				]
 			}
 		},
-		"break_items": [
-			{
-				"id": 763,
-				"lvl": 5
-			},
-			{
-				"id": 1,
-				"count": 18
-			},
-			{
-				"id": 8,
-				"count": 60
-			}
-		]
+		"break_items": {
+			"tools": [
+				{
+					"id": 763
+				}
+			],
+			"cats": [
+				{
+					"id": 1,
+					"count": 18
+				},
+				{
+					"id": 8,
+					"count": 60
+				}
+			]
+		}
 	},
 	{
 		"id": 763,
@@ -7834,20 +7965,23 @@
 				]
 			}
 		},
-		"break_items": [
-			{
-				"id": 501,
-				"lvl": 1
-			},
-			{
-				"id": 1,
-				"count": 20
-			},
-			{
-				"id": 8,
-				"count": 19
-			}
-		]
+		"break_items": {
+			"tools": [
+				{
+					"id": 501
+				}
+			],
+			"cats": [
+				{
+					"id": 1,
+					"count": 20
+				},
+				{
+					"id": 8,
+					"count": 19
+				}
+			]
+		}
 	},
 	{
 		"id": 910,
@@ -7951,20 +8085,23 @@
 				]
 			}
 		},
-		"break_items": [
-			{
-				"id": 624,
-				"lvl": 1
-			},
-			{
-				"id": 1,
-				"count": 15
-			},
-			{
-				"id": 8,
-				"count": 40
-			}
-		]
+		"break_items": {
+			"tools": [
+				{
+					"id": 624
+				}
+			],
+			"cats": [
+				{
+					"id": 1,
+					"count": 15
+				},
+				{
+					"id": 8,
+					"count": 40
+				}
+			]
+		}
 	},
 	{
 		"id": 917,
