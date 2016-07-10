@@ -41,6 +41,35 @@
 					</th>
 				</tr>
 			</thead>
+			{{ (function iter(pages, level) { }}
+			{{   for (var name in pages) { }}
+			{{     let page = pages[name]; }}
+			{{? level == 0 }}
+			<tr>
+				<td>
+					{{= page.short_title }}
+				</td>
+				<td>
+					{{ iter(page.children, level+1); }}
+				</td>
+			</tr>
+			{{?? level == 1 }}
+			<a href="{{=page.web_path}}">{{= page.short_title }}</a>
+			{{?}}
+			{{   } }}
+			{{ })(it.root_page.children, 0); }}
+		</table>
+	</div>
+
+	<div class="site_contents_table">
+		<table class="">
+			<thead>
+				<tr>
+					<th colspan="2">
+						Смотрите а также
+					</th>
+				</tr>
+			</thead>
 			<tr>
 				<td>
 					Об игре
@@ -98,6 +127,7 @@
 			</tr>
 		</table>
 	</div>
+
 	<!--
 	TODO: показывать если не выключено
 	<div class="bottom_adds_wrap">
