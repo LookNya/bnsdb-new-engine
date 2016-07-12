@@ -1,4 +1,54 @@
-some {{= it.item_type }} here
-<pre>
-var weapon = {{= JSON.stringify(it.item, null, '\t') }}
-</pre>
+```config
+ "type": "app",
+ "title": "Предмет"
+```
+```raw-html
+<script>
+	var CURR_ITEM = {{= JSON.stringify(it.item, null, '\t') }}
+	var CURR_ITEM_TYPE = "{{= it.item_type }}"
+	var cat = {
+		'weapon': 'weapons'
+	}[CURR_ITEM_TYPE]
+	var scat = {
+		'Мечи': 'bm'
+	}[CURR_ITEM.type]
+</script>
+<link rel="stylesheet" href="/static/css/idb/item-cards.css" type="text/css" />
+<link rel="stylesheet" href="/static/css/idb/item-page.css" type="text/css" />
+
+<div class="container">
+	<div class="background"></div>
+	<div class="f">
+		<div class="t">
+			<div class="r">
+				<div class="body">
+					<div class="left">
+						<!--Карточка--->
+						<div class="butt blue call-comparison">Сравнить с другим предметом</div>
+					</div>
+					<div class="mid hidden"></div>
+					<div class="right">
+						<div class="for-card">
+						</div>
+						<div class="butt blue change-item hidden">Выбрать другой предмет</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="/static/js/idb/item-cards.js"></script>
+<script src="/static/js/idb/item-page.js"></script>
+<script src="/static/js/idb/item-search-popup.js" async></script>
+<script>
+Ipa.init()
+function fixHeight(){
+	$('.content').style.height = document.body.clientHeight - $('.header').offsetHeight - $('.footer').offsetHeight + 'px'
+}
+fixHeight()
+addEventListener('resize', fixHeight)
+</script>
+<link rel="stylesheet" href="/static/css/ui/round-select.css" type="text/css" />
+<link rel="stylesheet" href="/static/css/idb/item-search-popup.css" type="text/css" />
+```

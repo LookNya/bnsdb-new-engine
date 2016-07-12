@@ -2,7 +2,7 @@ Ipa = {
 	el: $('.container .body'),
 	init: function(){
 		//не должно быть так
-		Model.xhr('/json/weapons/sum.json', {}, Ipa.handleRawData)
+		Model.xhr('/json/'+ cat +'/'+scat+'.json', {}, Ipa.handleRawData)//заменить на генерацию карточки
 
 		initEvents(Ipa)
 		var hash = location.hash.split('#')
@@ -14,11 +14,11 @@ Ipa = {
 		Ipa.rawData = JSON.parse(data)
 		//не должно быть так
 		Ipa.el.$('.left').insertBefore(
-			new ItemCard(Ipa.rawData[7], ['favable', 'dark'], Ipa.rawData),
+			new ItemCard(CURR_ITEM, ['favable', 'dark'], Ipa.rawData),
 			Ipa.el.$('.left .butt'))
 	},
 	load: function(callback){
-		Model.xhr('/json/weapons/sum.json', {},
+		Model.xhr('/json/'+ cat +'/'+scat+'.json', {},
 			function(data){
 				Ipa.data = JSON.parse(data)
 				if(callback) callback()

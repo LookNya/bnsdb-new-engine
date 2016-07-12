@@ -197,7 +197,7 @@ function ItemCard(item, params, fullList){
 				<div class="stats"></div>\
 			</div>'
 		var p = item.params[Object.keys(item.params).last]
-		cardEl.$('.icon').style.backgroundImage = 'url('+p.icon+')'
+		cardEl.$('.icon').style.backgroundImage = 'url('+(p.icon || item.icon)+')'
 		cardEl.$('.stats').innerHTML = genDescr(p)
 	}
 	// END очень маленькая
