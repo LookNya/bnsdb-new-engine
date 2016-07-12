@@ -43,11 +43,13 @@
 <script src="/static/js/idb/item-search-popup.js" async></script>
 <script>
 Ipa.init()
-function fixHeight(){
-	$('.content').style.height = document.body.clientHeight - $('.header').offsetHeight - $('.footer').offsetHeight + 'px'
-	return fixHeight
-}
-addEventListener('resize', fixHeight())
+document.addEventListener('DOMContentLoaded', function(){
+	function fixHeight(){
+		$('.content').style.height = document.body.clientHeight - $('.header').offsetHeight - $('.footer').offsetHeight + 'px'
+		return fixHeight
+	}
+	addEventListener('resize', fixHeight())
+})
 </script>
 <link rel="stylesheet" href="/static/css/ui/round-select.css" type="text/css" />
 <link rel="stylesheet" href="/static/css/idb/item-search-popup.css" type="text/css" />
