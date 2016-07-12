@@ -45,9 +45,9 @@
 Ipa.init()
 function fixHeight(){
 	$('.content').style.height = document.body.clientHeight - $('.header').offsetHeight - $('.footer').offsetHeight + 'px'
+	return fixHeight
 }
-fixHeight()
-addEventListener('resize', fixHeight)
+addEventListener('resize', fixHeight())
 </script>
 <link rel="stylesheet" href="/static/css/ui/round-select.css" type="text/css" />
 <link rel="stylesheet" href="/static/css/idb/item-search-popup.css" type="text/css" />
