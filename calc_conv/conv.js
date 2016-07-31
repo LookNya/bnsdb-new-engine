@@ -67,7 +67,7 @@ for (let info of data.SkillTooltips) {
 		ef.cost = node.chi
 		ef.damage = typeableToString(node.m1)
 		;(node.sub==null ? [] : node.sub).concat(node.m2==null ? [] : node.m2).forEach((s,i) => {
-			known(s, 'value type scale element ex before after num modId') //`modId: 1` - пареметр непонятного назначения
+			known(s, 'value type scale element ex before after num modId') //`modId: 1` - парематр непонятного назначения
 			s = check(s)
 			ef['attribute'+(i==0?'':'_'+i)] = typeableToString(s)
 		})

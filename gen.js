@@ -381,12 +381,13 @@ exports.write = function() {
 	log('  done\n')
 
 
+	// страницы предметов
 	;[
-		['weapon', PAGES_DIR+'/json/weapons/all.json'],
-		['cat', PAGES_DIR+'/json/cats/all.json'],
-		['gem', PAGES_DIR+'/json/gems/all.json'],
-		['acc', PAGES_DIR+'/json/accs/all.json'],
-	].forEach(([item_type, json_file_path]) => {
+		['weapon', 'wepaons', PAGES_DIR+'/json/weapons/all.json'],
+		['cat',    'cats',    PAGES_DIR+'/json/cats/all.json'],
+		['gem',    'gems',    PAGES_DIR+'/json/gems/all.json'],
+		['acc',    'accs',    PAGES_DIR+'/json/accs/all.json'],
+	].forEach(([item_type, item_type_plural, json_file_path]) => {
 		console.log(`generating ${item_type} pages...`)
 
 		if (!fs.existsSync(json_file_path)) {
@@ -397,22 +398,25 @@ exports.write = function() {
 		let mtime = fs.statSync(json_file_path).mtime.getTime()
 		let json_not_modified = mtime <= modifTimes[json_file_path+'*']
 		modifTimes[json_file_path+'*'] = mtime
-		if (json_not_modified && !templates_changed) {
-			console.log(`  no changes, skipping\n`)
-			return
-		}
+		// if (json_not_modified && !templates_changed) {
+		// 	console.log(`  no changes, skipping\n`)
+		// 	return
+		// }
 
 		let def = makeDef(main_def)
 		let items = JSON.parse(fs.readFileSync(json_file_path, 'utf-8'))
 		for (let item of items) {
 			let root_page = groups[MAIN_LANGSERVER]
 			let web_path = `/idb/${item_type}s/${item.id}/`
+			let file_path = `${OUT_DIR}/${web_path}/index.html`
+			if (json_not_modified && !templates_changed && fs.existsSync(file_path)) continue
 
+			let cat = item_type_plural //category (wepaons, ...)
 			let it = {title:item.name, web_path, root_page, page:{}, pages_chain:[], type:'item', toc:[], content:'',
-			          item_type, item}
+			          item, item_type, cat}
 			let html = main(it, def)
 			//html = beautify(html, beautifyConfig)
-			write(`${OUT_DIR}/${web_path}/index.html`, html)
+			write(file_path, html)
 		}
 
 		console.log(`  done, ${items.length} total\n`)
@@ -440,7 +444,7 @@ exports.gzip = function() {
 	console.log(`  done`)
 	console.log(`    processed:  ${Array.from(processed)}`)
 	console.log(`    skipped:    ${Array.from(skipped)}`)
-	console.log(`    compressed: ${sum.before/1024|0} --> ${sum.after/1024|0} KiB`)
+	console.log(`    compressed: ${sum.before/1024|0} --> ${sum.after/1024|0} KiB (${(1-sum.after/sum.before)*100+0.5|0}%)`)
 	console.log(``)
 }
 

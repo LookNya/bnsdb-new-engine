@@ -6,12 +6,8 @@
 <script>
 	var CURR_ITEM = {{= JSON.stringify(it.item, null, '\t') }}
 	var CURR_ITEM_TYPE = "{{= it.item_type }}"
-	var cat = {
-		'weapon': 'weapons'
-	}[CURR_ITEM_TYPE]
-	var scat = {
-		'Мечи': 'bm'
-	}[CURR_ITEM.type]
+	var cat = "{{= it.cat }}"
+	var scat = CURR_ITEM.type
 </script>
 <link rel="stylesheet" href="/static/css/idb/item-cards.css" type="text/css" />
 <link rel="stylesheet" href="/static/css/idb/item-page.css" type="text/css" />
