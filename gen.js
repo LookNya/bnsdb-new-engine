@@ -1,4 +1,4 @@
-#!/usr/bin/node
+﻿#!/usr/bin/node
 "use strict"
 
 const fs = require('fs')
@@ -383,7 +383,7 @@ exports.write = function() {
 
 	// страницы предметов
 	;[
-		['weapon', 'wepaons', PAGES_DIR+'/json/weapons/all.json'],
+		['weapon', 'weapons', PAGES_DIR+'/json/weapons/all.json'],
 		['cat',    'cats',    PAGES_DIR+'/json/cats/all.json'],
 		['gem',    'gems',    PAGES_DIR+'/json/gems/all.json'],
 		['acc',    'accs',    PAGES_DIR+'/json/accs/all.json'],
@@ -411,7 +411,7 @@ exports.write = function() {
 			let file_path = `${OUT_DIR}/${web_path}/index.html`
 			if (json_not_modified && !templates_changed && fs.existsSync(file_path)) continue
 
-			let cat = item_type_plural //category (wepaons, ...)
+			let cat = item_type_plural //category (weapons, ...)
 			let it = {title:item.name, web_path, root_page, page:{}, pages_chain:[], type:'item', toc:[], content:'',
 			          item, item_type, cat}
 			let html = main(it, def)
