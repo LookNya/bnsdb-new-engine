@@ -2,6 +2,7 @@ Ipa = {
 	el: $('.container .body'),
 	init: function(){
 		//не должно быть так
+		if(!scat) scat = 'all'
 		Model.xhr('/json/'+ cat +'/'+scat+'.json', {}, Ipa.handleRawData)//заменить на генерацию карточки
 
 		initEvents(Ipa)
