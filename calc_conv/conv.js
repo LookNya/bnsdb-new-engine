@@ -1,8 +1,11 @@
 #!/bin/env node
 
 let fs = require("fs")
+let path = require("path")
 
 
+const class_name = 'summoner'
+const class_letter = 's'
 const attack = 13
 const weapon_constant = 1
 
@@ -28,9 +31,19 @@ function check(obj) {
 	return p
 }
 
+function mkdir(dirname) {
+	let parts = dirname.split('/')
+	let curname = ''
+	for (let i=0; i<parts.length; i++) {
+		curname = path.posix.join(curname, parts[i])
+		if (!fs.existsSync(curname)) fs.mkdirSync(curname)
+	}
+}
+
 
 // effects name for trees generation
 let params_by_ext_tree_id_and_position = {}
+let icon_ids_by_name = {}
 for (let info of data.SkillTooltips) {
 	for (let node of info.nodes) {
 		// acquire: { value: 'Time Bomb Mastery', type: 'achievement' }
@@ -82,7 +95,13 @@ for (let info of data.SkillTooltips) {
 			c = check(c)
 			ef['condition'+(i==0?'':'_'+i)] = c.value
 		})
-		params_by_ext_tree_id_and_position[info._id+"|"+node.position] = {effects: ef, name: node.name}
+		let icon_id = icon_ids_by_name[node.icon]
+		if (!icon_id) icon_id = icon_ids_by_name[node.icon] = Object.keys(icon_ids_by_name).length + 1
+		params_by_ext_tree_id_and_position[info._id+"|"+node.position] = {
+			effects: ef,
+			name: node.name,
+			icon: `/img/sc/${class_letter}/${icon_id}.png`
+		}
 	}
 }
 
@@ -121,7 +140,7 @@ function addTreeNode(tree_id, node_id, params) {
 	if (params.max_lvl != null) node.max_lvl = params.max_lvl
 	if (params.effects && Object.keys(params.effects).length > 0) node.effects = params.effects
 	if (params.relations && params.relations.length > 0) node.relations = params.relations
-	if (params.img) node.img = params.img
+	if (params.img != null) node.img = params.img
 	skills_data[`tree_${tree_id}|${node_id}`] = node
 }
 for (let skill of data.SkillList) {
@@ -144,12 +163,12 @@ for (let skill of data.SkillList) {
 
 	tree_name_by_ext_id[skill._id] = `tree_${tree_id}`
 
-	let params = params_by_ext_tree_id_and_position[skill._id+"|"+0]
+	let root_params = params_by_ext_tree_id_and_position[skill._id+"|"+0]
 	addTreeNode(tree_id, "root", {
-		name: params.name,
-		effects: params.effects,
+		name: root_params.name,
+		effects: root_params.effects,
 		relations: [node_id_by_position[11]],
-		img: "http://local.bnsbase.com/img/sc/a/1.jpg" //TODO
+		img: root_params.icon
 	})
 
 	for (let node of tree.nodes) {
@@ -161,7 +180,7 @@ for (let skill of data.SkillList) {
 			max_lvl: 1, //TODO
 			effects: params.effects,
 			relations: node.children && node.children.map(pos => node_id_by_position[pos]),
-			img: null //TODO
+			img: params.icon == root_params.icon ? null : params.icon
 		})
 	}
 }
@@ -184,7 +203,7 @@ for (let skill of data.SkillList) {
 		addTreeNode(tree_id, "root", {
 			name: params.name,
 			effects: params.effects,
-			img: "/img/sc/a/1.jpg" //TODO
+			img: params.icon
 		})
 
 		skill.treeId = skill._id
@@ -201,7 +220,7 @@ for (let skill of data.SkillList) {
 			addTreeNode(tree_id, "root", {
 				name: params.name,
 				effects: params.effects,
-				img: "/img/sc/a/1.jpg" //TODO
+				img: params.icon //"/img/sc/a/1.jpg" //TODO
 			})
 		}
 	}
@@ -246,6 +265,21 @@ for (let key in skills_by_keys) {
 fs.writeFileSync("skillslist.js", "skills_list = " + JSON.stringify(skills_list, null, "\t") + "\n")
 fs.writeFileSync("skillsdata.js", "skills_data = " + JSON.stringify(skills_data, null, "\t") + "\n")
 
+
+// images
+mkdir('img_src')
+mkdir('img')
+fs.readdirSync('img').forEach(n => fs.unlinkSync('img/'+n))
+fs.writeFileSync("img_src_urls", Object.keys(icon_ids_by_name).map(n => `https://bnstree.com/img/skill/${n}.png\n`).join(''))
+/*
+cd img_src
+wget -nc -i ../img_src_urls
+cd ..
+ */
+for (let name in icon_ids_by_name) {
+	let id = icon_ids_by_name[name]
+	fs.writeFileSync(`img/${id}.png`, fs.readFileSync(`img_src/${name}.png`))
+}
 
 /*
 function numberWithCommas(e) {
