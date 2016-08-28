@@ -25,7 +25,7 @@ function ItemCard(item, params, fullList){
 	var lvlSelector = genLevelSelector()
 	var break_item, breaker = false, breaking = false
 	if(item.break_items && fullList){
-		var breaker = findItemByid(fullList, item.break_items[0].id)
+		var breaker = findItemByid(fullList, item.break_items.tools[0].id)
 		if(breaker)	{
 			breaker = {
 				name: breaker.name,
@@ -51,7 +51,9 @@ function ItemCard(item, params, fullList){
 			genSlots() +
 			'<div class="fave">&#10084;</div>\
 		</div>\
-		<h2 class="name '+ gradeMap[item.grade] +'">'+ item.name + '&nbsp;<span class="lvl"></span></h2>\
+		<h2 class="name '+ gradeMap[item.grade] +'">'+ item.name + '&nbsp;<span class="lvl"></span>\
+			<div class="report-error">Сообщить об ошибке</div>\
+		</h2>\
 		<br clear="all">' +
 		'<div class="descr cf"></div>' +
 		'<div class="bonuses"></div>' +

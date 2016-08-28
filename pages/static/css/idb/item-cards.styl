@@ -12,6 +12,7 @@
 	vertical-align: top;
 	margin: 0 0 31px 20px;
 	line-height: normal;
+
 	&:nth-child(1)
 		margin-left: 0
 	&, > *
@@ -28,6 +29,21 @@
 		line-height: 18px;
 		margin-top: 0;
 		padding-bottom: 0;
+		.report-error
+			display: none
+		&:hover
+			.report-error
+				cursor: pointer
+				display: block
+				position: absolute;
+				top: -16px
+				padding: 6px;
+				background: red
+				left 50%
+				color: white;
+				border-radius: 3px
+				margin-left: -71px
+				font-size: 12px;
 	.name,
 	.icon
 			float: left
