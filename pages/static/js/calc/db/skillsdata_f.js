@@ -1,3456 +1,4302 @@
 skills_data = {
-	"tree_2|root": {
-		name: "Энергетический шквал",
-		effects: {
-			cost: "Требует 1 Чи",
-			damage: "по 157-191 ед. урона тремя ударами",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "Персонаж парит или летит",
-		},
-		img: "/img/sc/f/1.jpg",
-	},
 	"tree_1|root": {
-		name: "Огненная длань",
-		relations: [1],
-		effects: {
-			cost: "Восстанавливает 1 Чи",
-			damage: "54-66 ед. урона",
-			attribute: "Накладывает 1 стак Искр",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
+		"name": "Огненная длань",
+		"effects": {
+			"cost": 1,
+			"damage": "Deals 12 ~ 14 fire damage",
+			"attribute": "Накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Deals 24 ~ 28 fire additional damage if Flame Soul is trained",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
 		},
-		img: "/img/sc/f/2.jpg",
+		"relations": [
+			1
+		],
+		"img": "/img/sc/f/1.png"
 	},
 	"tree_1|1": {
-		name: "Огненная длань",
-		max_lvl: 1,
-		relations: [2],
-		effects: {
-			cost: "Восстанавливает 1 Чи",
-			damage: "54-66 ед. урона",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Увеличивает скорость снаряда",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
+		"name": "Огненная длань",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 1,
+			"damage": "Deals 12 ~ 14 fire damage",
+			"attribute": "Накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Увеличивает скорость полета снарядов",
+			"attribute_2": "Deals 24 ~ 28 fire additional damage if Flame Soul is trained",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
 		},
+		"relations": [
+			2
+		]
 	},
 	"tree_1|2": {
-		name: "Огненная длань",
-		max_lvl: 1,
-		relations: [3, 4, 5],
-		effects: {
-			cost: "Восстанавливает 1 Чи",
-			damage: "65-79 ед. урона",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Увеличивает скорость снаряда",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
+		"name": "Огненная длань",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 1,
+			"damage": "Deals 14 ~ 17 fire damage",
+			"attribute": "Накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Увеличивает скорость полета снарядов",
+			"attribute_2": "Deals 24 ~ 28 fire additional damage if Flame Soul is trained",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
 		},
+		"relations": [
+			3,
+			5
+		]
 	},
 	"tree_1|3": {
-		name: "Огненная длань",
-		max_lvl: 1,
-		relations: [6],
-		effects: {
-			cost: "Восстанавливает 1 Чи",
-			damage: "65-79 ед. урона",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Увеличивает скорость снаряда",
-			attribute_2: "Увеличивает скорость стрельбы",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
+		"name": "Огненная длань",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 1,
+			"damage": "Deals 14 ~ 17 fire damage",
+			"attribute": "При крит. атаке создает эффект Огненный покров (1 шт.)",
+			"attribute_1": "Накладывает эффект Искра (1 шт.)",
+			"attribute_2": "Увеличивает скорость атаки приемом",
+			"attribute_3": "Увеличивает скорость полета снарядов",
+			"attribute_4": "Deals 24 ~ 28 fire additional damage if Flame Soul is trained",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
 		},
+		"relations": [
+			6
+		]
 	},
 	"tree_1|4": {
-		name: "Огненная длань",
-		max_lvl: 1,
-		relations: [7],
-		effects: {
-			cost: "Восстанавливает 1 Чи",
-			damage: "65-79 ед. урона по каждой из максимум 3 целей",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Увеличивает скорость снаряда",
-			range: "16м",
-			radius: "8м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
+		"name": "Огненная длань",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 1,
+			"damage": "Deals 14 ~ 17 fire damage",
+			"attribute": "Накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Если враг поражен эффектом Ожог, накладывает эффект Искра (2 шт.)",
+			"attribute_2": "Увеличивает скорость атаки приемом",
+			"attribute_3": "Увеличивает скорость полета снарядов",
+			"attribute_4": "Deals 24 ~ 28 fire additional damage if Flame Soul is trained",
+			"attribute_5": "Deals 10 ~ 11 fire additional damage to Burned enemies",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
 		},
+		"relations": [
+			9
+		]
 	},
 	"tree_1|5": {
-		name: "Огненная длань",
-		max_lvl: 1,
-		relations: [8],
-		effects: {
-			cost: "Восстанавливает 1 Чи",
-			damage: "119-145 ед. урона",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Увеличивает скорость снаряда",
-			range: "16м",
-			radius: "Цель",
-			cast: "1 секунда",
-			cooldown: "Мгновенно",
+		"name": "Огненная длань",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 1,
+			"damage": "Deals 14 ~ 17 fire damage up to 3 enemies",
+			"attribute": "Накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Увеличивает скорость полета снарядов",
+			"attribute_2": "Deals 24 ~ 28 fire additional damage if Flame Soul is trained",
+			"range": "16m",
+			"radius": "8 м",
+			"cast": "Instant",
+			"cooldown": "Instant"
 		},
+		"relations": [
+			7
+		]
 	},
 	"tree_1|6": {
-		name: "Огненная длань",
-		max_lvl: 1,
-		relations: [9],
-		effects: {
-			cost: "Восстанавливает 1 Чи",
-			damage: "65-79 ед. урона",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Увеличивает скорость снаряда",
-			attribute_2: "Увеличивает скорость стрельбы",
-			attribute_3: "Автоматически взрывает 5 стаков Искр",
-			attribute_4: "За каждый стак 16-20 ед. урона от взрыва",
-			attribute_5: "За каждое накладывание дополнительный урон от ожогов: 75%",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
+		"name": "Огненная длань",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 1,
+			"damage": "Deals 14 ~ 17 fire damage",
+			"attribute": "При крит. атаке создает эффект Огненный покров (1 шт.)",
+			"attribute_1": "Накладывает эффект Искра (1 шт.)",
+			"attribute_2": "Если на цель наложен эффект Искра (5 шт.), то происходит автоматический взрыв",
+			"attribute_3": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_4": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_5": "Увеличивает скорость атаки приемом",
+			"attribute_6": "Увеличивает скорость полета снарядов",
+			"attribute_7": "Deals 24 ~ 28 fire additional damage if Flame Soul is trained",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
 		},
+		"relations": [
+			8
+		]
 	},
 	"tree_1|7": {
-		name: "Огненная длань",
-		max_lvl: 1,
-		relations: [10],
-		effects: {
-			cost: "Восстанавливает 1 Чи",
-			damage: "65-79 ед. урона по каждой из максимум 3 целей",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Увеличивает скорость снаряда",
-			attribute_2: "При критической атаке накладывает 2 стака Искр",
-			range: "16м",
-			radius: "8м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
+		"name": "Огненная длань",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 1,
+			"damage": "Deals 14 ~ 17 fire damage up to 3 enemies",
+			"attribute": "Поглощает 10% НР от нанесенного урона",
+			"attribute_1": "Накладывает эффект Искра (1 шт.)",
+			"attribute_2": "Увеличивает скорость полета снарядов",
+			"attribute_3": "Deals 24 ~ 28 fire additional damage if Flame Soul is trained",
+			"range": "16m",
+			"radius": "8 м",
+			"cast": "Instant",
+			"cooldown": "Instant"
 		},
+		"relations": [
+			10
+		]
 	},
 	"tree_1|8": {
-		name: "Огненная длань",
-		max_lvl: 1,
-		relations: [11],
-		effects: {
-			cost: "Восстанавливает 1 Чи",
-			damage: "119-145 ед. урона",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Увеличивает скорость снаряда",
-			attribute_2: "При критической атаке накладывает 2 стака Искр",
-			attribute_3: "При критической атаке восстанавливает дополнительно 1 Чи",
-			attribute_4: "Создает 1 Огненную сферу",
-			range: "16м",
-			radius: "Цель",
-			cast: "1 секунда",
-			cooldown: "Мгновенно",
-		},
+		"name": "Огненная длань",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 1,
+			"damage": "Deals 17 ~ 20 fire damage",
+			"attribute": "При крит. атаке создает эффект Огненный покров (1 шт.)",
+			"attribute_1": "Накладывает эффект Искра (1 шт.)",
+			"attribute_2": "При крит. атаке накладывает эффект Искра (2 шт.)",
+			"attribute_3": "Если на цель наложен эффект Искра (5 шт.), то происходит автоматический взрыв",
+			"attribute_4": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_5": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_6": "Увеличивает скорость атаки приемом",
+			"attribute_7": "Увеличивает скорость полета снарядов",
+			"attribute_8": "Deals 24 ~ 28 fire additional damage if Flame Soul is trained",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		}
 	},
 	"tree_1|9": {
-		name: "Огненная длань",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			cost: "Восстанавливает 1 Чи",
-			damage: "65-79 ед. урона",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Увеличивает скорость снаряда",
-			attribute_2: "Увеличивает скорость стрельбы",
-			attribute_3: "Автоматически взрывает 5 стаков Искр",
-			attribute_4: "За каждый стак 16-20 ед. урона от взрыва",
-			attribute_5: "За каждое накладывание дополнительный урон от ожогов: 75%",
-			attribute_6: "При критической атаке создает 1 Огненную сферу",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-		},
+		"name": "Огненная длань",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 1,
+			"damage": "Deals 14 ~ 17 fire damage",
+			"attribute": "Накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Если враг поражен эффектом Ожог, накладывает эффект Искра (2 шт.)",
+			"attribute_2": "Увеличивает скорость атаки приемом",
+			"attribute_3": "Увеличивает скорость полета снарядов",
+			"attribute_4": "Deals 24 ~ 28 fire additional damage if Flame Soul is trained",
+			"attribute_5": "Deals 22 ~ 25 fire additional damage to Burned enemies",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		}
 	},
 	"tree_1|10": {
-		name: "Огненная длань",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			cost: "Восстанавливает 1 Чи",
-			damage: "65-79 ед. урона по каждой из максимум 3 целей",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Увеличивает скорость снаряда",
-			attribute_2: "При критической атаке накладывает 2 стака Искр",
-			attribute_3: "Поглощает 6-8 ХП",
-			attribute_4: "Атакует нескольких врагов, восстанавливая по 1 Чи при попадании",
-			range: "16м",
-			radius: "8м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-		},
+		"name": "Огненная длань",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 1,
+			"damage": "Deals 14 ~ 17 fire damage up to 5 enemies",
+			"attribute": "Поглощает 10% НР от нанесенного урона",
+			"attribute_1": "За каждого раненого врага Ци +1",
+			"attribute_2": "Накладывает эффект Искра (1 шт.)",
+			"attribute_3": "Увеличивает скорость полета снарядов",
+			"attribute_4": "Deals 24 ~ 28 fire additional damage if Flame Soul is trained",
+			"range": "16m",
+			"radius": "8 м",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		}
 	},
-	"tree_1|11": {
-		name: "Огненная длань",
-		max_lvl: 1,
-		note: "Перезарядка не сбрасывается",
-		legendary: true,
-		effects: {
-			cost: "Восстанавливает 2 Чи",
-			damage: "189-231 ед. урона",
-			attribute: "Накладывает 3 стака Искр",
-			attribute_1: "Увеличивает скорость снаряда",
-			attribute_2: "При критической атаке накладывает 4 стака Искр",
-			attribute_3: "При критической атаке восстанавливает дополнительно 1 Чи",
-			attribute_4: "Создает 1 Огненную сферу",
-			attribute_5: "При критическом ударе можно использовать Защитный барьер без перезарядки",
-			range: "16м",
-			radius: "Цель",
-			cast: "1,5 секунды",
-			cooldown: "Мгновенно",
+	"tree_2|root": {
+		"name": "Ледяная длань",
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 16 ~ 18 ice damage",
+			"attribute": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_1": "Deals 24 ~ 28 ice additional damage if Frost Soul is trained",
+			"attribute_2": "Inflicts 1 stack of Chill for 6 sec",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
 		},
+		"relations": [
+			11
+		],
+		"img": "/img/sc/f/3.png"
+	},
+	"tree_2|11": {
+		"name": "Ледяная длань",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 16 ~ 18 ice damage",
+			"attribute": "Увеличивает скорость полета снарядов",
+			"attribute_1": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_2": "Deals 24 ~ 28 ice additional damage if Frost Soul is trained",
+			"attribute_3": "Inflicts 1 stack of Chill for 6 sec",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		},
+		"relations": [
+			12,
+			13
+		]
+	},
+	"tree_2|12": {
+		"name": "Ледяная длань",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 18 ~ 21 ice damage",
+			"attribute": "Увеличивает скорость полета снарядов",
+			"attribute_1": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_2": "Deals 24 ~ 28 ice additional damage if Frost Soul is trained",
+			"attribute_3": "Inflicts 1 stack of Chill for 6 sec",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		},
+		"relations": [
+			15
+		]
+	},
+	"tree_2|13": {
+		"name": "Ледяная длань",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 18 ~ 21 ice damage",
+			"attribute": "При крит. атаке создает эффект Ледяной покров (1 шт.)",
+			"attribute_1": "Увеличивает скорость полета снарядов",
+			"attribute_2": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_3": "Deals 24 ~ 28 ice additional damage if Frost Soul is trained",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		},
+		"relations": [
+			14
+		]
+	},
+	"tree_2|14": {
+		"name": "Ледяная длань",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 18 ~ 21 ice damage",
+			"attribute": "При крит. атаке создает эффект Ледяной покров (1 шт.)",
+			"attribute_1": "Увеличивает скорость атаки приемом",
+			"attribute_2": "Увеличивает скорость полета снарядов",
+			"attribute_3": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_4": "Deals 24 ~ 28 ice additional damage if Frost Soul is trained",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		},
+		"relations": [
+			16
+		]
+	},
+	"tree_2|15": {
+		"name": "Ледяная длань",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 18 ~ 21 ice damage",
+			"attribute": "Увеличивает скорость полета снарядов",
+			"attribute_1": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_2": "Deals 24 ~ 28 ice additional damage if Frost Soul is trained",
+			"attribute_3": "Inflicts 1 stack of Chill for 10 sec",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		},
+		"relations": [
+			17
+		]
+	},
+	"tree_2|16": {
+		"name": "Ледяная длань",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 18 ~ 21 ice damage",
+			"attribute": "При крит. атаке создает эффект Ледяной покров (1 шт.)",
+			"attribute_1": "Не повышает уровень агрессии цели",
+			"attribute_2": "Увеличивает скорость атаки приемом",
+			"attribute_3": "Увеличивает скорость полета снарядов",
+			"attribute_4": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_5": "Deals 24 ~ 28 ice additional damage if Frost Soul is trained",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		},
+		"relations": [
+			18
+		]
+	},
+	"tree_2|17": {
+		"name": "Ледяная длань",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 18 ~ 21 ice damage",
+			"attribute": "Обморожение прерывает Отбивание и Защиту",
+			"attribute_1": "Увеличивает скорость полета снарядов",
+			"attribute_2": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_3": "Deals 24 ~ 28 ice additional damage if Frost Soul is trained",
+			"attribute_4": "Inflicts 1 stack of Chill for 10 sec",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		}
+	},
+	"tree_2|18": {
+		"name": "Ледяная длань",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 18 ~ 21 ice damage",
+			"attribute": "Если враг поражен эффектом Замораживание, активируется крит. атака",
+			"attribute_1": "При крит. атаке создает эффект Ледяной покров (1 шт.)",
+			"attribute_2": "Не повышает уровень агрессии цели",
+			"attribute_3": "Увеличивает скорость атаки приемом",
+			"attribute_4": "Увеличивает скорость полета снарядов",
+			"attribute_5": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_6": "Deals 24 ~ 28 ice additional damage if Frost Soul is trained",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		}
 	},
 	"tree_3|root": {
-		name: "Ледяная длань",
-		relations: [12],
-		effects: {
-			cost: "Требует 2 Чи",
-			damage: "65-79 ед. урона",
-			attribute: "Накладывает 1 стак холода на 6 секунд",
-			attribute_1: "У обмороженных врагов скорость передвижения снижается на 15%",
-			attribute_2: "Обмороженные противники не могут использоваеть навыки сближения",
-			attribute_3: "Увеличивает защиту на 10% при использовании ледяных умений",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
+		"name": "Волна тепла",
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 24 ~ 28 fire damage over 3 hits",
+			"attribute": "Создает эффект Огненный покров (1 шт.)",
+			"attribute_1": "Прерывает Отбивание",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления огнем",
+			"condition_1": "При крит. атаке огненным боевым приемом"
 		},
-		img: "/img/sc/f/3.jpg",
-	},
-	"tree_3|12": {
-		name: "Ледяная длань",
-		max_lvl: 1,
-		relations: [13, 14],
-		effects: {
-			cost: "Требует 2 Чи",
-			damage: "65-79 ед. урона",
-			attribute: "Накладывает 1 стак холода на 6 секунд",
-			attribute_1: "У обмороженных врагов скорость передвижения снижается на 15%",
-			attribute_2: "Обмороженные противники не могут использоваеть навыки сближения",
-			attribute_3: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_4: "Увеличивает скорость снарядов",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-		},
-	},
-	"tree_3|13": {
-		name: "Ледяная длань",
-		max_lvl: 1,
-		relations: [15],
-		effects: {
-			cost: "Требует 1 Чи",
-			damage: "65-79 ед. урона",
-			attribute: "Накладывает 1 стак холода на 6 секунд",
-			attribute_1: "У обмороженных врагов скорость передвижения снижается на 15%",
-			attribute_2: "Обмороженные противники не могут использоваеть навыки сближения",
-			attribute_3: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_4: "Увеличивает скорость снарядов",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-		},
-	},
-	"tree_3|14": {
-		name: "Ледяная длань",
-		max_lvl: 1,
-		relations: [16, 17],
-		effects: {
-			cost: "Требует 2 Чи",
-			damage: "97-119 ед. урона",
-			attribute_3: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_4: "Увеличивает скорость снарядов",
-			attribute_5: "Умение не повышает агрессию",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-		},
-	},
-	"tree_3|15": {
-		name: "Ледяная длань",
-		max_lvl: 1,
-		relations: [18],
-		effects: {
-			cost: "Требует 1 Чи",
-			damage: "65-79 ед. урона",
-			attribute: "Накладывает 1 стак холода на 6 секунд",
-			attribute_1: "У обмороженных врагов скорость передвижения снижается на 15%",
-			attribute_2: "Обмороженные противники не могут использоваеть навыки сближения",
-			attribute_3: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_4: "Увеличивает скорость снарядов",
-			attribute_5: "Замораживает врага с шансом 30% на 5 секунд",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-		},
-	},
-	"tree_3|16": {
-		name: "Ледяная длань",
-		max_lvl: 1,
-		relations: [19],
-		effects: {
-			cost: "Требует 2 Чи",
-			damage: "97-119 ед. урона",
-			attribute_3: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_4: "Увеличивает скорость снарядов",
-			attribute_5: "Умение не повышает агрессию",
-			attribute_6: "Увеличивает скорость стрельбы",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-		},
-	},
-	"tree_3|17": {
-		name: "Ледяная длань",
-		max_lvl: 1,
-		relations: [20],
-		effects: {
-			cost: "Требует 2 Чи",
-			damage: "243-297 ед. урона",
-			attribute_3: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_4: "Увеличивает скорость снарядов",
-			attribute_5: "Умение не повышает агрессию",
-			range: "16м",
-			radius: "Цель",
-			cast: "1 секунда",
-			cooldown: "Мгновенно",
-		},
-	},
-	"tree_3|18": {
-		name: "Ледяная длань",
-		max_lvl: 1,
-		relations: [21],
-		effects: {
-			cost: "Требует 1 Чи",
-			damage: "65-79 ед. урона",
-			attribute: "Накладывает 1 стак холода на 10 секунд",
-			attribute_1: "У обмороженных врагов скорость передвижения снижается на 15%",
-			attribute_2: "Обмороженные противники не могут использоваеть навыки сближения",
-			attribute_3: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_4: "Увеличивает скорость снарядов",
-			attribute_5: "Замораживает врага с шансом 30% на 5 секунд",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-		},
+		"relations": [
+			19
+		],
+		"img": "/img/sc/f/4.png"
 	},
 	"tree_3|19": {
-		name: "Ледяная длань",
-		max_lvl: 1,
-		relations: [22],
-		effects: {
-			cost: "Требует 2 Чи",
-			damage: "97-119 ед. урона",
-			attribute_3: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_4: "Увеличивает скорость снарядов",
-			attribute_5: "Умение не повышает агрессию",
-			attribute_6: "Увеличивает скорость стрельбы",
-			attribute_7: "При критической атаке создает 1 Ледяную сферу",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
+		"name": "Волна тепла",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 54 ~ 63 fire damage over 3 hits",
+			"attribute": "Создает эффект Огненный покров (1 шт.)",
+			"attribute_1": "Прерывает Отбивание",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления огнем",
+			"condition_1": "При крит. атаке огненным боевым приемом"
 		},
+		"relations": [
+			20
+		]
 	},
 	"tree_3|20": {
-		name: "Ледяная длань",
-		max_lvl: 1,
-		relations: [23],
-		effects: {
-			cost: "Требует 2 Чи",
-			damage: "243-297 ед. урона",
-			attribute_3: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_4: "Увеличивает скорость снарядов",
-			attribute_5: "Умение не повышает агрессию",
-			attribute_6: "Создает 1 Ледяную сферу",
-			range: "16м",
-			radius: "Цель",
-			cast: "1 секунда",
-			cooldown: "Мгновенно",
+		"name": "Волна тепла",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 54 ~ 63 fire damage over 3 hits",
+			"attribute": "Создает эффект Огненный покров (1 шт.)",
+			"attribute_1": "Прерывает Отбивание",
+			"attribute_2": "При каждом попадании накладывает эффект Искра (1 шт.)",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления огнем",
+			"condition_1": "При крит. атаке огненным боевым приемом"
 		},
+		"relations": [
+			21
+		]
 	},
 	"tree_3|21": {
-		name: "Ледяная длань",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			cost: "Требует 1 Чи",
-			damage: "65-79 ед. урона",
-			attribute: "Накладывает 1 стак холода на 10 секунд",
-			attribute_1: "У обмороженных врагов скорость передвижения снижается на 15%",
-			attribute_2: "Обмороженные противники не могут использоваеть навыки сближения",
-			attribute_3: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_4: "Увеличивает скорость снарядов",
-			attribute_5: "Замораживает врага с шансом 30% на 5 секунд",
-			attribute_6: "Стаки холода игнорируют защиту противника",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
+		"name": "Волна тепла",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 54 ~ 63 fire damage over 3 hits",
+			"attribute": "Создает эффект Огненный покров (1 шт.)",
+			"attribute_1": "Прерывает Отбивание",
+			"attribute_2": "При каждом попадании накладывает эффект Искра (1 шт.)",
+			"attribute_3": "Deals 12 ~ 14 fire additional damage to Burned enemies",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления огнем",
+			"condition_1": "При крит. атаке огненным боевым приемом"
 		},
+		"relations": [
+			22
+		]
 	},
 	"tree_3|22": {
-		name: "Ледяная длань",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			cost: "Требует 2 Чи",
-			damage: "97-119 ед. урона",
-			attribute_3: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_4: "Увеличивает скорость снарядов",
-			attribute_5: "Умение не повышает агрессию",
-			attribute_6: "Увеличивает скорость стрельбы",
-			attribute_7: "При критической атаке создает 1 Ледяную сферу",
-			attribute_8: "Умение приобретает критический эффект по замороженному врагу",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-		},
-	},
-	"tree_3|23": {
-		name: "Ледяная длань",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			cost: "Требует 2 Чи",
-			damage: "243-297 ед. урона",
-			attribute_3: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_4: "Увеличивает скорость снарядов",
-			attribute_5: "Умение не повышает агрессию",
-			attribute_6: "Создает 1 Ледяную сферу",
-			attribute_7: "При критической атаке возможно повторное использование моментально",
-			range: "16м",
-			radius: "Цель",
-			cast: "1 секунда",
-			cooldown: "Мгновенно",
-		},
+		"name": "Волна тепла",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 54 ~ 63 fire damage over 3 hits",
+			"attribute": "При 5 крит. атаках приемом можно использовать прием снова",
+			"attribute_1": "Создает эффект Огненный покров (1 шт.)",
+			"attribute_2": "Прерывает Отбивание",
+			"attribute_3": "При каждом попадании накладывает эффект Искра (1 шт.)",
+			"attribute_4": "Deals 12 ~ 14 fire additional damage to Burned enemies",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления огнем",
+			"condition_1": "При крит. атаке огненным боевым приемом"
+		}
 	},
 	"tree_4|root": {
-		name: "Дыхание дракона",
-		relations: [24],
-		effects: {
-			cost: "Требует 1 Чи",
-			damage: "по 189-231 ед. урона двумя ударами",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "Противник сбит с ног",
-			condition_1: "Противник в захвате",
-			condition_2: "Противник подброшен в воздух",
+		"name": "Волна холода",
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 36 ~ 42 ice damage over 3 hits",
+			"attribute": "При каждом попадании Ци +1",
+			"attribute_1": "Создает эффект Ледяной покров (1 шт.)",
+			"attribute_2": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления холодом",
+			"condition_1": "При крит. атаке ледяным боевым приемом"
 		},
-		img: "/img/sc/f/4.jpg",
+		"relations": [
+			23
+		],
+		"img": "/img/sc/f/5.png"
+	},
+	"tree_4|23": {
+		"name": "Волна холода",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 54 ~ 63 ice damage over 3 hits",
+			"attribute": "При каждом попадании Ци +1",
+			"attribute_1": "Создает эффект Ледяной покров (1 шт.)",
+			"attribute_2": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления холодом",
+			"condition_1": "При крит. атаке ледяным боевым приемом"
+		},
+		"relations": [
+			24,
+			25,
+			26
+		]
 	},
 	"tree_4|24": {
-		name: "Дыхание дракона",
-		max_lvl: 1,
-		relations: [25, 26],
-		effects: {
-			cost: "Требует 1 Чи",
-			damage: "по 189-231 ед. урона двумя ударами",
-			attribute: "Увеличивает критическую атаку на 3% каждым ударом на 3 секунды. Максимально на 30%",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "Противник сбит с ног",
-			condition_1: "Противник в захвате",
-			condition_2: "Противник подброшен в воздух",
+		"name": "Волна холода",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 54 ~ 63 ice damage over 3 hits",
+			"attribute": "При каждом попадании Ци +1",
+			"attribute_1": "Создает эффект Ледяной покров (1 шт.)",
+			"attribute_2": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_3": "Deals 4 ~ 4 ice additional damage to Frozen enemies",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления холодом",
+			"condition_1": "При крит. атаке ледяным боевым приемом"
 		},
+		"relations": [
+			27
+		]
 	},
 	"tree_4|25": {
-		name: "Дыхание дракона",
-		max_lvl: 1,
-		relations: [27],
-		effects: {
-			cost: "Требует 2 Чи",
-			damage: "по 189-231 ед. урона двумя ударами",
-			attribute: "Увеличивает критическую атаку на 3% каждым ударом на 3 секунды. Максимально на 30%",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "Противник сбит с ног",
-			condition_1: "Противник в захвате",
-			condition_2: "Противник подброшен в воздух",
-			condition_3: "Противник подавлен",
-			condition_4: "Противник обездвижен",
+		"name": "Волна холода",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 54 ~ 63 ice damage over 3 hits",
+			"attribute": "При каждом попадании Ци +1",
+			"attribute_1": "Создает эффект Ледяной покров (1 шт.)",
+			"attribute_2": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_3": "Обморожение (1 шт.) на 6 с.",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления холодом",
+			"condition_1": "При крит. атаке ледяным боевым приемом"
 		},
+		"relations": [
+			28
+		]
 	},
 	"tree_4|26": {
-		name: "Дыхание дракона",
-		max_lvl: 1,
-		relations: [28],
-		effects: {
-			cost: "Требует 2 Чи",
-			damage: "по 189-231 ед. урона двумя ударами",
-			attribute: "Увеличивает критическую атаку на 3% каждым ударом на 3 секунды. Максимально на 30%",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "Противник сбит с ног",
-			condition_1: "Противник в захвате",
-			condition_2: "Противник подброшен в воздух",
-			condition_3: "Противник ослаблен",
-			condition_4: "Противник оглушен",
+		"name": "Волна холода",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 54 ~ 63 ice damage over 3 hits",
+			"attribute": "Переводит 30% нанесенного урона в HP",
+			"attribute_1": "При каждом попадании Ци +1",
+			"attribute_2": "Создает эффект Ледяной покров (1 шт.)",
+			"attribute_3": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления холодом",
+			"condition_1": "При крит. атаке ледяным боевым приемом"
 		},
+		"relations": [
+			29
+		]
 	},
 	"tree_4|27": {
-		name: "Дыхание дракона",
-		max_lvl: 1,
-		relations: [29],
-		effects: {
-			cost: "Требует 2 Чи",
-			damage: "по 189-231 ед. урона двумя ударами",
-			attribute: "Увеличивает критическую атаку на 3% каждым ударом на 3 секунды. Максимально на 30%",
-			attribute_1: "Умение не повышает агрессию",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "Противник сбит с ног",
-			condition_1: "Противник в захвате",
-			condition_2: "Противник подброшен в воздух",
-			condition_3: "Противник подавлен",
-			condition_4: "Противник обездвижен",
+		"name": "Волна холода",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 54 ~ 63 ice damage over 3 hits",
+			"attribute": "При каждом попадании Ци +1",
+			"attribute_1": "При крит. атаке дополнительно восстанавливает 1 Ци",
+			"attribute_2": "Создает эффект Ледяной покров (1 шт.)",
+			"attribute_3": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_4": "Deals 4 ~ 4 ice additional damage to Frozen enemies",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления холодом",
+			"condition_1": "При крит. атаке ледяным боевым приемом"
 		},
+		"relations": [
+			30
+		]
 	},
 	"tree_4|28": {
-		name: "Дыхание дракона",
-		max_lvl: 1,
-		relations: [30],
-		effects: {
-			cost: "Требует 2 Чи",
-			damage: "по 189-231 ед. урона двумя ударами",
-			attribute: "Увеличивает критическую атаку на 3% каждым ударом на 3 секунды. Максимально на 30%",
-			attribute_1: "Врагу, подкинутому в воздух, при использовании восстанавливает 1 Чи",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "Противник сбит с ног",
-			condition_1: "Противник в захвате",
-			condition_2: "Противник подброшен в воздух",
-			condition_3: "Противник ослаблен",
-			condition_4: "Противник оглушен",
+		"name": "Волна холода",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 54 ~ 63 ice damage over 3 hits",
+			"attribute": "Обморожение прерывает Отбивание и Защиту",
+			"attribute_1": "При каждом попадании Ци +1",
+			"attribute_2": "Создает эффект Ледяной покров (1 шт.)",
+			"attribute_3": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_4": "Обморожение (1 шт.) на 6 с.",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления холодом",
+			"condition_1": "При крит. атаке ледяным боевым приемом"
 		},
+		"relations": [
+			31
+		]
 	},
 	"tree_4|29": {
-		name: "Дыхание дракона",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			cost: "Требует 2 Чи",
-			damage: "по 189-231 ед. урона двумя ударами",
-			attribute: "Увеличивает критическую атаку на 3% каждым ударом на 3 секунды. Максимально на 30%",
-			attribute_1: "Умение не повышает агрессию",
-			attribute_2: "Умение приобретает критический эффект при атаке захваченного или подавленного противника",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "Противник сбит с ног",
-			condition_1: "Противник в захвате",
-			condition_2: "Противник подброшен в воздух",
-			condition_3: "Противник подавлен",
-			condition_4: "Противник обездвижен",
+		"name": "Волна холода",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 54 ~ 63 ice damage over 3 hits",
+			"attribute": "Переводит 30% нанесенного урона в HP",
+			"attribute_1": "При крит. атаке поглощение HP увеличивается в 2 раза",
+			"attribute_2": "При каждом попадании Ци +1",
+			"attribute_3": "Создает эффект Ледяной покров (1 шт.)",
+			"attribute_4": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления холодом",
+			"condition_1": "При крит. атаке ледяным боевым приемом"
 		},
+		"relations": [
+			32
+		]
 	},
 	"tree_4|30": {
-		name: "Дыхание дракона",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			cost: "Требует 2 Чи",
-			damage: "по 189-231 ед. урона двумя ударами",
-			attribute: "Увеличивает критическую атаку на 3% каждым ударом на 3 секунды. Максимально на 30%",
-			attribute_1: "Врагу, подкинутому в воздух, при использовании восстанавливает 1 Чи",
-			attribute_2: "Умение приобретает критический эффект при атаке подброшенного в воздух противника",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "Противник сбит с ног",
-			condition_1: "Противник в захвате",
-			condition_2: "Противник подброшен в воздух",
-			condition_3: "Противник ослаблен",
-			condition_4: "Противник оглушен",
-		},
+		"name": "Волна холода",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 54 ~ 63 ice damage over 3 hits",
+			"attribute": "Если враг поражен эффектом Замораживание, активируется крит. атака",
+			"attribute_1": "При каждом попадании Ци +1",
+			"attribute_2": "При крит. атаке дополнительно восстанавливает 1 Ци",
+			"attribute_3": "Создает эффект Ледяной покров (1 шт.)",
+			"attribute_4": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_5": "Deals 4 ~ 4 ice additional damage to Frozen enemies",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления холодом",
+			"condition_1": "При крит. атаке ледяным боевым приемом"
+		}
+	},
+	"tree_4|31": {
+		"name": "Волна холода",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 54 ~ 63 ice damage over 3 hits",
+			"attribute": "Обморожение прерывает Отбивание и Защиту",
+			"attribute_1": "При каждом попадании Ци +1",
+			"attribute_2": "При каждом попадании отнимает у врага 10% Ци",
+			"attribute_3": "Создает эффект Ледяной покров (1 шт.)",
+			"attribute_4": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_5": "Обморожение (1 шт.) на 6 с.",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления холодом",
+			"condition_1": "При крит. атаке ледяным боевым приемом"
+		}
+	},
+	"tree_4|32": {
+		"name": "Волна холода",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 54 ~ 63 ice damage over 3 hits",
+			"attribute": "Переводит 30% нанесенного урона в HP",
+			"attribute_1": "При крит. атаке поглощение HP увеличивается в 2 раза",
+			"attribute_2": "При каждом попадании Ци +1",
+			"attribute_3": "Во время использования приема Волна холода получаемый урон -50%",
+			"attribute_4": "Создает эффект Ледяной покров (1 шт.)",
+			"attribute_5": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления холодом",
+			"condition_1": "При крит. атаке ледяным боевым приемом"
+		}
 	},
 	"tree_5|root": {
-		name: "Кувырок назад",
-		effects: {
-			cost: "Требует 1 Чи",
-			damage: "Кувырок назад на 4м",
-			range: "Вокруг персонаа",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "12 секунд",
-			condition: "Персонаж сбит с ног",
+		"name": "Дыхание дракона",
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 42 ~ 49 fire damage over 2 hits",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Если враг в состоянии Опрокидывания",
+			"condition_1": "Если враг в состоянии Подавления",
+			"condition_2": "Если враг подброшен в воздухe"
 		},
-		img: "/img/sc/f/5.jpg",
+		"relations": [
+			33
+		],
+		"img": "/img/sc/f/6.png"
+	},
+	"tree_5|33": {
+		"name": "Дыхание дракона",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 42 ~ 49 fire damage over 2 hits",
+			"attribute": "При каждом попадании в течение 3 с. крит. атака +3%",
+			"attribute_1": "Эффект Усиление крит. атаки суммируется до 10 раз",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Если враг в состоянии Опрокидывания",
+			"condition_1": "Если враг в состоянии Подавления",
+			"condition_2": "Если враг подброшен в воздухe"
+		},
+		"relations": [
+			34,
+			35
+		]
+	},
+	"tree_5|34": {
+		"name": "Дыхание дракона",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 42 ~ 49 fire damage over 2 hits",
+			"attribute": "При каждом попадании в течение 3 с. крит. атака +3%",
+			"attribute_1": "Эффект Усиление крит. атаки суммируется до 10 раз",
+			"attribute_2": "Deals 42 ~ 49 fire additional damage to Grabbed, Phantom Gripped, Grappled enemies",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Если враг в состоянии Опрокидывания",
+			"condition_1": "Если враг в состоянии Захвата, Подавления, Пленения",
+			"condition_2": "Если враг подброшен в воздухe"
+		},
+		"relations": [
+			36
+		]
+	},
+	"tree_5|35": {
+		"name": "Дыхание дракона",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 42 ~ 49 fire damage over 2 hits",
+			"attribute": "При каждом попадании в течение 3 с. крит. атака +3%",
+			"attribute_1": "Эффект Усиление крит. атаки суммируется до 10 раз",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Если враг в состоянии Ослабления, Оглушения, Опрокидывания",
+			"condition_1": "Если враг в состоянии Подавления",
+			"condition_2": "Если враг подброшен в воздухe"
+		},
+		"relations": [
+			37
+		]
+	},
+	"tree_5|36": {
+		"name": "Дыхание дракона",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 42 ~ 49 fire damage over 2 hits",
+			"attribute": "Не повышает уровень агрессии цели",
+			"attribute_1": "При каждом попадании в течение 3 с. крит. атака +3%",
+			"attribute_2": "Эффект Усиление крит. атаки суммируется до 10 раз",
+			"attribute_3": "Deals 42 ~ 49 fire additional damage to Grabbed, Phantom Gripped, Grappled enemies",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Если враг в состоянии Опрокидывания",
+			"condition_1": "Если враг в состоянии Захвата, Подавления, Пленения",
+			"condition_2": "Если враг подброшен в воздухe"
+		},
+		"relations": [
+			38
+		]
+	},
+	"tree_5|37": {
+		"name": "Дыхание дракона",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 42 ~ 49 fire damage over 2 hits",
+			"attribute": "Если враг подброшен в воздух, при использовании Ци +1",
+			"attribute_1": "При каждом попадании в течение 3 с. крит. атака +3%",
+			"attribute_2": "Эффект Усиление крит. атаки суммируется до 10 раз",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Если враг в состоянии Ослабления, Оглушения, Опрокидывания",
+			"condition_1": "Если враг в состоянии Подавления",
+			"condition_2": "Если враг подброшен в воздухe"
+		},
+		"relations": [
+			39
+		]
+	},
+	"tree_5|38": {
+		"name": "Дыхание дракона",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 42 ~ 49 fire damage over 2 hits",
+			"attribute": "Если враг в состоянии Подавления, Захвата, Пленения, активируется крит. атака",
+			"attribute_1": "Не повышает уровень агрессии цели",
+			"attribute_2": "При каждом попадании в течение 3 с. крит. атака +3%",
+			"attribute_3": "Эффект Усиление крит. атаки суммируется до 10 раз",
+			"attribute_4": "Deals 42 ~ 49 fire additional damage to Grabbed, Phantom Gripped, Grappled enemies",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Если враг в состоянии Опрокидывания",
+			"condition_1": "Если враг в состоянии Захвата, Подавления, Пленения",
+			"condition_2": "Если враг подброшен в воздухe"
+		}
+	},
+	"tree_5|39": {
+		"name": "Дыхание дракона",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 42 ~ 49 fire damage over 2 hits",
+			"attribute": "Если враг подброшен в воздух, активируется крит. атака",
+			"attribute_1": "Если враг подброшен в воздух, при использовании Ци +1",
+			"attribute_2": "При каждом попадании в течение 3 с. крит. атака +3%",
+			"attribute_3": "Эффект Усиление крит. атаки суммируется до 10 раз",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Если враг в состоянии Ослабления, Оглушения, Опрокидывания",
+			"condition_1": "Если враг в состоянии Подавления",
+			"condition_2": "Если враг подброшен в воздухe"
+		}
 	},
 	"tree_6|root": {
-		name: "Волна холода",
-		relations: [31],
-		effects: {
-			damage: "по 162-198 ед. урона пятью ударами",
-			attribute: "Создает 1 Ледяную сферу",
-			attribute_1: "При каждом попадании восстанавливает 1 Чи",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "В ледяной стойке",
-			condition_1: "Ледяная атака была критической",
+		"name": "Двойной поток",
+		"effects": {
+			"cost": 0,
+			"damage": "",
+			"attribute": "При использовании расходует все эффекты Огненный покров и Ледяной покров",
+			"attribute_1": "Накладывает эффект Кровотечение (1 шт.) на 10 с.",
+			"attribute_2": "Прерывает Отбивание",
+			"range": "From User",
+			"radius": "2 x 16 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Если на персонажа наложено 3 эффекта Огненный покров и Ледяной покров"
 		},
-		img: "/img/sc/f/6.jpg",
-	},
-	"tree_6|31": {
-		name: "Волна холода",
-		max_lvl: 1,
-		relations: [32, 33, 34],
-		effects: {
-			damage: "по 216-264 ед. урона пятью ударами",
-			attribute: "Создает 1 Ледяную сферу",
-			attribute_1: "При каждом попадании восстанавливает 1 Чи",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "В ледяной стойке",
-			condition_1: "Ледяная атака была критической",
-		},
-	},
-	"tree_6|32": {
-		name: "Волна холода",
-		max_lvl: 1,
-		relations: [35],
-		effects: {
-			damage: "по 216-264 ед. урона пятью ударами",
-			attribute: "Создает 1 Ледяную сферу",
-			attribute_1: "При каждом попадании восстанавливает 1 Чи",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "Замороженные враги дополнительно получают 11-13 ед. урона",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "В ледяной стойке",
-			condition_1: "Ледяная атака была критической",
-		},
-	},
-	"tree_6|33": {
-		name: "Волна холода",
-		max_lvl: 1,
-		relations: [36],
-		effects: {
-			damage: "по 216-264 ед. урона пятью ударами",
-			attribute: "Создает 1 Ледяную сферу",
-			attribute_1: "При каждом попадании восстанавливает 1 Чи",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "Накладывает 1 стак холода на 6 секунд",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "В ледяной стойке",
-			condition_1: "Ледяная атака была критической",
-		},
-	},
-	"tree_6|34": {
-		name: "Волна холода",
-		max_lvl: 1,
-		relations: [37],
-		effects: {
-			damage: "по 216-264 ед. урона пятью ударами",
-			attribute: "Создает 1 Ледяную сферу",
-			attribute_1: "При каждом попадании восстанавливает 1 Чи",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "При каждом попадании поглощает 13-16 ХП",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "В ледяной стойке",
-			condition_1: "Ледяная атака была критической",
-		},
-	},
-	"tree_6|35": {
-		name: "Волна холода",
-		max_lvl: 1,
-		relations: [38],
-		effects: {
-			damage: "по 216-264 ед. урона пятью ударами",
-			attribute: "Создает 1 Ледяную сферу",
-			attribute_1: "При каждом попадании восстанавливает 1 Чи",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "Замороженные враги дополнительно получают 11-13 ед. урона",
-			attribute_4: "При критической атаке дополнительно восстанавливает 1 Чи",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "В ледяной стойке",
-			condition_1: "Ледяная атака была критической",
-		},
-	},
-	"tree_6|36": {
-		name: "Волна холода",
-		max_lvl: 1,
-		relations: [39],
-		effects: {
-			damage: "по 216-264 ед. урона пятью ударами",
-			attribute: "Создает 1 Ледяную сферу",
-			attribute_1: "При каждом попадании восстанавливает 1 Чи",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "Накладывает 1 стак холода на 6 секунд",
-			attribute_4: "Игнорирует защиту противника",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "В ледяной стойке",
-			condition_1: "Ледяная атака была критической",
-		},
-	},
-	"tree_6|37": {
-		name: "Волна холода",
-		max_lvl: 1,
-		relations: [40],
-		effects: {
-			damage: "по 216-264 ед. урона пятью ударами",
-			attribute: "Создает 1 Ледяную сферу",
-			attribute_1: "При каждом попадании восстанавливает 1 Чи",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "При каждом попадании поглощает 13-16 ХП",
-			attribute_4: "При критической атаке поглощает в 2 раза больше ХП",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "В ледяной стойке",
-			condition_1: "Ледяная атака была критической",
-		},
-	},
-	"tree_6|38": {
-		name: "Волна холода",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "по 216-264 ед. урона пятью ударами",
-			attribute: "Создает 1 Ледяную сферу",
-			attribute_1: "При каждом попадании восстанавливает 1 Чи",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "Замороженные враги дополнительно получают 11-13 ед. урона",
-			attribute_4: "При критической атаке дополнительно восстанавливает 1 Чи",
-			attribute_5: "Умение приобретает критический эффект по замороженным врагам",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "В ледяной стойке",
-			condition_1: "Ледяная атака была критической",
-		},
-	},
-	"tree_6|39": {
-		name: "Волна холода",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "по 216-264 ед. урона пятью ударами",
-			attribute: "Создает 1 Ледяную сферу",
-			attribute_1: "При каждом попадании восстанавливает 1 Чи",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "Накладывает 1 стак холода на 6 секунд",
-			attribute_4: "Игнорирует защиту противника",
-			attribute_5: "Сжигает по 10% Чи противнику каждым попаданием",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "В ледяной стойке",
-			condition_1: "Ледяная атака была критической",
-		},
+		"relations": [
+			40
+		],
+		"img": "/img/sc/f/10.png"
 	},
 	"tree_6|40": {
-		name: "Волна холода",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "по 216-264 ед. урона пятью ударами",
-			attribute: "Создает 1 Ледяную сферу",
-			attribute_1: "При каждом попадании восстанавливает 1 Чи",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "При каждом попадании поглощает 13-16 ХП",
-			attribute_4: "При критической атаке поглощает в 2 раза больше ХП",
-			attribute_5: "Снижает входящий персонажу урон на 50% во время использования умения",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "В ледяной стойке",
-			condition_1: "Ледяная атака была критической",
+		"name": "Двойной поток",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 5,
+			"damage": "",
+			"attribute": "При использовании расходует все эффекты Огненный покров и Ледяной покров",
+			"attribute_1": "Накладывает эффект Кровотечение (1 шт.) на 10 с.",
+			"attribute_2": "Прерывает Отбивание",
+			"range": "From User",
+			"radius": "2 x 16 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Если на персонажа наложено 3 эффекта Огненный покров и Ледяной покров"
 		},
+		"relations": [
+			41
+		]
+	},
+	"tree_6|41": {
+		"name": "Двойной поток",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 5,
+			"damage": "",
+			"attribute": "Накладывает эффект Искра (5 шт.)",
+			"attribute_1": "При использовании расходует все эффекты Огненный покров и Ледяной покров",
+			"attribute_2": "Накладывает эффект Кровотечение (1 шт.) на 10 с.",
+			"attribute_3": "Прерывает Отбивание",
+			"range": "From User",
+			"radius": "2 x 16 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Если на персонажа наложено 3 эффекта Огненный покров и Ледяной покров"
+		},
+		"relations": [
+			42
+		]
+	},
+	"tree_6|42": {
+		"name": "Двойной поток",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 5,
+			"damage": "",
+			"attribute": "Накладывает эффект Искра (5 шт.)",
+			"attribute_1": "При использовании расходует все эффекты Огненный покров и Ледяной покров",
+			"attribute_2": "Накладывает эффект Кровотечение (1 шт.) на 10 с.",
+			"attribute_3": "Прерывает Отбивание",
+			"range": "From User",
+			"radius": "2 x 16 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Если на персонажа наложено 3 эффекта Огненный покров и Ледяной покров"
+		}
 	},
 	"tree_7|root": {
-		name: "Волна тепла",
-		relations: [41],
-		effects: {
-			damage: "по 108-132 ед. урона пятью ударами",
-			attribute: "Создает 1 Огненную сферу",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "В огненной стойке",
-			condition_1: "Огненная атака была критической",
+		"name": "Волна пламени",
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 36 ~ 42 fire damage",
+			"attribute": "Накладывает эффект Искра (1 шт.)",
+			"range": "From User",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "24 sec",
+			"condition": "Используется Стойка Управления огнем"
 		},
-		img: "/img/sc/f/7.jpg",
-	},
-	"tree_7|41": {
-		name: "Волна тепла",
-		max_lvl: 1,
-		relations: [42],
-		effects: {
-			damage: "по 132-165 ед. урона пятью ударами",
-			attribute: "Создает 1 Огненную сферу",
-			attribute_1: "При каждом попадании накладывает 1 стак Искр",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "В огненной стойке",
-			condition_1: "Огненная атака была критической",
-		},
-	},
-	"tree_7|42": {
-		name: "Волна тепла",
-		max_lvl: 1,
-		relations: [43],
-		effects: {
-			damage: "по 132-165 ед. урона пятью ударами",
-			attribute: "Создает 1 Огненную сферу",
-			attribute_1: "При каждом попадании накладывает 1 стак Искр",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "В огненной стойке",
-			condition_1: "Огненная атака была критической",
-		},
+		"relations": [
+			43
+		],
+		"img": "/img/sc/f/12.png"
 	},
 	"tree_7|43": {
-		name: "Волна тепла",
-		max_lvl: 1,
-		relations: [44],
-		effects: {
-			damage: "по 132-165 ед. урона пятью ударами",
-			attribute: "Создает 1 Огненную сферу",
-			attribute_1: "При каждом попадании накладывает 1 стак Искр",
-			attribute_2: "Последним ударом взрывает все стаки Искр на цели",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "В огненной стойке",
-			condition_1: "Огненная атака была критической",
+		"name": "Волна пламени",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 36 ~ 42 fire damage",
+			"attribute": "Накладывает эффект Искра (1 шт.)",
+			"range": "From User",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
 		},
+		"relations": [
+			44,
+			45
+		]
 	},
 	"tree_7|44": {
-		name: "Волна тепла",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "по 132-165 ед. урона пятью ударами",
-			attribute: "Создает 1 Огненную сферу",
-			attribute_1: "При каждом попадании накладывает 1 стак Искр",
-			attribute_2: "Последним ударом взрывает все стаки Искр на цели",
-			attribute_3: "Можно использовать повторно при крите 5 выстрелами",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "В огненной стойке",
-			condition_1: "Огненная атака была критической",
+		"name": "Волна пламени",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 60 ~ 70 fire damage",
+			"attribute": "Накладывает эффект Искра (1 шт.)",
+			"range": "From User",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
 		},
+		"relations": [
+			46
+		]
+	},
+	"tree_7|45": {
+		"name": "Волна пламени",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 18 ~ 21 fire damage",
+			"attribute": "Если враг в состоянии Оглушения, Ослабления, Опрокидывания, подбрасывает в воздух ",
+			"attribute_1": "Накладывает эффект Искра (1 шт.)",
+			"attribute_2": "Прерывает Отбивание",
+			"range": "From User",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
+		},
+		"relations": [
+			47,
+			48,
+			49
+		]
+	},
+	"tree_7|46": {
+		"name": "Волна пламени",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 60 ~ 70 fire damage",
+			"attribute": "Накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Deals 18 ~ 21 fire additional damage to Stunned, Dazed enemies",
+			"range": "From User",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
+		},
+		"relations": [
+			50
+		]
+	},
+	"tree_7|47": {
+		"name": "Волна пламени",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 18 ~ 21 fire damage",
+			"attribute": "Если враг в состоянии Оглушения, Ослабления, Опрокидывания, подбрасывает в воздух ",
+			"attribute_1": "Накладывает эффект Искра (1 шт.)",
+			"attribute_2": "После использования приема отбивает 1 атаку в течение 0,5 с.",
+			"range": "From User",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
+		},
+		"relations": [
+			51
+		]
+	},
+	"tree_7|48": {
+		"name": "Жаркая волна",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 36 ~ 42 fire damage",
+			"attribute": "Подбрасывает в воздух врага в состоянии Оглушения или Ослабления",
+			"attribute_1": "Накладывает эффект Искра (1 шт.)",
+			"attribute_2": "При наложенном эффекте Жгучая волна происходит взрыв",
+			"attribute_3": "Опрокидывание используется несколько раз (2)",
+			"attribute_4": "Прерывает Отбивание и Защиту",
+			"attribute_5": "Опрокидывает врага на 3 с.",
+			"range": "2m",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
+		},
+		"relations": [
+			54
+		],
+		"img": "/img/sc/f/13.png"
+	},
+	"tree_7|49": {
+		"name": "Жаркая волна",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 36 ~ 42 fire damage",
+			"attribute": "Если враг в состоянии Оглушения, Опрокидывания, подбрасывает в воздух",
+			"attribute_1": "Накладывает эффект Искра (1 шт.)",
+			"attribute_2": "При наложенном эффекте Жгучая волна происходит взрыв",
+			"attribute_3": "Ослабление используется несколько раз (2)",
+			"attribute_4": "Прерывает Отбивание и Защиту",
+			"attribute_5": "Ослабляет врага на 3 с.",
+			"range": "2m",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
+		},
+		"relations": [
+			55
+		],
+		"img": "/img/sc/f/13.png"
+	},
+	"tree_7|50": {
+		"name": "Волна пламени",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 60 ~ 70 fire damage",
+			"attribute": "Если враг в состоянии Оглушения и Ослабления, активируется крит. атака",
+			"attribute_1": "Накладывает эффект Искра (1 шт.)",
+			"attribute_2": "Deals 18 ~ 21 fire additional damage to Stunned, Dazed enemies",
+			"range": "From User",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
+		},
+		"relations": [
+			52
+		]
+	},
+	"tree_7|51": {
+		"name": "Волна пламени",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 18 ~ 21 fire damage",
+			"attribute": "При успешном Отбивании Ци +6 за 3 с.",
+			"attribute_1": "Если враг в состоянии Оглушения, Ослабления, Опрокидывания, подбрасывает в воздух ",
+			"attribute_2": "Накладывает эффект Искра (1 шт.)",
+			"attribute_3": "После использования приема отбивает 1 атаку в течение 0,5 с.",
+			"range": "From User",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
+		},
+		"relations": [
+			53
+		]
+	},
+	"tree_7|52": {
+		"name": "Волна пламени",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 60 ~ 70 fire damage",
+			"attribute": "Если враг в состоянии Оглушения и Ослабления, активируется крит. атака",
+			"attribute_1": "При крит. атаке используется подряд несколько раз (макс. 2)",
+			"attribute_2": "Накладывает эффект Искра (1 шт.)",
+			"attribute_3": "Deals 18 ~ 21 fire additional damage to Stunned, Dazed enemies",
+			"range": "From User",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
+		}
+	},
+	"tree_7|53": {
+		"name": "Волна пламени",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 18 ~ 21 fire damage",
+			"attribute": "При успешном Отбивании используется подряд несколько раз (макс. 2)",
+			"attribute_1": "При успешном Отбивании Ци +6 за 3 с.",
+			"attribute_2": "Если враг в состоянии Оглушения, Ослабления, Опрокидывания, подбрасывает в воздух ",
+			"attribute_3": "Накладывает эффект Искра (1 шт.)",
+			"attribute_4": "После использования приема отбивает 1 атаку в течение 0,5 с.",
+			"range": "From User",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
+		}
+	},
+	"tree_7|54": {
+		"name": "Жаркая волна",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 36 ~ 42 fire damage",
+			"attribute": "Подбрасывает в воздух врага в состоянии Оглушения или Ослабления",
+			"attribute_1": "Накладывает эффект Искра (1 шт.)",
+			"attribute_2": "При наложенном эффекте Жгучая волна происходит взрыв",
+			"attribute_3": "Опрокидывание используется несколько раз (2)",
+			"attribute_4": "Прерывает Отбивание и Защиту",
+			"attribute_5": "Опрокидывает врага на 3 с.",
+			"range": "16m",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
+		},
+		"img": "/img/sc/f/13.png"
+	},
+	"tree_7|55": {
+		"name": "Жаркая волна",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 36 ~ 42 fire damage",
+			"attribute": "Если враг в состоянии Оглушения, Опрокидывания, подбрасывает в воздух",
+			"attribute_1": "Накладывает эффект Искра (1 шт.)",
+			"attribute_2": "При наложенном эффекте Жгучая волна происходит взрыв",
+			"attribute_3": "Ослабление используется несколько раз (2)",
+			"attribute_4": "Прерывает Отбивание и Защиту",
+			"attribute_5": "Ослабляет врага на 3 с.",
+			"range": "16m",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
+		},
+		"img": "/img/sc/f/13.png"
+	},
+	"tree_8.0|root": {
+		"name": "Сфера льда",
+		"effects": {
+			"cost": 0,
+			"damage": "Сопротивление урону и негативным эффектам на 10 с.",
+			"attribute": "Ци +10 за 10 с.",
+			"attribute_1": "Во время использования приема удерживает и обездвиживает",
+			"attribute_2": "Отменяет все негативные эффекты",
+			"attribute_3": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "From User",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "1 min",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"relations": [
+			56
+		],
+		"img": "/img/sc/f/15.png"
+	},
+	"tree_8.0|56": {
+		"name": "Сфера льда",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Сопротивление урону и негативным эффектам на 10 с.",
+			"attribute": "Heals the user 10% of their Health",
+			"attribute_1": "Heals the user 2% of their Health on resist up to 3 times",
+			"attribute_2": "Ци +10 за 10 с.",
+			"attribute_3": "Во время использования приема удерживает и обездвиживает",
+			"attribute_4": "Отменяет все негативные эффекты",
+			"attribute_5": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "From User",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "1 min",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"relations": [
+			57,
+			58,
+			59
+		]
+	},
+	"tree_8.0|57": {
+		"name": "Ледокол",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Завершает прием Сфера льда",
+			"attribute": "Переводит 100% нанесенного урона в НР",
+			"attribute_1": "Deals 24 ~ 28 ice damage",
+			"range": "From User",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления холодом",
+			"condition_1": "Во время действия приема Сфера льда"
+		},
+		"relations": [
+			60
+		],
+		"img": "/img/sc/f/14.png"
+	},
+	"tree_8.0|58": {
+		"name": "Глобальное потепление",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Завершает прием Сфера льда",
+			"attribute": "При отмене приема Сфера льда Замораживание врагов на 5 с.",
+			"range": "From User",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления холодом",
+			"condition_1": "Во время действия приема Сфера льда"
+		},
+		"relations": [
+			61
+		],
+		"img": "/img/sc/f/14.png"
+	},
+	"tree_8.0|59": {
+		"name": "Сфера льда",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Сопротивление урону и негативным эффектам на 10 с.",
+			"attribute": "Heals the user 30% of their Health",
+			"attribute_1": "Heals the user 5% of their Health on resist up to 3 times",
+			"attribute_2": "Ци +10 за 10 с.",
+			"attribute_3": "Во время использования приема удерживает и обездвиживает",
+			"attribute_4": "Отменяет все негативные эффекты",
+			"attribute_5": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_6": "Не сбрасывает перезарядку приема",
+			"range": "From User",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "3 min",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"relations": [
+			62
+		]
+	},
+	"tree_8.0|60": {
+		"name": "Ледокол",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Завершает прием Сфера льда",
+			"attribute": "Переводит 100% нанесенного урона в НР",
+			"attribute_1": "Deals 24 ~ 28 ice damage",
+			"attribute_2": "При отмене приема Сфера льда отталкивает врагов на 5 м",
+			"range": "From User",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления холодом",
+			"condition_1": "Во время действия приема Сфера льда"
+		},
+		"img": "/img/sc/f/14.png"
+	},
+	"tree_8.0|61": {
+		"name": "Глобальное потепление",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Завершает прием Сфера льда",
+			"attribute": "При отмене приема Сфера льда Замораживание врагов на 5 с.",
+			"attribute_1": "Обморожение (1 шт.) на 6 с.",
+			"attribute_2": "При отмене приема Сфера льда перемещает назад на 15 м (персонаж)",
+			"attribute_3": "Во время движения сопротивление урону и негативным эффектам",
+			"range": "From User",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления холодом",
+			"condition_1": "Во время действия приема Сфера льда"
+		},
+		"img": "/img/sc/f/14.png"
+	},
+	"tree_8.0|62": {
+		"name": "Таяние льдов",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Завершает прием Сфера льда",
+			"attribute": "При отмене приема Сфера льда сопротивление урону и негативным эффектам на 1 c.",
+			"range": "From User",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Используется Стойка Управления холодом",
+			"condition_1": "Во время действия приема Сфера льда"
+		},
+		"img": "/img/sc/f/14.png"
+	},
+	"tree_10|root": {
+		"name": "Избавление",
+		"effects": {
+			"cost": 3,
+			"damage": "Выводит из состояния Опрокидывания и Обморока",
+			"attribute": "Сопротивление урону и негативным эффектам",
+			"attribute_1": "Сопротивление урону и негативным эффектам for 0.5 sec after use",
+			"attribute_2": "Сопротивление прерывается после применения другого приема",
+			"attribute_3": "Прерывает Отбивание и Защиту",
+			"attribute_4": "Deals 12 ~ 14 damage",
+			"range": "From User",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "В состоянии Опрокидывания или Обморока"
+		},
+		"relations": [
+			63
+		],
+		"img": "/img/sc/f/16.png"
+	},
+	"tree_10|63": {
+		"name": "Избавление",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 3,
+			"damage": "Выводит из состояния Оглушения, Ослабления, Опрокидывания, Обморока",
+			"attribute": "Сопротивление урону и негативным эффектам",
+			"attribute_1": "Сопротивление урону и негативным эффектам for 0.5 sec after use",
+			"attribute_2": "Сопротивление прерывается после применения другого приема",
+			"attribute_3": "Прерывает Отбивание и Защиту",
+			"attribute_4": "Deals 12 ~ 14 damage",
+			"range": "From User",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "В состоянии Оглушения, Ослабления, Опрокидывания или Обморока"
+		},
+		"relations": [
+			64,
+			65,
+			66
+		]
+	},
+	"tree_10|64": {
+		"name": "Избавление",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 3,
+			"damage": "Выводит из состояния Оглушения, Ослабления, Опрокидывания, Обморока",
+			"attribute": "Сопротивление урону и негативным эффектам",
+			"attribute_1": "Сопротивление урону и негативным эффектам for 0.5 sec after use",
+			"attribute_2": "Сопротивление прерывается после применения другого приема",
+			"attribute_3": "Прерывает Отбивание и Защиту",
+			"attribute_4": "Вырывается из Подавления, Захвата, Пленения",
+			"attribute_5": "Deals 12 ~ 14 damage",
+			"range": "From User",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "В состоянии Оглушения, Ослабления, Опрокидывания или Обморока",
+			"condition_1": "В состоянии Подавления, Захвата или Пленения"
+		},
+		"relations": [
+			67
+		]
+	},
+	"tree_10|65": {
+		"name": "Избавление",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 3,
+			"damage": "Выводит из состояния Оглушения, Ослабления, Опрокидывания, Обморока",
+			"attribute": "Сопротивление урону и негативным эффектам",
+			"attribute_1": "Сопротивление урону и негативным эффектам for 0.5 sec after use",
+			"attribute_2": "Сопротивление прерывается после применения другого приема",
+			"attribute_3": "Прерывает Отбивание и Защиту",
+			"attribute_4": "Отталкивает врагов на 11 м и Опрокидывает на 2 с.",
+			"attribute_5": "Deals 12 ~ 14 damage",
+			"range": "From User",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "В состоянии Оглушения, Ослабления, Опрокидывания или Обморока"
+		},
+		"relations": [
+			68
+		]
+	},
+	"tree_10|66": {
+		"name": "Избавление",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 3,
+			"damage": "Выводит из состояния Оглушения, Ослабления, Опрокидывания, Обморока",
+			"attribute": "Сопротивление урону и негативным эффектам",
+			"attribute_1": "Сопротивление урону и негативным эффектам for 0.5 sec after use",
+			"attribute_2": "Сопротивление прерывается после применения другого приема",
+			"attribute_3": "Прерывает Отбивание и Защиту",
+			"attribute_4": "Ослабляет врага на 2 с.",
+			"attribute_5": "Deals 12 ~ 14 damage",
+			"range": "From User",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "В состоянии Оглушения, Ослабления, Опрокидывания или Обморока"
+		},
+		"relations": [
+			69
+		]
+	},
+	"tree_10|67": {
+		"name": "Избавление",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 3,
+			"damage": "Выводит из состояния Оглушения, Ослабления, Опрокидывания, Обморока",
+			"attribute": "Сопротивление урону и негативным эффектам",
+			"attribute_1": "Сопротивление урону и негативным эффектам for 0.5 sec after use",
+			"attribute_2": "Сопротивление прерывается после применения другого приема",
+			"attribute_3": "При выходе из состояния Подавления, Захвата и Пленения НР +5%",
+			"attribute_4": "Прерывает Отбивание и Защиту",
+			"attribute_5": "Вырывается из Подавления, Захвата, Пленения",
+			"attribute_6": "Deals 12 ~ 14 damage",
+			"range": "From User",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "В состоянии Оглушения, Ослабления, Опрокидывания или Обморока",
+			"condition_1": "В состоянии Подавления, Захвата или Пленения"
+		},
+		"relations": [
+			70
+		]
+	},
+	"tree_10|68": {
+		"name": "Избавление",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 3,
+			"damage": "Выводит из состояния Оглушения, Ослабления, Опрокидывания, Обморока",
+			"attribute": "Сопротивление урону и негативным эффектам",
+			"attribute_1": "Сопротивление урону и негативным эффектам for 0.5 sec after use",
+			"attribute_2": "Сопротивление прерывается после применения другого приема",
+			"attribute_3": "Запрет на использование боевых приемов быстрого перемещения на 6 с.",
+			"attribute_4": "Скорость врагов -30% на 6 с.",
+			"attribute_5": "Прерывает Отбивание и Защиту",
+			"attribute_6": "Отталкивает врагов на 11 м и Опрокидывает на 2 с.",
+			"attribute_7": "Deals 12 ~ 14 damage",
+			"range": "From User",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "В состоянии Оглушения, Ослабления, Опрокидывания или Обморока"
+		},
+		"relations": [
+			71
+		]
+	},
+	"tree_10|69": {
+		"name": "Избавление",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 5,
+			"damage": "Выводит из состояния Оглушения, Ослабления, Опрокидывания, Обморока",
+			"attribute": "Сопротивление урону и негативным эффектам",
+			"attribute_1": "Сопротивление урону и негативным эффектам for 0.5 sec after use",
+			"attribute_2": "Сопротивление прерывается после применения другого приема",
+			"attribute_3": "Прерывает Отбивание и Защиту",
+			"attribute_4": "Ослабляет врага на 2 с.",
+			"attribute_5": "Deals 12 ~ 14 damage",
+			"range": "From User",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "В состоянии Оглушения, Ослабления, Опрокидывания или Обморока"
+		},
+		"relations": [
+			72
+		]
+	},
+	"tree_10|70": {
+		"name": "Избавление",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 3,
+			"damage": "Выводит из состояния Оглушения, Ослабления, Опрокидывания, Обморока",
+			"attribute": "Сопротивление урону и негативным эффектам",
+			"attribute_1": "Сопротивление урону и негативным эффектам for 1 sec after use",
+			"attribute_2": "При выходе из состояния Подавления, Захвата и Пленения НР +5%",
+			"attribute_3": "Прерывает Отбивание и Защиту",
+			"attribute_4": "Вырывается из Подавления, Захвата, Пленения",
+			"attribute_5": "Deals 12 ~ 14 damage",
+			"range": "From User",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "В состоянии Оглушения, Ослабления, Опрокидывания или Обморока",
+			"condition_1": "В состоянии Подавления, Захвата или Пленения"
+		}
+	},
+	"tree_10|71": {
+		"name": "Избавление",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 3,
+			"damage": "Выводит из состояния Оглушения, Ослабления, Опрокидывания, Обморока",
+			"attribute": "Сопротивление урону и негативным эффектам",
+			"attribute_1": "Сопротивление урону и негативным эффектам for 0.5 sec after use",
+			"attribute_2": "Сопротивление прерывается после применения другого приема",
+			"attribute_3": "Запрет на использование боевых приемов быстрого перемещения на 6 с.",
+			"attribute_4": "Скорость врагов -30% на 6 с.",
+			"attribute_5": "В течение 5 с. Защитный барьер в размере 10% от HP",
+			"attribute_6": "Прерывает Отбивание и Защиту",
+			"attribute_7": "Отталкивает врагов на 11 м и Опрокидывает на 2 с.",
+			"attribute_8": "Deals 12 ~ 14 damage",
+			"range": "From User",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "В состоянии Оглушения, Ослабления, Опрокидывания или Обморока"
+		}
+	},
+	"tree_10|72": {
+		"name": "Избавление",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 5,
+			"damage": "Выводит из состояния Оглушения, Ослабления, Опрокидывания, Обморока",
+			"attribute": "Сопротивление урону и негативным эффектам",
+			"attribute_1": "Сопротивление урону и негативным эффектам for 0.5 sec after use",
+			"attribute_2": "Сопротивление прерывается после применения другого приема",
+			"attribute_3": "Отнимает у врага 50% Ци",
+			"attribute_4": "Прерывает Отбивание и Защиту",
+			"attribute_5": "Ослабляет врага на 2 с.",
+			"attribute_6": "Deals 12 ~ 14 damage",
+			"range": "From User",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "В состоянии Оглушения, Ослабления, Опрокидывания или Обморока"
+		}
+	},
+	"tree_11|root": {
+		"name": "Ударная волна",
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 6 ~ 7 damage",
+			"attribute": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_1": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_2": "Если враг поражен эффектом Замораживание, отталкивает на 5 м и оглушает на 1 с.",
+			"attribute_3": "Deals 30 ~ 35 ice additional damage on breaking Freeze",
+			"range": "From User",
+			"radius": "2 x 10 м",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		},
+		"relations": [
+			73
+		],
+		"img": "/img/sc/f/18.png"
+	},
+	"tree_11|73": {
+		"name": "Ударная волна",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 6 ~ 7 damage",
+			"attribute": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_1": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_2": "Если враг поражен эффектом Замораживание, отталкивает на 5 м и оглушает на 1 с.",
+			"attribute_3": "Deals 30 ~ 35 ice additional damage on breaking Freeze",
+			"attribute_4": "Блокирует дистанционные атаки в течение 0,5 с. ",
+			"attribute_5": "Боевой прием атаки и защиты",
+			"range": "From User",
+			"radius": "2 x 10 м",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		},
+		"relations": [
+			74,
+			75
+		]
+	},
+	"tree_11|74": {
+		"name": "Ударная волна",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 6 ~ 7 damage",
+			"attribute": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_1": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_2": "Если враг поражен эффектом Замораживание, отталкивает на 5 м и оглушает на 1 с.",
+			"attribute_3": "Deals 30 ~ 35 ice additional damage on breaking Freeze",
+			"attribute_4": "При разрушении Замораживания поглощает HP в размере 25% от урона",
+			"attribute_5": "При разрушении эффекта Замораживание Ци +2",
+			"attribute_6": "Блокирует дистанционные атаки в течение 0,5 с. ",
+			"attribute_7": "Боевой прием атаки и защиты",
+			"range": "From User",
+			"radius": "2 x 10 м",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		},
+		"relations": [
+			76
+		]
+	},
+	"tree_11|75": {
+		"name": "Ударная волна",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 6 ~ 7 damage",
+			"attribute": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_1": "Если враг поражен эффектом Искра 5 раз. Ожог на 6 с.",
+			"attribute_2": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_3": "Если враг поражен эффектом Замораживание, отталкивает на 5 м и оглушает на 1 с.",
+			"attribute_4": "Deals 30 ~ 35 ice additional damage on breaking Freeze",
+			"range": "From User",
+			"radius": "2 x 10 м",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		},
+		"relations": [
+			77,
+			78,
+			79
+		]
+	},
+	"tree_11|76": {
+		"name": "Ударная волна",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 6 ~ 7 damage",
+			"attribute": "При успешном Блоке Ци +3",
+			"attribute_1": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_2": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_3": "Если враг поражен эффектом Замораживание, отталкивает на 5 м и оглушает на 1 с.",
+			"attribute_4": "Deals 30 ~ 35 ice additional damage on breaking Freeze",
+			"attribute_5": "При разрушении Замораживания поглощает HP в размере 25% от урона",
+			"attribute_6": "При разрушении эффекта Замораживание Ци +2",
+			"attribute_7": "Блокирует дистанционные атаки в течение 0,5 с. ",
+			"attribute_8": "Боевой прием атаки и защиты",
+			"range": "From User",
+			"radius": "2 x 10 м",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		},
+		"relations": [
+			80
+		]
+	},
+	"tree_11|77": {
+		"name": "Ударная волна",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 6 ~ 7 damage",
+			"attribute": "Если враг поражен эффектом Искра 5 раз при наложенном эффекте Искра происходит взрыв",
+			"attribute_1": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_2": "Если враг поражен эффектом Искра 5 раз. Ожог на 6 с.",
+			"attribute_3": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_4": "Если враг поражен эффектом Замораживание, отталкивает на 5 м и оглушает на 1 с.",
+			"attribute_5": "Deals 30 ~ 35 ice additional damage on breaking Freeze",
+			"range": "From User",
+			"radius": "2 x 16 м",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		},
+		"relations": [
+			81
+		]
+	},
+	"tree_11|78": {
+		"name": "Энергетический луч",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 12 ~ 14 damage",
+			"attribute": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_1": "Если враг поражен эффектом Искра 5 раз. Ожог на 6 с.",
+			"attribute_2": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		},
+		"relations": [
+			82
+		],
+		"img": "/img/sc/f/19.png"
+	},
+	"tree_11|79": {
+		"name": "Энергетический луч",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 48 ~ 56 damage",
+			"attribute": "Deals 60 ~ 70 ice additional damage to Frozen enemies",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		},
+		"relations": [
+			83
+		],
+		"img": "/img/sc/f/19.png"
+	},
+	"tree_11|80": {
+		"name": "Ударная волна",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 6 ~ 7 damage",
+			"attribute": "При успешной Контратаке отталкивает на 5 м",
+			"attribute_1": "При успешной Контратаке перемещает назад на 5 м (персонаж)",
+			"attribute_2": "При успешном Блоке Ци +3",
+			"attribute_3": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_4": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_5": "Если враг поражен эффектом Замораживание, отталкивает на 5 м и оглушает на 1 с.",
+			"attribute_6": "Deals 30 ~ 35 ice additional damage on breaking Freeze",
+			"attribute_7": "При разрушении Замораживания поглощает HP в размере 25% от урона",
+			"attribute_8": "При разрушении эффекта Замораживание Ци +2",
+			"attribute_9": "Дает возможность контратаковать в ближнем бою в течение 0,5 с.",
+			"attribute_10": "Блокирует дистанционные атаки в течение 0,5 с. ",
+			"attribute_11": "Боевой прием атаки и защиты",
+			"range": "From User",
+			"radius": "2 x 10 м",
+			"cast": "Instant",
+			"cooldown": "1 sec"
+		}
+	},
+	"tree_11|81": {
+		"name": "Ударная волна",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 12 ~ 14 damage",
+			"attribute": "Если враг поражен эффектом Искра 5 раз при наложенном эффекте Искра происходит взрыв",
+			"attribute_1": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_2": "Если враг поражен эффектом Искра 5 раз. Ожог на 6 с.",
+			"attribute_3": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_4": "Если враг поражен эффектом Замораживание, отталкивает на 5 м и оглушает на 1 с.",
+			"attribute_5": "Deals 30 ~ 35 ice additional damage on breaking Freeze",
+			"range": "From User",
+			"radius": "2 x 16 м",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		}
+	},
+	"tree_11|82": {
+		"name": "Энергетический луч",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 12 ~ 14 damage",
+			"attribute": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_1": "Если враг поражен эффектом Искра 5 раз. Ожог на 6 с.",
+			"attribute_2": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_3": "Deals 42 ~ 49 fire additional damage to enemies with 5 stacks of Ember",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		},
+		"img": "/img/sc/f/19.png"
+	},
+	"tree_11|83": {
+		"name": "Энергетический луч",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 48 ~ 56 damage",
+			"attribute": "Deals 60 ~ 70 ice additional damage to Frozen enemies",
+			"attribute_1": "Если враг поражен эффектом Замораживание, при крит. атаке уменьшает время перезарядки приемов Ледяной шар и Ледяной смерч до 1 с. ",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		},
+		"img": "/img/sc/f/19.png"
 	},
 	"tree_12|root": {
-		name: "Огненная вспышка",
-		relations: [45],
-		effects: {
-			cost: "Требует 3 Чи",
-			damage: "162-198 ед. урона",
-			attribute: "Накладывает 1 стак Искр",
-			range: "Вокруг персонажа",
-			radius: "5м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "24 секунды",
-			condition: "В огненной стойке",
+		"name": "Вихрь пламени",
+		"effects": {
+			"cost": -5,
+			"damage": "Deals 42 ~ 49 fire damage",
+			"attribute": "Накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Deals 48 ~ 56 fire additional damage to Burned enemies",
+			"attribute_2": "Снимает с члена группы эффект Обморожения, Замораживания, Переохлаждения и Ледяной клетки",
+			"attribute_3": "Прерывает Отбивание",
+			"range": "From User",
+			"radius": "2 x 10 м",
+			"cast": "Instant",
+			"cooldown": "Instant"
 		},
-		img: "/img/sc/f/12.jpg",
+		"relations": [
+			84
+		],
+		"img": "/img/sc/f/21.png"
 	},
-	"tree_12|45": {
-		name: "Огненная вспышка",
-		max_lvl: 1,
-		relations: [46, 47, 48],
-		effects: {
-			cost: "Требует 3 Чи",
-			damage: "162-198 ед. урона",
-			attribute: "Накладывает 1 стак Искр",
-			range: "Вокруг персонажа",
-			radius: "5м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В огненной стойке",
+	"tree_12|84": {
+		"name": "Вихрь пламени",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 42 ~ 49 fire damage",
+			"attribute": "Накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Deals 48 ~ 56 fire additional damage to Burned enemies",
+			"attribute_2": "Снимает с члена группы эффект Обморожения, Замораживания, Переохлаждения и Ледяной клетки",
+			"attribute_3": "Прерывает Отбивание",
+			"range": "From User",
+			"radius": "2 x 10 м",
+			"cast": "Instant",
+			"cooldown": "Instant"
 		},
+		"relations": [
+			85,
+			86,
+			87,
+			88
+		]
 	},
-	"tree_12|46": {
-		name: "Огненная вспышка",
-		max_lvl: 1,
-		relations: [49],
-		effects: {
-			cost: "Требует 3 Чи",
-			damage: "270-330 ед. урона",
-			attribute: "Накладывает 1 стак Искр",
-			range: "Вокруг персонажа",
-			radius: "5м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В огненной стойке",
+	"tree_12|85": {
+		"name": "Вихрь пламени",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 68 ~ 80 fire damage",
+			"attribute": "Накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Deals 48 ~ 56 fire additional damage to Burned enemies",
+			"attribute_2": "Снимает с члена группы эффект Обморожения, Замораживания, Переохлаждения и Ледяной клетки",
+			"attribute_3": "Прерывает Отбивание",
+			"range": "From User",
+			"radius": "2 x 10 м",
+			"cast": "Instant",
+			"cooldown": "Instant"
 		},
+		"relations": [
+			89
+		]
 	},
-	"tree_12|47": {
-		name: "Огненная вспышка",
-		max_lvl: 1,
-		relations: [50],
-		effects: {
-			cost: "Требует 3 Чи",
-			damage: "81-99 ед. урона",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Подбрасывает в воздух оглушенного, ослабленного или опрокинутого противника",
-			range: "Вокруг персонажа",
-			radius: "5м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В огненной стойке",
+	"tree_12|86": {
+		"name": "Вихрь пламени",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 42 ~ 49 fire damage",
+			"attribute": "Накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Deals 48 ~ 56 fire additional damage to Burned enemies",
+			"attribute_2": "Снимает с члена группы эффект Обморожения, Замораживания, Переохлаждения и Ледяной клетки",
+			"attribute_3": "Во время перезарядки (за исключением эффекта Ослабление)",
+			"attribute_4": "Прерывает Отбивание",
+			"attribute_5": "Ослабляет врага на 2 с.",
+			"range": "From User",
+			"radius": "2 x 10 м",
+			"cast": "Instant",
+			"cooldown": "18 sec"
 		},
+		"relations": [
+			90
+		]
 	},
-	"tree_12|48": {
-		name: "Жаркая волна",
-		max_lvl: 1,
-		relations: [53, 54],
-		effects: {
-			cost: "Требует 3 Чи",
-			damage: "162-198 ед. урона",
-			attribute_1: "Опрокидывает на 3 секунды",
-			attribute_2: "Возможно взорвать волну",
-			range: "2м",
-			radius: "5м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "1 секунда",
-			condition: "В огненной стойке",
+	"tree_12|87": {
+		"name": "Огненный луч",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 72 ~ 84 fire damage",
+			"attribute": "Накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Deals 48 ~ 56 fire additional damage to Burned enemies",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
 		},
-		img: "/img/sc/f/12.1.jpg",
+		"relations": [
+			91
+		],
+		"img": "/img/sc/f/22.png"
 	},
-	"tree_12|49": {
-		name: "Огненная вспышка",
-		max_lvl: 1,
-		relations: [51],
-		effects: {
-			cost: "Требует 3 Чи",
-			damage: "270-330 ед. урона",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Оглушенный и ослабленный противник получает дополнительно 81-89 ед. урона",
-			range: "Вокруг персонажа",
-			radius: "5м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В огненной стойке",
+	"tree_12|88": {
+		"name": "Ледяной шквал",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 36 ~ 42 ice damage",
+			"attribute": "Ускоряет действие боевого приема при повторном использовании",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
 		},
+		"relations": [
+			92
+		],
+		"img": "/img/sc/f/23.png"
 	},
-	"tree_12|50": {
-		name: "Огненная вспышка",
-		max_lvl: 1,
-		relations: [52],
-		effects: {
-			cost: "Требует 3 Чи",
-			damage: "81-99 ед. урона",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Подбрасывает в воздух оглушенного, ослабленного или опрокинутого противника",
-			attribute_2: "Отбрасывает атаки противника в течение 0,5 секунды",
-			range: "Вокруг персонажа",
-			radius: "5м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В огненной стойке",
+	"tree_12|89": {
+		"name": "Вихрь пламени",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 68 ~ 80 fire damage",
+			"attribute": "Накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Deals 48 ~ 56 fire additional damage to Burned enemies",
+			"attribute_2": "Снимает с члена группы эффект Обморожения, Замораживания, Переохлаждения и Ледяной клетки",
+			"attribute_3": "Прерывает Отбивание",
+			"range": "From User",
+			"radius": "4 x 10 м",
+			"cast": "Instant",
+			"cooldown": "Instant"
 		},
+		"relations": [
+			93
+		]
 	},
-	"tree_12|51": {
-		name: "Огненная вспышка",
-		max_lvl: 1,
-		relations: [55],
-		effects: {
-			cost: "Требует 3 Чи",
-			damage: "270-330 ед. урона",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Оглушенный и ослабленный противник получает дополнительно 81-89 ед. урона",
-			attribute_2: "По оглушенному или ослабленному противнику умение нанесет критической урон",
-			range: "Вокруг персонажа",
-			radius: "5м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В огненной стойке",
+	"tree_12|90": {
+		"name": "Вихрь пламени",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 42 ~ 49 fire damage",
+			"attribute": "Накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Deals 48 ~ 56 fire additional damage to Burned enemies",
+			"attribute_2": "Снимает с члена группы эффект Обморожения, Замораживания, Переохлаждения и Ледяной клетки",
+			"attribute_3": "Во время перезарядки (за исключением эффекта Ослабление)",
+			"attribute_4": "Прерывает Отбивание",
+			"attribute_5": "Отталкивает на 5 м и ослабляет на 2 с.",
+			"range": "From User",
+			"radius": "2 x 10 м",
+			"cast": "Instant",
+			"cooldown": "18 sec"
 		},
+		"relations": [
+			95
+		]
 	},
-	"tree_12|52": {
-		name: "Огненная вспышка",
-		max_lvl: 1,
-		relations: [56],
-		effects: {
-			cost: "Требует 3 Чи",
-			damage: "81-99 ед. урона",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Подбрасывает в воздух оглушенного, ослабленного или опрокинутого противника",
-			attribute_2: "Отбрасывает атаки противника в течение 0,5 секунды",
-			attribute_3: "При успешном отбрасывании персонаж восстанавливает по 2 Чи 3 раза в течение 3 секунд",
-			range: "Вокруг персонажа",
-			radius: "5м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В огненной стойке",
+	"tree_12|91": {
+		"name": "Огненный луч",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 72 ~ 84 fire damage",
+			"attribute": "Накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Если враг поражен эффектом Ожог, накладывает эффект Искра (2 шт.)",
+			"attribute_2": "Deals 48 ~ 56 fire additional damage to Burned enemies",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
 		},
+		"relations": [
+			96
+		],
+		"img": "/img/sc/f/22.png"
 	},
-	"tree_12|53": {
-		name: "Жаркая волна",
-		max_lvl: 1,
-		relations: [57],
-		effects: {
-			cost: "Требует 3 Чи",
-			damage: "162-198 ед. урона",
-			attribute_1: "Опрокидывает на 3 секунды",
-			attribute_2: "Возможно взорвать волну",
-			attribute_3: "Подбрасывает в воздух оглушенного или ослабленного врага",
-			range: "2м",
-			radius: "5м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "1 секунда",
-			condition: "В огненной стойке",
+	"tree_12|92": {
+		"name": "Ледяной шквал",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 36 ~ 42 ice damage",
+			"attribute": "Ускоряет действие боевого приема при повторном использовании",
+			"attribute_1": "Deals 48 ~ 56 ice additional damage to enemies within the Cold Snap area",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
 		},
-		img: "/img/sc/f/12.1.jpg",
+		"relations": [
+			97
+		],
+		"img": "/img/sc/f/23.png"
 	},
-	"tree_12|54": {
-		name: "Жаркая волна",
-		max_lvl: 1,
-		relations: [58],
-		effects: {
-			cost: "Требует 3 Чи",
-			damage: "378-462 ед. урона",
-			attribute_2: "Возможно взорвать волну",
-			attribute_3: "Опрокинутые враги получают дополнительно 270-330 ед. урона",
-			range: "2м",
-			radius: "5м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "1 секунда",
-			condition: "В огненной стойке",
+	"tree_12|93": {
+		"name": "Вихрь пламени",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 68 ~ 80 fire damage",
+			"attribute": "Накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Deals 48 ~ 56 fire additional damage to Burned enemies",
+			"attribute_2": "Снимает с члена группы эффект Обморожения, Замораживания, Переохлаждения и Ледяной клетки",
+			"attribute_3": "Прерывает Отбивание",
+			"attribute_4": "Deals 12 ~ 14 fire additional damage to Stunned, Dazed, Grabbed, Phantom Gripped enemies",
+			"range": "From User",
+			"radius": "4 x 10 м",
+			"cast": "Instant",
+			"cooldown": "Instant"
 		},
-		img: "/img/sc/f/12.1.jpg",
+		"relations": [
+			94
+		]
 	},
-	"tree_12|55": {
-		name: "Огненная вспышка",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			cost: "Требует 3 Чи",
-			damage: "270-330 ед. урона",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Оглушенный и ослабленный противник получает дополнительно 81-89 ед. урона",
-			attribute_2: "По оглушенному или ослабленному противнику умение нанесет критической урон",
-			attribute_3: "При крите можно использовать 2 раза подряд",
-			range: "Вокруг персонажа",
-			radius: "5м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В огненной стойке",
-		},
+	"tree_12|94": {
+		"name": "Вихрь пламени",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 68 ~ 80 fire damage",
+			"attribute": "Ускоряет действие боевого приема при повторном использовании",
+			"attribute_1": "Накладывает эффект Искра (1 шт.)",
+			"attribute_2": "Deals 48 ~ 56 fire additional damage to Burned enemies",
+			"attribute_3": "Снимает с члена группы эффект Обморожения, Замораживания, Переохлаждения и Ледяной клетки",
+			"attribute_4": "Прерывает Отбивание",
+			"attribute_5": "Deals 12 ~ 14 fire additional damage to Stunned, Dazed, Grabbed, Phantom Gripped enemies",
+			"range": "From User",
+			"radius": "4 x 10 м",
+			"cast": "Instant",
+			"cooldown": "Instant"
+		}
 	},
-	"tree_12|56": {
-		name: "Огненная вспышка",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			cost: "Требует 3 Чи",
-			damage: "81-99 ед. урона",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Подбрасывает в воздух оглушенного, ослабленного или опрокинутого противника",
-			attribute_2: "Отбрасывает атаки противника в течение 0,5 секунды",
-			attribute_3: "При успешном отбрасывании персонаж восстанавливает по 2 Чи 3 раза в течение 3 секунд",
-			attribute_4: "При успешном отбрасывании сбрасывается перезарядка",
-			range: "Вокруг персонажа",
-			radius: "5м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В огненной стойке",
-		},
+	"tree_12|95": {
+		"name": "Вихрь пламени",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 42 ~ 49 fire damage",
+			"attribute": "Накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Deals 48 ~ 56 fire additional damage to Burned enemies",
+			"attribute_2": "Снимает с члена группы эффект Обморожения, Замораживания, Переохлаждения и Ледяной клетки",
+			"attribute_3": "Во время перезарядки (за исключением эффекта Ослабление)",
+			"attribute_4": "Прерывает Отбивание и Защиту",
+			"attribute_5": "Отталкивает на 5 м и ослабляет на 2 с.",
+			"range": "From User",
+			"radius": "2 x 10 м",
+			"cast": "Instant",
+			"cooldown": "18 sec"
+		}
 	},
-	"tree_12|57": {
-		name: "Жаркая волна",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			cost: "Требует 3 Чи",
-			damage: "162-198 ед. урона",
-			attribute_1: "Опрокидывает на 3 секунды",
-			attribute_2: "Возможно взорвать волну",
-			attribute_3: "Подбрасывает в воздух оглушенного или ослабленного врага",
-			attribute_4: "Умение можно использовать на расстоянии",
-			range: "16м",
-			radius: "5м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "1 секунда",
-			condition: "В огненной стойке",
+	"tree_12|96": {
+		"name": "Огненный луч",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 72 ~ 84 fire damage",
+			"attribute": "При крит. атаке время перезарядки приема Двойной поток -1 с.",
+			"attribute_1": "Накладывает эффект Искра (1 шт.)",
+			"attribute_2": "Если враг поражен эффектом Ожог, накладывает эффект Искра (2 шт.)",
+			"attribute_3": "Deals 48 ~ 56 fire additional damage to Burned enemies",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
 		},
-		img: "/img/sc/f/12.1.jpg",
+		"img": "/img/sc/f/22.png"
 	},
-	"tree_12|58": {
-		name: "Жаркая волна",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			cost: "Требует 3 Чи",
-			damage: "378-462 ед. урона",
-			attribute_2: "Возможно взорвать волну",
-			attribute_3: "Опрокинутые враги получают дополнительно 270-330 ед. урона",
-			attribute_4: "Умение можно использовать на расстоянии",
-			range: "16м",
-			radius: "5м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "1 секунда",
-			condition: "В огненной стойке",
+	"tree_12|97": {
+		"name": "Ледяной шквал",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 36 ~ 42 ice damage",
+			"attribute": "Ускоряет действие боевого приема при повторном использовании",
+			"attribute_1": "Если враг поражен эффектом Ледяной круг. Ци +1",
+			"attribute_2": "Deals 48 ~ 56 ice additional damage to enemies within the Cold Snap area",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant"
 		},
-		img: "/img/sc/f/12.1.jpg",
+		"img": "/img/sc/f/23.png"
 	},
 	"tree_13|root": {
-		name: "Сфера льда",
-		relations: [59],
-		effects: {
-			damage: "Персонаж игнорирует урон в течение 10 секунд",
-			attribute: "Восстанавливает по 1 Чи 10 раз в течение 10 секунд",
-			attribute_1: "Невозможно передвижение внутри сферы",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			range: "Вокруг персонажа",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "1 минута",
-			condition: "В ледяной стойке",
+		"name": "Вихрь льда",
+		"effects": {
+			"cost": 2,
+			"damage": "Deals 10 ~ 11 ice damage",
+			"attribute": "Снимает с членов группы эффекты Искра и Ожог",
+			"attribute_1": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_2": "Прерывает Отбивание",
+			"attribute_3": "Замораживание на 5 с.",
+			"range": "From User",
+			"radius": "2 x 10 м",
+			"cast": "Instant",
+			"cooldown": "24 sec"
 		},
-		img: "/img/sc/f/13.jpg",
+		"relations": [
+			98
+		],
+		"img": "/img/sc/f/26.png"
 	},
-	"tree_13|59": {
-		name: "Сфера льда",
-		max_lvl: 1,
-		relations: [60, 61],
-		effects: {
-			damage: "Персонаж игнорирует урон в течение 10 секунд",
-			attribute: "Восстанавливает по 1 Чи 10 раз в течение 10 секунд",
-			attribute_1: "Невозможно передвижение внутри сферы",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "Восстанавливает по 2% ХП 5 раз в течение 10 секунд",
-			attribute_4: "При срабатывании Сопротивления дополнительно восстанавливает 1% ХП",
-			range: "Вокруг персонажа",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "1 минута",
-			condition: "В ледяной стойке",
+	"tree_13|98": {
+		"name": "Вихрь льда",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 2,
+			"damage": "Deals 10 ~ 11 ice damage",
+			"attribute": "Снимает с членов группы эффекты Искра и Ожог",
+			"attribute_1": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_2": "Прерывает Отбивание",
+			"attribute_3": "Замораживание на 5 с.",
+			"range": "From User",
+			"radius": "2 x 10 м",
+			"cast": "Instant",
+			"cooldown": "18 sec"
 		},
+		"relations": [
+			99
+		]
 	},
-	"tree_13|60": {
-		name: "Ледокол",
-		max_lvl: 1,
-		relations: [62],
-		effects: {
-			damage: "Персонаж игнорирует урон в течение 10 секунд",
-			attribute: "Восстанавливает по 1 Чи 10 раз в течение 10 секунд",
-			attribute_1: "Невозможно передвижение внутри сферы",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "Восстанавливает по 2% ХП 5 раз в течение 10 секунд",
-			attribute_4: "При срабатывании Сопротивления дополнительно восстанавливает 1% ХП",
-			attribute_5: "При выходе из Сферы льда окружающие противники получат по 108-132 ед. урона",
-			attribute_6: "При выходе из Сферы льда персонаж поглотит 108-132 ХП у окружающих врагов",
-			range: "Вокруг персонажа",
-			radius: "3м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "1 минута",
-			condition: "В ледяной стойке",
-			condition_1: "Во время действия Сферы льда",
+	"tree_13|99": {
+		"name": "Вихрь льда",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 2,
+			"damage": "Deals 10 ~ 11 ice damage",
+			"attribute": "При успехе атаки создает эффект Ледяной покров (1 шт.)",
+			"attribute_1": "Отменяет эффект Травма",
+			"attribute_2": "Снимает с членов группы эффекты Искра и Ожог",
+			"attribute_3": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_4": "Прерывает Отбивание",
+			"attribute_5": "Замораживание на 5 с.",
+			"range": "From User",
+			"radius": "2 x 10 м",
+			"cast": "Instant",
+			"cooldown": "18 sec"
 		},
-		img: "/img/sc/f/14.jpg",
+		"relations": [
+			100,
+			101,
+			102
+		]
 	},
-	"tree_13|61": {
-		name: "Ледокол",
-		max_lvl: 1,
-		relations: [63],
-		effects: {
-			damage: "Персонаж игнорирует урон в течение 10 секунд",
-			attribute: "Восстанавливает по 1 Чи 10 раз в течение 10 секунд",
-			attribute_1: "Невозможно передвижение внутри сферы",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "Восстанавливает по 2% ХП 5 раз в течение 10 секунд",
-			attribute_4: "При срабатывании Сопротивления дополнительно восстанавливает 1% ХП",
-			attribute_5: "При выходе из Сферы льда замораживает окружающих врагов на 5 секунд",
-			range: "Вокруг персонажа",
-			radius: "3м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "1 минута",
-			condition: "В ледяной стойке",
-			condition_1: "Во время действия Сферы льда",
+	"tree_13|100": {
+		"name": "Вихрь льда",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 2,
+			"damage": "Deals 10 ~ 11 ice damage",
+			"attribute": "Переводит 100% нанесенного урона в НР",
+			"attribute_1": "За каждого раненого врага дополнительно восстанавливает 1 Ци",
+			"attribute_2": "При успехе атаки создает эффект Ледяной покров (1 шт.)",
+			"attribute_3": "Отменяет эффект Травма",
+			"attribute_4": "Снимает с членов группы эффекты Искра и Ожог",
+			"attribute_5": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_6": "Прерывает Отбивание",
+			"attribute_7": "Замораживание на 5 с.",
+			"range": "From User",
+			"radius": "2 x 10 м",
+			"cast": "Instant",
+			"cooldown": "18 sec"
 		},
-		img: "/img/sc/f/14.jpg",
+		"relations": [
+			103
+		]
 	},
-	"tree_13|62": {
-		name: "Ледокол",
-		max_lvl: 1,
-		effects: {
-			damage: "Персонаж игнорирует урон в течение 10 секунд",
-			attribute: "Восстанавливает по 1 Чи 10 раз в течение 10 секунд",
-			attribute_1: "Невозможно передвижение внутри сферы",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "Восстанавливает по 2% ХП 5 раз в течение 10 секунд",
-			attribute_4: "При срабатывании Сопротивления дополнительно восстанавливает 1% ХП",
-			attribute_5: "При выходе из Сферы льда окружающие противники получат по 108-132 ед. урона",
-			attribute_6: "При выходе из Сферы льда персонаж поглотит 108-132 ХП у окружающих врагов",
-			attribute_7: "При выходе из Сферы льда отталкивает окружающих врагов на 5м",
-			range: "Вокруг персонажа",
-			radius: "3м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "1 минута",
-			condition: "В ледяной стойке",
-			condition_1: "Во время действия Сферы льда",
+	"tree_13|101": {
+		"name": "Дыхание ледника",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 3,
+			"damage": "Deals 10 ~ 11 ice damage",
+			"attribute": "Если враг поражен эффектом Замораживание, Переохлаждение на б с.",
+			"attribute_1": "При успехе атаки создает эффект Ледяной покров (1 шт.)",
+			"attribute_2": "Отменяет эффект Травма",
+			"attribute_3": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_4": "Прерывает Отбивание и Защиту",
+			"attribute_5": "Замораживание на 5 с.",
+			"range": "From User",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "36 sec"
 		},
-		img: "/img/sc/f/14.jpg",
+		"relations": [
+			105
+		],
+		"img": "/img/sc/f/27.png"
 	},
-	"tree_13|63": {
-		name: "Ледокол",
-		max_lvl: 1,
-		effects: {
-			damage: "Персонаж игнорирует урон в течение 10 секунд",
-			attribute: "Восстанавливает по 1 Чи 10 раз в течение 10 секунд",
-			attribute_1: "Невозможно передвижение внутри сферы",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "Восстанавливает по 2% ХП 5 раз в течение 10 секунд",
-			attribute_4: "При срабатывании Сопротивления дополнительно восстанавливает 1% ХП",
-			attribute_5: "При выходе из Сферы льда замораживает окружающих врагов на 5 секунд",
-			attribute_6: "При выходе из Сферы льда накладывает 1 стак холода на окружающих врагов на 6 секунд",
-			attribute_7: "При выходе из Сферы льда персонаж перемещается на 15м назад",
-			attribute_8: "Во время перемещения назад персонаж игнорирует урон",
-			range: "Вокруг персонажа",
-			radius: "3м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "1 минута",
-			condition: "В ледяной стойке",
-			condition_1: "Во время действия Сферы льда",
+	"tree_13|102": {
+		"name": "Ледяной луч",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 2,
+			"damage": "Deals 10 ~ 11 ice damage",
+			"attribute": "При успехе атаки создает эффект Ледяной покров (1 шт.)",
+			"attribute_1": "Отменяет эффект Травма",
+			"attribute_2": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_3": "Оглушение используется несколько раз (2)",
+			"attribute_4": "Оглушает врага на 2 с.",
+			"attribute_5": "Замораживание на 5 с.",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "36 sec"
 		},
-		img: "/img/sc/f/14.jpg",
+		"relations": [
+			106
+		],
+		"img": "/img/sc/f/28.png"
 	},
-	"tree_14|root": {
-		name: "Ледокол",
-		effects: {
-			damage: "Персонаж игнорирует урон в течение 10 секунд",
-			attribute: "Восстанавливает по 1 Чи 10 раз в течение 10 секунд",
-			attribute_1: "Невозможно передвижение внутри сферы",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			range: "Вокруг персонажа",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-			condition: "В ледяной стойке",
-			condition_1: "Во время действия Сферы льда",
+	"tree_13|103": {
+		"name": "Вихрь льда",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 2,
+			"damage": "Deals 10 ~ 11 ice damage",
+			"attribute": "Переводит 100% нанесенного урона в НР",
+			"attribute_1": "За каждого раненого врага дополнительно восстанавливает 1 Ци",
+			"attribute_2": "При успехе атаки создает эффект Ледяной покров (1 шт.)",
+			"attribute_3": "Отменяет эффект Травма",
+			"attribute_4": "Снимает с членов группы эффекты Искра и Ожог",
+			"attribute_5": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_6": "Прерывает Отбивание",
+			"attribute_7": "Замораживание на 5 с.",
+			"range": "From User",
+			"radius": "4 x 10 м",
+			"cast": "Instant",
+			"cooldown": "18 sec"
 		},
-		img: "/img/sc/f/14.jpg",
+		"relations": [
+			104
+		]
+	},
+	"tree_13|104": {
+		"name": "Вихрь льда",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 2,
+			"damage": "Deals 10 ~ 11 ice damage",
+			"attribute": "Переводит 100% нанесенного урона в НР",
+			"attribute_1": "При крит. атаке за 9 с. +6% HP",
+			"attribute_2": "За каждого раненого врага дополнительно восстанавливает 1 Ци",
+			"attribute_3": "При успехе атаки создает эффект Ледяной покров (1 шт.)",
+			"attribute_4": "Отменяет эффект Травма",
+			"attribute_5": "Снимает с членов группы эффекты Искра и Ожог",
+			"attribute_6": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_7": "Прерывает Отбивание",
+			"attribute_8": "Замораживание на 5 с.",
+			"range": "From User",
+			"radius": "4 x 10 м",
+			"cast": "Instant",
+			"cooldown": "18 sec"
+		}
+	},
+	"tree_13|105": {
+		"name": "Дыхание ледника",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 3,
+			"damage": "Deals 10 ~ 11 ice damage",
+			"attribute": "Если враг поражен эффектом Замораживание, Переохлаждение на б с.",
+			"attribute_1": "При крит. атаке используется подряд несколько раз (макс. 2)",
+			"attribute_2": "При успехе атаки создает эффект Ледяной покров (1 шт.)",
+			"attribute_3": "Отменяет эффект Травма",
+			"attribute_4": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_5": "Прерывает Отбивание и Защиту",
+			"attribute_6": "Замораживание на 5 с.",
+			"range": "From User",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "36 sec"
+		},
+		"img": "/img/sc/f/27.png"
+	},
+	"tree_13|106": {
+		"name": "Ледяной луч",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 2,
+			"damage": "Deals 10 ~ 11 ice damage",
+			"attribute": "При крит. атаке сбрасывает перезарядку приемов Ледяной шар и Ледяной смерч",
+			"attribute_1": "При успехе атаки создает эффект Ледяной покров (1 шт.)",
+			"attribute_2": "Отменяет эффект Травма",
+			"attribute_3": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_4": "Оглушение используется несколько раз (2)",
+			"attribute_5": "Оглушает врага на 2 с.",
+			"attribute_6": "Замораживание на 5 с.",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "36 sec"
+		},
+		"img": "/img/sc/f/28.png"
+	},
+	"tree_14.0|root": {
+		"name": "Пленение",
+		"effects": {
+			"cost": -2,
+			"damage": "Phantom Grips enemies for 4 sec",
+			"attribute": "Нельзя использовать прием, если враг сопротивляется Пленению",
+			"attribute_1": "Прерывает Отбивание и Защиту",
+			"attribute_2": "Отменяет Защиту",
+			"range": "8 м",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "18 sec"
+		},
+		"relations": [
+			107
+		],
+		"img": "/img/sc/f/30.png"
+	},
+	"tree_14.0|107": {
+		"name": "Пленение",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Phantom Grips enemies for 6 sec",
+			"attribute": "Нельзя использовать прием, если враг сопротивляется Пленению",
+			"attribute_1": "Прерывает Отбивание и Защиту",
+			"attribute_2": "Отменяет Защиту",
+			"range": "8 м",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "18 sec"
+		},
+		"relations": [
+			108,
+			109,
+			110,
+			111
+		]
+	},
+	"tree_14.0|108": {
+		"name": "Пленение",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Phantom Grips enemies for 6 sec",
+			"attribute": "Нельзя использовать прием, если враг сопротивляется Пленению",
+			"attribute_1": "Прерывает Отбивание и Защиту",
+			"attribute_2": "Отменяет Защиту",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "24 sec"
+		},
+		"relations": [
+			112
+		]
+	},
+	"tree_14.0|109": {
+		"name": "Пленение",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Phantom Grips enemies for 6 sec",
+			"attribute": "Если член группы в состоянии истощения или медитации, притягивает к персонажу",
+			"attribute_1": "Нельзя использовать прием, если враг сопротивляется Пленению",
+			"attribute_2": "Прерывает Отбивание и Защиту",
+			"attribute_3": "Отменяет Защиту",
+			"range": "8 м",
+			"radius": "8 м",
+			"cast": "Instant",
+			"cooldown": "18 sec"
+		},
+		"relations": [
+			113
+		]
+	},
+	"tree_14.0|110": {
+		"name": "Невесомость",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Применяется Невесомость",
+			"attribute": "Скорость врагов -80%",
+			"attribute_1": "Прерывает Отбивание и Защиту",
+			"attribute_2": "Притягивает к центру зоны действия эффекта",
+			"range": "16m",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "30 sec"
+		},
+		"relations": [
+			114
+		],
+		"img": "/img/sc/f/31.png"
+	},
+	"tree_14.0|111": {
+		"name": "Невесомость",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Применяется Невесомость",
+			"attribute": "Скорость врагов -80%",
+			"attribute_1": "Запрещает использовать боевые приемы быстрого перемещения",
+			"attribute_2": "Прерывает Отбивание и Защиту",
+			"attribute_3": "Притягивает к центру зоны действия эффекта",
+			"range": "16m",
+			"radius": "8 м",
+			"cast": "Instant",
+			"cooldown": "30 sec"
+		},
+		"relations": [
+			118
+		],
+		"img": "/img/sc/f/31.png"
+	},
+	"tree_14.0|112": {
+		"name": "Пленение",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Phantom Grips enemies for 6 sec",
+			"attribute": "Если враг в состоянии Пленения, Защита -10%",
+			"attribute_1": "Нельзя использовать прием, если враг сопротивляется Пленению",
+			"attribute_2": "Прерывает Отбивание и Защиту",
+			"attribute_3": "Отменяет Защиту",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "24 sec"
+		},
+		"relations": [
+			115
+		]
+	},
+	"tree_14.0|113": {
+		"name": "Пленение",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Phantom Grips enemies for 6 sec",
+			"attribute": "Если член группы в состоянии истощения или медитации, притягивает к персонажу",
+			"attribute_1": "У члена группы в состоянии медитации время медитации -6 с.",
+			"attribute_2": "Нельзя использовать прием, если враг сопротивляется Пленению",
+			"attribute_3": "Прерывает Отбивание и Защиту",
+			"attribute_4": "Отменяет Защиту",
+			"range": "8 м",
+			"radius": "8 м",
+			"cast": "Instant",
+			"cooldown": "18 sec"
+		},
+		"relations": [
+			116
+		]
+	},
+	"tree_14.0|114": {
+		"name": "Невесомость",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Применяется Невесомость",
+			"attribute": "Скорость врагов -80%",
+			"attribute_1": "Запрещает использовать боевые приемы быстрого перемещения",
+			"attribute_2": "Прерывает Отбивание и Защиту",
+			"attribute_3": "Притягивает к центру зоны действия эффекта",
+			"range": "16m",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "30 sec"
+		},
+		"relations": [
+			117
+		],
+		"img": "/img/sc/f/31.png"
+	},
+	"tree_14.0|115": {
+		"name": "Пленение",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Phantom Grips enemies for 6 sec",
+			"attribute": "Если враг в состоянии Пленения, Защита -10%",
+			"attribute_1": "При успешном применении приемов Испепеление, Силовой удар, Поглощение силы против врага в состоянии Пленения враг в течение 6 с. не может использовать защитные боевые приемы",
+			"attribute_2": "Нельзя использовать прием, если враг сопротивляется Пленению",
+			"attribute_3": "Прерывает Отбивание и Защиту",
+			"attribute_4": "Отменяет Защиту",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "24 sec"
+		}
+	},
+	"tree_14.0|116": {
+		"name": "Пленение",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Phantom Grips enemies for 6 sec",
+			"attribute": "Если член группы в состоянии истощения или медитации, притягивает к персонажу",
+			"attribute_1": "Если член группы в состоянии истощения или медитации, создает Защитный барьер на 10 с.",
+			"attribute_2": "У члена группы в состоянии медитации время медитации -6 с.",
+			"attribute_3": "Нельзя использовать прием, если враг сопротивляется Пленению",
+			"attribute_4": "Прерывает Отбивание и Защиту",
+			"attribute_5": "Отменяет Защиту",
+			"range": "8 м",
+			"radius": "8 м",
+			"cast": "Instant",
+			"cooldown": "18 sec"
+		}
+	},
+	"tree_14.0|117": {
+		"name": "Энергетическая клетка",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 420 ~ 490 ice damage",
+			"attribute": "Прерывает Отбивание и Защиту",
+			"range": "16m",
+			"radius": "5 м",
+			"cast": "5 sec",
+			"cooldown": "Instant",
+			"condition": "После применения приема Невесомость"
+		},
+		"img": "/img/sc/f/32.png"
+	},
+	"tree_14.0|118": {
+		"name": "Дым от взрыва",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 1020 ~ 1190 fire damage over 5 sec",
+			"attribute": "Прерывает Отбивание и Защиту",
+			"range": "16m",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "1 min",
+			"condition": "После применения приема Невесомость"
+		},
+		"img": "/img/sc/f/33.png"
 	},
 	"tree_15|root": {
-		name: "Отрицание",
-		effects: {
-			damage: "Опрокидывает на 2 секунды",
-			range: "16м",
-			radius: "4м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "15 секунд",
-			condition: "Противник в захвате",
+		"name": "Пленение в воздухе",
+		"effects": {
+			"cost": -2,
+			"damage": "Aerial Phantom Grips enemies for 4 sec",
+			"attribute": "Нельзя использовать прием, если враг сопротивляется Пленению",
+			"attribute_1": "Прерывает Отбивание и Защиту",
+			"range": "8 м",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "Если враг подброшен в воздухe"
 		},
-		img: "/img/sc/f/15.jpg",
+		"relations": [
+			119
+		],
+		"img": "/img/sc/f/34.png"
 	},
-	"tree_16|root": {
-		name: "Избавление",
-		relations: [64],
-		effects: {
-			damage: "54-66 ед. урона",
-			attribute: "Выводит из состояний опрокидывания и моментального обморока",
-			range: "Вокруг персонажа",
-			radius: "3м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "36 секунд",
-			condition: "Персонаж сбит с ног",
-			condition_1: "Персонаж в ментальном обмороке",
+	"tree_15|119": {
+		"name": "Пленение в воздухе",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Aerial Phantom Grips enemies for 4 sec",
+			"attribute": "Нельзя использовать прием, если враг сопротивляется Пленению",
+			"attribute_1": "Прерывает Отбивание и Защиту",
+			"range": "8 м",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "Если враг подброшен в воздухe"
 		},
-		img: "/img/sc/f/16.jpg",
+		"relations": [
+			120
+		]
 	},
-	"tree_16|64": {
-		name: "Избавление",
-		max_lvl: 1,
-		relations: [65, 66, 67],
-		effects: {
-			damage: "54-66 ед. урона",
-			attribute: "Выводит из состояний опрокидывания, ментального обморока, слабости и оглушения",
-			range: "Вокруг персонажа",
-			radius: "3м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "36 секунд",
-			condition: "Персонаж сбит с ног",
-			condition_1: "Персонаж в ментальном обмороке",
-			condition_2: "Персонаж оглушен",
-			condition_3: "Персонаж ослаблен",
+	"tree_15|120": {
+		"name": "Пленение в воздухе",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Aerial Phantom Grips enemies for 4 sec",
+			"attribute": "При успешном применении приема Испепеление против врага в состоянии Пленения в воздухе враг в течение 6 с. не может использовать защитные боевые приемы",
+			"attribute_1": "Нельзя использовать прием, если враг сопротивляется Пленению",
+			"attribute_2": "Прерывает Отбивание и Защиту",
+			"range": "8 м",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "Если враг подброшен в воздухe"
 		},
+		"relations": [
+			121
+		]
 	},
-	"tree_16|65": {
-		name: "Избавление",
-		max_lvl: 1,
-		relations: [68],
-		effects: {
-			damage: "54-66 ед. урона",
-			attribute: "Выводит из состояний опрокидывания, ментального обморока, слабости и оглушения",
-			attribute_1: "Выводит из состояния подавления",
-			range: "Вокруг персонажа",
-			radius: "3м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "36 секунд",
-			condition: "Персонаж сбит с ног",
-			condition_1: "Персонаж в ментальном обмороке",
-			condition_2: "Персонаж оглушен",
-			condition_3: "Персонаж ослаблен",
-			condition_4: "Персонаж подавлен",
-		},
-	},
-	"tree_16|66": {
-		name: "Избавление",
-		max_lvl: 1,
-		relations: [69],
-		effects: {
-			damage: "54-66 ед. урона",
-			attribute: "Выводит из состояний опрокидывания, ментального обморока, слабости и оглушения",
-			attribute_1: "Отбрасывает пораженных умением врагов на 11м",
-			range: "Вокруг персонажа",
-			radius: "3м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "36 секунд",
-			condition: "Персонаж сбит с ног",
-			condition_1: "Персонаж в ментальном обмороке",
-			condition_2: "Персонаж оглушен",
-			condition_3: "Персонаж ослаблен",
-		},
-	},
-	"tree_16|67": {
-		name: "Избавление",
-		max_lvl: 1,
-		relations: [70],
-		effects: {
-			damage: "54-66 ед. урона",
-			attribute: "Выводит из состояний опрокидывания, ментального обморока, слабости и оглушения",
-			attribute_1: "Оглушает пораженных умением врагов на 2 секунды",
-			range: "Вокруг персонажа",
-			radius: "3м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "36 секунд",
-			condition: "Персонаж сбит с ног",
-			condition_1: "Персонаж в ментальном обмороке",
-			condition_2: "Персонаж оглушен",
-			condition_3: "Персонаж ослаблен",
-		},
-	},
-	"tree_16|68": {
-		name: "Избавление",
-		max_lvl: 1,
-		relations: [71],
-		effects: {
-			damage: "54-66 ед. урона",
-			attribute: "Выводит из состояний опрокидывания, ментального обморока, слабости и оглушения",
-			attribute_1: "Выводит из состояний подавления и захвата",
-			range: "Вокруг персонажа",
-			radius: "3м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "36 секунд",
-			condition: "Персонаж сбит с ног",
-			condition_1: "Персонаж в ментальном обмороке",
-			condition_2: "Персонаж оглушен",
-			condition_3: "Персонаж ослаблен",
-			condition_4: "Персонаж подавлен",
-			condition_5: "Персонаж в состоянии захвата",
-		},
-	},
-	"tree_16|69": {
-		name: "Избавление",
-		max_lvl: 1,
-		relations: [72],
-		effects: {
-			damage: "54-66 ед. урона",
-			attribute: "Выводит из состояний опрокидывания, ментального обморока, слабости и оглушения",
-			attribute_1: "Отбрасывает пораженных умением врагов на 11м",
-			attribute_2: "Пораженный противник не может использоваеть навыки сближения в течение 6 секунд",
-			range: "Вокруг персонажа",
-			radius: "3м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "36 секунд",
-			condition: "Персонаж сбит с ног",
-			condition_1: "Персонаж в ментальном обмороке",
-			condition_2: "Персонаж оглушен",
-			condition_3: "Персонаж ослаблен",
-		},
-	},
-	"tree_16|70": {
-		name: "Избавление",
-		max_lvl: 1,
-		relations: [73],
-		effects: {
-			damage: "54-66 ед. урона",
-			attribute: "Выводит из состояний опрокидывания, ментального обморока, слабости и оглушения",
-			attribute_1: "Оглушает пораженных умением врагов на 2 секунды",
-			attribute_2: "За каждого пораженного врага персонаж восстанавливает по 2 Чи",
-			range: "Вокруг персонажа",
-			radius: "3м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "36 секунд",
-			condition: "Персонаж сбит с ног",
-			condition_1: "Персонаж в ментальном обмороке",
-			condition_2: "Персонаж оглушен",
-			condition_3: "Персонаж ослаблен",
-		},
-	},
-	"tree_16|71": {
-		name: "Избавление",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "54-66 ед. урона",
-			attribute: "Выводит из состояний опрокидывания, ментального обморока, слабости и оглушения",
-			attribute_1: "Выводит из состояний подавления и захвата",
-			attribute_2: "Персонаж игнорирует урон и контроль в течение 2 секунд после использования",
-			range: "Вокруг персонажа",
-			radius: "3м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "36 секунд",
-			condition: "Персонаж сбит с ног",
-			condition_1: "Персонаж в ментальном обмороке",
-			condition_2: "Персонаж оглушен",
-			condition_3: "Персонаж ослаблен",
-			condition_4: "Персонаж подавлен",
-			condition_5: "Персонаж в состоянии захвата",
-		},
-	},
-	"tree_16|72": {
-		name: "Избавление",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "54-66 ед. урона",
-			attribute: "Выводит из состояний опрокидывания, ментального обморока, слабости и оглушения",
-			attribute_1: "Отбрасывает пораженных умением врагов на 11м",
-			attribute_2: "Пораженный противник не может использоваеть навыки сближения в течение 6 секунд",
-			attribute_3: "Персонаж окружает себя защитным щитом, поглощающим урон в размере 10% от его ХП",
-			range: "Вокруг персонажа",
-			radius: "3м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "36 секунд",
-			condition: "Персонаж сбит с ног",
-			condition_1: "Персонаж в ментальном обмороке",
-			condition_2: "Персонаж оглушен",
-			condition_3: "Персонаж ослаблен",
-		},
-	},
-	"tree_16|73": {
-		name: "Избавление",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "54-66 ед. урона",
-			attribute: "Выводит из состояний опрокидывания, ментального обморока, слабости и оглушения",
-			attribute_1: "Оглушает пораженных умением врагов на 2 секунды",
-			attribute_2: "За каждого пораженного врага персонаж восстанавливает по 2 Чи",
-			attribute_3: "Отражает одну атаку в течение 2 секунд после использования умения",
-			attribute_4: "Отражает 11-13 ед. урона",
-			range: "Вокруг персонажа",
-			radius: "3м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "36 секунд",
-			condition: "Персонаж сбит с ног",
-			condition_1: "Персонаж в ментальном обмороке",
-			condition_2: "Персонаж оглушен",
-			condition_3: "Персонаж ослаблен",
-		},
-	},
-	"tree_17|root": {
-		name: "Ударная волна",
-		relations: [74],
-		effects: {
-			damage: "27-33 ед. урона",
-			attribute: "После отталкивания оглушает замороженного врага на 1 секунду",
-			attribute_1: "При разрушении замораживания наносит дополнительно 27-33 ед. урона",
-			attribute_2: "Наносит 16-20 ед. урона взрывом цели со стаками Искр",
-			attribute_3: "Наносит дополнительно 75% урона от каждого стака Искр",
-			range: "Вокруг персонажа",
-			radius: "По прямой 2х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-		},
-		img: "/img/sc/f/17.jpg",
-	},
-	"tree_17|74": {
-		name: "Ударная волна",
-		max_lvl: 1,
-		relations: [75, 76],
-		effects: {
-			damage: "27-33 ед. урона",
-			attribute: "После отталкивания оглушает замороженного врага на 1 секунду",
-			attribute_1: "При разрушении замораживания наносит дополнительно 27-33 ед. урона",
-			attribute_2: "Наносит 16-20 ед. урона взрывом цели со стаками Искр",
-			attribute_3: "Наносит дополнительно 75% урона от каждого стака Искр",
-			attribute_4: "Блокирует дистанционные атаки в течение 0,5 секунды",
-			range: "Вокруг персонажа",
-			radius: "По прямой 2х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-		},
-	},
-	"tree_17|75": {
-		name: "Ударная волна",
-		max_lvl: 1,
-		relations: [77, 78],
-		effects: {
-			damage: "27-33 ед. урона",
-			attribute: "После отталкивания оглушает замороженного врага на 1 секунду",
-			attribute_1: "При разрушении замораживания наносит дополнительно 27-33 ед. урона",
-			attribute_2: "Наносит 16-20 ед. урона взрывом цели со стаками Искр",
-			attribute_3: "Наносит дополнительно 75% урона от каждого стака Искр",
-			attribute_4: "Блокирует дистанционные атаки в течение 0,5 секунды",
-			attribute_5: "При каждом разрушении замораживания восстанавливает 2 Чи",
-			range: "Вокруг персонажа",
-			radius: "По прямой 2х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-		},
-	},
-	"tree_17|76": {
-		name: "Ударная волна",
-		max_lvl: 1,
-		relations: [79],
-		effects: {
-			damage: "27-33 ед. урона",
-			attribute: "После отталкивания оглушает замороженного врага на 1 секунду",
-			attribute_1: "При разрушении замораживания наносит дополнительно 27-33 ед. урона",
-			attribute_2: "Наносит 16-20 ед. урона взрывом цели со стаками Искр",
-			attribute_3: "Наносит дополнительно 75% урона от каждого стака Искр",
-			attribute_5: "Увеличивает скорость снаряда",
-			range: "Вокруг персонажа",
-			radius: "По прямой 2х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-		},
-	},
-	"tree_17|77": {
-		name: "Ударная волна",
-		max_lvl: 1,
-		relations: [80],
-		effects: {
-			damage: "27-33 ед. урона",
-			attribute: "После отталкивания оглушает замороженного врага на 1 секунду",
-			attribute_1: "При разрушении замораживания наносит дополнительно 27-33 ед. урона",
-			attribute_2: "Наносит 16-20 ед. урона взрывом цели со стаками Искр",
-			attribute_3: "Наносит дополнительно 75% урона от каждого стака Искр",
-			attribute_4: "Блокирует дистанционные атаки в течение 0,5 секунды",
-			attribute_5: "При каждом разрушении замораживания восстанавливает 2 Чи",
-			attribute_6: "При успешном блокировании дистанционной атаки восстанавливает 3 Чи",
-			range: "Вокруг персонажа",
-			radius: "По прямой 2х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-		},
-	},
-	"tree_17|78": {
-		name: "Ударная волна",
-		max_lvl: 1,
-		relations: [81],
-		effects: {
-			damage: "27-33 ед. урона",
-			attribute: "После отталкивания оглушает замороженного врага на 1 секунду",
-			attribute_1: "При разрушении замораживания наносит дополнительно 27-33 ед. урона",
-			attribute_2: "Наносит 16-20 ед. урона взрывом цели со стаками Искр",
-			attribute_3: "Наносит дополнительно 75% урона от каждого стака Искр",
-			attribute_4: "Блокирует дистанционные атаки в течение 0,5 секунды",
-			attribute_5: "При каждом разрушении замораживания восстанавливает 2 Чи",
-			attribute_6: "Отбрасывание боевым приемом передвижения",
-			range: "Вокруг персонажа",
-			radius: "По прямой 2х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-		},
-	},
-	"tree_17|79": {
-		name: "Ударная волна",
-		max_lvl: 1,
-		relations: [82],
-		effects: {
-			damage: "27-33 ед. урона",
-			attribute: "После отталкивания оглушает замороженного врага на 1 секунду",
-			attribute_1: "При разрушении замораживания наносит дополнительно 27-33 ед. урона",
-			attribute_2: "Наносит 16-20 ед. урона взрывом цели со стаками Искр",
-			attribute_3: "Наносит дополнительно 75% урона от каждого стака Искр",
-			attribute_5: "Увеличивает скорость снаряда",
-			attribute_6: "Взрывает стаки Искр цели с уроном, как от 5 стаков",
-			range: "Вокруг персонажа",
-			radius: "По прямой 4х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-		},
-	},
-	"tree_17|80": {
-		name: "Ударная волна",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "27-33 ед. урона",
-			attribute: "После отталкивания оглушает замороженного врага на 1 секунду",
-			attribute_1: "При разрушении замораживания наносит дополнительно 27-33 ед. урона",
-			attribute_2: "Наносит 16-20 ед. урона взрывом цели со стаками Искр",
-			attribute_3: "Наносит дополнительно 75% урона от каждого стака Искр",
-			attribute_4: "Блокирует дистанционные атаки в течение 0,5 секунды",
-			attribute_5: "При каждом разрушении замораживания восстанавливает 2 Чи",
-			attribute_6: "При успешном блокировании дистанционной атаки восстанавливает 3 Чи",
-			attribute_7: "Контратакует атаки ближнего боя в течение 0,5 секунды",
-			attribute_8: "Отбрасывает противника на 5м после контратаки",
-			attribute_9: "Персонаж отскакивает на 5м назад при успешной контратаке",
-			range: "Вокруг персонажа",
-			radius: "По прямой 2х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "1 секунда",
-		},
-	},
-	"tree_17|81": {
-		name: "Ударная волна",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "27-33 ед. урона",
-			attribute: "После отталкивания оглушает замороженного врага на 1 секунду",
-			attribute_1: "При разрушении замораживания наносит дополнительно 27-33 ед. урона",
-			attribute_2: "Наносит 16-20 ед. урона взрывом цели со стаками Искр",
-			attribute_3: "Наносит дополнительно 75% урона от каждого стака Искр",
-			attribute_4: "Контратакует дистанционные атаки в течение 0,5 секунды",
-			attribute_5: "При каждом разрушении замораживания восстанавливает 2 Чи",
-			attribute_6: "Отбрасывание боевым приемом передвижения",
-			range: "Вокруг персонажа",
-			radius: "По прямой 2х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "1 секунда",
-		},
-	},
-	"tree_17|82": {
-		name: "Ударная волна",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "27-33 ед. урона",
-			attribute: "После отталкивания оглушает замороженного врага на 1 секунду",
-			attribute_1: "При разрушении замораживания наносит дополнительно 27-33 ед. урона",
-			attribute_2: "Наносит 16-20 ед. урона взрывом цели со стаками Искр",
-			attribute_3: "Наносит дополнительно 75% урона от каждого стака Искр",
-			attribute_5: "Увеличивает скорость снаряда",
-			attribute_6: "Взрывает стаки Искр цели с уроном, как от 5 стаков",
-			attribute_7: "При поражении 5 целей наносит дополнительно 135-165 ед. урона",
-			range: "Вокруг персонажа",
-			radius: "По прямой 4х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-		},
+	"tree_15|121": {
+		"name": "Пленение в воздухе",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Aerial Phantom Grips enemies for 4 sec",
+			"attribute": "При успешном применении приема Испепеление против врага в состоянии Пленения в воздухе враг в течение 6 с. не может использовать защитные боевые приемы",
+			"attribute_1": "Нельзя использовать прием, если враг сопротивляется Пленению",
+			"attribute_2": "Прерывает Отбивание и Защиту",
+			"range": "8 м",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "Если враг подброшен в воздухe"
+		}
 	},
 	"tree_18|root": {
-		name: "Испепеление",
-		effects: {
-			cost: "Требует 1 Чи",
-			damage: "135-165 ед. урона",
-			attribute: "Наносит 16-20 ед. урона взрывом цели со стаками Искр",
-			attribute_1: "Наносит дополнительно 75% урона от каждого стака Искр",
-			range: "3м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "5 секунд",
-			condition: "Противник в захвате",
+		"name": "Лесной пожар",
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 10 ~ 11 fire damage 3 times up to 3 enemies",
+			"attribute": "Inflicts 1 stack of Ember",
+			"attribute_1": "Эффект Искра суммируется до 5 раз",
+			"attribute_2": "Прерывает Отбивание и Защиту",
+			"range": "16m",
+			"radius": "8 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
 		},
-		img: "/img/sc/f/18.jpg",
+		"relations": [
+			122
+		],
+		"img": "/img/sc/f/36.png"
+	},
+	"tree_18|122": {
+		"name": "Лесной пожар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 10 ~ 11 fire damage 3 times up to 3 enemies",
+			"attribute": "Inflicts 2 stacks of Ember",
+			"attribute_1": "Ожог продлевается на 4 с.",
+			"attribute_2": "Эффект Искра суммируется до 5 раз",
+			"attribute_3": "Прерывает Отбивание и Защиту",
+			"range": "16m",
+			"radius": "8 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
+		},
+		"relations": [
+			123,
+			124
+		]
+	},
+	"tree_18|123": {
+		"name": "Лесной пожар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 10 ~ 11 fire damage 5 times up to 5 enemies",
+			"attribute": "Inflicts 2 stacks of Ember",
+			"attribute_1": "Ожог продлевается на 4 с.",
+			"attribute_2": "Эффект Искра суммируется до 5 раз",
+			"attribute_3": "Прерывает Отбивание и Защиту",
+			"range": "16m",
+			"radius": "8 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
+		}
+	},
+	"tree_18|124": {
+		"name": "Сфера огня",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 37 ~ 43 fire damage after 3 sec",
+			"attribute": "Если враг в состоянии Оглушения, Ослабления, Опрокидывания, подбрасывает в воздух ",
+			"attribute_1": "Прерывает Отбивание и Защиту",
+			"range": "16m",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
+		},
+		"img": "/img/sc/f/37.png"
 	},
 	"tree_19|root": {
-		name: "Очищение",
-		effects: {
-			damage: "140-172 ед. урона",
-			attribute: "Выводит из состояний подавления и захвата",
-			attribute_1: "Оглушает на 2 секунды",
-			attribute_2: "Используется во время использования умения врага",
-			range: "3м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "9 секунд",
-			condition: "Персонаж в захвате",
-			condition_1: "Персонаж подавлен",
+		"name": "Обледенение",
+		"effects": {
+			"cost": 3,
+			"damage": "Deals 36 ~ 42 ice damage",
+			"attribute": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_1": "Прерывает Отбивание и Защиту",
+			"range": "16m",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления холодом"
 		},
-		img: "/img/sc/f/19.jpg",
+		"relations": [
+			125
+		],
+		"img": "/img/sc/f/38.png"
+	},
+	"tree_19|125": {
+		"name": "Обледенение",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 3,
+			"damage": "Deals 36 ~ 42 ice damage",
+			"attribute": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_1": "Прерывает Отбивание и Защиту",
+			"attribute_2": "Deals 18 ~ 21 ice additional damage to Frozen enemies",
+			"range": "16m",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"relations": [
+			126,
+			127,
+			128
+		]
+	},
+	"tree_19|126": {
+		"name": "Обледенение",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 3,
+			"damage": "Deals 54 ~ 63 ice damage",
+			"attribute": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_1": "Прерывает Отбивание и Защиту",
+			"attribute_2": "Deals 18 ~ 21 ice additional damage to Frozen enemies",
+			"range": "16m",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"relations": [
+			129
+		]
+	},
+	"tree_19|127": {
+		"name": "Ледяной буран",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Применяет эффект Ледяная клетка на 8 с.",
+			"attribute": "Персонаж подбрасывается в воздух",
+			"attribute_1": "При отмене приема с врага снимается эффект Ледяная клетка",
+			"attribute_2": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_3": "Прерывает Отбивание и Защиту",
+			"range": "From User",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "45 sec",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"relations": [
+			130
+		],
+		"img": "/img/sc/f/39.png"
+	},
+	"tree_19|128": {
+		"name": "Cold Snap",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 30 ~ 35 ice damage over 5 sec",
+			"attribute": "Против всех врагов в области действия приема урон от всех ледяных приемов +10%",
+			"attribute_1": "При каждой крит. атаке Обморожение на 6 с.",
+			"attribute_2": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_3": "Макс. ускоряет действие приема Ледяной шквал",
+			"attribute_4": "Прерывает Отбивание и Защиту",
+			"range": "16m",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"relations": [
+			131
+		],
+		"img": "/img/sc/f/40.png"
+	},
+	"tree_19|129": {
+		"name": "Обледенение",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 3,
+			"damage": "Deals 54 ~ 63 ice damage",
+			"attribute": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_1": "Прерывает Отбивание и Защиту",
+			"attribute_2": "Deals 18 ~ 21 ice additional damage to Frozen enemies",
+			"attribute_3": "Обморожение (1 шт.) на 6 с.",
+			"range": "16m",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления холодом"
+		}
+	},
+	"tree_19|130": {
+		"name": "Ледяной буран",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -3,
+			"damage": "Применяет эффект Ледяная клетка на 8 с.",
+			"attribute": "При отмене приема Ледяная клетка Обморожение на 6 с.",
+			"attribute_1": "За каждого раненого врага Ци +1",
+			"attribute_2": "Персонаж подбрасывается в воздух",
+			"attribute_3": "При отмене приема с врага снимается эффект Ледяная клетка",
+			"attribute_4": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_5": "Прерывает Отбивание и Защиту",
+			"range": "From User",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "45 sec",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"img": "/img/sc/f/39.png"
+	},
+	"tree_19|131": {
+		"name": "Cold Snap",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 30 ~ 35 ice damage over 5 sec",
+			"attribute": "Против всех врагов в области действия приема урон от всех ледяных приемов +10%",
+			"attribute_1": "При каждой крит. атаке Обморожение на 6 с.",
+			"attribute_2": "При каждом попадании Ци +1",
+			"attribute_3": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_4": "Макс. ускоряет действие приема Ледяной шквал",
+			"attribute_5": "Прерывает Отбивание и Защиту",
+			"range": "16m",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"img": "/img/sc/f/40.png"
 	},
 	"tree_20|root": {
-		name: "Вихрь пламени",
-		relations: [83],
-		effects: {
-			damage: "180-231 ед. урона",
-			cost: "Требует 5 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Не может быть отброшено",
-			attribute_2: "Освобождает союзников в радиусе действия умения от заморозки, холода, ледяной клетки и снимает стаки Льда",
-			range: "Вокруг персонажа",
-			radius: "Перед персонажем 2х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
+		"name": "Огненный шар",
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 204 ~ 238 fire damage",
+			"attribute": "Ожог на 6 с.",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "2.5 sec",
+			"cooldown": "45 sec",
+			"condition": "Используется Стойка Управления огнем"
 		},
-		img: "/img/sc/f/20.jpg",
+		"relations": [
+			132
+		],
+		"img": "/img/sc/f/41.png"
 	},
-	"tree_20|83": {
-		name: "Вихрь пламени",
-		relations: [84, 85, 86],
-		max_lvl: 1,
-		effects: {
-			damage: "180-231 ед. урона",
-			cost: "Требует 3 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Не может быть отброшено",
-			attribute_2: "Освобождает союзников в радиусе действия умения от заморозки, холода, ледяной клетки и снимает стаки Льда",
-			range: "Вокруг персонажа",
-			radius: "Перед персонажем 2х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
+	"tree_20|132": {
+		"name": "Огненный шар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 204 ~ 238 fire damage",
+			"attribute": "Ожог на 6 с.",
+			"attribute_1": "Увеличивает скорость полета снарядов",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "2.5 sec",
+			"cooldown": "45 sec",
+			"condition": "Используется Стойка Управления огнем"
 		},
+		"relations": [
+			133,
+			134
+		]
 	},
-	"tree_20|84": {
-		name: "Вихрь пламени",
-		relations: [87],
-		max_lvl: 1,
-		effects: {
-			damage: "180-231 ед. урона",
-			cost: "Требует 3 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Не может быть отброшено",
-			attribute_2: "Освобождает союзников в радиусе действия умения от заморозки, холода, ледяной клетки и снимает стаки Льда",
-			attribute_3: "При попадании генерирует 1 Огненную сферу",
-			range: "Вокруг персонажа",
-			radius: "Перед персонажем 2х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
+	"tree_20|133": {
+		"name": "Огненный шар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 240 ~ 280 fire damage",
+			"attribute": "Ожог на 6 с.",
+			"attribute_1": "Увеличивает скорость полета снарядов",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "2.5 sec",
+			"cooldown": "45 sec",
+			"condition": "Используется Стойка Управления огнем"
 		},
+		"relations": [
+			136
+		]
 	},
-	"tree_20|85": {
-		name: "Вихрь пламени",
-		relations: [88],
-		max_lvl: 1,
-		effects: {
-			damage: "180-231 ед. урона",
-			cost: "Требует 3 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Не может быть отброшено",
-			attribute_2: "Освобождает союзников в радиусе действия умения от заморозки, холода, ледяной клетки и снимает стаки Льда",
-			attribute_3: "Ослабляет пораженого врага на 2 секунды. Достуно раз в 18 секунд",
-			range: "Вокруг персонажа",
-			radius: "Перед персонажем 2х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
+	"tree_20|134": {
+		"name": "Огненный шар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 132 ~ 154 fire damage",
+			"attribute": "Ожог на 6 с.",
+			"attribute_1": "Увеличивает скорость полета снарядов",
+			"attribute_2": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_3": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_4": "Увеличивает скорость полета снарядов",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "45 sec",
+			"condition": "Используется Стойка Управления огнем"
 		},
+		"relations": [
+			137
+		]
 	},
-	"tree_20|86": {
-		name: "Вихрь пламени",
-		relations: [89],
-		max_lvl: 1,
-		effects: {
-			damage: "180-231 ед. урона",
-			cost: "Требует 3 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Не может быть отброшено",
-			attribute_2: "Освобождает союзников в радиусе действия умения от заморозки, холода, ледяной клетки и снимает стаки Льда",
-			attribute_3: "Наносит по 27-33 ед. урона 5 раз в течение 10 секунд ожогом. Доступно раз в 36 секунд",
-			range: "Вокруг персонажа",
-			radius: "Перед персонажем 2х5м в направлении камеры",
-			cast: "1 секунда",
-			cooldown: "Мгновенно",
+	"tree_20|135": {
+		"name": "Огненный шар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 96 ~ 112 fire damage",
+			"attribute": "Ожог на 6 с.",
+			"attribute_1": "Увеличивает скорость полета снарядов",
+			"attribute_2": "Прерывает Отбивание и Защиту",
+			"range": "16m",
+			"radius": "3 м",
+			"cast": "2.5 sec",
+			"cooldown": "45 sec",
+			"condition": "Используется Стойка Управления огнем"
 		},
+		"relations": [
+			138
+		]
 	},
-	"tree_20|87": {
-		name: "Вихрь пламени",
-		relations: [90],
-		max_lvl: 1,
-		effects: {
-			damage: "180-231 ед. урона",
-			cost: "Требует 3 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Не может быть отброшено",
-			attribute_2: "Освобождает союзников в радиусе действия умения от заморозки, холода, ледяной клетки и снимает стаки Льда",
-			attribute_3: "При попадании генерирует 1 Огненную сферу",
-			range: "Вокруг персонажа",
-			radius: "Перед персонажем 4х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
+	"tree_20|136": {
+		"name": "Огненный шар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 240 ~ 280 fire damage",
+			"attribute": "Ожог на 6 с.",
+			"attribute_1": "Увеличивает скорость полета снарядов",
+			"attribute_2": "Создает эффект Огненный покров (3 шт.)",
+			"attribute_3": "Не повышает уровень агрессии цели",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "2.5 sec",
+			"cooldown": "45 sec",
+			"condition": "Используется Стойка Управления огнем"
 		},
+		"relations": [
+			139
+		]
 	},
-	"tree_20|88": {
-		name: "Вихрь пламени",
-		max_lvl: 1,
-		relations: [92],
-		effects: {
-			damage: "180-231 ед. урона",
-			cost: "Требует 3 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Не может быть отброшено",
-			attribute_2: "Освобождает союзников в радиусе действия умения от заморозки, холода, ледяной клетки и снимает стаки Льда",
-			attribute_4: "Отталкивает пораженого врага на 5м, а после ослабляет на 2 секунды. Достуно раз в 18 секунд",
-			attribute_5: "При атаке генерирует 1 Огненную сферу",
-			range: "Вокруг персонажа",
-			radius: "Перед персонажем 2х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
+	"tree_20|137": {
+		"name": "Огненный шар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 132 ~ 154 fire damage",
+			"attribute": "Ожог на 6 с.",
+			"attribute_1": "Увеличивает скорость полета снарядов",
+			"attribute_2": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_3": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_4": "Deals 24 ~ 28 fire additional damage to Stunned, Dazed enemies",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "45 sec",
+			"condition": "Используется Стойка Управления огнем"
 		},
+		"relations": [
+			140
+		]
 	},
-	"tree_20|89": {
-		name: "Вихрь пламени",
-		max_lvl: 1,
-		relations: [93],
-		effects: {
-			damage: "180-231 ед. урона",
-			cost: "Требует 3 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Не может быть отброшено",
-			attribute_2: "Освобождает союзников в радиусе действия умения от заморозки, холода, ледяной клетки и снимает стаки Льда",
-			attribute_3: "Наносит по 27-33 ед. урона 5 раз в течение 10 секунд ожогом. Доступно раз в 36 секунд",
-			attribute_4: "При успешной атаке генерирует 1 Огненную сферу",
-			range: "Вокруг персонажа",
-			radius: "Перед персонажем 2х5м в направлении камеры",
-			cast: "1 секунда",
-			cooldown: "Мгновенно",
+	"tree_20|138": {
+		"name": "Огненный шар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 96 ~ 112 fire damage",
+			"attribute": "Ожог на 6 с.",
+			"attribute_1": "Увеличивает скорость полета снарядов",
+			"attribute_2": "Прерывает Отбивание и Защиту",
+			"attribute_3": "Накладывает эффект Искра (5 шт.)",
+			"range": "16m",
+			"radius": "3 м",
+			"cast": "2.5 sec",
+			"cooldown": "45 sec",
+			"condition": "Используется Стойка Управления огнем"
 		},
+		"relations": [
+			141
+		]
 	},
-	"tree_20|90": {
-		name: "Вихрь пламени",
-		max_lvl: 1,
-		relations: [91],
-		effects: {
-			damage: "180-231 ед. урона",
-			cost: "Требует 3 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Не может быть отброшено",
-			attribute_2: "Освобождает союзников в радиусе действия умения от заморозки, холода, ледяной клетки и снимает стаки Льда",
-			attribute_3: "При попадании генерирует 1 Огненную сферу",
-			attribute_4: "Оглушенный, ослабленный, захваченный и подавленный враг дополнительно получает 54-66 ед. урона",
-			range: "Вокруг персонажа",
-			radius: "Перед персонажем 4х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-		},
+	"tree_20|139": {
+		"name": "Огненный шар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 240 ~ 280 fire damage",
+			"attribute": "Ожог на 6 с.",
+			"attribute_1": "Увеличивает скорость полета снарядов",
+			"attribute_2": "При успехе атаки 1 раз применяется мгновенно без расхода Ци",
+			"attribute_3": "Deals 120 ~ 140 fire additional damage on additional use",
+			"attribute_4": "Создает эффект Огненный покров (3 шт.)",
+			"attribute_5": "Не повышает уровень агрессии цели",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "2.5 sec",
+			"cooldown": "45 sec",
+			"condition": "Используется Стойка Управления огнем"
+		}
 	},
-	"tree_20|91": {
-		name: "Вихрь пламени",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "180-231 ед. урона",
-			cost: "Требует 3 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Не может быть отброшено",
-			attribute_2: "Освобождает союзников в радиусе действия умения от заморозки, холода, ледяной клетки и снимает стаки Льда",
-			attribute_3: "При попадании генерирует 1 Огненную сферу",
-			attribute_4: "Оглушенный, ослабленный, захваченный и подавленный враг дополнительно получает 54-66 ед. урона",
-			attribute_5: "При повторном использовании скорость действия умения будет увеличина",
-			range: "Вокруг персонажа",
-			radius: "Перед персонажем 4х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-		},
+	"tree_20|140": {
+		"name": "Огненный шар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 132 ~ 154 fire damage",
+			"attribute": "Ожог на 6 с.",
+			"attribute_1": "Увеличивает скорость полета снарядов",
+			"attribute_2": "Если враг в состоянии Оглушения и Ослабления, активируется крит. атака",
+			"attribute_3": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_4": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_5": "Deals 24 ~ 28 fire additional damage to Stunned, Dazed enemies",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "45 sec",
+			"condition": "Используется Стойка Управления огнем"
+		}
 	},
-	"tree_20|92": {
-		name: "Вихрь пламени",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "180-231 ед. урона",
-			cost: "Требует 3 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Не может быть отброшено",
-			attribute_2: "Освобождает союзников в радиусе действия умения от заморозки, холода, ледяной клетки и снимает стаки Льда",
-			attribute_4: "Отталкивает пораженого врага на 5м, а после ослабляет на 2 секунды. Достуно раз в 18 секунд",
-			attribute_5: "При атаке генерирует 1 Огненную сферу",
-			attribute_6: "Игнорирует защиту противника",
-			range: "Вокруг персонажа",
-			radius: "Перед персонажем 2х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "Мгновенно",
-		},
-	},
-	"tree_20|93": {
-		name: "Вихрь пламени",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "180-231 ед. урона",
-			cost: "Требует 3 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Не может быть отброшено",
-			attribute_2: "Освобождает союзников в радиусе действия умения от заморозки, холода, ледяной клетки и снимает стаки Льда",
-			attribute_3: "Наносит по 49-59 ед. урона 5 раз в течение 10 секунд ожогом. Доступно раз в 36 секунд",
-			attribute_4: "При успешной атаке генерирует 1 Огненную сферу",
-			attribute_5: "При крите можно использовать 2 раза подряд",
-			range: "Вокруг персонажа",
-			radius: "Перед персонажем 2х5м в направлении камеры",
-			cast: "1 секунда",
-			cooldown: "Мгновенно",
-		},
+	"tree_20|141": {
+		"name": "Огненный шар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 110 ~ 129 fire damage",
+			"attribute": "Ожог на 6 с.",
+			"attribute_1": "Увеличивает скорость полета снарядов",
+			"attribute_2": "Прерывает Отбивание и Защиту",
+			"attribute_3": "Накладывает эффект Искра (5 шт.)",
+			"range": "16m",
+			"radius": "3 м",
+			"cast": "2.5 sec",
+			"cooldown": "45 sec",
+			"condition": "Используется Стойка Управления огнем"
+		}
 	},
 	"tree_21|root": {
-		name: "Силовой удар",
-		effects: {
-			damage: "54-66 ед. урона",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Отбрасывает захваченную цель назад на 15м и сбивает с ног на 2 секунды",
-			range: "3м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "5 секунд",
-			condition: "Противник в захвате",
+		"name": "Ледяной шар",
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 56 ~ 65 ice damage",
+			"attribute": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "Используется Стойка Управления холодом"
 		},
-		img: "/img/sc/f/21.jpg",
+		"relations": [
+			142
+		],
+		"img": "/img/sc/f/42.png"
+	},
+	"tree_21|142": {
+		"name": "Ледяной шар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 56 ~ 65 ice damage",
+			"attribute": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"relations": [
+			143,
+			144
+		]
+	},
+	"tree_21|143": {
+		"name": "Ледяной шар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 56 ~ 65 ice damage",
+			"attribute": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_1": "Deals 52 ~ 61 ice additional damage to Frozen enemies",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"relations": [
+			146
+		]
+	},
+	"tree_21|144": {
+		"name": "Ледяной шар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 18 ~ 21 ice damage",
+			"attribute": "Прерывает Отбивание и Защиту",
+			"attribute_1": "Увеличивает скорость полета снарядов",
+			"attribute_2": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "24 sec",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"relations": [
+			147
+		]
+	},
+	"tree_21|145": {
+		"name": "Ледяной смерч",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 18 ~ 21 ice damage 3 times up to 3 enemies",
+			"attribute": "Прерывает Отбивание",
+			"attribute_1": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_2": "При успешной первой атаке на 4 с. запрещает использовать Боевой прием атаки и защиты",
+			"range": "16m",
+			"radius": "8 м",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"relations": [
+			148
+		],
+		"img": "/img/sc/f/43.png"
+	},
+	"tree_21|146": {
+		"name": "Ледяной шар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 56 ~ 65 ice damage",
+			"attribute": "Создает эффект Ледяной покров (1 шт.)",
+			"attribute_1": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_2": "Deals 76 ~ 89 ice additional damage to Frozen enemies",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"relations": [
+			149
+		]
+	},
+	"tree_21|147": {
+		"name": "Ледяной шар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 18 ~ 21 ice damage",
+			"attribute": "Прерывает Отбивание и Защиту",
+			"attribute_1": "При отмене Защиты замораживает врага на 5 с.",
+			"attribute_2": "Увеличивает скорость полета снарядов",
+			"attribute_3": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "24 sec",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"relations": [
+			150
+		]
+	},
+	"tree_21|148": {
+		"name": "Ледяной смерч",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 18 ~ 21 ice damage 3 times up to 3 enemies",
+			"attribute": "При успехе серии атак Ци +3",
+			"attribute_1": "Прерывает Отбивание",
+			"attribute_2": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_3": "При успешной первой атаке на 4 с. запрещает использовать Боевой прием атаки и защиты",
+			"attribute_4": "При успешной первой атаке создает эффект Ледяной покров (1 шт.)",
+			"range": "16m",
+			"radius": "8 м",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"relations": [
+			153
+		],
+		"img": "/img/sc/f/43.png"
+	},
+	"tree_21|149": {
+		"name": "Ледяной шар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 56 ~ 65 ice damage",
+			"attribute": "Создает эффект Ледяной покров (1 шт.)",
+			"attribute_1": "Прерывает Отбивание",
+			"attribute_2": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_3": "Deals 76 ~ 89 ice additional damage to Frozen enemies",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"relations": [
+			151
+		]
+	},
+	"tree_21|150": {
+		"name": "Ледяной шар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 18 ~ 21 ice damage",
+			"attribute": "Прерывает Отбивание и Защиту",
+			"attribute_1": "При отмене Защиты замораживает врага на 5 с.",
+			"attribute_2": "При отмене Защиты запрещает врагам использовать боевые приемы Защиты на 6 с.",
+			"attribute_3": "Увеличивает скорость полета снарядов",
+			"attribute_4": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "24 sec",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"relations": [
+			152
+		]
+	},
+	"tree_21|151": {
+		"name": "Ледяной шар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 56 ~ 65 ice damage",
+			"attribute": "Создает эффект Ледяной покров (1 шт.)",
+			"attribute_1": "При крит. атаке сбрасывает перезарядку",
+			"attribute_2": "Прерывает Отбивание",
+			"attribute_3": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_4": "Deals 76 ~ 89 ice additional damage to Frozen enemies",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "Используется Стойка Управления холодом"
+		}
+	},
+	"tree_21|152": {
+		"name": "Ледяной шар",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 18 ~ 21 ice damage",
+			"attribute": "Прерывает Отбивание и Защиту",
+			"attribute_1": "При отмене Защиты замораживает врага на 5 с.",
+			"attribute_2": "При отмене Защиты запрещает врагам использовать боевые приемы Защиты на 6 с.",
+			"attribute_3": "При отмене Защиты ослабляет врагов на 2 с.",
+			"attribute_4": "Увеличивает скорость полета снарядов",
+			"attribute_5": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "24 sec",
+			"condition": "Используется Стойка Управления холодом"
+		}
+	},
+	"tree_21|153": {
+		"name": "Ледяной смерч",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 18 ~ 21 ice damage 5 times up to 5 enemies",
+			"attribute": "При успехе серии атак Ци +3",
+			"attribute_1": "Прерывает Отбивание",
+			"attribute_2": "При использовании ледяных боевых приемов Защита +10%",
+			"attribute_3": "При успешной первой атаке на 4 с. запрещает использовать Боевой прием атаки и защиты",
+			"attribute_4": "При успешной первой атаке создает эффект Ледяной покров (1 шт.)",
+			"range": "16m",
+			"radius": "8 м",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"img": "/img/sc/f/43.png"
 	},
 	"tree_22|root": {
-		name: "Печать",
-		effects: {
-			damage: "Вводит врага в состояние ментального обморока на 30 секунд",
-			cost: "Требует 3 Чи",
-			attribute: "Враг в состоянии ментального обморока будет восстанавливать по 10% ХП 10 раз в течение 30 секунд",
-			attribute_1: "Враг, получивший урон, выходит из состояния ментального обморока",
-			range: "Вокруг персонажа",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "30 секунд",
-			condition: "Противник в захвате",
+		"name": "Огненный дождь",
+		"effects": {
+			"cost": 3,
+			"damage": "Deals 18 ~ 21 fire damage over 5 sec",
+			"attribute": "При наложенном эффекте Искра происходит автоматический взрыв через 5 с.",
+			"attribute_1": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_2": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_3": "Прерывает Отбивание",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
 		},
-		img: "/img/sc/f/22.jpg",
+		"relations": [
+			154
+		],
+		"img": "/img/sc/f/44.png"
+	},
+	"tree_22|154": {
+		"name": "Огненный дождь",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 3,
+			"damage": "Deals 42 ~ 49 fire damage over 5 sec",
+			"attribute": "Если враг поражен приемом Огненный дождь, при получении крит. урона накладывает эффект Искра (1 шт.)",
+			"attribute_1": "При наложенном эффекте Искра происходит автоматический взрыв через 5 с.",
+			"attribute_2": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_3": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_4": "Прерывает Отбивание",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
+		},
+		"relations": [
+			155,
+			156
+		]
+	},
+	"tree_22|155": {
+		"name": "Огненный дождь",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 3,
+			"damage": "Deals 84 ~ 98 fire damage over 10 sec",
+			"attribute": "Если враг поражен приемом Огненный дождь, при получении крит. урона накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Burns enemies for 10 sec",
+			"attribute_2": "При наложенном эффекте Сжигание дотла происходит взрыв",
+			"attribute_3": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_4": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_5": "Накладывает эффект Кровотечение (1 шт.) на 10 с.",
+			"attribute_6": "Эффект Травма на 12 с.",
+			"attribute_7": "При успехе атаки Ци +16 за 8 с.",
+			"attribute_8": "Прерывает Отбивание",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления огнем"
+		},
+		"relations": [
+			157
+		]
+	},
+	"tree_22|156": {
+		"name": "Огненный дождь",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 3,
+			"damage": "Deals 42 ~ 49 fire damage over 5 sec",
+			"attribute": "Если враг поражен приемом Огненный дождь, при получении крит. урона накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Burns enemies for 5 sec",
+			"attribute_2": "При наложенном эффекте Искра происходит автоматический взрыв через 5 с.",
+			"attribute_3": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_4": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_5": "Накладывает эффект Кровотечение (1 шт.) на 10 с.",
+			"attribute_6": "При успехе атаки Ци +10 за 5 с.",
+			"attribute_7": "Прерывает Отбивание",
+			"range": "16m",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
+		},
+		"relations": [
+			158
+		]
+	},
+	"tree_22|157": {
+		"name": "Огненный дождь",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 3,
+			"damage": "Deals 120 ~ 140 fire damage over 10 sec",
+			"attribute": "Если враг поражен приемом Огненный дождь, при получении крит. урона накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Burns enemies for 10 sec",
+			"attribute_2": "Создает эффект Огненный покров (1 шт.)",
+			"attribute_3": "При наложенном эффекте Сжигание дотла происходит взрыв",
+			"attribute_4": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_5": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_6": "Накладывает эффект Кровотечение (1 шт.) на 10 с.",
+			"attribute_7": "Эффект Травма на 12 с.",
+			"attribute_8": "При успехе атаки Ци +16 за 8 с.",
+			"attribute_9": "Прерывает Отбивание",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления огнем"
+		},
+		"relations": [
+			159
+		]
+	},
+	"tree_22|158": {
+		"name": "Огненный дождь",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 3,
+			"damage": "Deals 60 ~ 70 fire damage over 5 sec",
+			"attribute": "Если враг поражен приемом Огненный дождь, при получении крит. урона накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Burns enemies for 5 sec",
+			"attribute_2": "При наложенном эффекте Искра происходит автоматический взрыв через 5 с.",
+			"attribute_3": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_4": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_5": "При взрыве накладывает эффект Искра (3 шт.)",
+			"attribute_6": "Накладывает эффект Кровотечение (1 шт.) на 10 с.",
+			"attribute_7": "При успехе атаки Ци +10 за 5 с.",
+			"attribute_8": "Прерывает Отбивание",
+			"range": "16m",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления огнем"
+		},
+		"relations": [
+			160
+		]
+	},
+	"tree_22|159": {
+		"name": "Огненный дождь",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 3,
+			"damage": "Deals 120 ~ 140 fire damage over 10 sec",
+			"attribute": "При крит. атаке сбрасывает перезарядку",
+			"attribute_1": "Если враг поражен приемом Огненный дождь, при получении крит. урона накладывает эффект Искра (1 шт.)",
+			"attribute_2": "Burns enemies for 10 sec",
+			"attribute_3": "Создает эффект Огненный покров (1 шт.)",
+			"attribute_4": "При наложенном эффекте Сжигание дотла происходит взрыв",
+			"attribute_5": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_6": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_7": "Накладывает эффект Кровотечение (1 шт.) на 10 с.",
+			"attribute_8": "Эффект Травма на 12 с.",
+			"attribute_9": "При успехе атаки Ци +16 за 8 с.",
+			"attribute_10": "Прерывает Отбивание",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления огнем"
+		}
+	},
+	"tree_22|160": {
+		"name": "Огненный дождь",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 3,
+			"damage": "Deals 60 ~ 70 fire damage over 5 sec",
+			"attribute": "Используется подряд несколько раз (макс. 3)",
+			"attribute_1": "Невозможно использовать серию атак против той же цели",
+			"attribute_2": "Если враг поражен приемом Огненный дождь, при получении крит. урона накладывает эффект Искра (1 шт.)",
+			"attribute_3": "Burns enemies for 5 sec",
+			"attribute_4": "При наложенном эффекте Искра происходит автоматический взрыв через 5 с.",
+			"attribute_5": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_6": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_7": "При взрыве накладывает эффект Искра (3 шт.)",
+			"attribute_8": "Накладывает эффект Кровотечение (1 шт.) на 10 с.",
+			"attribute_9": "При успехе атаки Ци +10 за 5 с.",
+			"attribute_10": "Прерывает Отбивание",
+			"range": "16m",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "Используется Стойка Управления огнем"
+		}
 	},
 	"tree_23|root": {
-		name: "Вихрь льда",
-		relations: [94],
-		effects: {
-			damage: "43-53 ед. урона",
-			cost: "Восстанавливает 2 Чи",
-			attribute: "Замораживает цель на 5 секунд",
-			attribute_1: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_2: "Снимает стаки Искр союзникам",
-			range: "Вокруг персонажа",
-			radius: "По прямой 2х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "24 секунды",
+		"name": "Защитный барьер",
+		"effects": {
+			"cost": -2,
+			"damage": "User and nearby party members are resistant to projectiles for 10 sec",
+			"attribute": "User and nearby party members take 30% reduced damage",
+			"attribute_1": "Прием отменяется, если персонаж начинает двигаться",
+			"attribute_2": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "From User",
+			"radius": "4 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления холодом"
 		},
-		img: "/img/sc/f/23.jpg",
+		"relations": [
+			161
+		],
+		"img": "/img/sc/f/45.png"
 	},
-	"tree_23|94": {
-		name: "Вихрь льда",
-		max_lvl: 1,
-		relations: [95],
-		effects: {
-			damage: "43-53 ед. урона",
-			cost: "Восстанавливает 2 Чи",
-			attribute: "Замораживает цель на 5 секунд",
-			attribute_1: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_2: "Снимает стаки Искр союзникам",
-			range: "Вокруг персонажа",
-			radius: "По прямой 2х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
+	"tree_23|161": {
+		"name": "Защитный барьер",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "User and nearby party members are resistant to projectiles for 10 sec",
+			"attribute": "Heals the user and nearby party members 15% of their Health over 10 sec",
+			"attribute_1": "User and nearby party members take 30% reduced damage",
+			"attribute_2": "Прием отменяется, если персонаж начинает двигаться",
+			"attribute_3": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "From User",
+			"radius": "4 м",
+			"cast": "Instant",
+			"cooldown": "18 sec",
+			"condition": "Используется Стойка Управления холодом"
 		},
+		"relations": [
+			162
+		]
 	},
-	"tree_23|95": {
-		name: "Вихрь льда",
-		max_lvl: 1,
-		relations: [96, 97],
-		effects: {
-			damage: "43-53 ед. урона",
-			cost: "Восстанавливает 2 Чи",
-			attribute: "Замораживает цель на 5 секунд",
-			attribute_1: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_2: "Снимает стаки Искр союзникам",
-			attribute_3: "При атаке генерирует 1 Ледяную сферу",
-			range: "Вокруг персонажа",
-			radius: "По прямой 2х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
+	"tree_23|162": {
+		"name": "Защитный барьер",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "User and nearby party members are resistant to projectiles for 15 sec",
+			"attribute": "Heals the user and nearby party members 15% of their Health over 15 sec",
+			"attribute_1": "User and nearby party members take 30% reduced damage",
+			"attribute_2": "Прием отменяется, если персонаж начинает двигаться",
+			"attribute_3": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "From User",
+			"radius": "4 м",
+			"cast": "Instant",
+			"cooldown": "24 sec",
+			"condition": "Используется Стойка Управления холодом"
 		},
+		"relations": [
+			163,
+			164
+		]
 	},
-	"tree_23|96": {
-		name: "Вихрь льда",
-		max_lvl: 1,
-		relations: [98, 99],
-		effects: {
-			damage: "43-53 ед. урона",
-			cost: "Восстанавливает 2 Чи",
-			attribute: "Замораживает цель на 5 секунд",
-			attribute_1: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_2: "Снимает стаки Искр союзникам",
-			attribute_3: "При атаке генерирует 1 Ледяную сферу",
-			attribute_4: "Поглощает 43-53 ХП",
-			attribute_5: "За каждого пораженного врага восстанавливает по 1 Чи",
-			range: "Вокруг персонажа",
-			radius: "По прямой 2х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
+	"tree_23|163": {
+		"name": "Защитный барьер",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "User and nearby party members are resistant to projectiles for 15 sec",
+			"attribute": "Heals the user and nearby party members 15% of their Health over 15 sec",
+			"attribute_1": "User and nearby party members take 20% reduced damage",
+			"attribute_2": "Прием не будет отменен, если персонаж начнет двигаться",
+			"attribute_3": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "1m",
+			"radius": "4 м",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "Используется Стойка Управления холодом"
 		},
+		"relations": [
+			165
+		]
 	},
-	"tree_23|97": {
-		name: "Вихрь льда",
-		max_lvl: 1,
-		relations: [100],
-		effects: {
-			damage: "43-53 ед. урона",
-			cost: "Восстанавливает 2 Чи",
-			attribute: "Замораживает цель на 5 секунд",
-			attribute_1: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_2: "Снимает стаки Искр союзникам",
-			attribute_3: "При атаке генерирует 1 Ледяную сферу",
-			attribute_4: "Оглушает на 1 секунду",
-			range: "Вокруг персонажа",
-			radius: "По прямой 2х10м в направлении камеры",
-			cast: "1 секунда",
-			cooldown: "24 секунды",
+	"tree_23|164": {
+		"name": "Защитный барьер",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "User and nearby party members are resistant to projectiles for 15 sec",
+			"attribute": "Heals the user and nearby party members 5% of their Health over 15 sec",
+			"attribute_1": "User and nearby party members take 15% reduced damage",
+			"attribute_2": "При движении во время использования защитный барьер перемещается вместе с персонажем",
+			"attribute_3": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "From User",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "45 sec",
+			"condition": "Используется Стойка Управления холодом"
 		},
+		"relations": [
+			166
+		]
 	},
-	"tree_23|98": {
-		name: "Вихрь льда",
-		max_lvl: 1,
-		relations: [101],
-		effects: {
-			damage: "43-53 ед. урона",
-			cost: "Восстанавливает 2 Чи",
-			attribute: "Замораживает цель на 5 секунд",
-			attribute_1: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_2: "Снимает стаки Искр союзникам",
-			attribute_3: "При атаке генерирует 1 Ледяную сферу",
-			attribute_4: "Поглощает 43-53 ХП",
-			attribute_5: "За каждого пораженного врага восстанавливает по 1 Чи",
-			range: "Вокруг персонажа",
-			radius: "По прямой 4х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
+	"tree_23|165": {
+		"name": "Защитный барьер",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "User and nearby party members are resistant to projectiles for 15 sec",
+			"attribute": "Heals the user and nearby party members 15% of their Health over 15 sec",
+			"attribute_1": "У персонажа и членов группы при сопротивлении HP +1% ",
+			"attribute_2": "User and nearby party members take 20% reduced damage",
+			"attribute_3": "Прием не будет отменен, если персонаж начнет двигаться",
+			"attribute_4": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "1m",
+			"radius": "4 м",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "Используется Стойка Управления холодом"
 		},
+		"relations": [
+			167
+		]
 	},
-	"tree_23|99": {
-		name: "Дыхание ледника",
-		max_lvl: 1,
-		relations: [102],
-		effects: {
-			damage: "43-53 ед. урона",
-			cost: "Восстанавливает 3 Чи",
-			attribute: "Замораживает цель на 5 секунд",
-			attribute_1: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_6: "При атаке генерирует 1 Ледяную сферу",
-			attribute_7: "Заключает замороженную цель в ледяную клетку на 6 секунд",
-			range: "Вокруг персонажа",
-			radius: "5м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
+	"tree_23|166": {
+		"name": "Защитный барьер",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "User and nearby party members are resistant to projectiles for 15 sec",
+			"attribute": "У врагов в радиусе действия точность -20%",
+			"attribute_1": "Heals the user and nearby party members 5% of their Health over 15 sec",
+			"attribute_2": "User and nearby party members take 15% reduced damage",
+			"attribute_3": "При движении во время использования защитный барьер перемещается вместе с персонажем",
+			"attribute_4": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "From User",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "45 sec",
+			"condition": "Используется Стойка Управления холодом"
 		},
-		img: "/img/sc/f/23.1.jpg",
+		"relations": [
+			168
+		]
 	},
-	"tree_23|100": {
-		name: "Вихрь льда",
-		max_lvl: 1,
-		relations: [103],
-		effects: {
-			damage: "43-53 ед. урона",
-			cost: "Восстанавливает 5 Чи",
-			attribute: "Замораживает цель на 5 секунд",
-			attribute_1: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_2: "Снимает стаки Искр союзникам",
-			attribute_3: "При атаке генерирует 1 Ледяную сферу",
-			attribute_4: "Оглушает на 1 секунду",
-			range: "Вокруг персонажа",
-			radius: "По прямой 2х10м в направлении камеры",
-			cast: "1 секунда",
-			cooldown: "24 секунды",
-		},
+	"tree_23|167": {
+		"name": "Защитный барьер",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "User and nearby party members are resistant to projectiles for 15 sec",
+			"attribute": "Heals the user and nearby party members 15% of their Health over 15 sec",
+			"attribute_1": "У персонажа и членов группы при сопротивлении HP +1% ",
+			"attribute_2": "User and nearby party members take 20% reduced damage",
+			"attribute_3": "У члена группы в состоянии медитации время медитации -6 с.",
+			"attribute_4": "Прием не будет отменен, если персонаж начнет двигаться",
+			"attribute_5": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "1m",
+			"radius": "4 м",
+			"cast": "Instant",
+			"cooldown": "36 sec",
+			"condition": "Используется Стойка Управления холодом"
+		}
 	},
-	"tree_23|101": {
-		name: "Вихрь льда",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "43-53 ед. урона",
-			cost: "Восстанавливает 2 Чи",
-			attribute: "Замораживает цель на 5 секунд",
-			attribute_1: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_2: "Снимает стаки Искр союзникам",
-			attribute_3: "При атаке генерирует 1 Ледяную сферу",
-			attribute_4: "Поглощает 43-53 ХП",
-			attribute_5: "За каждого пораженного врага восстанавливает по 1 Чи",
-			attribute_6: "При крит атаке будет персонад будет восстанавливать по 2% ХП 3 раза в течение 9 секунд",
-			range: "Вокруг персонажа",
-			radius: "По прямой 4х10м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-		},
-	},
-	"tree_23|102": {
-		name: "Дыхание ледника",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "43-53 ед. урона",
-			cost: "Восстанавливает 3 Чи",
-			attribute: "Замораживает цель на 5 секунд",
-			attribute_1: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_6: "При атаке генерирует 1 Ледяную сферу",
-			attribute_7: "Заключает замороженную цель в ледяную клетку на 6 секунд",
-			attribute_8: "При крит атаке можно использовать 2 раза подряд",
-			range: "Вокруг персонажа",
-			radius: "5м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-		},
-		img: "/img/sc/f/23.1.jpg",
-	},
-	"tree_23|103": {
-		name: "Вихрь льда",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "43-53 ед. урона",
-			cost: "Восстанавливает 5 Чи",
-			attribute: "Замораживает цель на 5 секунд",
-			attribute_1: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_2: "Снимает стаки Искр союзникам",
-			attribute_3: "При атаке генерирует 1 Ледяную сферу",
-			attribute_4: "Оглушает на 1 секунду",
-			attribute_5: "При крит атаке сбрасывает перезарядку умений Ледяной шар и Ледяной смерч",
-			attribute_6: "При крит атаке можно использовать следом Ледяной шар и Ледяной смерч моментально",
-			range: "Вокруг персонажа",
-			radius: "По прямой 2х10м в направлении камеры",
-			cast: "1 секунда",
-			cooldown: "24 секунды",
-		},
+	"tree_23|168": {
+		"name": "Защитный барьер",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "User and nearby party members are resistant to projectiles for 15 sec",
+			"attribute": "У врагов в радиусе действия точность -20%",
+			"attribute_1": "Heals the user and nearby party members 5% of their Health over 15 sec",
+			"attribute_2": "User and nearby party members take 15% reduced damage",
+			"attribute_3": "Создает защитный барьер для членов группы в радиусе 16 м",
+			"attribute_4": "Эффект Защитный барьер на членах группы снимается после 3-х сопротивлений урону",
+			"attribute_5": "При движении во время использования защитный барьер перемещается вместе с персонажем",
+			"attribute_6": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "From User",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "45 sec",
+			"condition": "Используется Стойка Управления холодом"
+		}
 	},
 	"tree_24|root": {
-		name: "Энергетическая клетка",
-		effects: {
-			damage: "1080-1320 ед. урона",
-			cost: "Требует 3 Чи",
-			attribute: "Пробивает защиту",
-			range: "16м",
-			radius: "5м вокруг цели",
-			cast: "5 секунд",
-			cooldown: "Мгновенно",
-			condition: "При использовании умения Черная дыра",
+		"name": "Пламя бездны",
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 72 ~ 84 fire damage over 5 sec",
+			"attribute": "Если цель находится более чем в 5 м, то прием срабатывает в 2 м перед персонажем",
+			"attribute_1": "Если враг в состоянии Пленения находится более чем в 5 м, то прием срабатывает там, где стоит плененный враг",
+			"attribute_2": "Если цель находится в пределах 5 м, то прием срабатывает там, где стоит цель",
+			"attribute_3": "Прерывает Отбивание и Защиту",
+			"range": "16m",
+			"radius": "5 x 2 м",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления огнем"
 		},
-		img: "/img/sc/f/24.jpg",
+		"relations": [
+			169
+		],
+		"img": "/img/sc/f/46.png"
+	},
+	"tree_24|169": {
+		"name": "Пламя бездны",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 72 ~ 84 fire damage over 5 sec",
+			"attribute": "При каждом попадании накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Если цель находится более чем в 5 м, то прием срабатывает в 2 м перед персонажем",
+			"attribute_2": "Если враг в состоянии Пленения находится более чем в 5 м, то прием срабатывает там, где стоит плененный враг",
+			"attribute_3": "Если цель находится в пределах 5 м, то прием срабатывает там, где стоит цель",
+			"attribute_4": "Прерывает Отбивание и Защиту",
+			"range": "16m",
+			"radius": "5 x 2 м",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления огнем"
+		},
+		"relations": [
+			170,
+			171
+		]
+	},
+	"tree_24|170": {
+		"name": "Пламя бездны",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 72 ~ 84 fire damage over 5 sec",
+			"attribute": "При каждом попадании накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Если на цель наложен эффект Искра (5 шт.), то происходит автоматический взрыв",
+			"attribute_2": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_3": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_4": "Если цель находится более чем в 5 м, то прием срабатывает в 2 м перед персонажем",
+			"attribute_5": "Если враг в состоянии Пленения находится более чем в 5 м, то прием срабатывает там, где стоит плененный враг",
+			"attribute_6": "Если цель находится в пределах 5 м, то прием срабатывает там, где стоит цель",
+			"attribute_7": "Прерывает Отбивание и Защиту",
+			"range": "16m",
+			"radius": "5 x 2 м",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления огнем"
+		},
+		"relations": [
+			172
+		]
+	},
+	"tree_24|171": {
+		"name": "Пламя с небес",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 144 ~ 168 fire damage over 5 sec",
+			"attribute": "Deals 72 ~ 84 fire additional damage to Burned enemies",
+			"attribute_1": "При каждом попадании накладывает эффект Искра (1 шт.)",
+			"attribute_2": "Прерывает Отбивание и Защиту",
+			"range": "16m",
+			"radius": "4 м",
+			"cast": "Instant",
+			"cooldown": "45 sec",
+			"condition": "Используется Стойка Управления огнем"
+		},
+		"relations": [
+			173
+		],
+		"img": "/img/sc/f/47.png"
+	},
+	"tree_24|172": {
+		"name": "Пламя бездны",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 72 ~ 84 fire damage over 5 sec",
+			"attribute": "При каждом попадании накладывает эффект Искра (1 шт.)",
+			"attribute_1": "Если на цель наложен эффект Искра (5 шт.), то происходит автоматический взрыв",
+			"attribute_2": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_3": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_4": "Если цель находится более чем в 5 м, то прием срабатывает в 2 м перед персонажем",
+			"attribute_5": "Если враг в состоянии Пленения находится более чем в 5 м, то прием срабатывает там, где стоит плененный враг",
+			"attribute_6": "Если цель находится в пределах 5 м, то прием срабатывает там, где стоит цель",
+			"attribute_7": "Прерывает Отбивание и Защиту",
+			"attribute_8": "Deals 10 ~ 11 fire additional damage to Grabbed, Phantom Gripped enemies",
+			"range": "16m",
+			"radius": "5 x 2 м",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления огнем"
+		}
+	},
+	"tree_24|173": {
+		"name": "Пламя с небес",
+		"max_lvl": 1,
+		"effects": {
+			"cost": -2,
+			"damage": "Deals 144 ~ 168 fire damage over 5 sec",
+			"attribute": "Deals 72 ~ 84 fire additional damage to Burned enemies",
+			"attribute_1": "При каждом попадании накладывает эффект Искра (1 шт.)",
+			"attribute_2": "Поражает 2 Искрами врага с эффектом Ожога",
+			"attribute_3": "Прерывает Отбивание и Защиту",
+			"range": "16m",
+			"radius": "4 м",
+			"cast": "Instant",
+			"cooldown": "45 sec",
+			"condition": "Используется Стойка Управления огнем"
+		},
+		"img": "/img/sc/f/47.png"
 	},
 	"tree_25|root": {
-		name: "Поглощение силы",
-		effects: {
-			damage: "65-79 ед. урона",
-			cost: "Восстанавливает 10 Чи",
-			attribute: "Поглощает 65-79 ХП",
-			range: "Вокруг персонажа",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "30 секунд",
-			condition: "Противник в захвате",
+		"name": "Ледяная клетка",
+		"effects": {
+			"cost": -1,
+			"damage": "Применяет эффект Ледяная клетка на 8 с.",
+			"attribute": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "1.5 sec",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления холодом"
 		},
-		img: "/img/sc/f/25.jpg",
+		"relations": [
+			174
+		],
+		"img": "/img/sc/f/48.png"
+	},
+	"tree_25|174": {
+		"name": "Ледяная клетка",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Применяет эффект Ледяная клетка на 8 с.",
+			"attribute": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "1.5 sec",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"relations": [
+			175,
+			176
+		]
+	},
+	"tree_25|175": {
+		"name": "Ледяная клетка",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Применяет эффект Ледяная клетка на 8 с.",
+			"attribute": "При отмене приема Ледяная клетка Обморожение на 6 с.",
+			"attribute_1": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "1.5 sec",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"relations": [
+			177
+		]
+	},
+	"tree_25|176": {
+		"name": "Ледяной цветок",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Применяет эффект Ледяной цветок на 3 с.",
+			"attribute": "При получении урона во время использования приема Ледяной цветок применяет эффект Ледяная клетка на 5 с.",
+			"attribute_1": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "From User",
+			"radius": "50 м",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"relations": [
+			178
+		],
+		"img": "/img/sc/f/49.png"
+	},
+	"tree_25|177": {
+		"name": "Ледяная клетка",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Применяет эффект Ледяная клетка на 8 с.",
+			"attribute": "При отмене приема Ледяная клетка Обморожение на 6 с.",
+			"attribute_1": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "16m",
+			"radius": "5 м",
+			"cast": "1.5 sec",
+			"cooldown": "1 min",
+			"condition": "Используется Стойка Управления холодом"
+		}
+	},
+	"tree_25|178": {
+		"name": "Ледяной цветок",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Применяет эффект Ледяной цветок на 3 с.",
+			"attribute": "При получении урона во время использования приема Ледяной цветок применяет эффект Ледяная клетка на 5 с.",
+			"attribute_1": "Во время накладывания эффекта Ледяная клетка Ци +100%",
+			"attribute_2": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "From User",
+			"radius": "50 м",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "Используется Стойка Управления холодом"
+		},
+		"img": "/img/sc/f/49.png"
 	},
 	"tree_26|root": {
-		name: "Пленение",
-		relations: [104],
-		effects: {
-			damage: "Захватывает цель на 4 секунды",
-			cost: "Требует 2 Чи",
-			attribute: "Притягивает цель",
-			attribute_1: "Противник в захвате не может двигаться",
-			attribute_2: "Игнорирует защиту",
-			range: "8м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
+		"name": "Освобождение",
+		"effects": {
+			"cost": 0,
+			"damage": "",
+			"attribute": "Используется двойным нажатием клавиши [S]",
+			"attribute_1": "Сопротивление урону и негативным эффектам",
+			"range": "From User",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "16 sec"
 		},
-		img: "/img/sc/f/26.jpg",
+		"relations": [
+			179
+		],
+		"img": "/img/sc/f/52.png"
 	},
-	"tree_26|104": {
-		name: "Пленение",
-		max_lvl: 2,
-		relations: [105, 106, 107],
-		effects: {
-			damage: "Захватывает цель на 5 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Притягивает цель",
-			attribute_1: "Противник в захвате не может двигаться",
-			attribute_2: "Игнорирует защиту",
-			range: "8м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
+	"tree_26|179": {
+		"name": "Освобождение",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "",
+			"attribute": "Используется двойным нажатием клавиши [S]",
+			"attribute_1": "Сопротивление урону и негативным эффектам",
+			"range": "From User",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "12 sec"
 		},
-		effects_1: {
-			damage: "Захватывает цель на 6 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Притягивает цель",
-			attribute_1: "Противник в захвате не может двигаться",
-			attribute_2: "Игнорирует защиту",
-			range: "8м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-		},
+		"relations": [
+			180
+		]
 	},
-	"tree_26|105": {
-		name: "Пленение",
-		max_lvl: 1,
-		relations: [108],
-		effects: {
-			damage: "Захватывает цель на 6 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Притягивает цель",
-			attribute_1: "Противник в захвате не может двигаться",
-			attribute_2: "Игнорирует защиту",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "24 секунд",
-		},
+	"tree_26|180": {
+		"name": "Освобождение",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "",
+			"attribute": "Замораживание на 5 с.",
+			"attribute_1": "Используется двойным нажатием клавиши [S]",
+			"attribute_2": "Выводит из состояния Оглушения, Ослабления, Опрокидывания, Обморока",
+			"attribute_3": "Сопротивление урону и негативным эффектам",
+			"range": "1m",
+			"radius": "3 м",
+			"cast": "Instant",
+			"cooldown": "36 sec"
+		}
 	},
-	"tree_26|106": {
-		name: "Пленение",
-		max_lvl: 1,
-		relations: [109],
-		effects: {
-			damage: "Захватывает цель на 6 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Притягивает цель",
-			attribute_1: "Противник в захвате не может двигаться",
-			attribute_2: "Игнорирует защиту",
-			attribute_3: "Притягивает истощенного или медитирующего члена группы",
-			range: "8м",
-			radius: "8м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
+	"tree_27.0|root": {
+		"name": "Чистая душа",
+		"effects": {
+			"cost": 0,
+			"damage": "Усиление приемов пламени"
 		},
+		"relations": [
+			181
+		],
+		"img": "/img/sc/f/53.png"
 	},
-	"tree_26|107": {
-		name: "Невесомость",
-		max_lvl: 1,
-		relations: [110],
-		effects: {
-			cost: "Требует 2 Чи",
-			attribute_3: "Стягивает в центр всех врагов в радиусе действия умения",
-			attribute_4: "Скорость передвижения пораженных врагов снижается на 80%",
-			range: "8м",
-			radius: "5м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "30 секунд",
-		},
-		img: "/img/sc/f/26.1.jpg",
+	"tree_27.0|181": {
+		"name": "Чистая душа",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Усиление приемов пламени",
+			"attribute": "Увеличение урона от Огненной длани",
+			"attribute_1": "При крит. атаке Огненной дланью Ци +1",
+			"attribute_2": "При успехе приема Огненный поток урон огнем +40%. доп. урон +100 (снаряжение)",
+			"attribute_3": "При каждом попадании Волной тепла возникает эффект Огненного покрова",
+			"attribute_4": "При успехе приема Огненный поток время перезарядки приемов Пламя бездны и Пламя с небес сокращается на 3 с."
+		}
 	},
-	"tree_26|108": {
-		name: "Пленение",
-		max_lvl: 1,
-		relations: [111],
-		effects: {
-			damage: "Захватывает цель на 6 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Притягивает цель",
-			attribute_1: "Противник в захвате не может двигаться",
-			attribute_2: "Игнорирует защиту",
-			attribute_3: "Доступен захват в воздухе",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "24 секунд",
+	"tree_27.0|182": {
+		"name": "Ледяная душа",
+		"max_lvl": 1,
+		"effects": {
+			"cost": 0,
+			"damage": "Усиление приемов холода",
+			"attribute": "Увеличение урона от Ледяной длани",
+			"attribute_1": "При успехе приема Ледяной поток урон холодом +40%. доп. урон +100 (снаряжение)",
+			"attribute_2": "При каждом попадании Волной холода возникает эффект Ледяного покрова",
+			"attribute_3": "Дополнительно использует прием Ледяной круг 2 раза",
+			"attribute_4": "Изменяет время перезарядки Ледяного круга до 45 с.",
+			"attribute_5": "При успехе приема Ледяной поток время перезарядки приемов Ледяной смерч и Ледяной шар сокращается на 3 c."
 		},
-	},
-	"tree_26|109": {
-		name: "Пленение",
-		max_lvl: 1,
-		relations: [112],
-		effects: {
-			damage: "Захватывает цель на 6 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Притягивает цель",
-			attribute_1: "Противник в захвате не может двигаться",
-			attribute_2: "Игнорирует защиту",
-			attribute_3: "Притягивает истощенного или медитирующего члена группы",
-			attribute_4: "Снижает время медитации союзника на 6 секунд",
-			range: "8м",
-			radius: "8м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-		},
-	},
-	"tree_26|110": {
-		name: "Невесомость",
-		max_lvl: 1,
-		relations: [113],
-		effects: {
-			cost: "Требует 2 Чи",
-			attribute_3: "Стягивает в центр всех врагов в радиусе действия умения",
-			attribute_4: "Скорость передвижения пораженных врагов снижается на 80%",
-			attribute_5: "Противник не может использоваеть навыки сближения",
-			range: "8м",
-			radius: "5м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "30 секунд",
-		},
-		img: "/img/sc/f/26.1.jpg",
-	},
-	"tree_26|111": {
-		name: "Пленение",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "Захватывает цель на 6 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Притягивает цель",
-			attribute_1: "Противник в захвате не может двигаться",
-			attribute_2: "Игнорирует защиту",
-			attribute_3: "Доступен захват в воздухе",
-			attribute_4: "Снижает защиту пораженного противника на 10%",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "24 секунд",
-		},
-	},
-	"tree_26|112": {
-		name: "Пленение",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "Захватывает цель на 6 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Притягивает цель",
-			attribute_1: "Противник в захвате не может двигаться",
-			attribute_2: "Игнорирует защиту",
-			attribute_3: "Притягивает истощенного или медитирующего члена группы",
-			attribute_4: "Снижает время медитации союзника на 6 секунд",
-			attribute_5: "Создает щит, защищающий медитирующего или истощенного союзника, на 10 секунд",
-			range: "8м",
-			radius: "8м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-		},
-	},
-	"tree_26|113": {
-		name: "Энергетическая клетка",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "1080-1320 ед. урона",
-			cost: "Требует 3 Чи",
-			attribute_6: "Игнорирует защиту противника",
-			range: "16м",
-			radius: "5м вокруг цели",
-			cast: "5 секунд",
-			cooldown: "Мгновенно",
-			condition: "При использовании умения Черная дыра",
-		},
-		img: "/img/sc/f/24.jpg",
-	},
-	"tree_27|root": {
-		name: "Лесной пожар",
-		relations: [114],
-		effects: {
-			damage: "По 43-53 ед. урона максимум трем врагам",
-			cost: "Требует 1 Чи",
-			attribute: "Снаряд не может быть заблокирован и отброшен",
-			attribute_1: "Накладывает 1 стак Искр",
-			range: "16м",
-			radius: "8м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В огненной стойке",
-		},
-		img: "/img/sc/f/27.jpg",
-	},
-	"tree_27|114": {
-		name: "Лесной пожар",
-		max_lvl: 1,
-		relations: [115, 116],
-		effects: {
-			damage: "По 43-53 ед. урона максимум трем врагам",
-			cost: "Требует 1 Чи",
-			attribute: "Снаряд не может быть заблокирован и отброшен",
-			attribute_1: "Накладывает 2 стака Искр",
-			range: "16м",
-			radius: "8м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В огненной стойке",
-		},
-	},
-	"tree_27|115": {
-		name: "Лесной пожар",
-		max_lvl: 1,
-		effects: {
-			damage: "По 43-53 ед. урона максимум пяти врагам",
-			cost: "Требует 1 Чи",
-			attribute: "Снаряд не может быть заблокирован и отброшен",
-			attribute_1: "Накладывает 2 стака Искр",
-			range: "16м",
-			radius: "8м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В огненной стойке",
-		},
-	},
-	"tree_27|116": {
-		name: "Сфера огня",
-		max_lvl: 1,
-		effects: {
-			damage: "167-205 ед. урона в течение 3 секунд",
-			cost: "Требует 2 Чи",
-			attribute_2: "Подбрасывает в воздух оглушенного, ослабленного или опрокинутого врага",
-			range: "16м",
-			radius: "5м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В огненной стойке",
-		},
-		img: "/img/sc/f/27.1.jpg",
-	},
-	"tree_28|root": {
-		name: "Обледенение",
-		relations: [117],
-		effects: {
-			damage: "162-198 ед. урона",
-			cost: "Восстанавливает 3 Чи",
-			attribute: "Увеличивает защиту на 10% при использовании ледяных умений",
-			range: "16м",
-			radius: "5м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "30 секунд",
-			condition: "В ледяной стойке",
-		},
-		img: "/img/sc/f/28.jpg",
-	},
-	"tree_28|117": {
-		name: "Обледенение",
-		max_lvl: 1,
-		relations: [118, 119],
-		effects: {
-			damage: "162-198 ед. урона",
-			cost: "Восстанавливает 3 Чи",
-			attribute: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_1: "Замороженные враги получают дополнительно 81-99 ед. урона",
-			range: "16м",
-			radius: "5м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "30 секунд",
-			condition: "В ледяной стойке",
-		},
-	},
-	"tree_28|118": {
-		name: "Обледенение",
-		max_lvl: 1,
-		relations: [120],
-		effects: {
-			damage: "243-297 ед. урона",
-			cost: "Восстанавливает 3 Чи",
-			attribute: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_1: "Замороженные враги получают дополнительно 81-99 ед. урона",
-			range: "16м",
-			radius: "5м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "30 секунд",
-			condition: "В ледяной стойке",
-		},
-	},
-	"tree_28|119": {
-		name: "Ледяной буран",
-		max_lvl: 1,
-		relations: [121],
-		effects: {
-			damage: "Заключает окружающих врагов в ледяную клетку на 8 секунд",
-			cost: "Требует 3 Чи",
-			attribute: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_2: "В ледяной клетке противник не может передвигаться, но игнорирует урон",
-			attribute_3: "Персонаж поднимается в воздух",
-			attribute_4: "При отмене приема отменяется и ледяная клетка",
-			range: "Вокруг персонажа",
-			radius: "5м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "45 секунд",
-			condition: "В ледяной стойке",
-		},
-		img: "/img/sc/f/28.1.jpg",
-	},
-	"tree_28|120": {
-		name: "Обледенение",
-		max_lvl: 1,
-		effects: {
-			damage: "243-297 ед. урона",
-			cost: "Восстанавливает 3 Чи",
-			attribute: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_1: "Замороженные враги получают дополнительно 81-99 ед. урона",
-			attribute_2: "Накладывает на цель Холод на 6 секунд",
-			range: "16м",
-			radius: "5м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "30 секунд",
-			condition: "В ледяной стойке",
-		},
-	},
-	"tree_28|121": {
-		name: "Ледяной буран",
-		max_lvl: 1,
-		effects: {
-			damage: "Заключает окружающих врагов в ледяную клетку на 8 секунд",
-			cost: "Требует 3 Чи",
-			attribute: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_2: "В ледяной клетке противник не может передвигаться, но игнорирует урон",
-			attribute_3: "Персонаж поднимается в воздух",
-			attribute_4: "При отмене приема отменяется и ледяная клетка",
-			attribute_5: "Накладывает Холод на всех пораженных врагов на 6 секунд",
-			attribute_6: "За каждого пораженного врага восстанавливает по 1 Чи",
-			range: "Вокруг персонажа",
-			radius: "5м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "45 секунд",
-			condition: "В ледяной стойке",
-		},
-		img: "/img/sc/f/28.1.jpg",
+		"img": "/img/sc/f/54.png"
 	},
 	"tree_29|root": {
-		name: "Ледяной шар",
-		relations: [122],
-		effects: {
-			damage: "235-287 ед. урона",
-			attribute: "Увеличивает защиту на 10% при использовании ледяных умений",
-			range: "16м",
-			radius: "Цель",
-			cast: "1 секунда",
-			cooldown: "24 секунды",
-			condition: "В ледяной стойке",
+		"name": "Энергетический шквал",
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 35 ~ 41 damage over 3 hits",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Во время Затяжного прыжка и Парения"
 		},
-		img: "/img/sc/f/29.jpg",
-	},
-	"tree_29|122": {
-		name: "Ледяной шар",
-		max_lvl: 1,
-		relations: [123, 124],
-		effects: {
-			damage: "235-287 ед. урона",
-			attribute: "Увеличивает защиту на 10% при использовании ледяных умений",
-			range: "16м",
-			radius: "Цель",
-			cast: "1 секунда",
-			cooldown: "18 секунд",
-			condition: "В ледяной стойке",
-		},
-	},
-	"tree_29|123": {
-		name: "Ледяной шар",
-		max_lvl: 1,
-		relations: [125],
-		effects: {
-			damage: "235-287 ед. урона",
-			attribute: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_1: "Замороженные враги получают дополнительно 235-287 ед. урона дополнительно",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В ледяной стойке",
-		},
-	},
-	"tree_29|124": {
-		name: "Ледяной смерч",
-		max_lvl: 1,
-		relations: [126, 127],
-		effects: {
-			damage: "81-99 ед. урона максимально трем врагам",
-			attribute: "Увеличивает защиту на 10% при использовании ледяных умений",
-			range: "16м",
-			radius: "8м вокруг цели",
-			cast: "1 секунда",
-			cooldown: "30 секунд",
-			condition: "В ледяной стойке",
-		},
-		img: "/img/sc/f/29.1.jpg",
-	},
-	"tree_29|125": {
-		name: "Ледяной шар",
-		max_lvl: 1,
-		relations: [128],
-		effects: {
-			damage: "235-287 ед. урона",
-			attribute: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_1: "Замороженные враги получают дополнительно 235-287 ед. урона дополнительно",
-			attribute_2: "Генерирует 1 Ледяную сферу",
-			attribute_3: "Снаряд невозможно отбросить",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В ледяной стойке",
-		},
-	},
-	"tree_29|126": {
-		name: "Ледяной смерч",
-		max_lvl: 1,
-		relations: [130],
-		effects: {
-			damage: "81-99 ед. урона максимально трем врагам",
-			attribute: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_1: "При критической атаке замораживает пораженную цель на 5 секунд",
-			range: "16м",
-			radius: "8м вокруг цели",
-			cast: "1 секунда",
-			cooldown: "30 секунд",
-			condition: "В ледяной стойке",
-		},
-		img: "/img/sc/f/29.1.jpg",
-	},
-	"tree_29|127": {
-		name: "Ледяной смерч",
-		max_lvl: 1,
-		relations: [131],
-		effects: {
-			damage: "81-99 ед. урона максимально трем врагам",
-			attribute: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_1: "При каждом попадании поглощает 81-99 ХП",
-			range: "16м",
-			radius: "8м вокруг цели",
-			cast: "1 секунда",
-			cooldown: "30 секунд",
-			condition: "В ледяной стойке",
-		},
-		img: "/img/sc/f/29.1.jpg",
-	},
-	"tree_29|128": {
-		name: "Ледяной шар",
-		max_lvl: 1,
-		relations: [129],
-		effects: {
-			damage: "235-287 ед. урона",
-			attribute: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_1: "Замороженные враги получают дополнительно 235-287 ед. урона дополнительно",
-			attribute_2: "Генерирует 1 Ледяную сферу",
-			attribute_3: "Снаряд невозможно отбросить",
-			attribute_4: "При критической атаке замораживает пораженную цель на 5 секунд",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В ледяной стойке",
-		},
-	},
-	"tree_29|129": {
-		name: "Ледяной шар",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "235-287 ед. урона",
-			attribute: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_1: "Замороженные враги получают дополнительно 235-287 ед. урона дополнительно",
-			attribute_2: "Генерирует 1 Ледяную сферу",
-			attribute_3: "Снаряд невозможно отбросить",
-			attribute_4: "При критической атаке замораживает пораженную цель на 5 секунд",
-			attribute_5: "При крит атаке сбрасывает перезарядку умения",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В ледяной стойке",
-		},
-	},
-	"tree_29|130": {
-		name: "Ледяной смерч",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "81-99 ед. урона максимально пяти врагам",
-			attribute: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_1: "При критической атаке замораживает пораженную цель на 5 секунд",
-			range: "16м",
-			radius: "8м вокруг цели",
-			cast: "1 секунда",
-			cooldown: "30 секунд",
-			condition: "В ледяной стойке",
-		},
-		img: "/img/sc/f/29.1.jpg",
-	},
-	"tree_29|131": {
-		name: "Ледяной смерч",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "81-99 ед. урона максимально пяти врагам",
-			attribute: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_1: "При каждом попадании поглощает 81-99 ХП",
-			range: "16м",
-			radius: "8м вокруг цели",
-			cast: "1 секунда",
-			cooldown: "30 секунд",
-			condition: "В ледяной стойке",
-		},
-		img: "/img/sc/f/29.1.jpg",
+		"img": "/img/sc/f/2.png"
 	},
 	"tree_30|root": {
-		name: "Огненный шар",
-		relations: [132],
-		effects: {
-			damage: "513-627 ед. урона",
-			cost: "Требует 3 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			range: "16м",
-			radius: "Цель",
-			cast: "2,5 секунды",
-			cooldown: "Мгновенно",
-			condition: "В огненной стойке",
+		"name": "Кувырок назад",
+		"effects": {
+			"cost": 0,
+			"damage": "Выводит из состояния Опрокидывания, Ослабления и Обморока",
+			"attribute": "Сопротивление урону и негативным эффектам",
+			"attribute_1": "Перемещает назад на 4 м",
+			"range": "From User",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "12 sec",
+			"condition": "В состоянии Опрокидывания, Ослабления или Обморока"
 		},
-		img: "/img/sc/f/30.jpg",
-	},
-	"tree_30|132": {
-		name: "Огненный шар",
-		max_lvl: 1,
-		relations: [133, 134, 135],
-		effects: {
-			damage: "513-627 ед. урона",
-			cost: "Требует 2 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			range: "16м",
-			radius: "Цель",
-			cast: "2,5 секунды",
-			cooldown: "Мгновенно",
-			condition: "В огненной стойке",
-		},
-	},
-	"tree_30|133": {
-		name: "Огненный шар",
-		max_lvl: 1,
-		relations: [136],
-		effects: {
-			damage: "513-627 ед. урона",
-			cost: "Требует 2 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Игнорирует защиту",
-			attribute_2: "Отталкивает защищающегося врага на 5 метров",
-			range: "16м",
-			radius: "Цель",
-			cast: "2,5 секунды",
-			cooldown: "Мгновенно",
-			condition: "В огненной стойке",
-		},
-	},
-	"tree_30|134": {
-		name: "Огненный шар",
-		max_lvl: 1,
-		relations: [137],
-		effects: {
-			damage: "594-726 ед. урона",
-			cost: "Требует 2 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Взрывает стаки Искр",
-			attribute_2: "Наносит цели 16-20 ед. урона от взрыва стаков",
-			attribute_3: "Каждый стак увеличивает урон от взрыва на 75%",
-			attribute_4: "Увеличивается скорость снарядов",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "45 секунд",
-			condition: "В огненной стойке",
-		},
-	},
-	"tree_30|135": {
-		name: "Огненный шар",
-		max_lvl: 1,
-		relations: [138],
-		effects: {
-			damage: "432-528 ед. урона",
-			cost: "Требует 2 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			range: "16м",
-			radius: "3м вокруг цели",
-			cast: "2,5 секунды",
-			cooldown: "Мгновенно",
-			condition: "В огненной стойке",
-		},
-	},
-	"tree_30|136": {
-		name: "Огненный шар",
-		max_lvl: 1,
-		relations: [139],
-		effects: {
-			damage: "513-627 ед. урона",
-			cost: "Требует 2 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Игнорирует защиту",
-			attribute_2: "Отталкивает защищающегося врага на 5 метров",
-			attribute_3: "Пр критической атаке доступно повторно моментальное использование умение",
-			range: "16м",
-			radius: "Цель",
-			cast: "2,5 секунды",
-			cooldown: "Мгновенно",
-			condition: "В огненной стойке",
-		},
-	},
-	"tree_30|137": {
-		name: "Огненный шар",
-		max_lvl: 1,
-		relations: [140],
-		effects: {
-			damage: "594-726 ед. урона",
-			cost: "Требует 2 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Взрывает стаки Искр",
-			attribute_2: "Наносит цели 16-20 ед. урона от взрыва стаков",
-			attribute_3: "Каждый стак увеличивает урон от взрыва на 75%",
-			attribute_4: "Увеличивается скорость снарядов",
-			attribute_5: "Оглушенный или ослабленный враг получает дополнительно 108-132 ед. урона",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "45 секунд",
-			condition: "В огненной стойке",
-		},
-	},
-	"tree_30|138": {
-		name: "Огненный шар",
-		max_lvl: 1,
-		relations: [141],
-		effects: {
-			damage: "432-528 ед. урона",
-			cost: "Требует 2 Чи",
-			attribute: "Накладывает 5 стаков Искр",
-			range: "16м",
-			radius: "3м вокруг цели",
-			cast: "2,5 секунды",
-			cooldown: "Мгновенно",
-			condition: "В огненной стойке",
-		},
-	},
-	"tree_30|139": {
-		name: "Огненный шар",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "513-627 ед. урона",
-			cost: "Требует 2 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Игнорирует защиту",
-			attribute_2: "Отталкивает защищающегося врага на 5 метров",
-			attribute_3: "Пр критической атаке доступно повторно моментальное использование умение",
-			attribute_4: "Умение не повышает агрессию противника",
-			range: "16м",
-			radius: "Цель",
-			cast: "2,5 секунды",
-			cooldown: "Мгновенно",
-			condition: "В огненной стойке",
-		},
-	},
-	"tree_30|140": {
-		name: "Огненный шар",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "594-726 ед. урона",
-			cost: "Требует 2 Чи",
-			attribute: "Накладывает 1 стак Искр",
-			attribute_1: "Взрывает стаки Искр",
-			attribute_2: "Наносит цели 16-20 ед. урона от взрыва стаков",
-			attribute_3: "Каждый стак увеличивает урон от взрыва на 75%",
-			attribute_4: "Увеличивается скорость снарядов",
-			attribute_5: "Оглушенный или ослабленный враг получает дополнительно 108-132 ед. урона",
-			attribute_6: "Умение приобретает критический эффект при атаке оглушенного или ослабленного противника",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "45 секунд",
-			condition: "В огненной стойке",
-		},
-	},
-	"tree_30|141": {
-		name: "Огненный шар",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "432-528 ед. урона",
-			cost: "Требует 2 Чи",
-			attribute: "Накладывает 5 стаков Искр",
-			attribute_1: "Наносит по 65-79 ед. урона в секунду по области в течение 5 секунд",
-			range: "16м",
-			radius: "3м вокруг цели",
-			cast: "2,5 секунды",
-			cooldown: "Мгновенно",
-			condition: "В огненной стойке",
-		},
+		"img": "/img/sc/f/7.png"
 	},
 	"tree_31|root": {
-		name: "Защитнй барьер",
-		relations: [142],
-		effects: {
-			damage: "Защищает от снарядов дальнего боя в течение 10 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Снижает на 30% получаемый урон",
-			attribute_1: "Эффект действует на союзников в радиусе действия умения",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			range: "Вокруг персонажа",
-			radius: "4м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В ледяной стойке",
+		"name": "Огненный поток",
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 108 ~ 126 fire damage",
+			"attribute": "Deals 24 ~ 28 fire additional damage to Burned enemies",
+			"attribute_1": "Накладывает эффект Искра (5 шт.)",
+			"attribute_2": "При использовании расходует все эффекты Огненный покров",
+			"attribute_3": "При наложенном эффекте Чистой души время перезарядки приемов Пламя бездны и Пламя с небес -3 с.",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Если на персонажа наложено 3 эффекта Огненный покров"
 		},
-		img: "/img/sc/f/31.jpg",
-	},
-	"tree_31|142": {
-		name: "Защитнй барьер",
-		max_lvl: 1,
-		relations: [143],
-		effects: {
-			damage: "Защищает от снарядов дальнего боя в течение 10 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Снижает на 30% получаемый урон",
-			attribute_1: "Эффект действует на союзников в радиусе действия умения",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "Восстанавливает 1% ХП в секунду во время действия умения",
-			range: "Вокруг персонажа",
-			radius: "4м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В ледяной стойке",
-		},
-	},
-	"tree_31|143": {
-		name: "Защитнй барьер",
-		max_lvl: 1,
-		relations: [144, 145],
-		effects: {
-			damage: "Защищает от снарядов дальнего боя в течение 15 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Снижает на 30% получаемый урон",
-			attribute_1: "Эффект действует на союзников в радиусе действия умения",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "Восстанавливает 1% ХП в секунду во время действия умения",
-			range: "Вокруг персонажа",
-			radius: "4м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "24 секунды",
-			condition: "В ледяной стойке",
-		},
-	},
-	"tree_31|144": {
-		name: "Защитнй барьер",
-		max_lvl: 1,
-		relations: [146],
-		effects: {
-			damage: "Защищает от снарядов дальнего боя в течение 15 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Снижает на 20% получаемый урон",
-			attribute_1: "Эффект действует на союзников в радиусе действия умения",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "Восстанавливает 1% ХП в секунду во время действия умения",
-			attribute_4: "Возможно передвижение персонажа при неподвижном барьере",
-			range: "1м",
-			radius: "4м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "36 секунды",
-			condition: "В ледяной стойке",
-		},
-	},
-	"tree_31|145": {
-		name: "Защитнй барьер",
-		max_lvl: 1,
-		relations: [147],
-		effects: {
-			damage: "Защищает от снарядов дальнего боя в течение 15 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Снижает на 15% получаемый урон",
-			attribute_1: "Эффект действует на союзников в радиусе действия умения",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "Восстанавливает 1% ХП в секунду во время действия умения",
-			attribute_4: "Перемещение защитного барьера при перемещении персонажа",
-			range: "Вокруг персонажа",
-			radius: "3м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "45 секунды",
-			condition: "В ледяной стойке",
-		},
-	},
-	"tree_31|146": {
-		name: "Защитнй барьер",
-		max_lvl: 1,
-		relations: [148],
-		effects: {
-			damage: "Защищает от снарядов дальнего боя в течение 15 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Снижает на 20% получаемый урон",
-			attribute_1: "Эффект действует на союзников в радиусе действия умения",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "Восстанавливает 1% ХП в секунду во время действия умения",
-			attribute_4: "Возможно передвижение персонажа при неподвижном барьере",
-			attribute_5: "При успешной защите умением дополнительно восстанавливает 1% ХП",
-			range: "1м",
-			radius: "4м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "36 секунды",
-			condition: "В ледяной стойке",
-		},
-	},
-	"tree_31|147": {
-		name: "Защитнй барьер",
-		max_lvl: 1,
-		relations: [149],
-		effects: {
-			damage: "Защищает от снарядов дальнего боя в течение 15 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Снижает на 15% получаемый урон",
-			attribute_1: "Эффект действует на союзников в радиусе действия умения",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "Восстанавливает 1% ХП в секунду во время действия умения",
-			attribute_4: "Перемещение защитного барьера при перемещении персонажа",
-			attribute_5: "Сокращение защитного барьера на 20% при попадании врага в цель",
-			range: "Вокруг персонажа",
-			radius: "3м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "45 секунды",
-			condition: "В ледяной стойке",
-		},
-	},
-	"tree_31|148": {
-		name: "Защитнй барьер",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "Защищает от снарядов дальнего боя в течение 15 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Снижает на 20% получаемый урон",
-			attribute_1: "Эффект действует на союзников в радиусе действия умения",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "Восстанавливает 1% ХП в секунду во время действия умения",
-			attribute_4: "Возможно передвижение персонажа при неподвижном барьере",
-			attribute_5: "При успешной защите умением дополнительно восстанавливает 1% ХП",
-			attribute_6: "Снижает время медитации союзника под действием эффекта на 6 секунд",
-			range: "1м",
-			radius: "4м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "36 секунды",
-			condition: "В ледяной стойке",
-		},
-	},
-	"tree_31|149": {
-		name: "Защитнй барьер",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "Защищает от снарядов дальнего боя в течение 15 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Снижает на 15% получаемый урон",
-			attribute_2: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_3: "Восстанавливает 1% ХП в секунду во время действия умения",
-			attribute_4: "Перемещение защитного барьера при перемещении персонажа",
-			attribute_5: "Сокращение защитного барьера на 20% при попадании врага в цель",
-			attribute_6: "Создает индивидуальное защитное поле каждому союзнику в радиусе 30м",
-			attribute_7: "Зищитное поле выдерживает только три атаки, после этого снимается",
-			range: "Вокруг персонажа",
-			radius: "3м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "45 секунды",
-			condition: "В ледяной стойке",
-		},
+		"img": "/img/sc/f/8.png"
 	},
 	"tree_32|root": {
-		name: "Огненный дождь",
-		relations: [150],
-		effects: {
-			damage: "По 16-20 ед. урона 5 раз в течение 5 секунд",
-			cost: "Требует 1 Чи",
-			attribute: "Взрывает стаки Искр через 5 секунд",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "9 секунд",
-			condition: "В огненной стойке",
+		"name": "Ледяной поток",
+		"effects": {
+			"cost": 5,
+			"damage": "Deals 108 ~ 126 ice damage",
+			"attribute": "Расходует все эффекты Ледяной покров при использовании",
+			"attribute_1": "При наложенном эффекте Ледяной души время перезарядки приемов Ледяной шар и Ледяной смерч -3 с.",
+			"attribute_2": "Прерывает Отбивание",
+			"attribute_3": "Накладывает эффект Обморожение (2 шт.)",
+			"range": "16m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Если на персонажа наложено 3 эффекта Ледяной покров"
 		},
-		img: "/img/sc/f/32.jpg",
-	},
-	"tree_32|150": {
-		name: "Огненный дождь",
-		max_lvl: 1,
-		relations: [151, 152],
-		effects: {
-			damage: "По 38-46 ед. урона 5 раз в течение 5 секунд",
-			cost: "Требует 1 Чи",
-			attribute: "Взрывает стаки Искр через 5 секунд",
-			attribute_1: "При критической атаке накладывает дополнительно 1 стак Искр",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "9 секунд",
-			condition: "В огненной стойке",
-		},
-	},
-	"tree_32|151": {
-		name: "Огненный дождь",
-		max_lvl: 1,
-		relations: [153],
-		effects: {
-			damage: "По 38-46 ед. урона 10 раз в течение 10 секунд",
-			cost: "Требует 1 Чи",
-			attribute_2: "Можно самостоятельно взорвать стаки Искр повторным использованием умения",
-			attribute_1: "При критической атаке накладывает дополнительно 1 стак Искр",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В огненной стойке",
-		},
-	},
-	"tree_32|152": {
-		name: "Огненный дождь",
-		max_lvl: 1,
-		relations: [154],
-		effects: {
-			damage: "По 38-46 ед. урона 5 раз в течение 5 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Взрывает стаки Искр через 5 секунд",
-			attribute_1: "При критической атаке накладывает дополнительно 1 стак Искр",
-			attribute_2: "Взрыв распространяется и на окружающих врагов",
-			range: "16м",
-			radius: "3м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В огненной стойке",
-		},
-	},
-	"tree_32|153": {
-		name: "Огненный дождь",
-		max_lvl: 1,
-		relations: [155],
-		effects: {
-			damage: "По 38-46 ед. урона 10 раз в течение 10 секунд",
-			cost: "Требует 1 Чи",
-			attribute_2: "Можно самостоятельно взорвать стаки Искр повторным использованием умения",
-			attribute_1: "При критической атаке накладывает дополнительно 1 стак Искр",
-			attribute_3: "Генерирует 1 Огненную сферу",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В огненной стойке",
-		},
-	},
-	"tree_32|154": {
-		name: "Огненный дождь",
-		max_lvl: 1,
-		relations: [156],
-		effects: {
-			damage: "По 38-46 ед. урона 5 раз в течение 5 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Взрывает стаки Искр через 5 секунд",
-			attribute_1: "При критической атаке накладывает дополнительно 1 стак Искр",
-			attribute_2: "Взрыв распространяется и на окружающих врагов",
-			attribute_3: "При взрыве окружающие враги получают 3 стака Искр",
-			range: "16м",
-			radius: "3м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В огненной стойке",
-		},
-	},
-	"tree_32|155": {
-		name: "Огненный дождь",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "По 38-46 ед. урона 10 раз в течение 10 секунд",
-			cost: "Требует 1 Чи",
-			attribute: "Можно самостоятельно взорвать стаки Искр повторным использованием умения",
-			attribute_1: "При критической атаке накладывает дополнительно 1 стак Искр",
-			attribute_2: "Генерирует 1 Огненную сферу",
-			attribute_3: "При крит атаке сбрасывает перезарядку",
-			range: "16м",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "18 секунд",
-			condition: "В огненной стойке",
-		},
-	},
-	"tree_32|156": {
-		name: "Огненный дождь",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "По 38-46 ед. урона 5 раз в течение 5 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Взрывает стаки Искр через 5 секунд",
-			attribute_1: "При критической атаке накладывает дополнительно 1 стак Искр",
-			attribute_2: "Взрыв распространяется и на окружающих врагов",
-			attribute_3: "При взрыве окружающие враги получают 3 стака Искр",
-			attribute_4: "Можно использовать до 3 раз подряд",
-			attribute_5: "Невозможно использовать подряд на одной и той же цели",
-			range: "16м",
-			radius: "3м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "36 секунд",
-			condition: "В огненной стойке",
-		},
+		"img": "/img/sc/f/9.png"
 	},
 	"tree_33|root": {
-		name: "Ледяная клетка",
-		relations: [157],
-		effects: {
-			damage: "Враг заключается в ледяную клетку на 8 секунд",
-			cost: "Требует 1 Чи",
-			attribute: "В ледяной клетке цель не может передвигаться, но устойчива к урону",
-			attribute_1: "Увеличивает защиту на 10% при использовании ледяных умений",
-			range: "16м",
-			radius: "Цель",
-			cast: "1,5 секунды",
-			cooldown: "30 секунд",
-			condition: "В ледяной стойке",
+		"name": "Двойной поток хранителя",
+		"effects": {
+			"cost": 5,
+			"damage": "",
+			"attribute": "Накладывает эффект Искра (5 шт.)",
+			"attribute_1": "Ожог на 6 с.",
+			"attribute_2": "При использовании 1 раз поражает эффектом Огненного покрова или Ледяного покрова",
+			"attribute_3": "Накладывает эффект Кровотечение (1 шт.) на 10 с.",
+			"attribute_4": "Прерывает Отбивание",
+			"attribute_5": "Доступено во время действия Soulburned",
+			"range": "From User",
+			"radius": "2 x 16 м",
+			"cast": "Instant",
+			"cooldown": "Instant",
+			"condition": "Если на персонажа наложен эффект Огненный покров или Ледяной покров",
+			"condition_1": "Под действием эффекта Soulburned (Warlock)"
 		},
-		img: "/img/sc/f/33.jpg",
+		"img": "/img/sc/f/11.png"
 	},
-	"tree_33|157": {
-		name: "Ледяная клетка",
-		max_lvl: 1,
-		relations: [158, 159],
-		effects: {
-			damage: "Враг заключается в ледяную клетку на 8 секунд",
-			attribute: "В ледяной клетке цель не может передвигаться, но устойчива к урону",
-			attribute_1: "Увеличивает защиту на 10% при использовании ледяных умений",
-			range: "16м",
-			radius: "Цель",
-			cast: "1,5 секунды",
-			cooldown: "30 секунд",
-			condition: "В ледяной стойке",
+	"tree_8.1|root": {
+		"name": "Сфера льда",
+		"effects": {
+			"cost": 0,
+			"damage": "Сопротивление урону и негативным эффектам на 10 с.",
+			"attribute": "Ци +10 за 10 с.",
+			"attribute_1": "Во время использования приема удерживает и обездвиживает",
+			"attribute_2": "Отменяет все негативные эффекты",
+			"attribute_3": "При использовании ледяных боевых приемов Защита +10%",
+			"range": "From User",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "1 min",
+			"condition": "Используется Стойка Управления холодом"
 		},
-	},
-	"tree_33|158": {
-		name: "Ледяная клетка",
-		max_lvl: 1,
-		effects: {
-			damage: "Враг заключается в ледяную клетку на 8 секунд",
-			attribute: "В ледяной клетке цель не может передвигаться, но устойчива к урону",
-			attribute_1: "Увеличивает защиту на 10% при использовании ледяных умений",
-			attribute_2: "При окончании действия Ледяной клетки пораженный враг будет заморожен на 6 секунд",
-			range: "16м",
-			radius: "Цель",
-			cast: "1,5 секунды",
-			cooldown: "30 секунд",
-			condition: "В ледяной стойке",
-		},
-	},
-	"tree_33|159": {
-		name: "Ледяной цветок",
-		max_lvl: 1,
-		relations: [160],
-		effects: {
-			attribute_2: "Персонаж, получивший во время действия умения урон заключается в ледяную клетку на 3 секунды",
-			attribute_3: "Ледяной цветок действует и на всех членов группы в радиусе действия умения",
-			range: "Вокруг персонажа",
-			radius: "30м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "30 секунд",
-			condition: "В ледяной стойке",
-		},
-		img: "/img/sc/f/33.1.jpg",
-	},
-	"tree_33|160": {
-		name: "Ледяной цветок",
-		max_lvl: 1,
-		effects: {
-			attribute_2: "Персонаж, получивший во время действия умения урон заключается в ледяную клетку на 3 секунды",
-			attribute_3: "Ледяной цветок действует и на всех членов группы в радиусе действия умения",
-			attribute_4: "Восстанавливает 5% ХП в ледяной клетке",
-			range: "Вокруг персонажа",
-			radius: "30м вокруг персонажа",
-			cast: "Мгновенно",
-			cooldown: "30 секунд",
-			condition: "В ледяной стойке",
-		},
-		img: "/img/sc/f/33.1.jpg",
+		"img": "/img/sc/f/15.png"
 	},
 	"tree_34|root": {
-		name: "Адское пламя",
-		relations: [161],
-		effects: {
-			damage: "По 65-79 ед. урона 5 раз в течение 5 секунд",
-			cost: "Требует 2 Чи",
-			attribute: "Устанавливается в двух метрах перед собой на землю, если в 5м от персонажа нет цели",
-			attribute_1: "Устанавливается под захваченной целью, если в радиусе 5м нет других целей",
-			attribute_2: "Устанавливается под ноги цели, стоящей в радиусе 5м перед персонажем",
-			range: "2м",
-			radius: "По прямой 5х2м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "30 секунд",
-			condition: "В огненной стойке",
+		"name": "Отрицание",
+		"effects": {
+			"cost": -2,
+			"damage": "Опрокидывает врага на 2 с.",
+			"range": "16m",
+			"radius": "4 м",
+			"cast": "Instant",
+			"cooldown": "15 sec",
+			"condition": "В состоянии Пленения"
 		},
-		img: "/img/sc/f/34.jpg",
-	},
-	"tree_34|161": {
-		name: "Адское пламя",
-		max_lvl: 1,
-		relations: [162],
-		effects: {
-			damage: "По 65-79 ед. урона 5 раз в течение 5 секунд",
-			cost: "Требует 1 Чи",
-			attribute: "Устанавливается в двух метрах перед собой на землю, если в 5м от персонажа нет цели",
-			attribute_1: "Устанавливается под захваченной целью, если в радиусе 5м нет других целей",
-			attribute_2: "Устанавливается под ноги цели, стоящей в радиусе 5м перед персонажем",
-			range: "2м",
-			radius: "По прямой 5х2м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "30 секунд",
-			condition: "В огненной стойке",
-		},
-	},
-	"tree_34|162": {
-		name: "Адское пламя",
-		max_lvl: 1,
-		relations: [163],
-		effects: {
-			damage: "По 65-79 ед. урона 5 раз в течение 5 секунд",
-			cost: "Требует 1 Чи",
-			attribute: "Устанавливается в двух метрах перед собой на землю, если в 5м от персонажа нет цели",
-			attribute_1: "Устанавливается под захваченной целью, если в радиусе 5м нет других целей",
-			attribute_2: "Устанавливается под ноги цели, стоящей в радиусе 5м перед персонажем",
-			attribute_3: "Автоматически взрывает 5 стаков Искр",
-			range: "2м",
-			radius: "По прямой 5х2м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "30 секунд",
-			condition: "В огненной стойке",
-		},
-	},
-	"tree_34|163": {
-		name: "Адское пламя",
-		max_lvl: 1,
-		relations: [164],
-		effects: {
-			damage: "По 65-79 ед. урона 5 раз в течение 5 секунд",
-			cost: "Требует 1 Чи",
-			attribute: "Устанавливается в двух метрах перед собой на землю, если в 5м от персонажа нет цели",
-			attribute_1: "Устанавливается под захваченной целью, если в радиусе 5м нет других целей",
-			attribute_2: "Устанавливается под ноги цели, стоящей в радиусе 5м перед персонажем",
-			attribute_3: "Автоматически взрывает 5 стаков Искр",
-			attribute_4: "Враги в состоянии захвата или подавления получают дополнительно 16-20 ед. урона",
-			range: "2м",
-			radius: "По прямой 5х2м в направлении камеры",
-			cast: "Мгновенно",
-			cooldown: "30 секунд",
-			condition: "В огненной стойке",
-		},
-	},
-	"tree_34|164": {
-		name: "Вулкан",
-		max_lvl: 1,
-		legendary: true,
-		effects: {
-			damage: "324-396 ед. урона в течение 5 секунд",
-			cost: "Требует 1 Чи",
-			attribute_3: "Автоматически взрывает 5 стаков Искр",
-			attribute_4: "Враги в состоянии захвата или подавления получают дополнительно 91-99 ед. урона",
-			range: "16м",
-			radius: "4м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "30 секунд",
-			condition: "В огненной стойке",
-		},
-		img: "/img/sc/f/34.1.jpg",
+		"img": "/img/sc/f/17.png"
 	},
 	"tree_35|root": {
-		name: "Полная защита",
-		effects: {
-			damage: "Перемещает на 7м за врага",
-			attribute: "Во время использования персонаж игнорирует урон",
-			attribute_1: "Если в радиусе 5м нет врага, то персонаж перемещается на 5м вперед",
-			attribute_2: "Q вводит в огненную стойку, E в ледяную",
-			range: "Вокруг персонажа",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "16 секунд",
+		"name": "Испепеление",
+		"effects": {
+			"cost": -1,
+			"damage": "Deals 30 ~ 35 damage",
+			"attribute": "Deals 4 ~ 4 exploding damage per Ember stack",
+			"attribute_1": "За каждый наложенный эффект Искра 75% доп. урона от наложенных эффектов Искры",
+			"attribute_2": "Если враг подброшен в воздух, используется без расхода Ци",
+			"range": "3m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "5 sec",
+			"condition": "В состоянии Пленения",
+			"condition_1": "В состоянии Пленения в воздухе"
 		},
-		img: "/img/sc/f/35.jpg",
+		"img": "/img/sc/f/20.png"
 	},
-	"tree_42|root": {
-		name: "Освобождение",
-		relations: [165],
-		effects: {
-			damage: "Отпрыгивает на 8м назад",
-			attribute: "Активируется комбинацией клавиш S+S",
-			attribute_1: "Сопротивление во время использования",
-			attribute_2: "Снимает невозможность перемещения",
-			range: "Вокруг персонажа",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "16 секунд",
+	"tree_36|root": {
+		"name": "Силовой удар",
+		"effects": {
+			"cost": 0,
+			"damage": "Deals 12 ~ 14 damage",
+			"attribute": "После Отталкивания на 15 м опрокидывает на 2 с",
+			"range": "3m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "5 sec",
+			"condition": "В состоянии Пленения"
 		},
-		img: "/img/sc/f/42.jpg",
+		"img": "/img/sc/f/24.png"
 	},
-	"tree_42|165": {
-		name: "Освобождение",
-		relations: [166],
-		max_lvl: 1,
-		effects: {
-			damage: "Отпрыгивает на 14м назад",
-			attribute: "Активируется комбинацией клавиш S+S",
-			attribute_1: "Сопротивление во время использования",
-			attribute_2: "Снимает невозможность перемещения",
-			range: "Вокруг персонажа",
-			radius: "Цель",
-			cast: "Мгновенно",
-			cooldown: "12 секунд",
+	"tree_37|root": {
+		"name": "Очищение",
+		"effects": {
+			"cost": 0,
+			"damage": "При использовании в качестве реакции на атаку врага выводит из состояния Подавления, Захвата и Пленения",
+			"attribute": "Прерывает Отбивание и Защиту",
+			"attribute_1": "Deals 31 ~ 36 damage",
+			"attribute_2": "При успешной Контратаке оглушает врага на 2 с.",
+			"attribute_3": "Сопротивление урону и негативным эффектам",
+			"range": "3m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "9 sec",
+			"condition": "В состоянии Подавления, Захвата или Пленения"
 		},
+		"img": "/img/sc/f/25.png"
 	},
-	"tree_42|166": {
-		name: "Освобождение",
-		max_lvl: 1,
-		effects: {
-			damage: "Отпрыгивает на 14м назад",
-			attribute: "Активируется комбинацией клавиш S+S",
-			attribute_1: "Сопротивление во время использования",
-			attribute_2: "Снимает невозможность перемещения",
-			attribute_3: "Выводит персонажа из обморока, опрокидывания, ослабления и оглушения",
-			attribute_4: "Замораживает врагов в радиусе действия умения на 5 секунд",
-			attribute_5: "Активирует Ледяную стойку",
-			range: "1м",
-			radius: "3м вокруг цели",
-			cast: "Мгновенно",
-			cooldown: "24 секунд",
+	"tree_38|root": {
+		"name": "Печать",
+		"effects": {
+			"cost": -3,
+			"damage": "Вводит в состояние Обморока на 30 с.",
+			"range": "1m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "В состоянии Пленения"
 		},
+		"img": "/img/sc/f/29.png"
 	},
+	"tree_14.1|root": {
+		"name": "Энергетическая клетка",
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 420 ~ 490 ice damage",
+			"attribute": "Прерывает Отбивание и Защиту",
+			"range": "16m",
+			"radius": "5 м",
+			"cast": "5 sec",
+			"cooldown": "Instant",
+			"condition": "После применения приема Невесомость"
+		},
+		"img": "/img/sc/f/32.png"
+	},
+	"tree_14.2|root": {
+		"name": "Дым от взрыва",
+		"effects": {
+			"cost": -3,
+			"damage": "Deals 1020 ~ 1190 fire damage over 5 sec",
+			"attribute": "Прерывает Отбивание и Защиту",
+			"range": "16m",
+			"radius": "5 м",
+			"cast": "Instant",
+			"cooldown": "1 min",
+			"condition": "После применения приема Невесомость"
+		},
+		"img": "/img/sc/f/33.png"
+	},
+	"tree_39|root": {
+		"name": "Поглощение силы",
+		"effects": {
+			"cost": 10,
+			"damage": "Deals 14 ~ 17 damage",
+			"attribute": "Переводит 100% нанесенного урона в НР",
+			"range": "1m",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "30 sec",
+			"condition": "В состоянии Пленения"
+		},
+		"img": "/img/sc/f/35.png"
+	},
+	"tree_40|root": {
+		"name": "Огненный шаг",
+		"effects": {
+			"cost": 0,
+			"damage": "Перемещает за спину врага на 7 м",
+			"attribute": "Перемещает на 5 м вперед, если в радиусе 5 м нет врагов",
+			"attribute_1": "Отменяет эффект Обморожение",
+			"attribute_2": "Сопротивление урону и негативным эффектам",
+			"range": "From User",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "16 sec"
+		},
+		"img": "/img/sc/f/50.png"
+	},
+	"tree_41|root": {
+		"name": "Ледяной шаг",
+		"effects": {
+			"cost": 0,
+			"damage": "Перемещает за спину врага на 7 м",
+			"attribute": "Перемещает на 5 м вперед, если в радиусе 5 м нет врагов",
+			"attribute_1": "Отменяет эффект Искра",
+			"attribute_2": "Сопротивление урону и негативным эффектам",
+			"range": "From User",
+			"radius": "Цель",
+			"cast": "Instant",
+			"cooldown": "16 sec"
+		},
+		"img": "/img/sc/f/51.png"
+	},
+	"tree_27.1|root": {
+		"name": "Ледяная душа",
+		"effects": {
+			"cost": 0,
+			"damage": "Усиление приемов холода"
+		},
+		"img": "/img/sc/f/54.png"
+	}
 }
