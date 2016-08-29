@@ -1,15 +1,27 @@
 #!/bin/env node
 
+// TODO:
+//   stanceChange
+//   !!! unexpected attribute increasing
+//   force master errors
+//   kung_fu_master errors
+
 let fs = require("fs")
 let path = require("path")
 
+if (process.argv.length < 4) {
+	console.log("Use like:\n  ./conv.js rusSummoner.json summoner")
+	process.exit(2)
+}
 
-const class_name = 'summoner'
-const class_letter = 's'
+const src_file_name = process.argv[2] //'summoner.json'
+const class_name = process.argv[3] //'summoner'
+const class_letter = {summoner:'s', blade_dancer:'l', assasin:'a', blade_master:'b', destroyer:'d', force_master:'f', kung_fu_master:'k'}[class_name]
+if (!class_letter) throw new Error(`unknown class '${class_name}'`)
 const attack = 13
 const weapon_constant = 1
 
-let data = JSON.parse(fs.readFileSync("summoner.json"))
+let data = JSON.parse(fs.readFileSync(src_file_name))
 console.log(Object.keys(data))
 
 
@@ -22,7 +34,11 @@ function known(obj, attrs) {
 
 function check(obj) {
 	let p = new Proxy(obj, {
-		get: function(obj, name){ if (!(name in obj)) console.log(`!!! missing attribute`, name, 'in', obj); return obj[name] }
+		get: function(obj, name){
+			if (!(name in obj) && name!='inspect' && name!=Symbol.toStringTag)
+				console.log(`!!! missing attribute`, name, 'in', obj)
+			return obj[name]
+		}
 		//has: function(name){ return name in obj },
 		//set: function(obj, name, val) { obj[name] = val; return true }
 	})
@@ -55,6 +71,7 @@ for (let info of data.SkillTooltips) {
 		      'element '+ //earth, wind
 		      'nosubinfo '+ //скрывает табличку с subinfo'й
 		      'depElement '+ //как element, только не явный, а копируемый по айди
+		      'stanceChange '+
 		      'tags icon')
 		known(node.m1, 'value scale element type before after affter num depElement')
 		node = check(node)
@@ -76,10 +93,15 @@ for (let info of data.SkillTooltips) {
 			return ''
 		}
 
+		// местами sub прописан в виде одного объекта, превращаем в массив
+		if (node.sub && !(node.sub instanceof Array)) node.sub = [node.sub]
+
 		let ef = {}
 		ef.cost = node.chi
 		ef.damage = typeableToString(node.m1)
 		;(node.sub==null ? [] : node.sub).concat(node.m2==null ? [] : node.m2).forEach((s,i) => {
+			// местами вместо объекта в m2 оказывается строка
+			if (typeof s == 'string') { if (s=="Move back 8m") s="Перемещает назад на 8 м"; s={value:s} }
 			known(s, 'value type scale element ex before after num modId') //`modId: 1` - парематр непонятного назначения
 			s = check(s)
 			ef['attribute'+(i==0?'':'_'+i)] = typeableToString(s)
@@ -262,23 +284,35 @@ for (let key in skills_by_keys) {
 }
 
 
-fs.writeFileSync("skillslist.js", "skills_list = " + JSON.stringify(skills_list, null, "\t") + "\n")
-fs.writeFileSync("skillsdata.js", "skills_data = " + JSON.stringify(skills_data, null, "\t") + "\n")
+mkdir('calc_db')
+
+
+fs.writeFileSync(`calc_db/skillslist_${class_letter}.js`, "skills_list = " + JSON.stringify(skills_list, null, "\t") + "\n")
+fs.writeFileSync(`calc_db/skillsdata_${class_letter}.js`, "skills_data = " + JSON.stringify(skills_data, null, "\t") + "\n")
 
 
 // images
-mkdir('img_src')
-mkdir('img')
-fs.readdirSync('img').forEach(n => fs.unlinkSync('img/'+n))
-fs.writeFileSync("img_src_urls", Object.keys(icon_ids_by_name).map(n => `https://bnstree.com/img/skill/${n}.png\n`).join(''))
-/*
-cd img_src
-wget -nc -i ../img_src_urls
-cd ..
- */
+mkdir(`img_orig/${class_name}`)
+mkdir(`img_sc/${class_letter}`)
+fs.readdirSync(`img_sc/${class_letter}/`).forEach(n => fs.unlinkSync(`img_sc/${class_letter}/${n}`))
+fs.writeFileSync(`img_orig/${class_name}/urls`, Object.keys(icon_ids_by_name).map(n => `https://bnstree.com/img/skill/${n}.png\n`).join(''))
+
+if (fs.readdirSync(`img_orig/${class_name}`).length <= 1) {
+	console.log(`No images found, do:
+cd img_orig/${class_name}; \\
+wget -nc -i urls; \\
+cd ..; \\
+cp -r ${class_name} ${class_name}__backup_not_compressed; \\
+du -sh ${class_name}; \\
+pngquant -f --ext .png --speed 1 ${class_name}/*.png; \\
+du -sh ${class_name}; \\
+cd ..`)
+	process.exit(0)
+}
+
 for (let name in icon_ids_by_name) {
 	let id = icon_ids_by_name[name]
-	fs.writeFileSync(`img/${id}.png`, fs.readFileSync(`img_src/${name}.png`))
+	fs.writeFileSync(`img_sc/${class_letter}/${id}.png`, fs.readFileSync(`img_orig/${class_name}/${name}.png`))
 }
 
 /*
