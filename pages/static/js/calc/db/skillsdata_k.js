@@ -1777,7 +1777,7 @@ skills_data = {
 			"attribute_3": "При успехе приема Двойной удар в течение 1,5 с. крит. атака +10%",
 			"attribute_4": "При использовании приема Двойной удар в течение 8 с. Защита +100%",
 			"attribute_5": "При успехе приема время перезарядки приема Пытка -1 с.",
-			"attribute_6": "Twin Cobra deals NaN ~ NaN damage",
+			"attribute_6": "Twin Cobra deals 24 ~ 70 damage",
 			"attribute_7": "Боевой прием атаки и защиты",
 			"range": "From User",
 			"radius": "Цель",
@@ -1863,7 +1863,7 @@ skills_data = {
 			"attribute_4": "При использовании приема Двойной удар в течение 8 с. Защита +100%",
 			"attribute_5": "Decreases the cooldown of Comet Strike by 3 sec on Counter",
 			"attribute_6": "При успехе приема время перезарядки приема Пытка -1 с.",
-			"attribute_7": "Twin Cobra deals NaN ~ NaN damage",
+			"attribute_7": "Twin Cobra deals 24 ~ 70 damage",
 			"attribute_8": "Боевой прием атаки и защиты",
 			"range": "From User",
 			"radius": "Цель",
@@ -2721,7 +2721,7 @@ skills_data = {
 		"name": "Пытка",
 		"effects": {
 			"cost": -2,
-			"damage": "",
+			"damage": "Deals 24 ~ 28 fire damage\nDeals 24 ~ 28 wind damage",
 			"attribute": "Прерывает Отбивание и Защиту",
 			"attribute_1": "Searing Palm Slows enemies by 10%",
 			"attribute_2": "Эффект Зияющая рана на 10 с.",
@@ -2749,7 +2749,7 @@ skills_data = {
 		"max_lvl": 1,
 		"effects": {
 			"cost": -1,
-			"damage": "",
+			"damage": "Deals 24 ~ 28 fire damage\nDeals 24 ~ 28 wind damage",
 			"attribute": "Прерывает Отбивание и Защиту",
 			"attribute_1": "Searing Palm Slows enemies by 10%",
 			"attribute_2": "Эффект Зияющая рана на 10 с.",
@@ -2776,7 +2776,7 @@ skills_data = {
 		"max_lvl": 1,
 		"effects": {
 			"cost": -1,
-			"damage": "",
+			"damage": "Deals 24 ~ 28 fire damage\nDeals 24 ~ 28 wind damage",
 			"attribute": "Прерывает Отбивание и Защиту",
 			"attribute_1": "Searing Palm Slows enemies by 10%",
 			"attribute_2": "На врага, пораженного эффектом Пытка, накладывает эффект Дух на 3 с.",
@@ -2806,7 +2806,7 @@ skills_data = {
 		"max_lvl": 1,
 		"effects": {
 			"cost": -1,
-			"damage": "",
+			"damage": "Deals 24 ~ 28 fire damage\nDeals 24 ~ 28 wind damage",
 			"attribute": "Прерывает Отбивание и Защиту",
 			"attribute_1": "При попадании по врагу накладывает эффект от приема Пытка, макс. 4 раза",
 			"attribute_2": "За каждый эффект Зияющая рана урон увеличивается в 2/3/4 раза",
@@ -2835,7 +2835,7 @@ skills_data = {
 		"max_lvl": 1,
 		"effects": {
 			"cost": -1,
-			"damage": "",
+			"damage": "Deals 24 ~ 28 fire damage\nDeals 24 ~ 28 wind damage",
 			"attribute": "Прерывает Отбивание и Защиту",
 			"attribute_1": "Searing Palm Slows enemies by 30%",
 			"attribute_2": "При попадании по врагу 8 раз накладывает Оглушение на 2 с., эффект Пытки пропадает",
@@ -3771,7 +3771,7 @@ skills_data = {
 		"name": "Пытка хранителя",
 		"effects": {
 			"cost": -1,
-			"damage": "",
+			"damage": "Deals 120 ~ 140 fire damage\nDeals 120 ~ 140 wind damage",
 			"attribute": "Прерывает Отбивание и Защиту",
 			"attribute_1": "Searing Palm Slows enemies by 10%",
 			"attribute_2": "Накладывает сразу 4 эффекта от приема Пытка",

@@ -877,7 +877,7 @@ skills_data = {
 		"name": "Двойной поток",
 		"effects": {
 			"cost": 0,
-			"damage": "",
+			"damage": "Deals 60 ~ 70 fire damage\nDeals 60 ~ 70 ice damage",
 			"attribute": "При использовании расходует все эффекты Огненный покров и Ледяной покров",
 			"attribute_1": "Накладывает эффект Кровотечение (1 шт.) на 10 с.",
 			"attribute_2": "Прерывает Отбивание",
@@ -897,7 +897,7 @@ skills_data = {
 		"max_lvl": 1,
 		"effects": {
 			"cost": 5,
-			"damage": "",
+			"damage": "Deals 60 ~ 70 fire damage\nDeals 60 ~ 70 ice damage",
 			"attribute": "При использовании расходует все эффекты Огненный покров и Ледяной покров",
 			"attribute_1": "Накладывает эффект Кровотечение (1 шт.) на 10 с.",
 			"attribute_2": "Прерывает Отбивание",
@@ -916,7 +916,7 @@ skills_data = {
 		"max_lvl": 1,
 		"effects": {
 			"cost": 5,
-			"damage": "",
+			"damage": "Deals 60 ~ 70 fire damage\nDeals 60 ~ 70 ice damage",
 			"attribute": "Накладывает эффект Искра (5 шт.)",
 			"attribute_1": "При использовании расходует все эффекты Огненный покров и Ледяной покров",
 			"attribute_2": "Накладывает эффект Кровотечение (1 шт.) на 10 с.",
@@ -936,7 +936,7 @@ skills_data = {
 		"max_lvl": 1,
 		"effects": {
 			"cost": 5,
-			"damage": "",
+			"damage": "Deals 108 ~ 126 fire damage\nDeals 108 ~ 126 ice damage",
 			"attribute": "Накладывает эффект Искра (5 шт.)",
 			"attribute_1": "При использовании расходует все эффекты Огненный покров и Ледяной покров",
 			"attribute_2": "Накладывает эффект Кровотечение (1 шт.) на 10 с.",
@@ -3961,7 +3961,7 @@ skills_data = {
 		"name": "Освобождение",
 		"effects": {
 			"cost": 0,
-			"damage": "",
+			"damage": "Move back 8m",
 			"attribute": "Используется двойным нажатием клавиши [S]",
 			"attribute_1": "Сопротивление урону и негативным эффектам",
 			"range": "From User",
@@ -3979,7 +3979,7 @@ skills_data = {
 		"max_lvl": 1,
 		"effects": {
 			"cost": 0,
-			"damage": "",
+			"damage": "Move back 14m",
 			"attribute": "Используется двойным нажатием клавиши [S]",
 			"attribute_1": "Сопротивление урону и негативным эффектам",
 			"range": "From User",
@@ -3996,7 +3996,7 @@ skills_data = {
 		"max_lvl": 1,
 		"effects": {
 			"cost": 0,
-			"damage": "",
+			"damage": "Move back 14m",
 			"attribute": "Замораживание на 5 с.",
 			"attribute_1": "Используется двойным нажатием клавиши [S]",
 			"attribute_2": "Выводит из состояния Оглушения, Ослабления, Опрокидывания, Обморока",
@@ -4112,7 +4112,7 @@ skills_data = {
 		"name": "Двойной поток хранителя",
 		"effects": {
 			"cost": 5,
-			"damage": "",
+			"damage": "Deals 132 ~ 154 fire damage\nDeals 132 ~ 154 ice damage",
 			"attribute": "Накладывает эффект Искра (5 шт.)",
 			"attribute_1": "Ожог на 6 с.",
 			"attribute_2": "При использовании 1 раз поражает эффектом Огненного покрова или Ледяного покрова",

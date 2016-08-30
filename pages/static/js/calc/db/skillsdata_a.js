@@ -233,7 +233,7 @@ skills_data = {
 		"name": "Укол в сердце",
 		"effects": {
 			"cost": -3,
-			"damage": "",
+			"damage": "Deals 54 ~ 63 shadow damage in disruption Stance\nDeals 54 ~ 63 lightning damage in Stealth Stance",
 			"attribute": "В состоянии невидимости используется мгновенно",
 			"range": "3 м",
 			"radius": "Цель",
@@ -250,7 +250,7 @@ skills_data = {
 		"max_lvl": 1,
 		"effects": {
 			"cost": -3,
-			"damage": "",
+			"damage": "Deals 54 ~ 63 shadow damage in disruption Stance\nDeals 54 ~ 63 lightning damage in Stealth Stance",
 			"attribute": "При успехе атаки в состоянии невидимости поддерживает состояние невидимости",
 			"attribute_1": "В состоянии невидимости используется мгновенно",
 			"range": "3 м",
@@ -267,7 +267,7 @@ skills_data = {
 		"max_lvl": 1,
 		"effects": {
 			"cost": -3,
-			"damage": "",
+			"damage": "Deals 54 ~ 63 shadow damage in disruption Stance\nDeals 54 ~ 63 lightning damage in Stealth Stance",
 			"attribute": "Если враг поражен 5 дозами яда, при атаке используется мгновенно",
 			"attribute_1": "Если враг в состоянии Оглушения, Ослабления, Захвата и Пленения, при атаке используется мгновенно",
 			"attribute_2": "При успехе атаки в состоянии невидимости поддерживает состояние невидимости",
@@ -324,7 +324,7 @@ skills_data = {
 		"max_lvl": 1,
 		"effects": {
 			"cost": -2,
-			"damage": "",
+			"damage": "Deals 54 ~ 63 shadow damage in disruption Stance\nDeals 54 ~ 63 lightning damage in Stealth Stance",
 			"attribute": "Deals 6 ~ 7 shadow additional damage to enemies with 5 stacks of Poison",
 			"attribute_1": "Если враг поражен 5 дозами яда, при атаке используется мгновенно",
 			"attribute_2": "Если враг в состоянии Оглушения, Ослабления, Захвата и Пленения, при атаке используется мгновенно",
@@ -363,7 +363,7 @@ skills_data = {
 		"max_lvl": 1,
 		"effects": {
 			"cost": -2,
-			"damage": "",
+			"damage": "Deals 54 ~ 63 shadow damage in disruption Stance\nDeals 54 ~ 63 lightning damage in Stealth Stance",
 			"attribute": "Deals 6 ~ 7 shadow additional damage to enemies with 5 stacks of Poison",
 			"attribute_1": "Увеличивает скорость атаки приемом",
 			"attribute_2": "При крит. атаке Ци +1",

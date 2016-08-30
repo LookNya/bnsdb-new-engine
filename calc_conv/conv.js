@@ -2,9 +2,8 @@
 
 // TODO:
 //   stanceChange
-//   !!! unexpected attribute increasing
-//   force master errors
-//   kung_fu_master errors
+// calc:
+//   history and hash
 
 let fs = require("fs")
 let path = require("path")
@@ -22,21 +21,21 @@ const attack = 13
 const weapon_constant = 1
 
 let data = JSON.parse(fs.readFileSync(src_file_name))
-console.log(Object.keys(data))
 
 
-function known(obj, attrs) {
+function known(obj, tag, attrs) {
 	attrs = attrs.split(' ')
 	for (let i in obj) {
-		if (attrs.indexOf(i) == -1) console.log('!!! unexpected attribute', i, 'in', obj)
+		if (attrs.indexOf(i) == -1)
+			console.log(`!!! ${tag}: unexpected attribute`, i, 'in', obj, new Error().stack.split('\n').splice(2,2).join('\n'))
 	}
 }
 
-function check(obj) {
+function check(obj, tag) {
 	let p = new Proxy(obj, {
 		get: function(obj, name){
 			if (!(name in obj) && name!='inspect' && name!=Symbol.toStringTag)
-				console.log(`!!! missing attribute`, name, 'in', obj)
+				console.log(`!!! ${tag}: missing attribute`, name, 'in', obj, new Error().stack.split('\n').splice(2,2).join('\n'))
 			return obj[name]
 		}
 		//has: function(name){ return name in obj },
@@ -65,30 +64,38 @@ for (let info of data.SkillTooltips) {
 		// acquire: { value: 'Time Bomb Mastery', type: 'achievement' }
 		// acquire: { value:"Rumblebees - Part 2", type:"book", location:[{type:"heroic", loc:"Bloodshade Harbor", image:"tooltip_party"}] }
 		// nosubinfo: true
-		known(node, 'name position chi m1 sub range area cast cooldown condition '+
+		known(node, 'node', 'name position chi m1 sub range area cast cooldown condition '+
 		      'm2 '+ //some additional info
 		      'acquire '+ //получаемая от вкачивания ачивка или какая-то другая непонятная фигня
 		      'element '+ //earth, wind
 		      'nosubinfo '+ //скрывает табличку с subinfo'й
 		      'depElement '+ //как element, только не явный, а копируемый по айди
-		      'stanceChange '+
+		      'stanceChange '+ //TODO
+		      'multiElement '+ //если element'ов должно быть два, тут массив из них
 		      'tags icon')
-		known(node.m1, 'value scale element type before after affter num depElement')
-		node = check(node)
-		node.m1 = check(node.m1)
+		node = check(node, 'node')
+		node.m1 = (node.m1 instanceof Array ? node.m1 : [node.m1]).map((m1,i) => {
+			known(m1, 'node.m1#'+i, 'value scale element type before after affter num depElement modId')
+			return check(m1, 'node.m1#'+i)
+		}) //бывает в виде массива и в виде объекта
 
 		function typeableToString(obj) {
 			if ('value' in obj)
 				return obj.value
-			if (obj.type == "damage") { //TODO: obj.dualScale
-				let min = Math.round((attack - weapon_constant) * obj.scale)
-				let max = Math.round((attack + weapon_constant) * obj.scale)
-				return `${obj._('before') ? obj.before+' deals' : 'Deals'} ${min} ~ ${max} ${obj.oneOf('', 'element')} ${obj.oneOf('', 'ex')} damage ${obj.oneOf('', 'after', 'affter')}`.replace(/\s+/g, ' ').trim()
+			if (obj.type == "damage") {
+				// в obj.dualScale массив из двух элементов
+				let [min_scale, max_scale] = obj._('dualScale') || [obj.scale, obj.scale]
+				let min = Math.round((attack - weapon_constant) * min_scale)
+				let max = Math.round((attack + weapon_constant) * max_scale)
+				let str = `${obj.oneOf('', 'before')} ${obj._('increasing') ? 'damage dealt increases by' : 'deals'} ${min} ~ ${max} ${obj.oneOf('', 'element')} ${obj.oneOf('', 'ex')} damage ${obj.oneOf('', 'after', 'affter')}`.replace(/\s+/g, ' ').trim()
+				return str[0].toUpperCase() + str.substr(1)
 			}
 			if (obj.type == "number")
 				return `${obj.before} ${obj.num} ${obj.oneOf('', 'after', 'affter')}`.trim()
 			if (obj.type == "percent")
 				return `${obj.before} ${obj.num}% ${obj.oneOf('', 'after', 'affter')}`.trim()
+			if (obj.type == "distance")
+				return `${obj.before} ${obj.num}m`
 			console.log('!!! unknown obj.type: '+obj.type)
 			return ''
 		}
@@ -98,12 +105,12 @@ for (let info of data.SkillTooltips) {
 
 		let ef = {}
 		ef.cost = node.chi
-		ef.damage = typeableToString(node.m1)
+		ef.damage = node.m1.map(typeableToString).join('\n')
 		;(node.sub==null ? [] : node.sub).concat(node.m2==null ? [] : node.m2).forEach((s,i) => {
 			// местами вместо объекта в m2 оказывается строка
 			if (typeof s == 'string') { if (s=="Move back 8m") s="Перемещает назад на 8 м"; s={value:s} }
-			known(s, 'value type scale element ex before after num modId') //`modId: 1` - парематр непонятного назначения
-			s = check(s)
+			known(s, 'node.sub+m2', 'value type increasing scale dualScale element ex before after num modId') //`modId: 1` - параметр непонятного назначения
+			s = check(s, 'node.sub+m2')
 			ef['attribute'+(i==0?'':'_'+i)] = typeableToString(s)
 		})
 		if ('range' in node)  ef.range = node.range
@@ -111,10 +118,11 @@ for (let info of data.SkillTooltips) {
 		if ('cast' in node)   ef.cast = node.cast
 		if ('cooldown' in node) ef.cooldown = node.cooldown
 		if ('condition' in node) node.condition.forEach((c,i) => {
-			known(c, 'value icon image type or')
+			known(c, 'node.condition', 'value icon image type or modId')
+			// `modId: 1` - параметр непонятного назначения
 			// `type: "mod"` - параметр непонятного назначения, используется вместе с `value: "bla-bla"`
 			// `or: true` - при наличии этого к тексту скилла добавляется в конце " OR", такое не надо
-			c = check(c)
+			c = check(c, 'node.condition')
 			ef['condition'+(i==0?'':'_'+i)] = c.value
 		})
 		let icon_id = icon_ids_by_name[node.icon]
@@ -253,7 +261,7 @@ for (let skill of data.SkillList) {
 let skills_by_keys = {}
 for (let skill of data.SkillList) {
 	if (!(skill.hotkey in skills_by_keys)) skills_by_keys[skill.hotkey] = []
-	known(skill, '_id hotkey name icon treeId minLevel disableFlag '+
+	known(skill, 'skill', '_id hotkey name icon treeId minLevel disableFlag '+
 	      'subEntry change') //TODO
 
 	let tree = tree_name_by_ext_id[skill._id]
