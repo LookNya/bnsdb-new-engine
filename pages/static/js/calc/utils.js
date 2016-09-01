@@ -203,7 +203,7 @@ Utils.generateDataToHash = function(subsks, tree_name, is_build) {
 	var ze = this.chars_for_zeroes_encoding;
 	data = data.replace(this.rgx_for_zeroes_replace, function(x){ return ze[x.length-1] });
 	
-	if (!window.DO_NOT_USE_HASH) location.hash = data;
+	if (!window.DO_NOT_USE_HASH) history.replaceState({}, "", "#"+data);
 	localStorage[Utils.getClassName()+"LastHash"] = data;
 }
 
