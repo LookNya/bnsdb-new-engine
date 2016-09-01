@@ -1,10 +1,5 @@
 #!/bin/env node
 
-// TODO:
-//   stanceChange
-// calc:
-//   history and hash
-
 let fs = require("fs")
 let path = require("path")
 
@@ -70,7 +65,7 @@ for (let info of data.SkillTooltips) {
 		      'element '+ //earth, wind
 		      'nosubinfo '+ //скрывает табличку с subinfo'й
 		      'depElement '+ //как element, только не явный, а копируемый по айди
-		      'stanceChange '+ //TODO
+		      'stanceChange '+ //"Change Stance" под "Requirements", не нужно
 		      'multiElement '+ //если element'ов должно быть два, тут массив из них
 		      'tags icon')
 		node = check(node, 'node')
