@@ -61,3 +61,8 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+bopae_react/nodevars.bat
+*.man
+bopae_react/npm
+bopae_react/npm.cmd
+bopae_react/node.exe
