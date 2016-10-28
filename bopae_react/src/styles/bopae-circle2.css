@@ -1,0 +1,15 @@
+.bopae-circle2 {
+	position: relative;
+}
+.bopae-circle2 polygon {
+	stroke-width: 0.5;
+	transition: transform 0.2s ease;
+}
+.bopae-circle2 polygon:hover {
+	z-index: 1;
+	filter: drop-shadow(0 0 4px green);
+}
+.bopae-circle2 polygon:not(:hover) {
+	transform: none !important;
+}
+
