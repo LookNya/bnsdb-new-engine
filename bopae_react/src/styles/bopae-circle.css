@@ -1,0 +1,23 @@
+.bopae-part {
+	pointer-events: none;
+	position: absolute;
+	transition: transform 0.2s ease;
+}
+.bopae-part:hover {
+	z-index: 1;
+	filter: drop-shadow(0 0 4px green);
+}
+.bopae-part:not(:hover) {
+	transform: none !important;
+}
+
+.bopae-part polygon {
+	pointer-events: all;
+	fill: none;
+	/*stroke-width: 2;
+	stroke: red;*/
+}
+
+.bopae-circle {
+	position: relative;
+}
