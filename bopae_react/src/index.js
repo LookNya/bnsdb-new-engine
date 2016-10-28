@@ -9,7 +9,7 @@ import bopaeDB from './bopae.json'
 ReactDOM.render(
 	<div>
 		<BopaeList db={bopaeDB}/>
-		<BopaeCircle name={bopaeDB[0].name} onClick={(name, dir) => alert(name+':'+dir)}/>
+		<BopaeCircle name={bopaeDB[0].name} onClick={(e, dir) => alert('clicked on #'+dir)}/>
 	</div>,
 	document.getElementById('root')
 )
