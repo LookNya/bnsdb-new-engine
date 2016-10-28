@@ -8,29 +8,6 @@ function dir2rad(dir) {
 	return (dir-3)/4*Math.PI
 }
 
-function dir2deg(dir) {
-	return (dir-3)/4*180
-}
-
-function centerOffset(dir) {
-	let w = PART_WIDTH
-	return [[w/2,w], [0,w], [0,w/2], [0,0], [w/2,0], [w,0], [w,w/2], [w,w]][dir-1]
-}
-
-class BopaePattern extends Component {
-	render() {
-		let w = PART_WIDTH
-		let [x0, y0] = centerOffset(this.props.dir)
-		//let transform = `translate(${x0}, ${y0}) rotate(${dir2deg(this.props.dir)} 0 0)`
-		let img_src = `${process.env.PUBLIC_URL}/img/${this.props.name}.png`
-		return (
-			<pattern id="img1" patternUnits="userSpaceOnUse" width="256" height="256">
-				<image href={img_src} x={-w+x0} y={-w+y0} width="256" height="256" />
-			</pattern>
-		)
-	}
-}
-
 class BopaePart extends Component {
 	points(dir) {
 		let w = PART_WIDTH, da = Math.PI/8, dw = 1.05
@@ -42,7 +19,6 @@ class BopaePart extends Component {
 	}
 	render() {
 		let angle = dir2rad(this.props.dir)
-		//let [x0, y0] = centerOffset(this.props.dir)
 		let [hoverDX, hoverDY] = [Math.cos(angle)*HOVER_DELTA_PX+0.5|0, Math.sin(angle)*HOVER_DELTA_PX+0.5|0]
 		let transform = `translate(${hoverDX}px, ${hoverDY}px)`
 		let img_src = `${process.env.PUBLIC_URL}/img/${this.props.name}.png`
@@ -64,9 +40,6 @@ class BopaeCircle2 extends Component {
 		let dirs = [1,2,3,4,5,6,7,8]
 		return (
 			<svg className="bopae-circle2" width={w} height={w}>
-				{[].map((dir) =>
-					<BopaePattern key={dir} dir={dir} name={this.props.name} />
-				)}
 				{dirs.map((dir) =>
 					<BopaePart key={dir} dir={dir} name={this.props.name} onClick={(e) => this.props.onClick(e, dir)} />
 				)}
