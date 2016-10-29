@@ -7,9 +7,9 @@ class SearchBar extends Component {
 							<input type="text"
 								placeholder="Hello!"
 								value={this.props.searchFilter}
-								onChange={e => this.props.handleSearchChange(e.target.value)}
+								onChange={e => this.props.onSearchChange(e.target.value)}
 							/>
-							<button onClick={() => this.props.handleSearchChange('')}>
+							<button onClick={() => this.props.onSearchChange('')}>
 								&times;
 							</button>
 						</div>

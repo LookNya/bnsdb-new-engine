@@ -19,7 +19,7 @@ class BopaeChooser extends Component {
 							<ListWithSearch
 								data={this.props.db}
 								selectedItem={this.state.selectedListItem}
-								onItemChanged={this.onListItemChange.bind(this)}
+								onItemChange={this.onListItemChange.bind(this)}
 							/>
 						</div>
 	}
