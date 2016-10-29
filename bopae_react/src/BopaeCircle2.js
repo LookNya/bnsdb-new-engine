@@ -28,7 +28,7 @@ class BopaePart extends Component {
 				<pattern id={id} patternUnits="userSpaceOnUse" width="256" height="256">
 					<image xlinkHref={img_src} width="256" height="256" />
 				</pattern>
-				<polygon points={this.points(this.props.dir)} fill={'url(#'+id+')'} stroke={'url(#'+id+')'} style={{transform}} />
+				<polygon points={this.points(this.props.dir)} fill={'url(#'+id+')'} stroke={'url(#'+id+')'} style={{transform}} onClick={this.props.onClick} />
 			</g>
 		)
 	}
