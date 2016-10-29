@@ -1,9 +1,13 @@
+//реактовы нужды
 import React from 'react'
 import ReactDOM from 'react-dom'
+//собственно модули
 import BopaeList from './BopaeList'
 import BopaeCircle from './BopaeCircle'
 import BopaeCircle2 from './BopaeCircle2'
-import './styles/index.css'
+//глобальные штучки-дрючки
+import './styles/global/reset.css'
+import './styles/global/utils.css'
 import bopaeDB from './bopae.json'
 
 

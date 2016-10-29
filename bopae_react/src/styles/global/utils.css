@@ -1,0 +1,39 @@
+*{
+	box-sizing: border-box;
+}
+label[for]{
+	cursor: pointer;
+}
+.hidden{
+	display:none!important;
+	visibility: hidden;
+}
+.visible{
+	visibility: visible;
+}
+.f_l{
+	float: left;
+}
+.f_r{
+	float: right;
+}
+.d-tr{
+	display: table-row;
+}
+.d-td{
+	display: table-cell;
+}
+.d-t{
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+}
+.in-cell-relative-fix{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.cf:before,
+.cf:after {content:""; display:table;}
+.cf:after {clear:both;}
