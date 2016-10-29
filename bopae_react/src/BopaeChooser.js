@@ -11,15 +11,15 @@ class BopaeChooser extends Component {
 			selectedListItem: null,
 		}
 	}
-	onListItemChange(item_id) {
-		this.setState({selectedListItem: item_id})
+	onListItemChange(item) {
+		this.setState({selectedListItem: item})
 	}
 	render() {
 		return  <div className="bopae-list">
 							<ListWithSearch
 								data={this.props.db}
 								selectedItem={this.state.selectedListItem}
-								onItemChanged={this.onListItemChange}
+								onItemChanged={this.onListItemChange.bind(this)}
 							/>
 						</div>
 	}

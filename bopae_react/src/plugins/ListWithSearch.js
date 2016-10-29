@@ -8,29 +8,25 @@ class ListWithSearch extends Component {
 			searchFilter: ''
 		}
 	}
-	handleSearchChange(e) {
-		this.setState({searchFilter: e.target.value})
+	handleSearchChange(value) {
+		this.setState({searchFilter: value})
 	}
-	handleSearchReset() {
-		this.setState({searchFilter: ''})
-	}
-	onItemChanged(e){
-		this.props.onItemChanged(e.target.key)
+	onItemChanged(item, e){
+		this.props.onItemChanged(item)
 	}
 	render() {
 		return  <div className="list-with-search">
 							<SearchBar
 								searchFilter={this.state.searchFilter}
 								handleSearchChange={this.handleSearchChange.bind(this)}
-								handleSearchReset={this.handleSearchReset.bind(this)}
-								/>
+							/>
 							{this.props.data.map((item, i) =>
 								<ListItem
 									key={i}
 									name={item.name}
 									icon={item.icon}
-									onClick={this.onItemChanged.bind(this)}
-									isSelected={this.props.selectedItem === i}
+									onClick={this.onItemChanged.bind(this, item)}
+									isSelected={this.props.selectedItem === item}
 									className={
 										~item.name.toLowerCase().indexOf(this.state.searchFilter) ? '' : 'hidden'
 									}

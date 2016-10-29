@@ -15,7 +15,7 @@ ReactDOM.render(
 	<div>
 		<BopaeChooser db={bopaeDB}/>
 		{bopaeDB.map(item =>
-			<BopaeCircle name={item.name} onClick={(e, dir) => alert(`clicked on ${item.name} #${dir}`)}/>
+			<BopaeCircle key={item.name} name={item.name} onClick={(e, dir) => alert(`clicked on ${item.name} #${dir}`)}/>
 		)}
 		<BopaeCircle2 name={bopaeDB[0].name} onClick={(e, dir) => alert('clicked on #'+dir)}/>
 	</div>,

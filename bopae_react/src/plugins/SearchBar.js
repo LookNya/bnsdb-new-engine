@@ -2,17 +2,14 @@ import React, { Component } from 'react'
 import '../styles/search-bar.css' 
 
 class SearchBar extends Component {
-	handleSubmit(){
-		this.setState({searchFilter: ''})
-	}
 	render() {
 		return  <div className="search-bar-wrap">
 							<input type="text"
 								placeholder="Hello!"
 								value={this.props.searchFilter}
-								onChange={this.props.handleSearchChange}
+								onChange={e => this.props.handleSearchChange(e.target.value)}
 							/>
-							<button onClick={this.props.handleSearchReset}>
+							<button onClick={() => this.props.handleSearchChange('')}>
 								&times;
 							</button>
 						</div>
