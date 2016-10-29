@@ -2,7 +2,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 //собственно модули
-import BopaeList from './BopaeList'
+import BopaeChooser from './BopaeChooser'
 import BopaeCircle from './BopaeCircle'
 import BopaeCircle2 from './BopaeCircle2'
 //глобальные штучки-дрючки
@@ -13,7 +13,7 @@ import bopaeDB from './bopae.json'
 
 ReactDOM.render(
 	<div>
-		<BopaeList db={bopaeDB}/>
+		<BopaeChooser db={bopaeDB}/>
 		{bopaeDB.map(item =>
 			<BopaeCircle name={item.name} onClick={(e, dir) => alert(`clicked on ${item.name} #${dir}`)}/>
 		)}

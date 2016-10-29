@@ -1,20 +1,12 @@
 import React, { Component } from 'react'
-import './styles/bopae-list.css'
+import SearchBar from '../plugins/SearchBar'
 
-import SearchBar from './SearchBar'
-
-
-class BopaeList extends Component {
+class ListWithSearch extends Component {
 	constructor() {
 		super()
 		this.state = {
-			selectedItem: null,
 			searchFilter: ''
 		}
-	}
-
-	clickHandler(i) {
-		this.setState({selectedItem: i})
 	}
 	handleSearchChange(e) {
 		this.setState({searchFilter: e.target.value})
@@ -22,20 +14,23 @@ class BopaeList extends Component {
 	handleSearchReset() {
 		this.setState({searchFilter: ''})
 	}
+	onItemChanged(e){
+		this.props.onItemChanged(e.target.key)
+	}
 	render() {
-		return  <div className="bopae-list">
+		return  <div className="list-with-search">
 							<SearchBar
 								searchFilter={this.state.searchFilter}
 								handleSearchChange={this.handleSearchChange.bind(this)}
 								handleSearchReset={this.handleSearchReset.bind(this)}
 								/>
-							{this.props.db.map((item, i) =>
+							{this.props.data.map((item, i) =>
 								<ListItem
 									key={i}
 									name={item.name}
 									icon={item.icon}
-									onClick={this.clickHandler.bind(this, i)}
-									isSelected={this.state.selectedItem === i}
+									onClick={this.onItemChanged.bind(this)}
+									isSelected={this.props.selectedItem === i}
 									className={
 										~item.name.toLowerCase().indexOf(this.state.searchFilter) ? '' : 'hidden'
 									}
@@ -57,4 +52,4 @@ class ListItem extends Component {
 	}
 }
 
-export default BopaeList
+export default ListWithSearch
