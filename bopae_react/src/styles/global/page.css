@@ -6,6 +6,7 @@ html{
 	min-height: 100%;
 	min-width: 600px;
 	background: black;
+	color: white;
 	position: relative;
 }
 header{

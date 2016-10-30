@@ -45,3 +45,6 @@ button{
 	border: none;
 	cursor: pointer;
 }
+input{
+	color: inherit;
+}
