@@ -1,6 +1,8 @@
 .search-bar-wrap{
 	width: 100%;
 	background: inherit;
+	height: 36px;
+	overflow: hidden;
 }
 .search-bar-wrap>*{
 	display: inline-block;
@@ -12,7 +14,7 @@
 	padding: 10px 15px;
 }
 .search-bar-wrap button{
-	width: 38px;
-	height: 38px;
+	width: 36px;
+	height: 36px;
 	font-size: 24px;
 }

@@ -47,4 +47,5 @@ button{
 }
 input{
 	color: inherit;
+	border: 1px solid;
 }
