@@ -8,6 +8,7 @@ import BopaeCircle2 from './BopaeCircle2'
 //глобальные штучки-дрючки
 import './styles/global/reset.css'
 import './styles/global/utils.css'
+import './styles/global/main.css'
 import bopaeDB from './bopae.json'
 
 
