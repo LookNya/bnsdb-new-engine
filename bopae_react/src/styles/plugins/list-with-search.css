@@ -1,0 +1,20 @@
+.list-with-search{
+	background: rgba(0, 0, 0, 0.5);
+	color: white;
+}
+.list-with-search .list-item.selected{
+	background: red
+}
+.list-with-search .list-item{
+	height: 50px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	cursor: pointer;
+}
+.list-with-search .list-item img{
+	height: 100%;
+	vertical-align: middle;
+}
+.list-with-search .list-item label{
+	padding-left: 15px;
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import SearchBar from '../plugins/SearchBar'
+import '../styles/plugins/list-with-search.css'
 
 class ListWithSearch extends Component {
 	constructor() {
@@ -38,12 +39,11 @@ class ListWithSearch extends Component {
 
 class ListItem extends Component {
 	render() {
-		let style = {
-				background: (this.props.isSelected ? 'whitesmoke' : 'white')
-		}
-		return <div style={style} onClick={this.props.onClick} className={this.props.className}>
+		let selectedClass =this.props.isSelected ? 'selected' : ''
+		return <div onClick={this.props.onClick}
+						className={this.props.className + ' ' + selectedClass + ' list-item'}>
 							<img src={this.props.icon} alt="icon"></img>
-							{this.props.name}
+							<label>{this.props.name}</label>
 						</div>
 	}
 }

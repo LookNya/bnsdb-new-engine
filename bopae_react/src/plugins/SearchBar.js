@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import '../styles/search-bar.css' 
+import '../styles/plugins/search-bar.css'
 
 class SearchBar extends Component {
 	render() {
 		return  <div className="search-bar-wrap">
 							<input type="text"
-								placeholder="Hello!"
+								placeholder="Search…"
 								value={this.props.searchFilter}
 								onChange={e => this.props.onSearchChange(e.target.value)}
 							/>

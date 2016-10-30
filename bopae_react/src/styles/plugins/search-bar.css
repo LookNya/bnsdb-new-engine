@@ -1,0 +1,18 @@
+.search-bar-wrap{
+	width: 100%;
+	background: inherit;
+}
+.search-bar-wrap>*{
+	display: inline-block;
+	vertical-align: top;
+}
+.search-bar-wrap input{
+	width: calc(100% - 38px);
+	background: transparent;
+	padding: 10px 15px;
+}
+.search-bar-wrap button{
+	width: 38px;
+	height: 38px;
+	font-size: 24px;
+}
