@@ -2,6 +2,20 @@ import React, { Component } from 'react'
 import SearchBar from '../plugins/SearchBar'
 import '../styles/plugins/list-with-search.css'
 
+var rusify = (function() {
+	var s = "qй wц eу rк tе yн uг iш oщ pз [х ]ъ "+
+					 "aф sы dв fа gп hр jо kл lд ;ж 'э "+
+						"zя xч cс vм bи nт mь ,б .ю /."
+	var h = {}
+	for (var i=0; i<s.length; i+=3) h[s[i]] = s[i+1]
+
+	return function(str) {
+		return str.toLowerCase().replace(/[A-z\[\];',\.\/]/g, function(l) {
+			return l in h ? h[l] : l
+		})
+	}
+})()
+
 class ListWithSearch extends Component {
 	constructor() {
 		super()
@@ -16,7 +30,11 @@ class ListWithSearch extends Component {
 		this.props.onItemChange(item)
 	}
 	render() {
-		let nameMatches = item => ~item.name.toLowerCase().indexOf(this.state.searchFilter)
+		let nameMatches = item => {
+			var name = item.name.toLowerCase()
+			return  ~name.indexOf( this.state.searchFilter.toLowerCase() ) ||
+							~name.indexOf( rusify(this.state.searchFilter) )
+		}
 		let isAnyOneVisible = this.props.data.some(nameMatches)
 		return  <div className="list-with-search">
 							<SearchBar

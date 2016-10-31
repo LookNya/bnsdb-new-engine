@@ -16,8 +16,8 @@ import bopaeDB from './bopae.json'
 ReactDOM.render(
 	<div className="app">
 		<header>
-			<div className="main-wrap">
-				<div className="logo">The asd</div>
+			<div className="main-wrap center-content">
+				<div className="logo">BnS Character Calculator</div>
 				<nav>
 				</nav>
 			</div>
@@ -29,7 +29,9 @@ ReactDOM.render(
 					<BopaeChooser db={bopaeDB}/>
 				</section>
 				<section>
-					<BopaeCircle2 name={bopaeDB[0].name} onClick={(e, dir) => alert('clicked on #'+dir)}/>
+					<figure>
+						<BopaeCircle2 name={bopaeDB[0].name} onClick={(e, dir) => alert('clicked on #'+dir)}/>
+					</figure>
 				</section>
 
 				{bopaeDB.map(item =>

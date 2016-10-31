@@ -1,6 +1,6 @@
 html{
 	min-height: 100%;
-	background: black;
+	background: #12131f;
 }
 .app{
 	min-height: 100%;
@@ -12,8 +12,16 @@ html{
 }
 header{
 	height: 85px;
-	background:#7c5daa;
+	/*background:#7c5daa;*/
+	/*background: #6e18ef;*/
+	background: #8149d6;
 	color: white
+}
+.logo{
+	font-family: 'Roboto Slab', serif;
+	font-size: 28px;
+	text-align: center;
+	padding-top: 26px;
 }
 
 
@@ -28,7 +36,8 @@ main{
 	bottom: -10px;
 	left: -10px;
 	right: -10px;
-	background-image: url(http://bnsbase.com/img/mpi/2.jpg);
+	/*background-image: url(http://bnsbase.com/img/mpi/2.jpg);*/
+	background-image: url(/img/bg.jpg);
 	background-size: cover;
 	filter: blur(5px);
 }
@@ -40,8 +49,14 @@ main section{
 	width: 50%;
 	display: inline-block;
 	vertical-align: middle;
+	text-align: center;
 }
-
+main section>*{
+	text-align: initial;
+}
+main section figure{
+	display: inline-block;
+}
 footer{
 	position: absolute;
 	bottom: 0;
