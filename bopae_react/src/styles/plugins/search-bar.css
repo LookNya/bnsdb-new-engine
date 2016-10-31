@@ -9,12 +9,15 @@
 	vertical-align: top;
 }
 .search-bar-wrap input{
-	width: calc(100% - 38px);
+	width: calc(100% - 36px);
 	background: transparent;
 	padding: 10px 15px;
+	border-color: #ebe5fb;
 }
 .search-bar-wrap button{
 	width: 36px;
 	height: 36px;
 	font-size: 24px;
+	background: #ebe5fb;
+	color: #2f3d08;
 }

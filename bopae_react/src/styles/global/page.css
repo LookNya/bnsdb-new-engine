@@ -6,12 +6,13 @@ html{
 	min-height: 100%;
 	min-width: 600px;
 	background: black;
-	color: white;
+	color: #ebe5fb;
+	font-color: #ebe5fb;
 	position: relative;
 }
 header{
 	height: 85px;
-	background: #3f88d8;
+	background:#7c5daa;
 	color: white
 }
 
@@ -35,7 +36,11 @@ main .main-wrap{
 	padding: 70px 40px;
 	background: rgba(0, 0, 0, 0.5);
 }
-
+main section{
+	width: 50%;
+	display: inline-block;
+	vertical-align: middle;
+}
 
 footer{
 	position: absolute;

@@ -17,17 +17,24 @@ ReactDOM.render(
 	<div className="app">
 		<header>
 			<div className="main-wrap">
-				asd
+				<div className="logo">The asd</div>
+				<nav>
+				</nav>
 			</div>
 		</header>
 		<main>
 			<div className="main-bg"></div>
 			<div className="main-wrap">
-				<BopaeChooser db={bopaeDB}/>
+				<section>
+					<BopaeChooser db={bopaeDB}/>
+				</section>
+				<section>
+					<BopaeCircle2 name={bopaeDB[0].name} onClick={(e, dir) => alert('clicked on #'+dir)}/>
+				</section>
+
 				{bopaeDB.map(item =>
 					<BopaeCircle key={item.name} name={item.name} onClick={(e, dir) => alert(`clicked on ${item.name} #${dir}`)}/>
 				)}
-				<BopaeCircle2 name={bopaeDB[0].name} onClick={(e, dir) => alert('clicked on #'+dir)}/>
 			</div>
 		</main>
 		<footer>
