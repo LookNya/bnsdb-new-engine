@@ -40,12 +40,29 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+button, input{
+	margin:0;
+	padding:0;
+	border-radius: 0;
+	-webkit-appearance: none;
+	line-height:1;
+	overflow:visible;
+	width:auto;
+}
+input:focus,
+select:focus,
+button:focus{
+	outline:0;
+}
 button{
 	background:none;
-	border: none;
+	border: 0;
 	cursor: pointer;
 }
 input{
 	color: inherit;
 	border: 1px solid;
+}
+::-webkit-search-decoration{
+	display:none;
 }
