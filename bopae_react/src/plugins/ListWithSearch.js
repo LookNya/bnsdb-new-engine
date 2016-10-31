@@ -19,6 +19,7 @@ class ListWithSearch extends Component {
 		let isAnyOneVisible = false
 		this.props.data.map((item, i) => {
 			if (~item.name.toLowerCase().indexOf(this.state.searchFilter)) isAnyOneVisible = true
+			return false
 		})
 		return  <div className="list-with-search">
 							<SearchBar
