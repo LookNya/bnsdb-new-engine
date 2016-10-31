@@ -16,11 +16,8 @@ class ListWithSearch extends Component {
 		this.props.onItemChange(item)
 	}
 	render() {
-		let isAnyOneVisible = false
-		this.props.data.map((item, i) => {
-			if (~item.name.toLowerCase().indexOf(this.state.searchFilter)) isAnyOneVisible = true
-			return false
-		})
+		let nameMatches = item => ~item.name.toLowerCase().indexOf(this.state.searchFilter)
+		let isAnyOneVisible = this.props.data.some(nameMatches)
 		return  <div className="list-with-search">
 							<SearchBar
 								searchFilter={this.state.searchFilter}
@@ -34,9 +31,7 @@ class ListWithSearch extends Component {
 										icon={item.icon}
 										onClick={this.onItemChange.bind(this, item)}
 										isSelected={this.props.selectedItem === item}
-										className={
-											~item.name.toLowerCase().indexOf(this.state.searchFilter) ? '' : 'hidden'
-										}
+										className={nameMatches(item) ? '' : 'hidden'}
 									/>
 								)}
 								<div className={!isAnyOneVisible ? 'empty-label' : 'hidden'}>
