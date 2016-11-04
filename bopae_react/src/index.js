@@ -12,6 +12,7 @@ import './styles/global/main.css'
 import './styles/global/page.css'
 import bopaeDB from './bopae.json'
 
+bopaeDB.forEach(item => item.name = item.name.ru)
 
 ReactDOM.render(
 	<div className="app">
@@ -30,12 +31,12 @@ ReactDOM.render(
 				</section>
 				<section>
 					<figure>
-						<BopaeCircle2 name={bopaeDB[0].name} onClick={(e, dir) => alert('clicked on #'+dir)}/>
+						<BopaeCircle2 name={bopaeDB[0].icon} onClick={(e, dir) => alert('clicked on #'+dir)}/>
 					</figure>
 				</section>
 
 				{bopaeDB.map(item =>
-					<BopaeCircle key={item.name} name={item.name} onClick={(e, dir) => alert(`clicked on ${item.name} #${dir}`)}/>
+					<BopaeCircle key={item.name} name={item.icon} onClick={(e, dir) => alert(`clicked on ${item.name} #${dir}`)}/>
 				)}
 			</div>
 		</main>
