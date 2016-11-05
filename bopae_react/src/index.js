@@ -2,7 +2,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 //собственно модули
-import BopaeChooser from './BopaeChooser'
+import BopaeList from './BopaeList'
 import BopaeCircle from './BopaeCircle'
 import BopaeCircle2 from './BopaeCircle2'
 //глобальные штучки-дрючки
@@ -27,7 +27,7 @@ ReactDOM.render(
 			<div className="main-bg"></div>
 			<div className="main-wrap">
 				<section>
-					<BopaeChooser db={bopaeDB}/>
+					<BopaeList db={bopaeDB}/>
 				</section>
 				<section>
 					<figure>

@@ -6,6 +6,16 @@
 	overflow-x: hidden;
 	overflow-y: auto;
 }
+.list-with-search .item-table{
+	table-layout: fixed;
+	width: 100%;
+}
+.list-with-search .item-table td{
+	vertical-align: top;
+}
+.list-with-search .item-table .icon-cell{
+	width: 100px;
+}
 .list-with-search .list-item.selected{
 	background: #391252
 }
@@ -13,22 +23,65 @@
 	height: 50px;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	cursor: pointer;
 	white-space: nowrap;
+}
+.list-with-search .list-item,
+.list-with-search .list-item *{
+	cursor: pointer;
 }
 .list-with-search .list-item .icon{
 	height: 100%;
-	vertical-align: middle;
 	width: 100px;
 	background-size: cover;
-	display: inline-block;
+	position: relative;
 }
+.list-with-search .icon .square{
+	position: absolute;
+	width: 50%;
+	top: 0;
+	left: 0;
+}
+.list-with-search .icon .piece-7{
+	top: 25px;
+}
+.list-with-search .icon .piece-8{
+	left: 0;
+}
+.list-with-search .icon .piece-1{
+	left: 25px;
+}
+.list-with-search .icon .piece-2{
+	left: 50px;
+}
+.list-with-search .icon .piece-3{
+	top: 25px;
+	left: 50px;
+}
+
 .list-with-search .list-item label{
 	padding-left: 15px;
+	padding-top: 17px;
+	display: inline-block;
 }
 .list-with-search .empty-label{
 	padding: 40px 15px;
 	text-align: center;
 	font-style: italic;
 	opacity: 0.6;
+}
+.list-with-search .piece-detail{
+	font-size: 11px;
+	line-height: 13px;
+	padding: 6px;
+	font-family: monospace;
+	color: grey;
+}
+.list-with-search .piece-detail tr.main-stat{
+	color: #d2d2d2;
+}
+.list-with-search .piece-detail table td{
+	padding-right: 5px;
+}
+.list-with-search .piece-detail .piece{
+	width: 35px;
 }

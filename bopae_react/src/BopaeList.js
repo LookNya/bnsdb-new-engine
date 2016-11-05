@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import './styles/bopae-list.css'
+
+import './styles/bopae-list/piece.css'
 
 import ListWithSearch from './plugins/ListWithSearch'
 
 
-class BopaeChooser extends Component {
+class BopaeList extends Component {
 	constructor() {
 		super()
 		this.state = {
@@ -24,4 +25,4 @@ class BopaeChooser extends Component {
 						</div>
 	}
 }
-export default BopaeChooser
+export default BopaeList

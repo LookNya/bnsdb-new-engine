@@ -65,10 +65,49 @@ class ListItem extends Component {
 		let selectedClass =this.props.isSelected ? 'selected' : ''
 		return <div onClick={this.props.onClick}
 						className={this.props.className + ' ' + selectedClass + ' list-item'}>
-							<div style={{backgroundImage: 'url('+ this.props.icon +')'}} className="icon"></div>
-							<label>{this.props.name}</label>
+							<table className="item-table">
+								<tbody>
+									<tr>
+										<td className="icon-cell">
+											<div className="icon">
+												{[7,8,1,2,3].map( i => <BopaePiece key={i} num={i} icon={process.env.PUBLIC_URL +'/img/'+this.props.icon+i+'.png'}/>)}
+											</div>
+										</td>
+										<td>
+											<label>{this.props.name}</label>
+										</td>
+										<td>
+											<PieceDetail num={1} bopaeId={1} icon={process.env.PUBLIC_URL +'/img/'+this.props.icon+2+'.png'}/>
+										</td>
+									</tr>
+								</tbody>
+							</table>
 						</div>
 	}
 }
+class BopaePiece extends Component{
+	render() {
+		return <div className={"square piece piece-"+this.props.num} style={{backgroundImage: 'url('+ this.props.icon +')'}}	></div>
+	}
+}
+class PieceDetail extends Component{
+	render() {
+		return (
+			<div className="piece-detail cf f_r">
+				<div className="left f_l">
+					<table>
+						<tbody>
+							{[1,2,3].map(i => <tr className={i==1?'main-stat':''}key={i}><td>стат{4*i*i}</td><td>{4*i+'–'+8*i}</td></tr>)}
+						</tbody>
+					</table>
+				</div>
+				<div className="right f_r">
+					<BopaePiece num={this.props.num} icon={this.props.icon} />
+				</div>
+			</div>
+		)
+	}
+}
+
 
 export default ListWithSearch

@@ -37,3 +37,8 @@ label[for]{
 .cf:before,
 .cf:after {content:""; display:table;}
 .cf:after {clear:both;}
+.square:after {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
