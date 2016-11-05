@@ -69,7 +69,7 @@ class ListItem extends Component {
 									<tr>
 										<td className="icon-cell">
 											<div className="icon">
-												{[7,8,1,2,3].map( i => <BopaePiece key={i} num={i} bopae={this.props.bopae}/>)}
+												{[7,8,1,2,3,4,5,6].map( i => <BopaePiece key={i} num={i} bopae={this.props.bopae}/>)}
 											</div>
 										</td>
 										<td>
@@ -88,19 +88,26 @@ class BopaePiece extends Component{
 	render() {
 		return <div
 			className={"square piece piece-"+this.props.num}
-			style={{backgroundImage: 'url('+ process.env.PUBLIC_URL +'/img/'+this.props.bopae.icon + this.props.num+'.png' +')'}}
+			style={{backgroundImage: 'url('+this.props.bopae.getPieceIcon(this.props.num)+')'}}
 			></div>
 	}
 }
 class PieceDetail extends Component{
 	render() {
-		console.log(this.props.bopae)
 		return (
 			<div className="piece-detail cf f_r">
 				<div className="left f_l">
 					<table>
 						<tbody>
-							{[1,2,3].map(i => <tr className={i==1?'main-stat':''}key={i}><td>стат{4*i*i}</td><td>{4*i+'–'+8*i}</td></tr>)}
+							{
+								this.props.bopae.getStatNamesForPiece(this.props.num).map(
+									(statName, i) =>
+										<tr className={i===0?'main-stat':''}key={i}>
+											<td> {statName} </td>
+											<td>{this.props.bopae.getStatValuesForPiece(this.props.num, statName).max}-123</td>
+										</tr>
+								)
+							}
 						</tbody>
 					</table>
 				</div>

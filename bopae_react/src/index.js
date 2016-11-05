@@ -12,8 +12,33 @@ import './styles/global/main.css'
 import './styles/global/page.css'
 import bopaeDB from './bopae.json'
 
-bopaeDB.forEach(item => item.name = item.name.ru)
+bopaeDB.forEach(
+	item => {
+		item.name = item.name.ru
 
+		item.getPieceIcon = function(pieceNum){
+			return process.env.PUBLIC_URL +'/img/'+ this.icon + pieceNum +'.png'
+		}
+
+		item.getStatNamesForPiece = function(pieceNum){
+			var pieceStatsNames = []
+			var allStatNames = Object.keys(this.pieces)
+			allStatNames.forEach(statName =>{
+				var pieceStats = (''+this.pieces[statName]).trim().split(/\s+/)[pieceNum-1]
+				var re = new RegExp(/\d/g)
+				if(pieceStats!='0-0' && re.test(pieceStats) && statName!='synth') pieceStatsNames.push(statName)
+			})
+			return pieceStatsNames
+		}
+
+		item.getStatValuesForPiece = function(pieceNum, statName){
+			if(!this.pieces[statName]) return null
+			var pieceStats = this.pieces[statName].trim().split(/\s+/)[pieceNum-1]
+			var pieceStats = pieceStats.split('-')
+			return {min: pieceStats[0], max: pieceStats[1]}
+		}
+	}
+)
 ReactDOM.render(
 	<div className="app">
 		<header>
