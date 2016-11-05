@@ -11,8 +11,13 @@ import './styles/global/utils.css'
 import './styles/global/main.css'
 import './styles/global/page.css'
 import bopaeDB from './bopae.json'
+import BopaeDBUtils from './dbutils.js'
 
-bopaeDB.forEach(item => item.name = item.name.ru)
+let bopaes = BopaeDBUtils.convert(bopaeDB, 'ru')
+console.log(bopaes)
+
+bopaeDB.bopaes.forEach(item => item.name = item.name.ru)
+bopaes = bopaeDB.bopaes
 
 ReactDOM.render(
 	<div className="app">
@@ -27,15 +32,15 @@ ReactDOM.render(
 			<div className="main-bg"></div>
 			<div className="main-wrap">
 				<section>
-					<BopaeList db={bopaeDB}/>
+					<BopaeList db={bopaes}/>
 				</section>
 				<section>
 					<figure>
-						<BopaeCircle2 name={bopaeDB[0].icon} onClick={(e, dir) => alert('clicked on #'+dir)}/>
+						<BopaeCircle2 name={bopaes[0].icon} onClick={(e, dir) => alert('clicked on #'+dir)}/>
 					</figure>
 				</section>
 
-				{bopaeDB.map(item =>
+				{bopaes.map(item =>
 					<BopaeCircle key={item.name} name={item.icon} onClick={(e, dir) => alert(`clicked on ${item.name} #${dir}`)}/>
 				)}
 			</div>
