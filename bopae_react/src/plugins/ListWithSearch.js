@@ -88,7 +88,7 @@ class BopaePiece extends Component{
 	render() {
 		return <div
 			className={"square piece piece-"+this.props.num}
-			style={{backgroundImage: 'url('+ process.env.PUBLIC_URL +'/img/'+this.props.bopae.icon + this.props.num+'.png' +')'}}
+			style={{backgroundImage: `url(${process.env.PUBLIC_URL}/img/${this.props.bopae.icon}${this.props.num}.png)`}}
 			></div>
 	}
 }
@@ -100,7 +100,7 @@ class PieceDetail extends Component{
 				<div className="left f_l">
 					<table>
 						<tbody>
-							{[1,2,3].map(i => <tr className={i==1?'main-stat':''}key={i}><td>стат{4*i*i}</td><td>{4*i+'–'+8*i}</td></tr>)}
+							{[1,2,3].map(i => <tr className={i===1?'main-stat':''} key={i}><td>стат{4*i*i}</td><td>{4*i+'–'+8*i}</td></tr>)}
 						</tbody>
 					</table>
 				</div>
