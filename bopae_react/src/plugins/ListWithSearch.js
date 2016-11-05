@@ -45,8 +45,7 @@ class ListWithSearch extends Component {
 								{this.props.data.map((item, i) =>
 									<ListItem
 										key={i}
-										name={item.name}
-										icon={item.icon}
+										bopae={item}
 										onClick={this.onItemChange.bind(this, item)}
 										isSelected={this.props.selectedItem === item}
 										className={nameMatches(item) ? '' : 'hidden'}
@@ -70,14 +69,14 @@ class ListItem extends Component {
 									<tr>
 										<td className="icon-cell">
 											<div className="icon">
-												{[7,8,1,2,3].map( i => <BopaePiece key={i} num={i} icon={process.env.PUBLIC_URL +'/img/'+this.props.icon+i+'.png'}/>)}
+												{[7,8,1,2,3].map( i => <BopaePiece key={i} num={i} bopae={this.props.bopae}/>)}
 											</div>
 										</td>
 										<td>
-											<label>{this.props.name}</label>
+											<label>{this.props.bopae.name}</label>
 										</td>
 										<td>
-											<PieceDetail num={1} bopaeId={1} icon={process.env.PUBLIC_URL +'/img/'+this.props.icon+2+'.png'}/>
+											<PieceDetail num={1} bopae={this.props.bopae}/>
 										</td>
 									</tr>
 								</tbody>
@@ -87,11 +86,15 @@ class ListItem extends Component {
 }
 class BopaePiece extends Component{
 	render() {
-		return <div className={"square piece piece-"+this.props.num} style={{backgroundImage: 'url('+ this.props.icon +')'}}	></div>
+		return <div
+			className={"square piece piece-"+this.props.num}
+			style={{backgroundImage: 'url('+ process.env.PUBLIC_URL +'/img/'+this.props.bopae.icon + this.props.num+'.png' +')'}}
+			></div>
 	}
 }
 class PieceDetail extends Component{
 	render() {
+		console.log(this.props.bopae)
 		return (
 			<div className="piece-detail cf f_r">
 				<div className="left f_l">
@@ -102,7 +105,7 @@ class PieceDetail extends Component{
 					</table>
 				</div>
 				<div className="right f_r">
-					<BopaePiece num={this.props.num} icon={this.props.icon} />
+					<BopaePiece num={this.props.num} bopae={this.props.bopae} />
 				</div>
 			</div>
 		)
