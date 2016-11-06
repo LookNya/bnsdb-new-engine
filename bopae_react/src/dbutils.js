@@ -6,22 +6,26 @@ class Bopae {
 		this.pieces = pieces
 		this.bonuses = bonuses
 	}
-	iconPath() {
-		return `${process.env.PUBLIC_URL}/img/${this.bopae.icon}.png`
+	getIconPath() {
+		return `${process.env.PUBLIC_URL}/img/${this.icon}.png`
+	}
+	getPiece(num) {
+		return this.pieces[num-1]
 	}
 }
 
 class BopaePiece {
-	constructor(num, icon, stats) {
+	constructor(num, icon, stats, synthMax) {
 		this.num = num
 		this.icon = icon
 		this.stats = stats
+		this.synthMax = synthMax
 	}
-	iconPath() {
+	getIconPath() {
 		return `${process.env.PUBLIC_URL}/img/${this.icon}${this.num}.png`
 	}
-	stat(name) {
-		return name in this.stats ? this.stats[name] : [0, 0]
+	getStat(name) {
+		return name in this.stats ? this.stats[name] : [0, 0, false]
 	}
 }
 
@@ -38,15 +42,19 @@ class BopaeDBUtils {
 	static convertBopae(bopae) {
 		let statsForNums = [{}, {}, {}, {}, {}, {}, {}, {}]
 		for (let statName in bopae.pieces) { //eslint-disable-line guard-for-in
-			let stats = bopae.pieces[statName].trim().split(/\s+/).map(this.convertStat)
-			let l10nStatName = this.l10n.stats[statName][this.lang]
-			for (let i=0; i<8; i++)
-				statsForNums[i][l10nStatName] = stats[i]
+			if (bopae.pieces.hasOwnProperty(statName)) {
+				if (statName !== "synth") {
+					let stats = bopae.pieces[statName].trim().split(/\s+/).map(this.convertStat)
+					let l10nStatName = this.l10n.stats[statName][this.lang]
+					for (let i=0; i<8; i++)
+						statsForNums[i][l10nStatName] = stats[i]
+				}
+			}
 		}
 
 		let pieces = new Array(8)
 		for (let i=0; i<pieces.length; i++) {
-			pieces[i] = new BopaePiece(i+1, bopae.icon, statsForNums[i])
+			pieces[i] = new BopaePiece(i+1, bopae.icon, statsForNums[i], bopae.pieces.synth)
 		}
 
 		return new Bopae(bopae.name[this.lang], bopae.icon, bopae.obtaining[this.lang], pieces, bopae.bonus)

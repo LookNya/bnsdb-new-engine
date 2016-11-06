@@ -14,6 +14,7 @@ import bopaeDB from './bopae.json'
 import BopaeDBUtils from './dbutils.js'
 
 let bopaes = BopaeDBUtils.convert(bopaeDB, 'ru')
+window.qwe = bopaes
 console.log(bopaes)
 ReactDOM.render(
 	<div className="app">
