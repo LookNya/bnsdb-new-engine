@@ -5,7 +5,8 @@ const Image = Canvas.Image
 
 if (process.argv.length < 3) {
 	const path = require('path')
-	console.log('Usage: '+path.basename(process.argv[1])+' <prefix_of_8_images>')
+	console.log(`Usage: ${path.basename(process.argv[1])} <prefix_of_8_images>`)
+	console.log(`   or: ${path.basename(process.argv[1])} <complete_image>.png`)
 	process.exit(2)
 }
 
@@ -17,11 +18,27 @@ let canvas = new Canvas(w*2, w*2)
 let rc = canvas.getContext('2d')
 
 rc.globalCompositeOperation = 'screen'
-offsets.forEach(([dx,dy],i) => {
+if (name.endsWith('.png')) {
+	name = name.slice(0, -4)
 	let img = new Image()
-	img.src = fs.readFileSync(`./img_orig/${name}${i+1}.png`)
-	rc.drawImage(img, w-dx, w-dy)
-})
+	img.src = fs.readFileSync(`./img_orig/${name}.png`)
+	rc.drawImage(img, 0, 0)
+} else {
+	offsets.forEach(([dx,dy],i) => {
+		let img = new Image()
+		img.src = fs.readFileSync(`./img_orig/${name}${i+1}.png`)
+		rc.drawImage(img, w-dx, w-dy)
+	})
+
+	// alpha correction
+	rc.globalCompositeOperation = 'lighten'//'destination-atop'
+	rc.beginPath()
+	for (var i=0; i<8; i++) {
+		let a = (i+0.5)/8 * 2*Math.PI, r = 133
+		rc.lineTo(w+Math.cos(a)*r, w+Math.sin(a)*r)
+	}
+	rc.fill()
+}
 
 /*let data = rc.getImageData(0, 0, w*2, w*2)
 let pix = data.data
@@ -37,14 +54,6 @@ rc.putImageData(data, 0, 0)*/
 //rc.fillStyle = 'rgba(255,255,255,0)'
 //rc.fillRect(0, 0, w, w)
 
-rc.globalCompositeOperation = 'lighten'//'destination-atop'
-rc.beginPath()
-for (var i=0; i<8; i++) {
-	let a = (i+0.5)/8 * 2*Math.PI, r = 133
-	rc.lineTo(w+Math.cos(a)*r, w+Math.sin(a)*r)
-}
-rc.fill()
-
 
 offsets.forEach(([dx,dy],i) => {
 	let partCanvas = new Canvas(w, w)
@@ -54,11 +63,11 @@ offsets.forEach(([dx,dy],i) => {
 	rc.fillStyle = 'rgba(255,255,255,0)'
 	rc.fillRect(0, 0, w, w)
 
-	let da = Math.PI/8, a = (i-2)/8 * 2*Math.PI
+	let da = Math.PI/8, a = (i-2)/8 * 2*Math.PI, dp = 0.5
 	rc.beginPath()
-	rc.moveTo(dx-Math.cos(a)*0.5, dy-Math.sin(a)*0.5)
-	rc.lineTo(dx+Math.cos(a+da)*w*2, dy+Math.sin(a+da)*w*2)
-	rc.lineTo(dx+Math.cos(a-da)*w*2, dy+Math.sin(a-da)*w*2)
+	rc.moveTo(dx-Math.cos(a)*0.5   -dp, dy-Math.sin(a)*0.5   -dp)
+	rc.lineTo(dx+Math.cos(a+da)*w*2-dp, dy+Math.sin(a+da)*w*2-dp)
+	rc.lineTo(dx+Math.cos(a-da)*w*2-dp, dy+Math.sin(a-da)*w*2-dp)
 	rc.clip()
 
 	rc.globalCompositeOperation = 'source-over'
