@@ -86,7 +86,7 @@ class ListItem extends Component {
 }
 class BopaePiece extends Component{
 	render() {
-		let piece = this.props.bopae.pieces[this.props.num]
+		let piece = this.props.bopae.pieces[this.props.num-1]
 		return <div
 			className={"square piece piece-"+this.props.num}
 			style={{backgroundImage: 'url('+piece.getIconPath()+')'}}
