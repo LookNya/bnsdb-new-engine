@@ -15,10 +15,6 @@ import BopaeDBUtils from './dbutils.js'
 
 let bopaes = BopaeDBUtils.convert(bopaeDB, 'ru')
 console.log(bopaes)
-
-bopaeDB.bopaes.forEach(item => item.name = item.name.ru)
-bopaes = bopaeDB.bopaes
-
 ReactDOM.render(
 	<div className="app">
 		<header>

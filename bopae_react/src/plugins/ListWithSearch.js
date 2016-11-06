@@ -76,7 +76,7 @@ class ListItem extends Component {
 											<label>{this.props.bopae.name}</label>
 										</td>
 										<td>
-											<PieceDetail num={1} bopae={this.props.bopae}/>
+											<PieceDetail num={1} bopae={this.props.bopae}/>//TODO прокинуть номер куска
 										</td>
 									</tr>
 								</tbody>
@@ -86,26 +86,27 @@ class ListItem extends Component {
 }
 class BopaePiece extends Component{
 	render() {
+		let piece = this.props.bopae.pieces[this.props.num]
 		return <div
 			className={"square piece piece-"+this.props.num}
-			style={{backgroundImage: 'url('+this.props.bopae.getPieceIcon(this.props.num)+')'}}
+			style={{backgroundImage: 'url('+piece.getIconPath()+')'}}
 			></div>
 	}
 }
 class PieceDetail extends Component{
 	render() {
+		let piece = this.props.bopae.pieces[this.props.num]
 		return (
 			<div className="piece-detail cf f_r">
 				<div className="left f_l">
 					<table>
 						<tbody>
 							{
-								this.props.bopae.getStatNamesForPiece(this.props.num).map(
-									(statName, i) =>
-										<tr className={i===0?'main-stat':''}key={i}>
-											<td> {statName} </td>
-											<td>{this.props.bopae.getStatValuesForPiece(this.props.num, statName).max}-123</td>
-										</tr>
+								Object.keys(piece.stats).forEach(statName =>
+									<tr className={piece.stats[statName].isBase === true ? 'main-stat' : ''} key={statName}>
+										<td> {statName} </td>
+										<td> {piece.stats[statName].min} - {piece.stats[statName].max} </td>
+									</tr>
 								)
 							}
 						</tbody>
