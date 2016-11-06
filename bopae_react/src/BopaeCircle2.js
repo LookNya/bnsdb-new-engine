@@ -12,9 +12,9 @@ class BopaePart extends Component {
 	points(dir) {
 		let w = PART_WIDTH, da = Math.PI/8, dw = 1.05
 		let angle = dir2rad(dir)
-		let [x0, y0] = [w, w]
-		let [x1, y1] = [x0+Math.cos(angle-da)*w*dw+0.5|0, y0+Math.sin(angle-da)*w*dw+0.5|0]
-		let [x2, y2] = [x0+Math.cos(angle+da)*w*dw+0.5|0, y0+Math.sin(angle+da)*w*dw+0.5|0]
+		let [x0, y0] = [w-0.5, w-0.5]
+		let [x1, y1] = [x0+Math.cos(angle-da)*w*dw+0.5, y0+Math.sin(angle-da)*w*dw+0.5]
+		let [x2, y2] = [x0+Math.cos(angle+da)*w*dw+0.5, y0+Math.sin(angle+da)*w*dw+0.5]
 		return `${x0},${y0} ${x1},${y1} ${x2},${y2}`
 	}
 	render() {
