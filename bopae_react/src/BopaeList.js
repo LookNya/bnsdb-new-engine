@@ -19,6 +19,7 @@ class BopaeList extends Component {
 		return  <div className="bopae-list">
 							<ListWithSearch
 								data={this.props.db}
+								selectedPieceNum={this.props.selectedPieceNum}
 								selectedItem={this.state.selectedListItem}
 								onItemChange={this.onListItemChange.bind(this)}
 							/>

@@ -9,9 +9,6 @@ class Bopae {
 	getIconPath() {
 		return `${process.env.PUBLIC_URL}/img/${this.icon}.png`
 	}
-	getPiece(num) {
-		return this.pieces[num-1]
-	}
 }
 
 class BopaePiece {
@@ -27,6 +24,11 @@ class BopaePiece {
 	getStat(name) {
 		return name in this.stats ? this.stats[name] : [0, 0, false]
 	}
+	forEachStat(func) {
+		for (let statName in this.stats)
+			if (this.stats.hasOwnProperty(statName))
+				func(statName, this.stats[statName])
+	}
 }
 
 class BopaeDBUtils {
@@ -41,7 +43,7 @@ class BopaeDBUtils {
 
 	static convertBopae(bopae) {
 		let statsForNums = [{}, {}, {}, {}, {}, {}, {}, {}]
-		for (let statName in bopae.pieces) { //eslint-disable-line guard-for-in
+		for (let statName in bopae.pieces) {
 			if (bopae.pieces.hasOwnProperty(statName)) {
 				if (statName !== "synth") {
 					let stats = bopae.pieces[statName].trim().split(/\s+/).map(this.convertStat)
@@ -54,7 +56,7 @@ class BopaeDBUtils {
 
 		let pieces = new Array(8)
 		for (let i=0; i<pieces.length; i++) {
-			pieces[i] = new BopaePiece(i+1, bopae.icon, statsForNums[i], bopae.pieces.synth)
+			pieces[i] = new BopaePiece(i, bopae.icon, statsForNums[i], bopae.pieces.synth)
 		}
 
 		return new Bopae(bopae.name[this.lang], bopae.icon, bopae.obtaining[this.lang], pieces, bopae.bonus)
