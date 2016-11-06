@@ -3,6 +3,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 //собственно модули
 import BopaeCalc from './BopaeCalc'
+import BopaeCircle from './BopaeCircle'
+import BopaeCircle2 from './BopaeCircle2'
+import BopaeCircle3 from './BopaeCircle3'
 //глобальные штучки-дрючки
 import './styles/global/reset.css'
 import './styles/global/utils.css'
@@ -28,6 +31,9 @@ ReactDOM.render(
 			<div className="main-wrap">
 				<BopaeCalc bopaes={bopaes} />
 			</div>
+			<BopaeCircle pieces={bopaes[0].pieces}/>
+			<BopaeCircle2 name={bopaes[0].icon} />
+			<BopaeCircle3 name={bopaes[0].icon} />
 		</main>
 		<footer>
 			<div className="main-wrap">

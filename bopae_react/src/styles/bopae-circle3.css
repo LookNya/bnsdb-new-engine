@@ -1,0 +1,21 @@
+.bopae-circle3 {
+	position: relative;
+}
+
+.bopae-circle3 .bopae-piece {
+	position: absolute;
+	pointer-events: none;
+	transition: transform 0.2s ease;
+}
+.bopae-circle3 .bopae-piece:hover {
+	z-index: 1;
+	filter: drop-shadow(0 0 4px green);
+}
+.bopae-circle3 .bopae-piece:not(:hover) {
+	transform: none !important;
+}
+
+.bopae-circle3 polygon {
+	pointer-events: all;
+}
+
