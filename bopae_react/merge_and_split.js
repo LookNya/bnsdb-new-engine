@@ -73,7 +73,7 @@ offsets.forEach(([dx,dy],i) => {
 	rc.globalCompositeOperation = 'source-over'
 	rc.drawImage(canvas, dx-w, dy-w)
 
-	partCanvas.pngStream().pipe(fs.createWriteStream(`./public/img/${name}${i+1}.png`))
+	partCanvas.pngStream().pipe(fs.createWriteStream(`./public/img/${name}${i}.png`))
 })
 
 
