@@ -5,14 +5,27 @@ import BopaeSets from './little/BopaeSets'
 
 class BopaePieceEditor extends Component {
 	render() {
-		if(this.props.selectedBopae && this.props.selectedPieceNum){
+		if(this.props.selectedBopae && this.props.selectedPieceNum !== null){
 			let piece = this.props.selectedBopae.pieces[this.props.selectedPieceNum]
 			//если выбран кусок, показываем его редактор
 
 			return (
 				<div className="bopae-piece-editor">
-					<h2>Равнины изобилия 45 #3</h2>
-					<BopaeSets />
+					<h2>Равнины изобилия 45 #{this.props.selectedPieceNum+1}</h2>
+					<h3>Бонусы от сета</h3>
+					<BopaeSets bopae={this.props.selectedBopae}/>
+					{
+						piece.mapStats((statName, stat) =>
+							{
+								if(stat.isBase) return(
+									<div className="lpair" key={this.props.selectedBopae.name+statName}>
+										<label>{statName}</label>
+										<label>{stat.min}—{stat.max}</label>
+									</div>
+								)
+							}
+						)
+					}
 					{
 						piece.mapStats((statName, stat) =>
 							{

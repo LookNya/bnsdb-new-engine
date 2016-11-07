@@ -3,50 +3,40 @@ import '../styles/little/bopae-sets.css'
 
 class BopaeSets extends Component {
 	render() {
+		let bopae = this.props.bopae
+		let tbody = []
+		let count = 0
+		for(var group in bopae.bonuses){
+			let stats = bopae.bonuses[group]
+			count = 0
+			for(var stat in stats){
+				let statsLength = Object.keys(stats).length
+				tbody.push(
+					<tr className="enabled" key={group+stat}>
+						{
+							count===0 ?
+							<td rowSpan={statsLength}>
+									<div className="set-icon" data-group={group}></div>
+							</td>
+							: null
+						}
+						<td className="set-name">
+							{stat}
+						</td>
+						<td className="set-stat">
+							{stats[stat]}
+						</td>
+					</tr>
+				)
+				count ++
+				if(count === statsLength)tbody.push(<tr className="separator" key={group+stat+'sep'}></tr>)
+			}
+		}
 		return (
 			<div className="set-stats">
-				<h3>Бонусы от сета</h3>
 				<table>
 					<tbody>
-						<tr className="enabled">
-							<td rowSpan="2">
-								<div className="set-icon" data-set-name="3"></div>
-							</td>
-							<td className="set-name">
-								бла
-							</td>
-							<td className="set-stat">
-								180
-							</td>
-						</tr>
-						<tr className="enabled">
-							<td className="set-name">
-								бла
-							</td>
-							<td className="set-stat">
-								180
-							</td>
-						</tr>
-						<tr className="separator"></tr>
-						<tr className="disabled">
-							<td rowSpan="2">
-								<div className="set-icon" data-set-name="3"></div>
-							</td>
-							<td className="set-name">
-								бла
-							</td>
-							<td className="set-stat">
-								180
-							</td>
-						</tr>
-						<tr className="disabled">
-							<td className="set-name">
-								бла
-							</td>
-							<td className="set-stat">
-								180
-							</td>
-						</tr>
+						{tbody}
 					</tbody>
 				</table>
 			</div>
