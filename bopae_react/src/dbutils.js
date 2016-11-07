@@ -21,6 +21,9 @@ class BopaePiece {
 	getIconPath() {
 		return `${process.env.PUBLIC_URL}/img/${this.icon}${this.num}.png`
 	}
+	getFullIconPath() {
+		return `${process.env.PUBLIC_URL}/img/${this.icon}.png`
+	}
 	getStat(name) {
 		return name in this.stats ? this.stats[name] : [0, 0, false]
 	}

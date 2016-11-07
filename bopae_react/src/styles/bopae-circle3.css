@@ -5,14 +5,18 @@
 .bopae-circle3 .bopae-piece {
 	position: absolute;
 	pointer-events: none;
-	transition: transform 0.2s ease;
+	transition: transform 0.2s ease, opacity 0.2s ease;
 }
 .bopae-circle3 .bopae-piece:hover {
 	z-index: 1;
-	filter: drop-shadow(0 0 4px green);
+	filter: drop-shadow(0 0 4px yellow);
 }
+.bopae-circle3 .bopae-piece.empty,
 .bopae-circle3 .bopae-piece:not(:hover) {
 	transform: none !important;
+}
+.bopae-circle3 .bopae-piece.empty:not(:hover) {
+	opacity: 0;
 }
 
 .bopae-circle3 polygon {

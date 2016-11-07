@@ -2,11 +2,6 @@
 	position: relative;
 }
 
-.bopae-circle .bopae-bg-image {
-	margin-left: -23px;
-	margin-top: -23px;
-}
-
 .bopae-circle .bopae-part {
 	pointer-events: none;
 	position: absolute;

@@ -17,6 +17,10 @@ import BopaeDBUtils from './dbutils.js'
 let bopaes = BopaeDBUtils.convert(bopaeDB, 'ru')
 window.bopaes = bopaes
 
+let testPieces = bopaes[0].pieces.slice()
+testPieces[4] = null
+testPieces[5] = null
+
 ReactDOM.render(
 	<div className="app">
 		<header>
@@ -31,9 +35,9 @@ ReactDOM.render(
 			<div className="main-wrap">
 				<BopaeCalc bopaes={bopaes} />
 			</div>
-			<BopaeCircle pieces={bopaes[0].pieces}/>
+			<BopaeCircle pieces={testPieces}/>
 			<BopaeCircle2 name={bopaes[0].icon} />
-			<BopaeCircle3 name={bopaes[0].icon} />
+			<BopaeCircle3 pieces={testPieces} />
 		</main>
 		<footer>
 			<div className="main-wrap">
