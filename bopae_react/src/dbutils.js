@@ -60,14 +60,27 @@ class BopaeDBUtils {
 			}
 		}
 
+		function sortStats([name0,stat0], [name1,stat1]){ return stat1.isBase - stat0.isBase }
+		function reduceStats(stats, [name, params]){ stats[name] = params; return stats }
 		let pieces = new Array(8)
 		for (let i=0; i<8; i++) {
-			statsForNums[i].sort(([name0,stat0], [name1,stat1]) => stat1.isBase - stat0.isBase)
-			let stats = statsForNums[i].reduce((acc, [name, params]) => { acc[name] = params; return acc }, {})
+			statsForNums[i].sort(sortStats)
+			let stats = statsForNums[i].reduce(reduceStats, {})
 			pieces[i] = new BopaePiece(i, bopae.icon, stats, bopae.pieces.synth)
 		}
 
-		return new Bopae(bopae.name[this.lang], bopae.icon, bopae.obtaining[this.lang], pieces, bopae.bonus)
+		let bonuses = {3:{}, 5:{}, 8:{}}
+		for (let statName in bopae.bonus) {
+			if (bopae.bonus.hasOwnProperty(statName)) {
+				let [b3, b5, b8] = bopae.bonus[statName]
+				let l10nStatName = this.l10n.stats[statName][this.lang]
+				if (b3 !== 0) bonuses[3][l10nStatName] = b3
+				if (b5 !== 0) bonuses[5][l10nStatName] = b5
+				if (b8 !== 0) bonuses[8][l10nStatName] = b8
+			}
+		}
+
+		return new Bopae(bopae.name[this.lang], bopae.icon, bopae.obtaining[this.lang], pieces, bonuses)
 	}
 
 	static convertStat(str) {
