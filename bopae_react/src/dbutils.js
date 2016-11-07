@@ -47,21 +47,24 @@ class BopaeDBUtils {
 	}
 
 	static convertBopae(bopae) {
-		let statsForNums = [{}, {}, {}, {}, {}, {}, {}, {}]
+		let statsForNums = [[], [], [], [], [], [], [], []]
 		for (let statName in bopae.pieces) {
 			if (bopae.pieces.hasOwnProperty(statName)) {
 				if (statName !== "synth") {
 					let stats = bopae.pieces[statName].trim().split(/\s+/).map(this.convertStat)
 					let l10nStatName = this.l10n.stats[statName][this.lang]
 					for (let i=0; i<8; i++)
-						statsForNums[i][l10nStatName] = stats[i]
+						if (stats[i].min !== 0 || stats[i].max !== 0)
+							statsForNums[i].push([l10nStatName, stats[i]])
 				}
 			}
 		}
 
 		let pieces = new Array(8)
-		for (let i=0; i<pieces.length; i++) {
-			pieces[i] = new BopaePiece(i, bopae.icon, statsForNums[i], bopae.pieces.synth)
+		for (let i=0; i<8; i++) {
+			statsForNums[i].sort(([name0,stat0], [name1,stat1]) => stat1.isBase - stat0.isBase)
+			let stats = statsForNums[i].reduce((acc, [name, params]) => { acc[name] = params; return acc }, {})
+			pieces[i] = new BopaePiece(i, bopae.icon, stats, bopae.pieces.synth)
 		}
 
 		return new Bopae(bopae.name[this.lang], bopae.icon, bopae.obtaining[this.lang], pieces, bopae.bonus)
