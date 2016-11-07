@@ -21,7 +21,7 @@ class BopaePart extends Component {
 		let angle = dir2rad(this.props.dir)
 		let [hoverDX, hoverDY] = [Math.cos(angle)*HOVER_DELTA_PX+0.5|0, Math.sin(angle)*HOVER_DELTA_PX+0.5|0]
 		let transform = `translate(${hoverDX}px, ${hoverDY}px)`
-		let img_src = `${process.env.PUBLIC_URL}/img/${this.props.name}.png`
+		let img_src = `${process.env.PUBLIC_URL}/img/bopae/${this.props.name}.png`
 		let id = `bopae-pattern-${this.props.name}-${this.props.dir}`
 		return (
 			<g transform={`translate(${HOVER_DELTA_PX} ${HOVER_DELTA_PX})`}>

@@ -19,7 +19,7 @@
 			"en": "googletranslate me plz"
 		},
 		"icon":
-			"sparring_soul_shield",
+			"sparring",
 		"obtaining": {
 			"ru": "где татам",
 			"en": "somewhere"
@@ -47,7 +47,7 @@
 			"en": "..."
 		},
 		"icon":
-			"blackram_supply_soul_shield",
+			"blackram_supply",
 		"obtaining": {
 			"ru": "...",
 			"en": "..."
@@ -76,7 +76,7 @@
 			"en": "..."
 		},
 		"icon":
-			"bloodshade_soul_shield",
+			"bloodshade",
 		"obtaining": {
 			"ru": "...",
 			"en": "..."

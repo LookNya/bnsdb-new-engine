@@ -7,7 +7,7 @@ class Bopae {
 		this.bonuses = bonuses
 	}
 	getIconPath() {
-		return `${process.env.PUBLIC_URL}/img/${this.icon}.png`
+		return `${process.env.PUBLIC_URL}/img/bopae/${this.icon}.png`
 	}
 }
 
@@ -19,10 +19,10 @@ class BopaePiece {
 		this.synthMax = synthMax
 	}
 	getIconPath() {
-		return `${process.env.PUBLIC_URL}/img/${this.icon}${this.num}.png`
+		return `${process.env.PUBLIC_URL}/img/bopae/${this.icon}${this.num}.png`
 	}
 	getFullIconPath() {
-		return `${process.env.PUBLIC_URL}/img/${this.icon}.png`
+		return `${process.env.PUBLIC_URL}/img/bopae/${this.icon}.png`
 	}
 	getStat(name) {
 		return name in this.stats ? this.stats[name] : [0, 0, false]
