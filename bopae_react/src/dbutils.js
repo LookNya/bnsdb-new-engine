@@ -27,10 +27,12 @@ class BopaePiece {
 	getStat(name) {
 		return name in this.stats ? this.stats[name] : [0, 0, false]
 	}
-	forEachStat(func) {
+	mapStats(func) {
+		let res = []
 		for (let statName in this.stats)
 			if (this.stats.hasOwnProperty(statName))
-				func(statName, this.stats[statName])
+				res.push(func(statName, this.stats[statName]))
+		return res
 	}
 }
 

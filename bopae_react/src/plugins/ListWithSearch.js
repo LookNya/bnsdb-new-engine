@@ -62,7 +62,7 @@ class ListWithSearch extends Component {
 
 class ListItem extends Component {
 	render() {
-		let selectedClass =this.props.isSelected ? 'selected' : ''
+		let selectedClass = this.props.isSelected ? 'selected' : ''
 		let piece = this.props.bopae.pieces[this.props.selectedPieceNum] || null
 		return <div onClick={this.props.onClick}
 						className={this.props.className + ' ' + selectedClass + ' list-item'}>
@@ -107,7 +107,7 @@ class PieceDetail extends Component{
 					<table>
 						<tbody>
 							{
-								piece.forEachStat((statName, stat) =>
+								piece.mapStats((statName, stat) =>
 									<tr className={stat.isBase ? 'main-stat' : ''} key={statName}>
 										<td> {statName} </td>
 										<td> {stat.min} - {stat.max} </td>
