@@ -1,0 +1,29 @@
+.bopae-piece-editor{
+	height: 436px;
+	background: rgba(0, 0, 0, 0.5);
+	margin-left: 20px;
+	padding: 15px;
+	position: relative;
+	padding-bottom: 44px;
+}
+.bopae-piece-editor h2,
+.bopae-piece-editor h3 {
+	margin-top: 0;
+}
+.stat-cust-wrap{
+	padding-bottom: 16px;
+}
+.stat-cust-wrap>*{
+	vertical-align: middle;
+}
+.bopae-piece-editor button{
+	margin-left: 12px;
+}
+.bopae-piece-editor .bottom-controls{
+	position: absolute;
+	bottom: 0;
+	padding-bottom: 10px;
+}
+.bopae-piece-editor .bottom-controls button:nth-child(1){
+	margin-left: 0;
+}

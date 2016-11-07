@@ -2,10 +2,16 @@
 	background: rgba(0, 0, 0, 0.5);
 }
 .list-with-search .items-wrap{
-	min-height: 400px;
+	height: 400px;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
+/*.list-with-search .items-wrap::-webkit-scrollbar-thumb{
+	visibility: hidden;
+}
+.list-with-search .items-wrap:hover::-webkit-scrollbar-thumb{
+	visibility: visible;
+}*/
 .list-with-search .item-table{
 	table-layout: fixed;
 	width: 100%;

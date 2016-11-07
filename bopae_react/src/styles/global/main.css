@@ -19,8 +19,34 @@ a:active {
 button{
 	background: white;
 }
+button.togglable{
+	background: transparent;
+	padding: 5px 7px;
+	border-radius: 4px;
+	border: 1px solid #a7a0b9;
+	color: #ebe5fb;
+	transition: border-color 0.1s;
+}
+button.togglable.selected{
+	background: #391252;
+	border-color: #a76cff;
+	/*color: #9dcc1a;*/
+	color: #dfc9ff;
+}
+button.togglable:hover{
+	border-color: #a76cff;
+	color: #dfc9ff;
+}
+button.disabled{
+	cursor: auto;
+	opacity: 0.5;
+	pointer-events: none;
+}
+h1, h2, h3{
+	font-family: 'Roboto Slab', serif;
+	color: #bc9fce;
+}
 h1 {
-	color: #000;
 	font-style: normal;
 	font-weight: 300;
 	margin-bottom: 0;
@@ -28,7 +54,6 @@ h1 {
 	margin-bottom: 35px;
 }
 h2 {
-	color: #000;
 	font-style: normal;
 	font-weight: normal;
 	margin-bottom: 0;
@@ -37,7 +62,6 @@ h2 {
 	padding-bottom: 20px;
 }
 h3 {
-	color: #717171;
 	font-style: normal;
 	font-weight: normal;
 	margin-bottom: 0;
@@ -51,4 +75,18 @@ h4 {
 }
 input{
 	border-style: solid;
+}
+
+::-webkit-scrollbar {
+		width: 6px;
+}
+::-webkit-scrollbar-track {
+		background-color:transparent;
+}
+::-webkit-scrollbar-thumb {
+		background-color: #817e88;
+		border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background-color: #7c7196;
 }
