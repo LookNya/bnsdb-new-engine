@@ -30,7 +30,7 @@ class BopaePart extends Component {
 		let [x0, y0] = centerOffset(this.props.num)
 		let [hoverDX, hoverDY] = [Math.cos(angle)*HOVER_DELTA_PX+0.5|0, Math.sin(angle)*HOVER_DELTA_PX+0.5|0]
 		let transform = `translate(${hoverDX}px, ${hoverDY}px)`
-		let id = `bopae-pattern-3-${this.props.name}-${this.props.num}`
+		let id = `bopae-pattern-${Math.random()}-${this.props.num}`
 		return (
 			<svg className={"bopae-piece"+(this.props.icon ? "" : " empty")} width={w} height={w} style={{left: w-x0, top: w-y0, transform}}>
 				<pattern id={id} x={x0-w} y={y0-w} patternUnits="userSpaceOnUse" width="256" height="256">
