@@ -6,22 +6,16 @@ import ListWithSearch from './plugins/ListWithSearch'
 
 
 class BopaeList extends Component {
-	constructor() {
-		super()
-		this.state = {
-			selectedListItem: null,
-		}
-	}
-	onListItemChange(item) {
-		this.setState({selectedListItem: item})
+	onListItemChange(bopae) {
+		this.props.onBopaeChange(bopae)
 	}
 	render() {
 		return  <div className="bopae-list">
 							<ListWithSearch
 								data={this.props.db}
 								selectedPieceNum={this.props.selectedPieceNum}
-								selectedItem={this.state.selectedListItem}
-								onItemChange={this.onListItemChange.bind(this)}
+								selectedBopae={this.props.selectedBopae}
+								onItemChange={this.props.onBopaeChange}
 							/>
 						</div>
 	}

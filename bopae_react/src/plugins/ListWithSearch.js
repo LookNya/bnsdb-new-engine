@@ -26,8 +26,8 @@ class ListWithSearch extends Component {
 	onSearchChange(value) {
 		this.setState({searchFilter: value})
 	}
-	onItemChange(item, e){
-		this.props.onItemChange(item)
+	onItemChange(bopae){
+		this.props.onItemChange(bopae)
 	}
 	render() {
 		let nameMatches = item => {
@@ -42,14 +42,14 @@ class ListWithSearch extends Component {
 								onSearchChange={this.onSearchChange.bind(this)}
 							/>
 							<div className="items-wrap">
-								{this.props.data.map((item, i) =>
+								{this.props.data.map((bopae, i) =>
 									<ListItem
 										key={i}
-										bopae={item}
+										bopae={bopae}
 										selectedPieceNum={this.props.selectedPieceNum}
-										onClick={this.onItemChange.bind(this, item)}
-										isSelected={this.props.selectedItem === item}
-										className={nameMatches(item) ? '' : 'hidden'}
+										onClick={this.onItemChange.bind(this, bopae)}
+										isSelected={this.props.selectedBopae === bopae}
+										className={nameMatches(bopae) ? '' : 'hidden'}
 									/>
 								)}
 								<div className={!isAnyOneVisible ? 'empty-label' : 'hidden'}>
@@ -109,8 +109,8 @@ class PieceDetail extends Component{
 							{
 								piece.mapStats((statName, stat) =>
 									<tr className={stat.isBase ? 'main-stat' : ''} key={statName}>
-										<td> {statName} </td>
-										<td> {stat.min} - {stat.max} </td>
+										<td> <span className="dots-after">{statName}</span> </td>
+										<td> {stat.min}—{stat.max} </td>
 									</tr>
 								)
 							}

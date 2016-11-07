@@ -9,11 +9,15 @@ class BopaeCalc extends Component {
 		super()
 		this.state = {
 			choosenPieces: Array(8).fill(null),
-			selectedNum: null
+			selectedNum: null,
+			selectedBopae: null
 		}
 	}
 	onPieceClick = (num) => {
 		this.setState({selectedNum: num})
+	}
+	onSelectedBopaeChange = (bopae) => {
+		this.setState({selectedBopae: bopae})
 	}
 	render() {
 		return (
@@ -26,15 +30,23 @@ class BopaeCalc extends Component {
 				</section>
 
 				<section>
-					
+
 				</section>
 
 				<section>
-					<BopaeList db={this.props.bopaes} selectedPieceNum={this.state.selectedNum}/>
+					<BopaeList
+						db={this.props.bopaes}
+						selectedPieceNum={this.state.selectedNum}
+						onBopaeChange={this.onSelectedBopaeChange}
+						selectedBopae={this.state.selectedBopae}
+						/>
 				</section>
 
 				<section>
-					<BopaePieceEditor selectedPieceNum={this.state.selectedNum}/>
+					<BopaePieceEditor
+						selectedPieceNum={this.state.selectedNum}
+						selectedBopae={this.state.selectedBopae}
+						/>
 				</section>
 
 			</div>

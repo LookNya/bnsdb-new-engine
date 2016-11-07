@@ -100,6 +100,25 @@
 }
 .list-with-search .piece-detail table td{
 	padding-right: 5px;
+	min-width: 60px;
+	overflow: hidden;
+}
+.list-with-search .piece-detail table td:nth-child(1){
+	/*text-align: right;*/
+	min-width: 72px;
+}
+.dots-after{
+	position: relative;
+}
+.dots-after:after{
+	width: 100px;
+	border-bottom: 1px dotted;
+	content: '';
+	position: absolute;
+	bottom: 3px;
+	margin-left: 1px;
+	opacity: 0.4;
+	color: grey;
 }
 .list-with-search .piece-detail .piece{
 	width: 35px;

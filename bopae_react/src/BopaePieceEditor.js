@@ -5,27 +5,52 @@ import BopaeSets from './little/BopaeSets'
 
 class BopaePieceEditor extends Component {
 	render() {
-		return (
-			<div className="bopae-piece-editor">
-				<h2>Равнины изобилия 45 #3</h2>
-				<BopaeSets />
-				{[1,3,4].map(i => <StatCustomuzer/>)}
-				<div className="bottom-controls">
-					<button className="togglable">Использовать эту скрижаль везде</button>
-					<button className="togglable">Использовать эту скрижаль на свободных кусках</button>
+		if(this.props.selectedBopae && this.props.selectedPieceNum){
+			let piece = this.props.selectedBopae.pieces[this.props.selectedPieceNum]
+			//если выбран кусок, показываем его редактор
+
+			return (
+				<div className="bopae-piece-editor">
+					<h2>Равнины изобилия 45 #3</h2>
+					<BopaeSets />
+					{
+						piece.mapStats((statName, stat) =>
+							{
+								if(!stat.isBase) return <StatCustomizer key={statName} statName={statName} stat={stat}/>
+							}
+						)
+					}
+					<div className="bottom-controls">
+						<button className="togglable">Использовать эту скрижаль везде</button>
+						<button className="togglable">Использовать эту скрижаль на свободных кусках</button>
+					</div>
 				</div>
-			</div>
-		)
+			)
+		} else if(this.props.selectedBopae){
+			//если выбрана бопая, показываем предложение замостить весь блин ею
+			return (
+				<div className="bopae-piece-editor">
+					<h2>Равнины изобилия 45 #3</h2>
+				</div>
+			)
+		} else {
+			//если ничего не выбрано, показываем предложение выбрать
+			return (
+				<div className="bopae-piece-editor">
+					<h2>Равнины изобилия 45 #3</h2>
+				</div>
+			)
+		}
 	}
 }
 
-class StatCustomuzer extends Component {
+class StatCustomizer extends Component {
 	render() {
 		return (
 			<div className="stat-cust-wrap">
-				<label>statname</label>
-				<button className="togglable selected">200</button>
-				<button className="togglable">800</button>
+				<label>{this.props.statName}</label>
+				<button className="togglable selected">{this.props.stat.min}</button>
+				<button className="togglable">{this.props.stat.max}</button>
 			</div>
 		)
 	}
