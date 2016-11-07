@@ -14,7 +14,7 @@
 	vertical-align: top;
 }
 .list-with-search .item-table .icon-cell{
-	width: 116px;
+	width: 132px;
 }
 .list-with-search .list-item.selected{
 	background: #391252
@@ -41,31 +41,31 @@
 	top: 0;
 	left: 0;
 }
-.list-with-search .icon .piece-7{
+.list-with-search .icon .piece-6{
 	top: 33px;
 }
-.list-with-search .icon .piece-8{
+.list-with-search .icon .piece-7{
 	left: 0;
 }
-.list-with-search .icon .piece-1{
+.list-with-search .icon .piece-0{
 	left: 33px;
 }
+.list-with-search .icon .piece-1{
+	left: 66px;
+}
 .list-with-search .icon .piece-2{
+	top: 33px;
 	left: 66px;
 }
 .list-with-search .icon .piece-3{
-	top: 33px;
+	top: 66px;
 	left: 66px;
 }
 .list-with-search .icon .piece-4{
 	top: 66px;
-	left: 66px;
-}
-.list-with-search .icon .piece-5{
-	top: 66px;
 	left: 33px;
 }
-.list-with-search .icon .piece-6{
+.list-with-search .icon .piece-5{
 	top: 66px;
 }
 

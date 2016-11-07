@@ -63,6 +63,7 @@ class ListWithSearch extends Component {
 class ListItem extends Component {
 	render() {
 		let selectedClass =this.props.isSelected ? 'selected' : ''
+		let piece = this.props.bopae.pieces[this.props.selectedPieceNum] || null
 		return <div onClick={this.props.onClick}
 						className={this.props.className + ' ' + selectedClass + ' list-item'}>
 							<table className="item-table">
@@ -70,14 +71,16 @@ class ListItem extends Component {
 									<tr>
 										<td className="icon-cell">
 											<div className="icon">
-												{[6,7,0,1,2,3,4,5].map( i => <BopaePiece key={i} num={i} bopae={this.props.bopae}/>)}
+												{[6,7,0,1,2,3,4,5].map( i => <BopaePiece key={i} num={i} piece={this.props.bopae.pieces[i]}/>)}
 											</div>
 										</td>
 										<td>
 											<label>{this.props.bopae.name}</label>
 										</td>
 										<td>
-											<PieceDetail num={this.props.selectedPieceNum} bopae={this.props.bopae}/>//TODO прокинуть номер куска
+											{
+												piece ? <PieceDetail num={this.props.selectedPieceNum} piece={piece}/> : ''
+											}
 										</td>
 									</tr>
 								</tbody>
@@ -88,24 +91,23 @@ class ListItem extends Component {
 
 class BopaePiece extends Component{
 	render() {
-		let piece = this.props.bopae.pieces[this.props.num]
 		return <div
 			className={"square piece piece-"+this.props.num}
-			style={{backgroundImage: 'url('+piece.getIconPath()+')'}}
+			style={{backgroundImage: 'url('+this.props.piece.getIconPath()+')'}}
 			></div>
 	}
 }
 
 class PieceDetail extends Component{
 	render() {
-		let piece = this.props.bopae.pieces[this.props.num] || null
+		let piece = this.props.piece
 		return (
 			<div className="piece-detail cf f_r">
 				<div className="left f_l">
 					<table>
 						<tbody>
 							{
-								piece && piece.forEachStat((statName, stat) =>
+								piece.forEachStat((statName, stat) =>
 									<tr className={stat.isBase ? 'main-stat' : ''} key={statName}>
 										<td> {statName} </td>
 										<td> {stat.min} - {stat.max} </td>
@@ -119,7 +121,7 @@ class PieceDetail extends Component{
 					{
 						this.props.num === null
 							? null
-							: <BopaePiece num={this.props.num} bopae={this.props.bopae} />
+							: <BopaePiece num={this.props.num} piece={piece} />
 					}
 				</div>
 			</div>
