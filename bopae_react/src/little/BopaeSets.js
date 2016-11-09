@@ -4,6 +4,7 @@ import '../styles/little/bopae-sets.css'
 class BopaeSets extends Component {
 	render() {
 		let bopae = this.props.bopae
+		let piecesCount = this.props.piecesCount
 		let tbody = []
 		let count = 0
 		for(var group in bopae.bonuses){
@@ -12,7 +13,7 @@ class BopaeSets extends Component {
 			for(var stat in stats){
 				let statsLength = Object.keys(stats).length
 				tbody.push(
-					<tr className="enabled" key={group+stat}>
+					<tr className={piecesCount >= +group ? "enabled" : ""} key={group+stat}>
 						{
 							count===0 ?
 							<td rowSpan={statsLength}>

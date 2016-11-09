@@ -13,7 +13,7 @@ class BopaePieceEditor extends Component {
 				<div className="bopae-piece-editor">
 					<h2>Равнины изобилия 45 #{this.props.selectedPieceNum+1}</h2>
 					<h3>Бонусы от сета</h3>
-					<BopaeSets bopae={this.props.selectedBopae}/>
+					<BopaeSets bopae={this.props.selectedBopae} piecesCount={this.props.selectedBopaePiecesCount}/>
 					{
 						piece.mapStats((statName, stat) =>
 							{
