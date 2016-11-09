@@ -1,5 +1,9 @@
-.set-stats .set-stats{
-	margin-left: 8px;
+.set-stats .set-stat{
+	padding-left: 8px;
+}
+.set-stats .set-name,
+.set-stats .set-stat{
+	line-height: 17px;
 }
 .set-stats .set-icon:before{
 	display: inline-block;
@@ -12,6 +16,8 @@
 	height: 11px;
 	text-align: center;
 	margin-right: 8px;
+	position: relative;
+	top: -1px;
 }
 .set-stats tr.enabled .set-icon:before{
 	border: 1px solid #02a902;
@@ -22,5 +28,5 @@
 	opacity: 0.5;
 }
 .set-stats tr.separator{
-	height: 6px;
+	height: 8px;
 }

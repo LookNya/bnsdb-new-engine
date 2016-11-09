@@ -13,7 +13,7 @@ class BopaeSets extends Component {
 			for(var stat in stats){
 				let statsLength = Object.keys(stats).length
 				tbody.push(
-					<tr className={piecesCount >= +group ? "enabled" : ""} key={group+stat}>
+					<tr className={piecesCount >= +group ? "enabled" : "disabled"} key={group+stat}>
 						{
 							count===0 ?
 							<td rowSpan={statsLength}>
