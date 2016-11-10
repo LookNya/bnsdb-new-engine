@@ -2,30 +2,35 @@
 	position: relative;
 }
 
-.bopae-circle .bopae-part {
+.bopae-circle .bopae-piece {
 	pointer-events: none;
 	position: absolute;
 }
-.bopae-circle .bopae-part:hover {
+.bopae-circle .bopae-piece.selected {
 	z-index: 1;
 	filter: drop-shadow(0 0 4px green);
 }
-.bopae-circle .bopae-part.selected {
-	opacity: 0.5;
+.bopae-circle .bopae-piece:hover {
+	z-index: 2;
+	filter: drop-shadow(0 0 4px yellow);
 }
 
-.bopae-circle .bopae-part img {
+.bopae-circle .bopae-piece img {
 	position: absolute;
-	transition: transform 0.2s ease;
+	transition: transform 0.2s ease, opacity 0.2s ease;
 }
-.bopae-circle .bopae-part:not(:hover) img {
+.bopae-circle .bopae-piece.empty img,
+.bopae-circle .bopae-piece:not(:hover) img {
 	transform: none !important;
 }
+.bopae-circle .bopae-piece.empty:not(.selected):not(:hover) img {
+	opacity: 0;
+}
 
-.bopae-circle .bopae-part-mask {
+.bopae-circle .bopae-piece-mask {
 	position: absolute;
 }
-.bopae-circle .bopae-part-mask polygon {
+.bopae-circle .bopae-piece-mask polygon {
 	pointer-events: all;
 	fill: none;
 }

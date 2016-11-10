@@ -6,6 +6,9 @@ class Bopae {
 		this.pieces = pieces
 		this.bonuses = bonuses
 	}
+	static getBGPath() {
+		return `${process.env.PUBLIC_URL}/img/bopae/background.png`
+	}
 	getIconPath() {
 		return `${process.env.PUBLIC_URL}/img/bopae/${this.icon}.png`
 	}
@@ -17,6 +20,9 @@ class BopaePiece {
 		this.icon = icon
 		this.stats = stats
 		this.synthMax = synthMax
+	}
+	static getBGPath(num) {
+		return `${process.env.PUBLIC_URL}/img/bopae/background${num}.png`
 	}
 	getIconPath() {
 		return `${process.env.PUBLIC_URL}/img/bopae/${this.icon}${this.num}.png`

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
+import { Bopae } from './dbutils.js'
 import './styles/bopae-circle3.css'
-import bgImg from './img/bopae_circle_bg.png'
 
 const PART_WIDTH = 128
 const HOVER_DELTA_PX = 16
@@ -34,7 +34,7 @@ class BopaePart extends Component {
 		return (
 			<svg className={"bopae-piece"+(this.props.icon ? "" : " empty")} width={w} height={w} style={{left: w-x0, top: w-y0, transform}}>
 				<pattern id={id} x={x0-w} y={y0-w} patternUnits="userSpaceOnUse" width="256" height="256">
-					<image xlinkHref={this.props.icon || bgImg} width="256" height="256" />
+					<image xlinkHref={this.props.icon || Bopae.getBGPath()} width="256" height="256" />
 				</pattern>
 				<polygon points={this.points(this.props.num)} fill={'url(#'+id+')'} onClick={this.props.onClick} />
 			</svg>
@@ -46,7 +46,7 @@ class BopaeCircle2 extends Component {
 	render() {
 		return (
 			<div className="bopae-circle3" style={{width: PART_WIDTH*2, height: PART_WIDTH*2}}>
-				<img alt="background" className="bopae-bg-image" src={bgImg} />
+				<img alt="background" className="bopae-bg-image" src={Bopae.getBGPath()} />
 				{this.props.pieces.map((piece, num) =>
 					<BopaePart key={num} num={num} icon={piece && piece.getFullIconPath()} onClick={(e) => this.props.onClick(num)} />
 				)}
