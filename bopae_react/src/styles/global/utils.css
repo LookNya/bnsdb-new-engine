@@ -42,3 +42,16 @@ label[for]{
 	display: block;
 	padding-bottom: 100%;
 }
+.dots-after{
+	position: relative;
+}
+.dots-after:after{
+	width: 100px;
+	border-bottom: 1px dotted;
+	content: '';
+	position: absolute;
+	bottom: 3px;
+	margin-left: 1px;
+	opacity: 0.4;
+	color: grey;
+}

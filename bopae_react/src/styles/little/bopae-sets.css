@@ -1,5 +1,6 @@
 .set-stats .set-stat{
-	padding-left: 8px;
+	padding-right: 8px;
+	overflow: hidden;
 }
 .set-stats .set-name,
 .set-stats .set-stat{
@@ -29,4 +30,7 @@
 }
 .set-stats tr.separator{
 	height: 8px;
+}
+.set-stats .dots-after:after{
+	opacity: 0.8;
 }

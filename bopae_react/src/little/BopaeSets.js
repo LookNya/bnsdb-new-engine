@@ -21,11 +21,11 @@ class BopaeSets extends Component {
 							</td>
 							: null
 						}
-						<td className="set-name">
-							{stat}
-						</td>
 						<td className="set-stat">
-							{stats[stat]}
+							<span className="dots-after">{stats[stat]}</span>
+						</td>
+						<td className="set-name">
+							{stat.toLowerCase()}
 						</td>
 					</tr>
 				)
