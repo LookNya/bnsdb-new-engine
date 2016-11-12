@@ -72,7 +72,7 @@ class BopaeDBUtils {
 		for (let i=0; i<8; i++) {
 			statsForNums[i].sort(sortStats)
 			let stats = statsForNums[i].reduce(reduceStats, {})
-			pieces[i] = new BopaePiece(i, bopae.icon, stats, bopae.pieces.synth)
+			pieces[i] = new BopaePiece(i, bopae.icon, stats, bopae.pieces.synth[i])
 		}
 
 		let bonuses = {3:{}, 5:{}, 8:{}}

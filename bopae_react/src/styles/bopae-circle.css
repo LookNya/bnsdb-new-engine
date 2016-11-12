@@ -5,14 +5,17 @@
 .bopae-circle .bopae-piece {
 	pointer-events: none;
 	position: absolute;
+	transition: z-index 0s ease 0.2s;
+	z-index: 1;
 }
 .bopae-circle .bopae-piece.selected {
-	z-index: 1;
+	z-index: 2;
 	filter: drop-shadow(0 0 4px green);
 }
 .bopae-circle .bopae-piece:hover {
-	z-index: 2;
+	z-index: 3;
 	filter: drop-shadow(0 0 4px yellow);
+	transition-delay: 0s;
 }
 
 .bopae-circle .bopae-piece img {
