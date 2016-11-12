@@ -11,8 +11,8 @@ class BopaePieceEditor extends Component {
 			selectedRange: 0
 		}
 	}
-	onRangeChange(e){
-		this.setState({selectedRange: e.target.value})
+	onRangeChange(value){
+		this.setState({selectedRange: value})
 	}
 	render() {
 		if(this.props.selectedBopae && this.props.selectedPieceNum !== null){
