@@ -1,0 +1,10 @@
+.input-range .value-wrap{
+	position: relative;
+}
+.input-range table{
+	table-layout: fixed;
+	width: 100%;
+}
+.input-range .value{
+	position: absolute;
+}

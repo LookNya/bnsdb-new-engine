@@ -2,8 +2,18 @@ import React, { Component } from 'react'
 import './styles/bopae-piece-editor.css'
 
 import BopaeSets from './little/BopaeSets'
+import InputRange from './plugins/InputRange'
 
 class BopaePieceEditor extends Component {
+	constructor() {
+		super()
+		this.state = {
+			selectedRange: 0
+		}
+	}
+	onRangeChange(e){
+		this.setState({selectedRange: e.target.value})
+	}
 	render() {
 		if(this.props.selectedBopae && this.props.selectedPieceNum !== null){
 			let piece = this.props.selectedBopae.pieces[this.props.selectedPieceNum]
@@ -33,6 +43,18 @@ class BopaePieceEditor extends Component {
 							}
 						)
 					}
+					<div className="lpair">
+						<label>Заточка</label>
+						<label>
+							<InputRange
+								min={0}
+								max={100}
+								value={this.state.selectedRange || 50}
+								onChange={this.onRangeChange.bind(this)}
+							/>
+						</label>
+					</div>
+
 					<div className="bottom-controls">
 						<button className="togglable">Использовать эту скрижаль везде</button>
 						<button className="togglable">Использовать эту скрижаль на свободных кусках</button>
