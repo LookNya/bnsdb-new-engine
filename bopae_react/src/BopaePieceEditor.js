@@ -44,12 +44,12 @@ class BopaePieceEditor extends Component {
 						)
 					}
 					<div className="lpair">
-						<label>Заточка</label>
+						<label>Заточка ({this.state.selectedRange})</label>
 						<label>
 							<InputRange
-								min={0}
-								max={100}
-								value={this.state.selectedRange || 50}
+								min={-20}
+								max={90}
+								value={this.state.selectedRange}
 								onChange={this.onRangeChange.bind(this)}
 							/>
 						</label>
