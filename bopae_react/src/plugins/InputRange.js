@@ -11,7 +11,7 @@ class InputRange extends Component {
 	}
 	handleChange(e){
 		var target = e.target
-		if(e.target.classList.contains('thumb')) target.parentElement
+		if(e.target.classList.contains('thumb')) target=target.parentElement
 		var clickX = e.pageX - target.getBoundingClientRect().left
 		var clientWidth = target.clientWidth
 		var thumbW = 10//ширина ползунка
