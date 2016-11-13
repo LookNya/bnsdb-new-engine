@@ -1,6 +1,7 @@
 .input-range table{
 	table-layout: fixed;
 	width: 100%;
+	cursor: pointer;
 }
 .input-range .min,
 .input-range .max{

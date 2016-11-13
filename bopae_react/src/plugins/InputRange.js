@@ -34,9 +34,16 @@ class InputRange extends Component {
 		window.removeEventListener('mouseup', this.onMouseUp)
 	}
 
+	onMinClick = (e) => {
+		this.props.onChange(this.props.min)
+	}
+	onMaxClick = (e) => {
+		this.props.onChange(this.props.max)
+	}
 	onMouseDown = (e) => {
 		e.preventDefault()
 		this.setupEvents()
+		this.handleChange(e)
 	}
 	onMouseUp = (e) => {
 		e.preventDefault()
@@ -59,7 +66,7 @@ class InputRange extends Component {
 				<table>
 					<tbody>
 						<tr>
-							<td className="min">{min}</td>
+							<td className="min" onClick={this.onMinClick}>{min}</td>
 							<td>
 								<div className="input-field"
 									onMouseDown={this.onMouseDown}
@@ -68,7 +75,7 @@ class InputRange extends Component {
 									<div className="thumb" ref={(el) => this.thumbElem = el} style={style}></div>
 								</div>
 							</td>
-							<td className="max">{max}</td>
+							<td className="max" onClick={this.onMaxClick}>{max}</td>
 						</tr>
 					</tbody>
 				</table>
