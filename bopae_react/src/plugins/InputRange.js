@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import '../styles/plugins/input-range-reset.css'
 import '../styles/plugins/input-range-main.css'
 
 class InputRange extends Component {
@@ -21,7 +20,7 @@ class InputRange extends Component {
 		let newValue = this.props.min + (this.props.max - this.props.min) * pos
 		if(newValue < this.props.min) newValue = this.props.min
 		if(newValue > this.props.max) newValue = this.props.max
-
+		newValue = parseInt(newValue)
 		this.props.onChange(newValue)
 	}
 
@@ -61,6 +60,14 @@ class InputRange extends Component {
 		let style = {
 			left: (value - min)/(max - min)*100 +'%'
 		}
+		if(value == min) {
+			style.borderTopLeftRadius = '4px'
+			style.borderBottomLeftRadius = '4px'
+		}
+		if(value == max) {
+			style.borderTopRightRadius = '4px'
+			style.borderBottomRightRadius = '4px'
+		}
 		return  (
 			<div className="input-range">
 				<table>
@@ -72,7 +79,13 @@ class InputRange extends Component {
 									onMouseDown={this.onMouseDown}
 									>
 									<div className="track" ref={(el) => this.trackElem = el}></div>
-									<div className="thumb" ref={(el) => this.thumbElem = el} style={style}></div>
+									<div className="thumb-fix">
+										<div className="thumb"
+											ref={(el) => this.thumbElem = el}
+											style={style}
+											data-range-value={value}
+										></div>
+									</div>
 								</div>
 							</td>
 							<td className="max" onClick={this.onMaxClick}>{max}</td>

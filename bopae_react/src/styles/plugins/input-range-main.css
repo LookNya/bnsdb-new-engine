@@ -3,6 +3,9 @@
 	width: 100%;
 	cursor: pointer;
 }
+.input-range table td{
+	vertical-align: middle;
+}
 .input-range .min,
 .input-range .max{
 	width: 44px;
@@ -11,12 +14,29 @@
 .input-range .input-field{
 	width: 100%;
 	background: red;
-	height: 10px;
+	height: 24px;
+	border: 1px solid #ebe5fb;
+	background: transparent;
 	position: relative;
+	border-radius: 4px;
+}
+.input-range .thumb-fix{
+	position: relative;
+	width: calc(100% - 13px);
 }
 .input-range .thumb{
-	width: 10px;
-	background: green;
-	height: 10px;
+	width: 13px;
+	background: #8149d6;
+	height: 22px;
 	position: absolute;
+}
+.input-range .thumb::after{
+	position: absolute;
+	top: -13px;
+	left: -25px;
+	width: 50px;
+	margin-left: 50%;
+	text-align: center;
+	font-size: 10px;
+	content: attr(data-range-value);
 }
