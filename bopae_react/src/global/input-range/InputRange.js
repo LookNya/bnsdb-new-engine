@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../styles/plugins/input-range-main.css'
+import './input-range.css'
 
 class InputRange extends Component {
 	constructor(){

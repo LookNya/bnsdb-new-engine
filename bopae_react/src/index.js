@@ -2,17 +2,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 //собственно модули
-import BopaeCalc from './BopaeCalc'
-import BopaeCircle from './BopaeCircle'
-import BopaeCircle2 from './BopaeCircle2'
-import BopaeCircle3 from './BopaeCircle3'
+import BopaeCalc from './bopae-calc/BopaeCalc'
+import BopaeCircle from './bopae-calc/bopae-circle/BopaeCircle'
+import BopaeCircle2 from './bopae-calc/bopae-circle/BopaeCircle2'
+import BopaeCircle3 from './bopae-calc/bopae-circle/BopaeCircle3'
 //глобальные штучки-дрючки
-import './styles/global/reset.css'
-import './styles/global/utils.css'
-import './styles/global/main.css'
-import './styles/global/page.css'
+import './styles/reset.css'
+import './styles/utils.css'
+import './styles/main.css'
+import './styles/page.css'
 import bopaeDB from './bopae.json'
-import BopaeDBUtils from './dbutils.js'
+import BopaeDBUtils from './global/dbutils.js'
 
 let bopaes = BopaeDBUtils.convert(bopaeDB, 'ru')
 window.bopaes = bopaes

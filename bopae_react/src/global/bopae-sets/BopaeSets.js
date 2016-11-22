@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../styles/little/bopae-sets.css'
+import './bopae-sets.css'
 
 class BopaeSets extends Component {
 	render() {

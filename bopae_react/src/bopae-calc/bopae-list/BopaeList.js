@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-import './styles/bopae-list/piece.css'
+import './bopae-list.css'
 
-import ListWithSearch from './plugins/ListWithSearch'
+import ListWithSearch from '../../global/list-with-search/ListWithSearch'
 
 
 class BopaeList extends Component {

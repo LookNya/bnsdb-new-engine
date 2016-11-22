@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import './styles/bopae-piece-editor.css'
+import './bopae-piece-editor.css'
 
-import BopaeSets from './little/BopaeSets'
-import InputRange from './plugins/InputRange'
+import BopaeSets from '../../global/bopae-sets/BopaeSets'
+import InputRange from '../../global/input-range/InputRange'
 
 class BopaePieceEditor extends Component {
 	constructor() {

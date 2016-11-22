@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import SearchBar from '../plugins/SearchBar'
-import '../styles/plugins/list-with-search.css'
+import SearchBar from './SearchBar.js'
+import './list-with-search.css'
 
 var rusify = (function() {
 	var s = "qй wц eу rк tе yн uг iш oщ pз [х ]ъ "+

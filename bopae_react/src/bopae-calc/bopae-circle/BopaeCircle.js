@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Bopae, BopaePiece } from './dbutils.js'
-import './styles/bopae-circle.css'
+import { Bopae, BopaePiece } from '../../global/dbutils.js'
+import './bopae-circle.css'
 
 const PART_WIDTH = 128
 const HOVER_DELTA_PX = 16

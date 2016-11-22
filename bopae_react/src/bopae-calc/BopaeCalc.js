@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import BopaeList from './BopaeList'
-import BopaeCircle from './BopaeCircle'
-import BopaePieceEditor from './BopaePieceEditor'
+import BopaeList from './bopae-list/BopaeList'
+import BopaeCircle from './bopae-circle/BopaeCircle'
+import BopaePieceEditor from './bopae-piece-editor/BopaePieceEditor'
 //import './styles/bopae-calc.css'
 
 class BopaeCalc extends Component {

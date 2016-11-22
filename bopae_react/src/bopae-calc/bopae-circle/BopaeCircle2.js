@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './styles/bopae-circle2.css'
+import './bopae-circle2.css'
 
 const PART_WIDTH = 128
 const HOVER_DELTA_PX = 16
