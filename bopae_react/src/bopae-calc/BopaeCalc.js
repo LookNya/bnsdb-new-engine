@@ -64,13 +64,6 @@ class BopaeCalc extends Component {
 			this.setState({selectedBopaeId: bopae.id})
 		}
 	}
-	onPieceConfigChange = (statName, value) => {
-		let num = this.state.selectedPieceNum
-		let bopaeId = this.state.choosenPieceBopaeIds[num]
-		let bopaes = this.state.bopaes.slice()
-		bopaes[bopaeId] = bopaes[bopaeId].updatePieceConfig(num, statName, value)
-		this.setState({bopaes})
-	}
 
 	// Рендер
 	render() {
@@ -91,8 +84,8 @@ class BopaeCalc extends Component {
 					<BopaeList
 						db={this.state.bopaes}
 						selectedPieceNum={this.state.selectedPieceNum}
-						selectedBopae={this.getSelectedBopae()}
 						onBopaeChange={this.onSelectedBopaeChange}
+						selectedBopae={this.getSelectedBopae()}
 						/>
 				</section>
 
@@ -101,7 +94,6 @@ class BopaeCalc extends Component {
 						selectedPieceNum={this.state.selectedPieceNum}
 						selectedBopae={this.getSelectedBopae()}
 						selectedBopaePiecesCount={this.countPiecesOf(this.getSelectedBopae())}
-						onPieceConfigChange={this.onPieceConfigChange}
 						/>
 				</section>
 
