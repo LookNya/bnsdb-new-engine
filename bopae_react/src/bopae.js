@@ -50,9 +50,8 @@ class BopaePiece {
 	}
 	mapStats(func) {
 		let res = []
-		for (let statName in this.stats)
-			if (this.stats.hasOwnProperty(statName))
-				res.push(func(statName, this.stats[statName]))
+		for (let statName in this.stats) //eslint-disable-line guard-for-in
+			res.push(func(statName, this.stats[statName]))
 		return res
 	}
 
@@ -61,7 +60,7 @@ class BopaePiece {
 	}
 	updateConfig(statName, value) {
 		let newPiece = this.copy()
-		for (let name in this.config)
+		for (let name in this.config) //eslint-disable-line guard-for-in
 			newPiece.config[name] = this.config[name]
 		newPiece.config[statName] = value
 		return newPiece
@@ -69,27 +68,25 @@ class BopaePiece {
 }
 
 
-class BopaeDBUtils {
-	static l10n = null
-	static lang = ''
-
-	static convert(db, lang) {
-		this.l10n = db.l10n
+class BopaeDBConv {
+	constructor(lang, l10n) {
 		this.lang = lang
-		return db.bopaes.map(BopaeDBUtils.convertBopae.bind(this))
+		this.l10n = l10n
 	}
 
-	static convertBopae(bopae, index) {
+	convert(dbBopaes) {
+		return dbBopaes.map(this.convertBopae.bind(this))
+	}
+
+	convertBopae(bopae, index) {
 		let statsForNums = [[], [], [], [], [], [], [], []]
 		for (let statName in bopae.pieces) {
-			if (bopae.pieces.hasOwnProperty(statName)) {
-				if (statName !== "synth") {
-					let stats = bopae.pieces[statName].trim().split(/\s+/).map(this.convertStat)
-					let l10nStatName = this.l10n.stats[statName][this.lang]
-					for (let i=0; i<8; i++)
-						if (stats[i].min !== 0 || stats[i].max !== 0)
-							statsForNums[i].push([l10nStatName, stats[i]])
-				}
+			if (statName !== "synth") {
+				let stats = bopae.pieces[statName].trim().split(/\s+/).map(this.convertStat)
+				let l10nStatName = this.l10n.stats[statName][this.lang]
+				for (let i=0; i<8; i++)
+					if (stats[i].min !== 0 || stats[i].max !== 0)
+						statsForNums[i].push([l10nStatName, stats[i]])
 			}
 		}
 
@@ -103,20 +100,18 @@ class BopaeDBUtils {
 		}
 
 		let bonuses = {3:{}, 5:{}, 8:{}}
-		for (let statName in bopae.bonus) {
-			if (bopae.bonus.hasOwnProperty(statName)) {
-				let [b3, b5, b8] = bopae.bonus[statName]
-				let l10nStatName = this.l10n.stats[statName][this.lang]
-				if (b3 !== 0) bonuses[3][l10nStatName] = b3
-				if (b5 !== 0) bonuses[5][l10nStatName] = b5
-				if (b8 !== 0) bonuses[8][l10nStatName] = b8
-			}
+		for (let statName in bopae.bonus) { //eslint-disable-line guard-for-in
+			let [b3, b5, b8] = bopae.bonus[statName]
+			let l10nStatName = this.l10n.stats[statName][this.lang]
+			if (b3 !== 0) bonuses[3][l10nStatName] = b3
+			if (b5 !== 0) bonuses[5][l10nStatName] = b5
+			if (b8 !== 0) bonuses[8][l10nStatName] = b8
 		}
 
 		return new Bopae(index, bopae.name[this.lang], bopae.icon, bopae.obtaining[this.lang], pieces, bonuses)
 	}
 
-	static convertStat(str) {
+	convertStat(str) {
 		let isBase = false
 		if (str.startsWith('#')) {
 			isBase = true
@@ -127,5 +122,4 @@ class BopaeDBUtils {
 	}
 }
 
-export { Bopae, BopaePiece }
-export default BopaeDBUtils
+export { Bopae, BopaePiece, BopaeDBConv }

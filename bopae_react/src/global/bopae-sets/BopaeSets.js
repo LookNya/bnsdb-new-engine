@@ -7,10 +7,10 @@ class BopaeSets extends Component {
 		let piecesCount = this.props.piecesCount
 		let tbody = []
 		let count = 0
-		for(var group in bopae.bonuses){
+		for(var group in bopae.bonuses){ //eslint-disable-line guard-for-in
 			let stats = bopae.bonuses[group]
 			count = 0
-			for(var stat in stats){
+			for(var stat in stats){ //eslint-disable-line guard-for-in
 				let statsLength = Object.keys(stats).length
 				tbody.push(
 					<tr className={piecesCount >= +group ? "enabled" : "disabled"} key={group+stat}>

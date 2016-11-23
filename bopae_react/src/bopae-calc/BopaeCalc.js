@@ -4,14 +4,14 @@ import BopaeCircle from './bopae-circle/BopaeCircle'
 import BopaePieceEditor from './bopae-piece-editor/BopaePieceEditor'
 //import './styles/bopae-calc.css'
 import bopaeDB from '../bopae.json'
-import BopaeDBUtils from '../global/dbutils.js'
+import { BopaeDBConv } from '../bopae.js'
 
 
 class BopaeCalc extends Component {
 	constructor() {
 		super()
 		this.state = {
-			bopaes: BopaeDBUtils.convert(bopaeDB, 'ru'),
+			bopaes: new BopaeDBConv('ru', bopaeDB.l10n).convert(bopaeDB.bopaes),
 			choosenPieceBopaeIds: Array(8).fill(null),
 			selectedPieceNum: null,
 			selectedBopaeId: null

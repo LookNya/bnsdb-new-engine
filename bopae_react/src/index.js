@@ -12,9 +12,9 @@ import './styles/utils.css'
 import './styles/main.css'
 import './styles/page.css'
 import bopaeDB from './bopae.json'
-import BopaeDBUtils from './global/dbutils.js'
+import { BopaeDBConv } from './bopae.js'
 
-let bopaes = BopaeDBUtils.convert(bopaeDB, 'ru')
+let bopaes = new BopaeDBConv('ru', bopaeDB.l10n).convert(bopaeDB.bopaes)
 window.bopaes = bopaes
 
 let testPieces = bopaes[0].pieces.slice()
