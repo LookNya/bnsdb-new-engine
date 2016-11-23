@@ -9,8 +9,12 @@ class BopaePieceEditor extends Component {
 		super()
 		this.state = {}
 	}
+	getPieceConfigFor(statName){
+		let piece = this.props.selectedBopae.pieces[this.props.selectedPieceNum]
+		return statName in piece.config ? piece.config[statName] : 0
+	}
 	onRangeChange(value){
-		//this.setState({selectedRange: value})
+		this.props.onPieceConfigChange('synth', value)
 	}
 	render() {
 		if(this.props.selectedBopae && this.props.selectedPieceNum !== null){
