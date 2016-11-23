@@ -3,14 +3,18 @@ import BopaeList from './bopae-list/BopaeList'
 import BopaeCircle from './bopae-circle/BopaeCircle'
 import BopaePieceEditor from './bopae-piece-editor/BopaePieceEditor'
 //import './styles/bopae-calc.css'
+import bopaeDB from '../bopae.json'
+import BopaeDBUtils from '../global/dbutils.js'
+
 
 class BopaeCalc extends Component {
 	constructor() {
 		super()
 		this.state = {
-			choosenPieces: Array(8).fill(null),
-			selectedNum: null,
-			selectedBopae: null
+			bopaes: BopaeDBUtils.convert(bopaeDB, 'ru'),
+			choosenPieceBopaeIds: Array(8).fill(null),
+			selectedPieceNum: null,
+			selectedBopaeId: null
 		}
 	}
 
@@ -19,43 +23,45 @@ class BopaeCalc extends Component {
 		if (bopae === null) return 0
 		let count = 0
 		for (let i=0; i<8; i++) {
-			if (this.state.choosenPieces[i] === bopae.pieces[i])
+			if (this.state.choosenPieceBopaeIds[i] === bopae.id)
 				count++
 		}
 		return count
 	}
-	findBopaeWith(piece) {
-		return this.props.bopaes.find(bopae => bopae.pieces[piece.num] === piece)
+	getSelectedBopae() {
+		if (this.state.selectedBopaeId === null) return null
+		return this.state.bopaes[this.state.selectedBopaeId]
+	}
+	getChoosenPieces() {
+		return this.state.choosenPieceBopaeIds.map((id, num) => id === null ? null : this.state.bopaes[id].pieces[num])
 	}
 
 	// Модификаторы состояния
 	choosePiece(num, bopae) {
-		let pieces = this.state.choosenPieces.slice()
-		pieces[num] = bopae.pieces[num]
-		this.setState({choosenPieces: pieces})
+		let ids = this.state.choosenPieceBopaeIds.slice()
+		ids[num] = bopae.id
+		this.setState({choosenPieceBopaeIds: ids})
 	}
 	chooseAllPiecesOf(bopae) {
-		let pieces = bopae.pieces.slice()
-		this.setState({choosenPieces: pieces})
+		this.setState({choosenPieceBopaeIds: Array(8).fill(bopae.id)})
 	}
 
 	// Евенты
 	onPieceClick = (num) => {
-		let piece = this.state.choosenPieces[num]
-		let bopae = piece && this.findBopaeWith(piece)
-		let newState = {selectedNum: num}
-		if (bopae) newState.selectedBopae = bopae
+		let bopaeId = this.state.choosenPieceBopaeIds[num]
+		let newState = {selectedPieceNum: num}
+		if (bopaeId !== null) newState.selectedBopaeId = bopaeId
 		this.setState(newState)
 	}
 	onSelectedBopaeChange = (bopae) => {
-		if (this.state.selectedBopae === bopae) {
-			if (this.state.selectedNum === null) {
+		if (this.state.selectedBopaeId === bopae.id) {
+			if (this.state.selectedPieceNum === null) {
 				this.chooseAllPiecesOf(bopae)
 			} else {
-				this.choosePiece(this.state.selectedNum, bopae)
+				this.choosePiece(this.state.selectedPieceNum, bopae)
 			}
 		} else {
-			this.setState({selectedBopae: bopae})
+			this.setState({selectedBopaeId: bopae.id})
 		}
 	}
 
@@ -66,7 +72,7 @@ class BopaeCalc extends Component {
 
 				<section>
 					<figure>
-						<BopaeCircle pieces={this.state.choosenPieces} selectedNum={this.state.selectedNum} onClick={this.onPieceClick}/>
+						<BopaeCircle pieces={this.getChoosenPieces()} selectedNum={this.state.selectedPieceNum} onClick={this.onPieceClick}/>
 					</figure>
 				</section>
 
@@ -76,18 +82,18 @@ class BopaeCalc extends Component {
 
 				<section>
 					<BopaeList
-						db={this.props.bopaes}
-						selectedPieceNum={this.state.selectedNum}
+						db={this.state.bopaes}
+						selectedPieceNum={this.state.selectedPieceNum}
 						onBopaeChange={this.onSelectedBopaeChange}
-						selectedBopae={this.state.selectedBopae}
+						selectedBopae={this.getSelectedBopae()}
 						/>
 				</section>
 
 				<section>
 					<BopaePieceEditor
-						selectedPieceNum={this.state.selectedNum}
-						selectedBopae={this.state.selectedBopae}
-						selectedBopaePiecesCount={this.countPiecesOf(this.state.selectedBopae)}
+						selectedPieceNum={this.state.selectedPieceNum}
+						selectedBopae={this.getSelectedBopae()}
+						selectedBopaePiecesCount={this.countPiecesOf(this.getSelectedBopae())}
 						/>
 				</section>
 

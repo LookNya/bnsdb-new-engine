@@ -1,18 +1,31 @@
 class Bopae {
-	constructor(name, icon, obtaining, pieces, bonuses) {
+	constructor(id, name, icon, obtaining, pieces, bonuses) {
+		this.id = id
 		this.name = name
 		this.icon = icon
 		this.obtaining = obtaining
 		this.pieces = pieces
 		this.bonuses = bonuses
 	}
+
 	static getBGPath() {
 		return `${process.env.PUBLIC_URL}/img/bopae/background.png`
 	}
 	getIconPath() {
 		return `${process.env.PUBLIC_URL}/img/bopae/${this.icon}.png`
 	}
+
+	copy() {
+		return new Bopae(this.id, this.name, this.icon, this.obtaining, this.pieces, this.bonuses)
+	}
+	updatePieceConfig(num, statName, value) {
+		let newBopae = this.copy()
+		newBopae.pieces = newBopae.pieces.slice()
+		newBopae.pieces[num] = newBopae.pieces[num].updateConfig(statName, value)
+		return newBopae
+	}
 }
+
 
 class BopaePiece {
 	constructor(num, icon, stats, synthMax) {
@@ -20,7 +33,9 @@ class BopaePiece {
 		this.icon = icon
 		this.stats = stats
 		this.synthMax = synthMax
+		this.config = {}
 	}
+
 	static getBGPath(num) {
 		return `${process.env.PUBLIC_URL}/img/bopae/background${num}.png`
 	}
@@ -40,7 +55,19 @@ class BopaePiece {
 				res.push(func(statName, this.stats[statName]))
 		return res
 	}
+
+	copy() {
+		return new BopaePiece(this.num, this.icon, this.stats, this.synthMax)
+	}
+	updateConfig(statName, value) {
+		let newPiece = this.copy()
+		for (let name in this.config)
+			newPiece.config[name] = this.config[name]
+		newPiece.config[statName] = value
+		return newPiece
+	}
 }
+
 
 class BopaeDBUtils {
 	static l10n = null
@@ -52,7 +79,7 @@ class BopaeDBUtils {
 		return db.bopaes.map(BopaeDBUtils.convertBopae.bind(this))
 	}
 
-	static convertBopae(bopae) {
+	static convertBopae(bopae, index) {
 		let statsForNums = [[], [], [], [], [], [], [], []]
 		for (let statName in bopae.pieces) {
 			if (bopae.pieces.hasOwnProperty(statName)) {
@@ -86,7 +113,7 @@ class BopaeDBUtils {
 			}
 		}
 
-		return new Bopae(bopae.name[this.lang], bopae.icon, bopae.obtaining[this.lang], pieces, bonuses)
+		return new Bopae(index, bopae.name[this.lang], bopae.icon, bopae.obtaining[this.lang], pieces, bonuses)
 	}
 
 	static convertStat(str) {
