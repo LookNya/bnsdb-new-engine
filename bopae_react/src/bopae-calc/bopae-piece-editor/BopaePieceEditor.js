@@ -7,10 +7,12 @@ import InputRange from '../../global/input-range/InputRange'
 class BopaePieceEditor extends Component {
 	constructor() {
 		super()
-		this.state = {}
+		this.state = {
+			selectedRange: 0
+		}
 	}
 	onRangeChange(value){
-		//this.setState({selectedRange: value})
+		this.setState({selectedRange: value})
 	}
 	render() {
 		if(this.props.selectedBopae && this.props.selectedPieceNum !== null){
@@ -42,12 +44,12 @@ class BopaePieceEditor extends Component {
 						)
 					}
 					<div className="lpair">
-						<label>Заточка ({this.getPieceConfigFor('synth')})</label>
+						<label>Заточка ({this.state.selectedRange})</label>
 						<label>
 							<InputRange
 								min={-20}
 								max={90}
-								value={this.getPieceConfigFor('synth')}
+								value={this.state.selectedRange}
 								onChange={this.onRangeChange.bind(this)}
 							/>
 						</label>

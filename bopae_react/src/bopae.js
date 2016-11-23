@@ -1,31 +1,18 @@
 class Bopae {
-	constructor(id, name, icon, obtaining, pieces, bonuses) {
-		this.id = id
+	constructor(name, icon, obtaining, pieces, bonuses) {
 		this.name = name
 		this.icon = icon
 		this.obtaining = obtaining
 		this.pieces = pieces
 		this.bonuses = bonuses
 	}
-
 	static getBGPath() {
 		return `${process.env.PUBLIC_URL}/img/bopae/background.png`
 	}
 	getIconPath() {
 		return `${process.env.PUBLIC_URL}/img/bopae/${this.icon}.png`
 	}
-
-	copy() {
-		return new Bopae(this.id, this.name, this.icon, this.obtaining, this.pieces, this.bonuses)
-	}
-	updatePieceConfig(num, statName, value) {
-		let newBopae = this.copy()
-		newBopae.pieces = newBopae.pieces.slice()
-		newBopae.pieces[num] = newBopae.pieces[num].updateConfig(statName, value)
-		return newBopae
-	}
 }
-
 
 class BopaePiece {
 	constructor(num, icon, stats, synthMax) {
@@ -33,9 +20,7 @@ class BopaePiece {
 		this.icon = icon
 		this.stats = stats
 		this.synthMax = synthMax
-		this.config = {}
 	}
-
 	static getBGPath(num) {
 		return `${process.env.PUBLIC_URL}/img/bopae/background${num}.png`
 	}
@@ -53,17 +38,6 @@ class BopaePiece {
 		for (let statName in this.stats) //eslint-disable-line guard-for-in
 			res.push(func(statName, this.stats[statName]))
 		return res
-	}
-
-	copy() {
-		return new BopaePiece(this.num, this.icon, this.stats, this.synthMax)
-	}
-	updateConfig(statName, value) {
-		let newPiece = this.copy()
-		for (let name in this.config) //eslint-disable-line guard-for-in
-			newPiece.config[name] = this.config[name]
-		newPiece.config[statName] = value
-		return newPiece
 	}
 }
 
@@ -108,7 +82,7 @@ class BopaeDBConv {
 			if (b8 !== 0) bonuses[8][l10nStatName] = b8
 		}
 
-		return new Bopae(index, bopae.name[this.lang], bopae.icon, bopae.obtaining[this.lang], pieces, bonuses)
+		return new Bopae(bopae.name[this.lang], bopae.icon, bopae.obtaining[this.lang], pieces, bonuses)
 	}
 
 	convertStat(str) {

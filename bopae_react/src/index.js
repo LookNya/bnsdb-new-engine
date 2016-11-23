@@ -33,7 +33,7 @@ ReactDOM.render(
 		<main>
 			<div className="main-bg"></div>
 			<div className="main-wrap">
-				<BopaeCalc/>
+				<BopaeCalc bopaes={bopaes} />
 			</div>
 			<BopaeCircle pieces={testPieces}/>
 			<BopaeCircle2 name={bopaes[0].icon} />
