@@ -9,6 +9,7 @@ class BopaeCalc extends Component {
 		super()
 		this.state = {
 			choosenPieces: Array(8).fill(null),
+			piecesConfig: {},
 			selectedNum: null,
 			selectedBopae: null
 		}
@@ -26,6 +27,14 @@ class BopaeCalc extends Component {
 	}
 	findBopaeWith(piece) {
 		return this.props.bopaes.find(bopae => bopae.pieces[piece.num] === piece)
+	}
+	getPieceConfig(num) {
+		if (this.state.selectedBopae === null) return {}
+		let piecesConfig = this.state.piecesConfig[this.state.selectedBopae.name]
+		if (!piecesConfig) return {}
+		let pieceConfig = piecesConfig[num]
+		if (!pieceConfig) return {}
+		return pieceConfig
 	}
 
 	// Модификаторы состояния
@@ -58,6 +67,13 @@ class BopaeCalc extends Component {
 			this.setState({selectedBopae: bopae})
 		}
 	}
+	onPieceConfigChange = (statName, value) => {
+		this.setState({
+			piecesConfig: {
+				[this.state.selectedBopae.name]: {[this.state.selectedNum]: {[statName]: value}}
+			}
+		})
+	}
 
 	// Рендер
 	render() {
@@ -88,6 +104,8 @@ class BopaeCalc extends Component {
 						selectedPieceNum={this.state.selectedNum}
 						selectedBopae={this.state.selectedBopae}
 						selectedBopaePiecesCount={this.countPiecesOf(this.state.selectedBopae)}
+						pieceConfig={this.getPieceConfig(this.state.selectedNum)}
+						onPieceConfigChange={this.onPieceConfigChange}
 						/>
 				</section>
 
