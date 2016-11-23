@@ -10,16 +10,22 @@ class BopaePieceEditor extends Component {
 		this.state = {}
 	}
 	getPieceConfigFor(statName) {
-		return statName in this.props.pieceConfig ? this.props.pieceConfig[statName] : 0
+		let piece = this.props.selectedBopae.pieces[this.props.selectedPieceNum]
+		let piceMax = 0
+		if(statName !== 'synth'){
+			piceMax = piece.stats[statName].max
+		} else {
+			piceMax = piece.synthMax
+		}
+		return statName in this.props.pieceConfig ? this.props.pieceConfig[statName] : piceMax
 	}
-	onRangeChange(value) {
-		this.props.onPieceConfigChange('synth', value)
+	onRangeChange(value, statName) {
+		this.props.onPieceConfigChange(statName, value)
 	}
 	render() {
 		if(this.props.selectedBopae && this.props.selectedPieceNum !== null){
 			let piece = this.props.selectedBopae.pieces[this.props.selectedPieceNum]
 			//если выбран кусок, показываем его редактор
-
 			return (
 				<div className="bopae-piece-editor">
 					<h2>{this.props.selectedBopae.name}#{this.props.selectedPieceNum+1}</h2>
@@ -40,20 +46,26 @@ class BopaePieceEditor extends Component {
 					{
 						piece.mapStats((statName, stat) =>
 							{
-								if(!stat.isBase) return <StatCustomizer key={statName} statName={statName} stat={stat}/>
+								if(!stat.isBase)
+									return <StatCustomizer
+											key={statName}
+											statName={statName}
+											stat={stat}
+											value={this.getPieceConfigFor(statName)}
+											onRangeChange={this.onRangeChange.bind(this)}
+										/>
 							}
 						)
 					}
-					<div className="lpair">
+					<div className="stat-cust-wrap">
 						<label>Заточка ({this.getPieceConfigFor('synth')})</label>
-						<label>
-							<InputRange
-								min={-20}
-								max={90}
-								value={this.getPieceConfigFor('synth')}
-								onChange={this.onRangeChange.bind(this)}
-							/>
-						</label>
+						<InputRange
+							min={0}
+							max={piece.synthMax}
+							value={this.getPieceConfigFor('synth')}
+							onChange={this.onRangeChange.bind(this)}
+							codeName={'synth'}
+						/>
 					</div>
 
 					<div className="bottom-controls">
@@ -85,8 +97,13 @@ class StatCustomizer extends Component {
 		return (
 			<div className="stat-cust-wrap">
 				<label>{this.props.statName}</label>
-				<button className="togglable selected">{this.props.stat.min}</button>
-				<button className="togglable">{this.props.stat.max}</button>
+					<InputRange
+						min={this.props.stat.min}
+						max={this.props.stat.max}
+						value={this.props.value}
+						onChange={this.props.onRangeChange.bind(this)}
+						codeName={this.props.statName}
+					/>
 			</div>
 		)
 	}

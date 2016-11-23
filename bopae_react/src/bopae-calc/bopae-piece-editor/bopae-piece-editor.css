@@ -12,9 +12,11 @@
 }
 .stat-cust-wrap{
 	padding-bottom: 16px;
+	white-space: nowrap;
 }
 .stat-cust-wrap>*{
 	vertical-align: middle;
+	display: inline-block;
 }
 .bopae-piece-editor button{
 	margin-left: 12px;

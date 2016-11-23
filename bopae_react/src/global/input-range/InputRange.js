@@ -21,7 +21,7 @@ class InputRange extends Component {
 		if(newValue < this.props.min) newValue = this.props.min
 		if(newValue > this.props.max) newValue = this.props.max
 		newValue = parseInt(newValue)
-		this.props.onChange(newValue)
+		this.props.onChange(newValue, this.props.codeName)
 	}
 
 	setupEvents(){
@@ -54,17 +54,18 @@ class InputRange extends Component {
 	}
 
 	render() {
-		let value = this.props.value === null ? 0 : this.props.value
 		let min = this.props.min === null ? 0 : this.props.min
 		let max = this.props.max === null ? 10 : this.props.max
+		let value = this.props.value === null ? min : this.props.value
+
 		let style = {
 			left: (value - min)/(max - min)*100 +'%'
 		}
-		if(value == min) {
+		if(value === min) {
 			style.borderTopLeftRadius = '4px'
 			style.borderBottomLeftRadius = '4px'
 		}
-		if(value == max) {
+		if(value === max) {
 			style.borderTopRightRadius = '4px'
 			style.borderBottomRightRadius = '4px'
 		}
