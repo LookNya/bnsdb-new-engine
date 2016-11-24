@@ -47,6 +47,16 @@ class BopaeCalc extends PureComponent {
 		let pieces = bopae.pieces.slice()
 		this.setState({choosenPieces: pieces})
 	}
+	updatePieceConfig(bopae, num, statName, statValue) {
+		let bopaeConfig = this.state.piecesConfig[bopae.name] || {}
+		let pieceConfig = bopaeConfig[num] || {}
+		this.setState({
+			piecesConfig: {
+				...this.state.piecesConfig,
+				[bopae.name]: {...bopaeConfig, [num]: {...pieceConfig, [statName]: statValue}}
+			}
+		})
+	}
 
 	// Евенты
 	onPieceClick = (num) => {
@@ -68,11 +78,7 @@ class BopaeCalc extends PureComponent {
 		}
 	}
 	onPieceConfigChange = (statName, value) => {
-		this.setState({
-			piecesConfig: {
-				[this.state.selectedBopae.name]: {[this.state.selectedNum]: {[statName]: value}}
-			}
-		})
+		this.updatePieceConfig(this.state.selectedBopae, this.state.selectedNum, statName, value)
 	}
 
 	// Рендер
