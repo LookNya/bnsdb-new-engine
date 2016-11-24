@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import './bopae-circle2.css'
 
 const PART_WIDTH = 128
@@ -8,7 +8,7 @@ function dir2rad(dir) {
 	return (dir-3)/4*Math.PI
 }
 
-class BopaePart extends Component {
+class BopaePart extends PureComponent {
 	points(dir) {
 		let w = PART_WIDTH, da = Math.PI/8, dw = 1.05
 		let angle = dir2rad(dir)
@@ -34,7 +34,7 @@ class BopaePart extends Component {
 	}
 }
 
-class BopaeCircle2 extends Component {
+class BopaeCircle2 extends PureComponent {
 	render() {
 		let w = PART_WIDTH*2 + HOVER_DELTA_PX*2
 		let dirs = [1,2,3,4,5,6,7,8]

@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
 import './bopae-list.css'
 
 import ListWithSearch from '../../global/list-with-search/ListWithSearch'
 
 
-class BopaeList extends Component {
+class BopaeList extends PureComponent {
 	onListItemChange(bopae) {
 		this.props.onBopaeChange(bopae)
 	}

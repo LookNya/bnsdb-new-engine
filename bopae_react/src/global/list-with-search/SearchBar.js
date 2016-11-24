@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import './search-bar.css'
 
-class SearchBar extends Component {
+class SearchBar extends PureComponent {
 	render() {
 		return  <div className="search-bar-wrap">
 							<input type="text"

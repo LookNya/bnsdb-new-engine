@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { Bopae, BopaePiece } from '../../bopae.js'
 import './bopae-circle.css'
 
@@ -18,7 +18,7 @@ function centerOffset(num) {
 	return [[w/2,w], [0,w], [0,w/2], [0,0], [w/2,0], [w,0], [w,w/2], [w,w]][num]
 }
 
-class BopaePartMask extends Component {
+class BopaePartMask extends PureComponent {
 	render() {
 		let [x0, y0] = centerOffset(this.props.num)
 		let transform = `translate(${x0}, ${y0}) rotate(${num2deg(this.props.num)} 0 0)`
@@ -30,7 +30,7 @@ class BopaePartMask extends Component {
 	}
 }
 
-class BopaePart extends Component {
+class BopaePart extends PureComponent {
 	render() {
 		let w = PART_WIDTH, angle = num2rad(this.props.num)
 		let [x0, y0] = centerOffset(this.props.num)
@@ -46,7 +46,7 @@ class BopaePart extends Component {
 	}
 }
 
-class BopaeCircle extends Component {
+class BopaeCircle extends PureComponent {
 	render() {
 		return (
 			<div className="bopae-circle" style={{width: PART_WIDTH*2, height: PART_WIDTH*2}}>

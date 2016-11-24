@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import SearchBar from './SearchBar.js'
 import './list-with-search.css'
 
@@ -16,7 +16,7 @@ var rusify = (function() {
 	}
 })()
 
-class ListWithSearch extends Component {
+class ListWithSearch extends PureComponent {
 	constructor() {
 		super()
 		this.state = {
@@ -60,7 +60,7 @@ class ListWithSearch extends Component {
 	}
 }
 
-class ListItem extends Component {
+class ListItem extends PureComponent {
 	render() {
 		let selectedClass = this.props.isSelected ? 'selected' : ''
 		let piece = this.props.bopae.pieces[this.props.selectedPieceNum] || null
@@ -89,7 +89,7 @@ class ListItem extends Component {
 	}
 }
 
-class BopaePiece extends Component{
+class BopaePiece extends PureComponent {
 	render() {
 		return <div
 			className={"square piece piece-"+this.props.num}
@@ -98,7 +98,7 @@ class BopaePiece extends Component{
 	}
 }
 
-class PieceDetail extends Component{
+class PieceDetail extends PureComponent {
 	render() {
 		let piece = this.props.piece
 		return (

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { Bopae } from '../../bopae.js' 
 import './bopae-circle3.css'
 
@@ -14,7 +14,7 @@ function centerOffset(num) {
 	return [[w/2,w], [0,w], [0,w/2], [0,0], [w/2,0], [w,0], [w,w/2], [w,w]][num]
 }
 
-class BopaePart extends Component {
+class BopaePart extends PureComponent {
 	points(num) {
 		let w = PART_WIDTH, da = Math.PI/8, dw = 1.05
 		let angle = num2rad(num)
@@ -42,7 +42,7 @@ class BopaePart extends Component {
 	}
 }
 
-class BopaeCircle2 extends Component {
+class BopaeCircle2 extends PureComponent {
 	render() {
 		return (
 			<div className="bopae-circle3" style={{width: PART_WIDTH*2, height: PART_WIDTH*2}}>

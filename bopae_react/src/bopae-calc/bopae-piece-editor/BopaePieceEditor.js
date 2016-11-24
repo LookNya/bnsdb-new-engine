@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import './bopae-piece-editor.css'
 
 import BopaeSets from '../../global/bopae-sets/BopaeSets'
 import InputRange from '../../global/input-range/InputRange'
 
-class BopaePieceEditor extends Component {
+class BopaePieceEditor extends PureComponent {
 	constructor() {
 		super()
 		this.state = {}
@@ -92,7 +92,7 @@ class BopaePieceEditor extends Component {
 	}
 }
 
-class StatCustomizer extends Component {
+class StatCustomizer extends PureComponent {
 	render() {
 		return (
 			<div className="stat-cust-wrap">

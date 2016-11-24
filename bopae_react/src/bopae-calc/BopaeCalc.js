@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import BopaeList from './bopae-list/BopaeList'
 import BopaeCircle from './bopae-circle/BopaeCircle'
 import BopaePieceEditor from './bopae-piece-editor/BopaePieceEditor'
 //import './styles/bopae-calc.css'
 
-class BopaeCalc extends Component {
+class BopaeCalc extends PureComponent {
 	constructor() {
 		super()
 		this.state = {

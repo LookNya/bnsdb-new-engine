@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import './bopae-sets.css'
 
-class BopaeSets extends Component {
+class BopaeSets extends PureComponent {
 	render() {
 		let bopae = this.props.bopae
 		let piecesCount = this.props.piecesCount
