@@ -77,7 +77,7 @@ class ListItem extends PureComponent {
 										<td className="icon-cell">
 											<BopaeIcon bopae={this.props.bopae} />
 										</td>
-										<td>
+										<td className="item-name">
 											<label>{this.props.bopae.name}</label>
 										</td>
 										<td>

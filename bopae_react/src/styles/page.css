@@ -50,6 +50,9 @@ main section{
 	vertical-align: middle;
 	text-align: center;
 }
+main section .margin-left{
+	margin-left: 20px;
+}
 main section>*{
 	text-align: initial;
 }

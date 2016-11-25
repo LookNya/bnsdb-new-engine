@@ -15,12 +15,14 @@
 .list-with-search .item-table{
 	table-layout: fixed;
 	width: 100%;
+	min-height: 64px;
 }
 .list-with-search .item-table td{
 	vertical-align: top;
 }
 .list-with-search .item-table .icon-cell{
 	width: 132px;
+	overflow: hidden;
 }
 .list-with-search .list-item.selected{
 	background: #391252
@@ -40,6 +42,9 @@
 	width: 100px;
 	background-size: cover;
 	position: relative;
+}
+.list-with-search .list-item .item-name{
+	padding-right: 17px;
 }
 .list-with-search .icon .square{
 	position: absolute;
@@ -94,6 +99,7 @@
 	padding: 6px;
 	font-family: monospace;
 	color: grey;
+	position: relative;
 }
 .list-with-search .piece-detail tr.main-stat{
 	color: #d2d2d2;

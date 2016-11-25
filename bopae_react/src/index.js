@@ -11,6 +11,7 @@ import './styles/reset.css'
 import './styles/utils.css'
 import './styles/main.css'
 import './styles/page.css'
+import './styles/mobile.css'
 import bopaeDB from './bopae.json'
 import { BopaeDBConv } from './bopae.js'
 

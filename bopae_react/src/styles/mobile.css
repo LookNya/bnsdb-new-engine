@@ -1,0 +1,20 @@
+@media (max-width: 1200px) {
+	main .main-wrap {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	main section .margin-left{
+		margin-left: 10px;
+	}
+	.list-with-search .item-table .icon-cell {
+		width: 66px;
+	}
+	.list-with-search .piece-detail .right{
+		position: absolute;
+		left: -26px;
+		top: 0;
+	}
+	.list-with-search .piece-detail .piece{
+		transform: scale(0.5, 0.5)
+	}
+}

@@ -27,7 +27,7 @@ class BopaePieceEditor extends PureComponent {
 			let piece = this.props.selectedBopae.pieces[this.props.selectedPieceNum]
 			//если выбран кусок, показываем его редактор
 			return (
-				<div className="bopae-piece-editor">
+				<div className="bopae-piece-editor margin-left">
 					<h2>{this.props.selectedBopae.name}#{this.props.selectedPieceNum+1}</h2>
 					<h3>Бонусы от сета</h3>
 					<BopaeSets bopae={this.props.selectedBopae} piecesCount={this.props.selectedBopaePiecesCount}/>
@@ -77,14 +77,14 @@ class BopaePieceEditor extends PureComponent {
 		} else if(this.props.selectedBopae){
 			//если выбрана бопая, показываем предложение замостить весь блин ею
 			return (
-				<div className="bopae-piece-editor">
+				<div className="bopae-piece-editor margin-left">
 					<h2>Равнины изобилия 45 #3</h2>
 				</div>
 			)
 		} else {
 			//если ничего не выбрано, показываем предложение выбрать
 			return (
-				<div className="bopae-piece-editor">
+				<div className="bopae-piece-editor margin-left">
 					<h2>Равнины изобилия 45 #3</h2>
 				</div>
 			)
