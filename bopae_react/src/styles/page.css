@@ -4,7 +4,6 @@ html{
 }
 .app{
 	min-height: 100%;
-	min-width: 600px;
 	background: black;
 	color: #ebe5fb;
 	font-color: #ebe5fb;
@@ -67,7 +66,6 @@ footer{
 	background: #12131f;
 }
 .main-wrap{
-	min-width: 600px;
 	max-width: 1200px;
 	margin: auto;
 	position: relative;

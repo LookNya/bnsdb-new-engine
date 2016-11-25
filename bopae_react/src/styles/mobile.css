@@ -11,10 +11,22 @@
 	}
 	.list-with-search .piece-detail .right{
 		position: absolute;
-		left: -26px;
-		top: 0;
+		left: -20px;
+		top: 13px;
 	}
 	.list-with-search .piece-detail .piece{
-		transform: scale(0.5, 0.5)
+		width: 20px;
+	}
+}
+@media (max-width: 767px) {
+	main section {
+		width: auto;
+		margin-bottom: 10px;
+	}
+	main section .margin-left{
+		margin-left: 0;
+	}
+	.list-with-search .item-table .icon-cell {
+		width: 0;
 	}
 }
