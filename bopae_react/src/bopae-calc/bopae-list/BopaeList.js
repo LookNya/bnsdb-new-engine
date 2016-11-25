@@ -6,9 +6,6 @@ import ListWithSearch from '../../global/list-with-search/ListWithSearch'
 
 
 class BopaeList extends PureComponent {
-	onListItemChange(bopae) {
-		this.props.onBopaeChange(bopae)
-	}
 	render() {
 		return  <div className="bopae-list">
 							<ListWithSearch

@@ -19,7 +19,7 @@ class BopaePieceEditor extends PureComponent {
 		}
 		return statName in this.props.pieceConfig ? this.props.pieceConfig[statName] : piceMax
 	}
-	onRangeChange(value, statName) {
+	onRangeChange = (value, statName) => {
 		this.props.onPieceConfigChange(statName, value)
 	}
 	render() {
@@ -52,7 +52,7 @@ class BopaePieceEditor extends PureComponent {
 											statName={statName}
 											stat={stat}
 											value={this.getPieceConfigFor(statName)}
-											onRangeChange={this.onRangeChange.bind(this)}
+											onRangeChange={this.onRangeChange}
 										/>
 							}
 						)
@@ -63,7 +63,7 @@ class BopaePieceEditor extends PureComponent {
 							min={0}
 							max={piece.synthMax}
 							value={this.getPieceConfigFor('synth')}
-							onChange={this.onRangeChange.bind(this)}
+							onChange={this.onRangeChange}
 							codeName={'synth'}
 						/>
 					</div>

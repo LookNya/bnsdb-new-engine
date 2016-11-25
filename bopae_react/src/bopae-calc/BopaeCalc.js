@@ -5,6 +5,7 @@ import BopaePieceEditor from './bopae-piece-editor/BopaePieceEditor'
 //import './styles/bopae-calc.css'
 
 class BopaeCalc extends PureComponent {
+
 	constructor() {
 		super()
 		this.state = {

@@ -23,12 +23,14 @@ class ListWithSearch extends PureComponent {
 			searchFilter: ''
 		}
 	}
-	onSearchChange(value) {
+
+	onSearchChange = (value) => {
 		this.setState({searchFilter: value})
 	}
-	onItemChange(bopae){
+	onItemChange = (bopae) => {
 		this.props.onItemChange(bopae)
 	}
+
 	render() {
 		let nameMatches = item => {
 			var name = item.name.toLowerCase()
@@ -39,7 +41,7 @@ class ListWithSearch extends PureComponent {
 		return  <div className="list-with-search">
 							<SearchBar
 								searchFilter={this.state.searchFilter}
-								onSearchChange={this.onSearchChange.bind(this)}
+								onSearchChange={this.onSearchChange}
 							/>
 							<div className="items-wrap">
 								{this.props.data.map((bopae, i) =>
@@ -47,7 +49,7 @@ class ListWithSearch extends PureComponent {
 										key={i}
 										bopae={bopae}
 										selectedPieceNum={this.props.selectedPieceNum}
-										onClick={this.onItemChange.bind(this, bopae)}
+										onClick={this.onItemChange}
 										isSelected={this.props.selectedBopae === bopae}
 										className={nameMatches(bopae) ? '' : 'hidden'}
 									/>
@@ -61,18 +63,19 @@ class ListWithSearch extends PureComponent {
 }
 
 class ListItem extends PureComponent {
+	onClick = (e) => {
+		this.props.onClick(this.props.bopae)
+	}
 	render() {
 		let selectedClass = this.props.isSelected ? 'selected' : ''
 		let piece = this.props.bopae.pieces[this.props.selectedPieceNum] || null
-		return <div onClick={this.props.onClick}
+		return <div onClick={this.onClick}
 						className={this.props.className + ' ' + selectedClass + ' list-item'}>
 							<table className="item-table">
 								<tbody>
 									<tr>
 										<td className="icon-cell">
-											<div className="icon">
-												{[6,7,0,1,2,3,4,5].map( i => <BopaePiece key={i} num={i} piece={this.props.bopae.pieces[i]}/>)}
-											</div>
+											<BopaeIcon bopae={this.props.bopae} />
 										</td>
 										<td>
 											<label>{this.props.bopae.name}</label>
@@ -89,11 +92,21 @@ class ListItem extends PureComponent {
 	}
 }
 
+class BopaeIcon extends PureComponent {
+	render() {
+		return (
+			<div className="icon">
+				{[6,7,0,1,2,3,4,5].map( i => <BopaePiece key={i} piece={this.props.bopae.pieces[i]} /> )}
+			</div>
+		)
+	}
+}
+
 class BopaePiece extends PureComponent {
 	render() {
 		return <div
-			className={"square piece piece-"+this.props.num}
-			style={{backgroundImage: 'url('+this.props.piece.getIconPath()+')'}}
+			className={"square piece piece-"+this.props.piece.num}
+			style={{backgroundImage: `url(${this.props.piece.getIconPath()})`}}
 			></div>
 	}
 }
