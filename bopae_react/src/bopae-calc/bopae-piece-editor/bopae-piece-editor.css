@@ -1,5 +1,5 @@
 .bopae-piece-editor{
-	height: 436px;
+	height: 560px;
 	background: rgba(0, 0, 0, 0.75);
 	padding: 15px;
 	position: relative;
@@ -9,13 +9,30 @@
 .bopae-piece-editor h3 {
 	margin-top: 0;
 }
+.bopae-piece-editor h3 {
+	padding-bottom: 15px;
+}
+.bopae-piece-editor h2{
+	padding-bottom: 11px;
+}
 .stat-cust-wrap{
-	padding-bottom: 16px;
 	white-space: nowrap;
 }
 .stat-cust-wrap>*{
 	vertical-align: middle;
-	display: inline-block;
+	padding: 9px 4px;
+}
+.stat-cust-wrap.title td{
+	font-weight: bold;
+	padding: 4px;
+	background: #391252;
+	letter-spacing: 0.6px;
+}
+.stat-cust-wrap.title td span{
+	font-weight: normal;
+	opacity: 0.5;
+	letter-spacing: initial;
+	padding-left: 5px;
 }
 .bopae-piece-editor button{
 	margin-left: 12px;

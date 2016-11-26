@@ -31,42 +31,62 @@ class BopaePieceEditor extends PureComponent {
 					<h2>{this.props.selectedBopae.name}#{this.props.selectedPieceNum+1}</h2>
 					<h3>Бонусы от сета</h3>
 					<BopaeSets bopae={this.props.selectedBopae} piecesCount={this.props.selectedBopaePiecesCount}/>
-					{
-						piece.mapStats((statName, stat) =>
+					<table>
+						<tbody>
+							<tr className="stat-cust-wrap title">
+								<td colSpan={2}>
+									Основные статы
+								</td>
+							</tr>
 							{
-								if(stat.isBase) return(
-									<div className="lpair" key={this.props.selectedBopae.name+statName}>
-										<label>{statName}</label>
-										<label>{stat.min}—{stat.max}</label>
-									</div>
+								piece.mapStats((statName, stat) =>
+									{
+										if(stat.isBase)
+											return <StatCustomizer
+													key={statName}
+													statName={statName}
+													stat={stat}
+													value={this.getPieceConfigFor(statName)}
+													onRangeChange={this.onRangeChange}
+												/>
+									}
 								)
 							}
-						)
-					}
-					{
-						piece.mapStats((statName, stat) =>
+							<tr className="stat-cust-wrap title">
+								<td colSpan={2}>
+									Дополнительные статы <span>выберите два</span> {/*TODO менять подсказку в зависимости от количества выбранного*/}
+								</td>
+							</tr>
 							{
-								if(!stat.isBase)
-									return <StatCustomizer
-											key={statName}
-											statName={statName}
-											stat={stat}
-											value={this.getPieceConfigFor(statName)}
-											onRangeChange={this.onRangeChange}
-										/>
+								piece.mapStats((statName, stat) =>
+									{
+										if(!stat.isBase)
+											return <StatCustomizer
+													key={statName}
+													statName={statName}
+													stat={stat}
+													value={this.getPieceConfigFor(statName)}
+													onRangeChange={this.onRangeChange}
+												/>
+									}
+								)
 							}
-						)
-					}
-					<div className="stat-cust-wrap">
-						<label>Заточка ({this.getPieceConfigFor('synth')})</label>
-						<InputRange
-							min={0}
-							max={piece.synthMax}
-							value={this.getPieceConfigFor('synth')}
-							onChange={this.onRangeChange}
-							codeName={'synth'}
-						/>
-					</div>
+							<tr className="stat-cust-wrap">
+								<td>
+									<label>Заточка</label>
+								</td>
+								<td>
+									<InputRange
+										min={0}
+										max={piece.synthMax}
+										value={this.getPieceConfigFor('synth')}
+										onChange={this.onRangeChange}
+										codeName={'synth'}
+									/>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 
 					<div className="bottom-controls">
 						<button className="togglable">Использовать эту скрижаль везде</button>
@@ -94,18 +114,35 @@ class BopaePieceEditor extends PureComponent {
 
 class StatCustomizer extends PureComponent {
 	render() {
-		return (
-			<div className="stat-cust-wrap">
-				<label>{this.props.statName}</label>
-					<InputRange
-						min={this.props.stat.min}
-						max={this.props.stat.max}
-						value={this.props.value}
-						onChange={this.props.onRangeChange.bind(this)}
-						codeName={this.props.statName}
-					/>
-			</div>
-		)
+		if(this.props.stat.isBase){
+			return (
+				<tr className="stat-cust-wrap">
+					<td>
+						<label>{this.props.statName}</label>
+					</td>
+					<td>
+						{this.props.stat.min}—{this.props.stat.max}
+					</td>
+				</tr>
+			)
+		} else {
+			return (
+				<tr className="stat-cust-wrap">
+					<td>
+						<label>{this.props.statName}</label>
+					</td>
+					<td>
+						<InputRange
+							min={this.props.stat.min}
+							max={this.props.stat.max}
+							value={this.props.value}
+							onChange={this.props.onRangeChange.bind(this)}
+							codeName={this.props.statName}
+						/>
+					</td>
+				</tr>
+			)
+		}
 	}
 }
 

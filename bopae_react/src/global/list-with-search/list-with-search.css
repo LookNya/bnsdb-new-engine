@@ -2,7 +2,7 @@
 	background: rgba(0, 0, 0, 0.5);
 }
 .list-with-search .items-wrap{
-	height: 400px;
+	height: 524px;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
