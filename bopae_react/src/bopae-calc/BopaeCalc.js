@@ -1,8 +1,10 @@
 import React, { PureComponent } from 'react'
 import BopaeList from './bopae-list/BopaeList'
+import BopaeResult from './bopae-result/BopaeResult'
 import BopaeCircle from './bopae-circle/BopaeCircle'
 import BopaePieceEditor from './bopae-piece-editor/BopaePieceEditor'
-//import './styles/bopae-calc.css'
+
+import './bopae-calc.css'
 
 class BopaeCalc extends PureComponent {
 
@@ -12,7 +14,8 @@ class BopaeCalc extends PureComponent {
 			choosenPieces: Array(8).fill(null),
 			piecesConfig: {},
 			selectedNum: null,
-			selectedBopae: null
+			selectedBopae: null,
+			wrapLeft: 0
 		}
 	}
 
@@ -58,7 +61,6 @@ class BopaeCalc extends PureComponent {
 			}
 		})
 	}
-
 	// Евенты
 	onPieceClick = (num) => {
 		let piece = this.state.choosenPieces[num]
@@ -81,23 +83,35 @@ class BopaeCalc extends PureComponent {
 	onPieceConfigChange = (statName, value) => {
 		this.updatePieceConfig(this.state.selectedBopae, this.state.selectedNum, statName, value)
 	}
-
 	// Рендер
+	componentDidMount(){
+		this.setState({wrapLeft: '-' + this.getLeft + 'px'})
+	}
+	getLeft(){
+		var width = this.bopaeCalcWrap.offsetWidth
+		return '-' + width*this.props.selectedPage + 'px'
+	}
 	render() {
+		let wrap = this.bopaeCalcWrap
+		let wrapLeft = this.state.wrapLeft
+		var page = this.props.selectedPage
+		if(wrap){
+			wrapLeft = this.getLeft()
+		}
 		return (
-			<div className="bopae-calc">
+			<div className="bopae-calc" ref={(elem) => {this.bopaeCalcWrap = elem}} style={{transform: 'translateX('+wrapLeft+')'}}>
 
-				<section>
+				<section className={page == 0 ? 'visible' : ''}>
 					<figure>
 						<BopaeCircle pieces={this.state.choosenPieces} selectedNum={this.state.selectedNum} onClick={this.onPieceClick}/>
 					</figure>
 				</section>
 
-				<section>
-
+				<section className={page == 1 ? 'visible' : ''}>
+					<BopaeResult/>
 				</section>
 
-				<section>
+				<section className={page == 2 ? 'visible' : ''}>
 					<BopaeList
 						db={this.props.bopaes}
 						selectedPieceNum={this.state.selectedNum}
@@ -106,7 +120,7 @@ class BopaeCalc extends PureComponent {
 						/>
 				</section>
 
-				<section>
+				<section className={page == 3 ? 'visible' : ''}>
 					<BopaePieceEditor
 						selectedPieceNum={this.state.selectedNum}
 						selectedBopae={this.state.selectedBopae}

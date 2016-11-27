@@ -19,12 +19,31 @@
 	}
 }
 @media (max-width: 767px) {
+	html{
+		overflow: hidden;
+	}
+	header{
+		height: 44px;
+	}
+	.logo{
+		font-size: 17px;
+		padding-top: 13px;
+	}
+	.bottom-tabs{
+		display: block;
+	}
+	main .main-wrap{
+		padding: 10px 0;
+	}
 	main section {
-		width: auto;
-		margin-bottom: 10px;
+		width: calc(100% - 20px);
+		margin: 0 10px;
 	}
 	main section .margin-left{
 		margin-left: 0;
+	}
+	.bopae-calc{
+		white-space: nowrap;
 	}
 	.list-with-search .item-table .icon-cell {
 		width: 0;

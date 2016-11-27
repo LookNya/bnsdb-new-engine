@@ -1,0 +1,18 @@
+.bottom-tabs{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: none;
+}
+.bottom-tabs .tab{
+	width: 25%;
+	text-align: center;
+	cursor: pointer;
+	height: 49px;
+	background: #12131f;
+	transition: color 0.2s;
+}
+.bottom-tabs .tab.selected{
+	color: #8149d6;
+}

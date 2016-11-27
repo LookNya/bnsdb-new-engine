@@ -8,6 +8,7 @@
 .bopae-piece-editor h2,
 .bopae-piece-editor h3 {
 	margin-top: 0;
+	white-space: normal;
 }
 .bopae-piece-editor h3 {
 	padding-bottom: 15px;
