@@ -15,7 +15,6 @@ class BopaeCalc extends PureComponent {
 			piecesConfig: {},
 			selectedNum: null,
 			selectedBopae: null,
-			wrapLeft: 0
 		}
 	}
 
@@ -84,22 +83,9 @@ class BopaeCalc extends PureComponent {
 		this.updatePieceConfig(this.state.selectedBopae, this.state.selectedNum, statName, value)
 	}
 	// Рендер
-	componentDidMount(){
-		this.setState({wrapLeft: '-' + this.getLeft + 'px'})
-	}
-	getLeft(){
-		var width = this.bopaeCalcWrap.offsetWidth
-		return '-' + width*this.props.selectedPage + 'px'
-	}
 	render() {
-		let wrap = this.bopaeCalcWrap
-		let wrapLeft = this.state.wrapLeft
 		var page = this.props.selectedPage
-		if(wrap){
-			wrapLeft = this.getLeft()
-		}
 		return (
-			<div className="bopae-calc" ref={(elem) => {this.bopaeCalcWrap = elem}} style={{transform: 'translateX('+wrapLeft+')'}}>
 
 				<section className={page == 0 ? 'visible' : ''}>
 					<figure>
