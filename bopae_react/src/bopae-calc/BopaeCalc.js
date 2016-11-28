@@ -86,6 +86,7 @@ class BopaeCalc extends PureComponent {
 	render() {
 		var page = this.props.selectedPage
 		return (
+			<div className="bopae-calc" ref={(elem) => {this.bopaeCalcWrap = elem}} style={{transform: 'translateX(-' + 100*this.props.selectedPage + '%)'}}>
 
 				<section className={page == 0 ? 'visible' : ''}>
 					<figure>
