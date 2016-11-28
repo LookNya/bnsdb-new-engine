@@ -9,19 +9,20 @@ class BopaePieceEditor extends PureComponent {
 		super()
 		this.state = {}
 	}
+
 	getPieceConfigFor(statName) {
-		let piece = this.props.selectedBopae.pieces[this.props.selectedPieceNum]
-		let piceMax = 0
-		if(statName !== 'synth'){
-			piceMax = piece.stats[statName].max
+		if (statName in this.props.pieceConfig) {
+			return this.props.pieceConfig[statName]
 		} else {
-			piceMax = piece.synthMax
+			let piece = this.props.selectedBopae.pieces[this.props.selectedPieceNum]
+			return statName === 'synth' ? piece.synthMax : piece.stats[statName].max
 		}
-		return statName in this.props.pieceConfig ? this.props.pieceConfig[statName] : piceMax
 	}
+
 	onRangeChange = (value, statName) => {
 		this.props.onPieceConfigChange(statName, value)
 	}
+
 	render() {
 		if(this.props.selectedBopae && this.props.selectedPieceNum !== null){
 			let piece = this.props.selectedBopae.pieces[this.props.selectedPieceNum]
@@ -40,16 +41,14 @@ class BopaePieceEditor extends PureComponent {
 							</tr>
 							{
 								piece.mapStats((statName, stat) =>
-									{
-										if(stat.isBase)
-											return <StatCustomizer
-													key={statName}
-													statName={statName}
-													stat={stat}
-													value={this.getPieceConfigFor(statName)}
-													onRangeChange={this.onRangeChange}
-												/>
-									}
+									stat.isBase &&
+										<StatCustomizer
+											key={statName}
+											statName={statName}
+											stat={stat}
+											value={this.getPieceConfigFor(statName)}
+											onRangeChange={this.onRangeChange}
+										/>
 								)
 							}
 							<tr className="stat-cust-wrap title">
@@ -59,16 +58,14 @@ class BopaePieceEditor extends PureComponent {
 							</tr>
 							{
 								piece.mapStats((statName, stat) =>
-									{
-										if(!stat.isBase)
-											return <StatCustomizer
-													key={statName}
-													statName={statName}
-													stat={stat}
-													value={this.getPieceConfigFor(statName)}
-													onRangeChange={this.onRangeChange}
-												/>
-									}
+									!stat.isBase &&
+										<StatCustomizer
+											key={statName}
+											statName={statName}
+											stat={stat}
+											value={this.getPieceConfigFor(statName)}
+											onRangeChange={this.onRangeChange}
+										/>
 								)
 							}
 							<tr className="stat-cust-wrap">

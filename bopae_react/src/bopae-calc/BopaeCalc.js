@@ -7,9 +7,9 @@ import BopaePieceEditor from './bopae-piece-editor/BopaePieceEditor'
 import './bopae-calc.css'
 
 class BopaeCalc extends PureComponent {
-
 	constructor() {
 		super()
+		this.bopaeCalcWrap = null
 		this.state = {
 			choosenPieces: Array(8).fill(null),
 			piecesConfig: {},
@@ -60,6 +60,7 @@ class BopaeCalc extends PureComponent {
 			}
 		})
 	}
+
 	// Евенты
 	onPieceClick = (num) => {
 		let piece = this.state.choosenPieces[num]
@@ -82,23 +83,24 @@ class BopaeCalc extends PureComponent {
 	onPieceConfigChange = (statName, value) => {
 		this.updatePieceConfig(this.state.selectedBopae, this.state.selectedNum, statName, value)
 	}
+
 	// Рендер
 	render() {
 		var page = this.props.selectedPage
 		return (
 			<div className="bopae-calc" ref={(elem) => {this.bopaeCalcWrap = elem}} style={{transform: 'translateX(-' + 100*this.props.selectedPage + '%)'}}>
 
-				<section className={page == 0 ? 'visible' : ''}>
+				<section className={page === 0 ? 'visible' : ''}>
 					<figure>
 						<BopaeCircle pieces={this.state.choosenPieces} selectedNum={this.state.selectedNum} onClick={this.onPieceClick}/>
 					</figure>
 				</section>
 
-				<section className={page == 1 ? 'visible' : ''}>
+				<section className={page === 1 ? 'visible' : ''}>
 					<BopaeResult/>
 				</section>
 
-				<section className={page == 2 ? 'visible' : ''}>
+				<section className={page === 2 ? 'visible' : ''}>
 					<BopaeList
 						db={this.props.bopaes}
 						selectedPieceNum={this.state.selectedNum}
@@ -107,7 +109,7 @@ class BopaeCalc extends PureComponent {
 						/>
 				</section>
 
-				<section className={page == 3 ? 'visible' : ''}>
+				<section className={page === 3 ? 'visible' : ''}>
 					<BopaePieceEditor
 						selectedPieceNum={this.state.selectedNum}
 						selectedBopae={this.state.selectedBopae}

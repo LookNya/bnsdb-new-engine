@@ -11,10 +11,10 @@ class BottomTabs extends PureComponent {
 		let classnames = 'tab f_l '
 		return (
 			<div className="bottom-tabs cf">
-				<div className={this.props.selectedPage==0 ? classnames+'selected' : classnames} onClick={this.handleClick} data-page="0">Блин</div>
-				<div className={this.props.selectedPage==1 ? classnames+'selected' : classnames} onClick={this.handleClick} data-page="1">Статы</div>
-				<div className={this.props.selectedPage==2 ? classnames+'selected' : classnames} onClick={this.handleClick} data-page="2">Список</div>
-				<div className={this.props.selectedPage==3 ? classnames+'selected' : classnames} onClick={this.handleClick} data-page="3">Кусок</div>
+				<div className={this.props.selectedPage===0 ? classnames+'selected' : classnames} onClick={this.handleClick} data-page="0">Блин</div>
+				<div className={this.props.selectedPage===1 ? classnames+'selected' : classnames} onClick={this.handleClick} data-page="1">Статы</div>
+				<div className={this.props.selectedPage===2 ? classnames+'selected' : classnames} onClick={this.handleClick} data-page="2">Список</div>
+				<div className={this.props.selectedPage===3 ? classnames+'selected' : classnames} onClick={this.handleClick} data-page="3">Кусок</div>
 			</div>
 		)
 	}

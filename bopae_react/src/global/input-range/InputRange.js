@@ -10,7 +10,7 @@ class InputRange extends PureComponent {
 
 	handleChange(e){
 		let trackRect = this.trackElem.getBoundingClientRect()
-		let thumbRect = this.thumbElem.getBoundingClientRect()
+		//let thumbRect = this.thumbElem.getBoundingClientRect()
 		let clickX = e.clientX - trackRect.left
 
 		// относительная позиция на полске, 0 - слева, 1 - справа
@@ -20,7 +20,7 @@ class InputRange extends PureComponent {
 		let newValue = this.props.min + (this.props.max - this.props.min) * pos
 		if(newValue < this.props.min) newValue = this.props.min
 		if(newValue > this.props.max) newValue = this.props.max
-		newValue = parseInt(newValue)
+		newValue = parseInt(newValue, 10)
 		this.props.onChange(newValue, this.props.codeName)
 	}
 
