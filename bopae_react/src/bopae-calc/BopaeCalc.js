@@ -3,6 +3,7 @@ import BopaeList from './bopae-list/BopaeList'
 import BopaeResult from './bopae-result/BopaeResult'
 import BopaeCircle from './bopae-circle/BopaeCircle'
 import BopaePieceEditor from './bopae-piece-editor/BopaePieceEditor'
+import { BopaesConfig, BopaePieceConfig } from '../bopae.js'
 
 import './bopae-calc.css'
 
@@ -12,7 +13,7 @@ class BopaeCalc extends PureComponent {
 		this.bopaeCalcWrap = null
 		this.state = {
 			choosenPieces: Array(8).fill(null),
-			piecesConfig: {},
+			piecesConfig: new BopaesConfig(),
 			selectedNum: null,
 			selectedBopae: null,
 		}
@@ -32,12 +33,8 @@ class BopaeCalc extends PureComponent {
 		return this.props.bopaes.find(bopae => bopae.pieces[piece.num] === piece)
 	}
 	getPieceConfig(num) {
-		if (this.state.selectedBopae === null) return {}
-		let piecesConfig = this.state.piecesConfig[this.state.selectedBopae.name]
-		if (!piecesConfig) return {}
-		let pieceConfig = piecesConfig[num]
-		if (!pieceConfig) return {}
-		return pieceConfig
+		if (this.state.selectedBopae === null) return BopaePieceConfig.default
+		return this.state.piecesConfig.getPieceConfig(this.state.selectedBopae, num)
 	}
 
 	// Модификаторы состояния
@@ -51,13 +48,8 @@ class BopaeCalc extends PureComponent {
 		this.setState({choosenPieces: pieces})
 	}
 	updatePieceConfig(bopae, num, statName, statValue) {
-		let bopaeConfig = this.state.piecesConfig[bopae.name] || {}
-		let pieceConfig = bopaeConfig[num] || {}
 		this.setState({
-			piecesConfig: {
-				...this.state.piecesConfig,
-				[bopae.name]: {...bopaeConfig, [num]: {...pieceConfig, [statName]: statValue}}
-			}
+			piecesConfig: this.state.piecesConfig.updatePieceConfig(bopae, num, statName, statValue)
 		})
 	}
 

@@ -11,12 +11,8 @@ class BopaePieceEditor extends PureComponent {
 	}
 
 	getPieceConfigFor(statName) {
-		if (statName in this.props.pieceConfig) {
-			return this.props.pieceConfig[statName]
-		} else {
-			let piece = this.props.selectedBopae.pieces[this.props.selectedPieceNum]
-			return statName === 'synth' ? piece.synthMax : piece.stats[statName].max
-		}
+		let piece = this.props.selectedBopae.pieces[this.props.selectedPieceNum]
+		return this.props.pieceConfig.get(piece, statName)
 	}
 
 	onRangeChange = (value, statName) => {
@@ -64,13 +60,14 @@ class BopaePieceEditor extends PureComponent {
 											statName={statName}
 											stat={stat}
 											value={this.getPieceConfigFor(statName)}
+											isActive={this.props.pieceConfig.isActive(statName)}
 											onRangeChange={this.onRangeChange}
 										/>
 								)
 							}
 							<tr className="stat-cust-wrap">
 								<td>
-									<label>Заточка</label>
+									<label>Заточка{this.props.pieceConfig.isActive('synth') ? '(a)' : ''}</label>
 								</td>
 								<td>
 									<InputRange
@@ -126,7 +123,7 @@ class StatCustomizer extends PureComponent {
 			return (
 				<tr className="stat-cust-wrap">
 					<td>
-						<label>{this.props.statName}</label>
+						<label>{this.props.statName}{this.props.isActive ? '(a)' : ''}</label>
 					</td>
 					<td>
 						<InputRange

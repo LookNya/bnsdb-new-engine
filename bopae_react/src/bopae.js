@@ -42,6 +42,57 @@ class BopaePiece {
 }
 
 
+class BopaePieceConfig {
+	static maxActiveStats = 2
+	static default = new BopaePieceConfig()
+	constructor(stats={}, activeStats=[]) {
+		this.stats = stats
+		this.activeStats = activeStats
+	}
+	get(piece, statName) {
+		if (statName in this.stats) return this.stats[statName]
+		return statName === 'synth' ? piece.synthMax : piece.stats[statName].max
+	}
+	isActive(statName) {
+		return this.activeStats.indexOf(statName) !== -1
+	}
+	update(statName, value) {
+		let newStats = {...this.stats, [statName]: value}
+		let newActiveStats = this.activeStats
+		if (this.activeStats[this.activeStats.length-1] !== statName) {
+			newActiveStats = this.activeStats.slice()
+			let ind = newActiveStats.indexOf(statName)
+			if (ind !== -1) newActiveStats.splice(ind, 1)
+			if (newActiveStats.length === BopaePieceConfig.maxActiveStats) newActiveStats.shift()
+			newActiveStats.push(statName)
+		}
+		return new BopaePieceConfig(newStats, newActiveStats)
+	}
+}
+
+class BopaesConfig {
+	constructor(bopaesConfig={}) {
+		this.bopaesConfig = bopaesConfig
+	}
+	getPieceConfig(bopae, num) {
+		let piecesConfig = this.bopaesConfig[bopae.name]
+		if (!piecesConfig) return BopaePieceConfig.default
+		let pieceConfig = piecesConfig[num]
+		if (!pieceConfig) return BopaePieceConfig.default
+		return pieceConfig
+	}
+	updatePieceConfig(bopae, num, statName, statValue) {
+		let bopaeConfig = this.bopaesConfig[bopae.name] || {}
+		let pieceConfig = bopaeConfig[num] || BopaePieceConfig.default
+		let newBopaesConfig = {
+				...this.bopaesConfig,
+			[bopae.name]: {...bopaeConfig, [num]: pieceConfig.update(statName, statValue)}
+		}
+		return new BopaesConfig(newBopaesConfig)
+	}
+}
+
+
 class BopaeDBConv {
 	constructor(lang, l10n) {
 		this.lang = lang
@@ -96,4 +147,4 @@ class BopaeDBConv {
 	}
 }
 
-export { Bopae, BopaePiece, BopaeDBConv }
+export { Bopae, BopaePiece, BopaesConfig, BopaePieceConfig, BopaeDBConv }
