@@ -59,15 +59,6 @@ class BopaePart extends PureComponent {
 }
 
 class BopaeCircle extends PureComponent {
-	constructor(){
-		super()
-		this.state = {
-			hoveredPieceNum: null
-		}
-	}
-	handleHover = (num) => {
-		this.setState({hoveredPieceNum: num})
-	}
 	render() {
 		let pieces = this.props.pieces
 		return (
@@ -80,7 +71,6 @@ class BopaeCircle extends PureComponent {
 						icon={piece && piece.getIconPath()}
 						selected={this.props.selectedNum === num}
 						onClick={(e) => this.props.onClick(num)}
-						onMouseOver={(e) => this.handleHover(num)}
 					/>
 				)}
 			</div>

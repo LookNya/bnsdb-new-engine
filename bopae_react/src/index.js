@@ -27,13 +27,48 @@ class App extends PureComponent{
 	constructor() {
 		super()
 		this.state = {
-			selectedPage: 0
+			selectedPage: 0,
+			layout: ''
 		}
+	}
+	componentWillMount() {
+		this.updateLayout()
+	}
+	componentDidMount() {
+		this.setupEvents()
+	}
+	componentWillUnmount() {
+		this.clearEvents()
+	}
+	// Евенты
+	setupEvents(){
+		window.addEventListener('resize', this.updateLayout.bind(this))
+	}
+	clearEvents(){
+		window.removeEventListener('resize', this.updateLayout.bind(this))
 	}
 	onPageChange = (page) => {
 		this.setState({selectedPage: page})
 	}
 
+	updateLayout(){
+		let layout = 'desktop',
+			w = window,
+			d = document,
+			documentElement = d.documentElement,
+			body = d.getElementsByTagName('body')[0],
+			width = w.innerWidth || documentElement.clientWidth || body.clientWidth,
+			height = w.innerHeight|| documentElement.clientHeight|| body.clientHeight
+		if(width < 700){
+			layout = 'mobile'
+		} else if(width < 1200){
+			layout = 'tablet'
+		} else {
+			layout = 'desktop'
+		}
+		d.body.scrollTop = 0
+		this.setState({layout: layout, selectedPage: 0})
+	}
 	render(){
 		return(
 			<div className="app">
@@ -49,9 +84,6 @@ class App extends PureComponent{
 					<div className="main-wrap">
 						<BopaeCalc bopaes={bopaes} selectedPage={this.state.selectedPage}/>
 					</div>
-					<BopaeCircle pieces={testPieces}/>
-					<BopaeCircle2 name={bopaes[0].icon} />
-					<BopaeCircle3 pieces={testPieces} />
 				</main>
 				<footer>
 					<div className="main-wrap">

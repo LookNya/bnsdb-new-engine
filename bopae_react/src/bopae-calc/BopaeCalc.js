@@ -18,7 +18,6 @@ class BopaeCalc extends PureComponent {
 			selectedBopae: null,
 		}
 	}
-
 	// Полезности
 	countPiecesOf(bopae) {
 		if (bopae === null) return 0
@@ -53,7 +52,7 @@ class BopaeCalc extends PureComponent {
 		})
 	}
 
-	// Евенты
+
 	onPieceClick = (num) => {
 		let piece = this.state.choosenPieces[num]
 		let bopae = piece && this.findBopaeWith(piece)

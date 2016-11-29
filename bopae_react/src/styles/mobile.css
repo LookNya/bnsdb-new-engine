@@ -22,8 +22,17 @@
 	html{
 		overflow: hidden;
 	}
+	header, main{
+		position: fixed;
+		width: 100%;
+		z-index: 1;
+	}
 	header{
 		height: 44px;
+		top: 0;
+	}
+	footer{
+		display: none
 	}
 	.logo{
 		font-size: 17px;
@@ -32,8 +41,15 @@
 	.bottom-tabs{
 		display: block;
 	}
+	main {
+		top: 44px;
+		bottom: 49px;
+		padding: 0;
+		z-index: 0;
+	}
 	main .main-wrap{
 		padding: 10px 0;
+		height: 100%;
 	}
 	main section {
 		width: calc(100% - 20px);
@@ -44,6 +60,9 @@
 	}
 	.bopae-calc{
 		white-space: nowrap;
+	}
+	.bopae-calc .bopae-piece-help{
+		display: none;
 	}
 	.list-with-search .item-table .icon-cell {
 		width: 0;
