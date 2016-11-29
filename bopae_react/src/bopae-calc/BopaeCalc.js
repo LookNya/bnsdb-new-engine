@@ -84,10 +84,10 @@ class BopaeCalc extends PureComponent {
 				<section>
 					<figure>
 						<BopaeCircle 
-							pieces={this.state.choosenPieces} 
-							selectedNum={this.state.selectedNum} 
+							pieces={this.state.choosenPieces}
+							selectedNum={this.state.selectedNum}
 							onClick={this.onPieceClick}
-							/>
+						/>
 					</figure>
 				</section>
 
@@ -101,7 +101,7 @@ class BopaeCalc extends PureComponent {
 						selectedPieceNum={this.state.selectedNum}
 						onBopaeChange={this.onSelectedBopaeChange}
 						selectedBopae={this.state.selectedBopae}
-						/>
+					/>
 				</section>
 
 				<section>
@@ -111,7 +111,7 @@ class BopaeCalc extends PureComponent {
 						selectedBopaePiecesCount={this.countPiecesOf(this.state.selectedBopae)}
 						pieceConfig={this.getPieceConfig(this.state.selectedNum)}
 						onPieceConfigChange={this.onPieceConfigChange}
-						/>
+					/>
 				</section>
 
 			</div>

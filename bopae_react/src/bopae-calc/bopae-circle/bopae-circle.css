@@ -11,17 +11,21 @@
 }
 .bopae-circle .bopae-piece.selected {
 	z-index: 2;
-	filter: drop-shadow(0 0 4px green);
 }
 .bopae-circle .bopae-piece:hover {
 	z-index: 3;
-	filter: drop-shadow(0 0 4px yellow);
 	transition-delay: 0s;
 }
 
 .bopae-circle .bopae-piece img {
 	position: absolute;
 	transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.bopae-circle .bopae-piece.selected img {
+	filter: drop-shadow(0 0 4px green);
+}
+.bopae-circle .bopae-piece:hover img {
+	filter: drop-shadow(0 0 4px yellow);
 }
 .bopae-circle .bopae-piece.empty img,
 .bopae-circle .bopae-piece:not(:hover) img {
