@@ -36,9 +36,21 @@ class BopaePart extends PureComponent {
 		let [x0, y0] = centerOffset(this.props.num)
 		let [hoverDX, hoverDY] = [Math.cos(angle)*HOVER_DELTA_PX, Math.sin(angle)*HOVER_DELTA_PX]
 		let transform = `translate(${hoverDX}px,${hoverDY}px)`
-		let className = `bopae-piece${this.props.selected ? ' selected' : ''}${this.props.icon ? '' : ' empty'}`
+		let className = `bopae-piece${this.props.selected ? ' selected' : ''}${this.props.icon ? '' : ' empty'} piece-${this.props.num}`
+
+		let pieceName = ''
+		var helpLabelClassName = ''
+		pieceName = 'Легендарного героя равнины 45 ур.'//убрать это
+		if(pieceName.length > 18) helpLabelClassName = 'too-long'
 		return (
 			<div className={className} style={{left: w-x0, top: w-y0, width: w, height: w}} onClick={this.props.onClick}>
+				<div className="bopae-piece-help">
+					<div className="arrow"></div>
+					<div className="plate"></div>
+					<label className={helpLabelClassName ? helpLabelClassName : ''}>
+						{pieceName}
+					</label>
+				</div>
 				<BopaePartMask num={this.props.num} />
 				<img style={{transform}} alt={'bopae-'+this.props.num} src={this.props.icon || BopaePiece.getBGPath(this.props.num)} />
 			</div>
@@ -58,28 +70,8 @@ class BopaeCircle extends PureComponent {
 	}
 	render() {
 		let pieces = this.props.pieces
-		// var hoveredPieceNum = this.state.hoveredPieceNum
-		var hoveredPieceNum = this.props.selectedNum //убрать это
-		let pieceName = ''
-		var helpLabelClassName = ''
-		var helpClassName = 'hidden'
-		if(hoveredPieceNum !== null) {
-			// pieceName = pieces[hoveredPieceNum].bopaeName 
-			helpClassName = 'help piece-' + hoveredPieceNum 
-		}
-		pieceName = 'Легендарного героя равнины 45 ур.'//убрать это
-		if(pieceName.length > 18) helpLabelClassName = 'too-long'
 		return (
 			<div className="bopae-circle" style={{width: PART_WIDTH*2, height: PART_WIDTH*2}}>
-				<div className="bopae-circle-help">
-					<div className={helpClassName}>
-						<div className="arrow"></div>
-						<div className="plate"></div>
-						<label className={helpLabelClassName ? helpLabelClassName : ''}>
-							{pieceName}
-						</label>
-					</div>
-				</div>
 				<img alt="background" className="bopae-bg-image" src={Bopae.getBGPath()} />
 				{pieces.map((piece, num) =>
 					<BopaePart

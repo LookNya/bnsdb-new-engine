@@ -1,5 +1,6 @@
 .bopae-circle {
 	position: relative;
+	margin: 44px 0 88px;
 }
 
 .bopae-circle .bopae-piece {
@@ -38,18 +39,42 @@
 	fill: none;
 }
 
-.bopae-circle-help{
+.bopae-piece-help{
 	position: absolute;
 	top:0;
 	left:0;
 	height: 100%;
 	width: 100%;
+	opacity: 0;
 }
-.bopae-circle-help .help{
-	position: absolute;
-	opacity: 0.5;
+.bopae-circle .bopae-piece:hover .bopae-piece-help{
+	opacity: 0.5
 }
-.bopae-circle-help .help label{
+.bopae-piece-help label{
+	opacity: 0;
+	transition: opacity .4s;
+}
+.bopae-piece-help .arrow{
+ 	width: 21px;
+	transition: clip .3s;
+}
+.bopae-piece-help .plate{
+	width: 100px;
+	transition: clip .3s;
+	clip: rect(0, 0, 21px, 0);
+}
+.bopae-circle .bopae-piece:hover .arrow{
+	width: 21px;
+}
+.bopae-circle .bopae-piece:hover .plate{
+	width: 100px;
+}
+.bopae-circle .bopae-piece:hover label{
+	opacity: 1
+}
+
+
+.bopae-piece-help label{
 	position: relative;
 	text-align: center;
 	display: block;
@@ -57,52 +82,147 @@
 	font-size: 11px;
 	line-height: 13px;
 }
-.bopae-circle-help .help .arrow,
-.bopae-circle-help .help .plate{
+.bopae-piece-help .arrow,
+.bopae-piece-help .plate{
 	border-top: 1px solid #ebe5fb;
 	position: relative;
 }
-.bopae-circle-help .help.piece-0{
-	width: 100px;
-	left: 50%;
-	margin-left: -50px;
-}
-.bopae-circle-help .help.piece-0 .arrow{
-	width: 21px;
-	left: 40px;
+
+
+.piece-0 .bopae-piece-help .arrow{
+	left: 53px;
 	top: -7px;
 	transform: rotate(90deg);
 }
-.bopae-circle-help .help.piece-0 .plate{
+.piece-0 .bopae-piece-help .plate{
 	top: -20px;
+	left: 15px;
 }
-.bopae-circle-help .help.piece-0 label,
-.bopae-circle-help .help.piece-5 label{
+.piece-0 .bopae-piece-help label{
 	top: -38px;
 	width: 240px;
-	left: -70px;
+	left: -57px;
 }
 
-.bopae-circle-help .help.piece-1{
-	width: 100px;
-	left: 50%;
-	margin-left: -50px;
-}
-.bopae-circle-help .help.piece-1 .arrow{
-	width: 21px;
-	left: 138px;
+.piece-1 .bopae-piece-help .arrow{
+	left: 85px;
 	transform: rotate(-45deg);
-	top: 35px;
+	top: 33px;
 }
-.bopae-circle-help .help.piece-1 .plate{
-	top: 27px;
-	left: 156px;
+.piece-1 .bopae-piece-help .plate{
+	top: 25px;
+	left: 103px;
 }
-.bopae-circle-help .help.piece-1 label{
-	bottom: -8px;
-	left: 143px;
+.piece-1 .bopae-piece-help label{
+	bottom: -7px;
+	left: 95px;
 	width: 123px;
 }
-.bopae-circle-help .help.piece-1 label.too-long{
-	bottom: 4px;
+.piece-1 .bopae-piece-help label.too-long{
+	bottom: 6px;
+}
+
+.piece-2 .bopae-piece-help .arrow{
+	left: 123px;
+	top: 63px;
+	display: none;
+}
+.piece-2 .bopae-piece-help .plate{
+	top: 63px;
+	left: 123px;
+}
+.piece-2 .bopae-piece-help label{
+	bottom: -45px;
+	left: 126px;
+	width: 123px;
+}
+.piece-2 .bopae-piece-help label.too-long{
+	bottom: -32px;
+}
+
+.piece-3 .bopae-piece-help .arrow{
+	left: 84px;
+	top: 96px;
+	transform: rotate(45deg);
+}
+.piece-3 .bopae-piece-help .plate{
+	top: 103px;
+	left: 102px;
+}
+.piece-3 .bopae-piece-help label{
+	bottom: -85px;
+	left: 107px;
+	width: 123px;
+}
+.piece-3 .bopae-piece-help label.too-long{
+	bottom: -72px;
+}
+
+.piece-4 .bopae-piece-help .arrow{
+	left: 53px;
+	top: 135px;
+	transform: rotate(90deg);
+}
+.piece-4 .bopae-piece-help .plate{
+	top: 145px;
+	left: 15px;
+}
+.piece-4 .bopae-piece-help label{
+	top: 149px;
+	width: 240px;
+	left: -57px;
+}
+
+.piece-5 .bopae-piece-help .arrow{
+	left: 22px;
+	top: 96px;
+	transform: rotate(-45deg);
+}
+.piece-5 .bopae-piece-help .plate{
+	top: 103px;
+	left: -75px;
+}
+.piece-5 .bopae-piece-help label{
+	bottom: -85px;
+	left: -105px;
+	width: 123px;
+}
+.piece-5 .bopae-piece-help label.too-long{
+	bottom: -72px;
+}
+
+.piece-6 .bopae-piece-help .arrow{
+	left: -76зч;
+	top: 63px;
+	display: none;
+}
+.piece-6 .bopae-piece-help .plate{
+	top: 63px;
+	left: -98px;
+}
+.piece-6 .bopae-piece-help label{
+	bottom: -45px;
+	left: -123px;
+	width: 123px;
+}
+.piece-6 .bopae-piece-help label.too-long{
+	bottom: -32px;
+}
+
+.piece-7 .bopae-piece-help .arrow{
+	left: 22px;
+	transform: rotate(45deg);
+	top: 33px;
+}
+.piece-7 .bopae-piece-help .plate{
+	top: 25px;
+	left: -75px;
+}
+.piece-7 .bopae-piece-help label{
+	bottom: -7px;
+	left: -84px;
+	width: 123px;
+}
+.piece-7 .bopae-piece-help label.too-long{
+	bottom: 6px;
 }
