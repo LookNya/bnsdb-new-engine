@@ -65,20 +65,13 @@ class BopaePieceEditor extends PureComponent {
 										/>
 								)
 							}
-							<tr className="stat-cust-wrap">
-								<td>
-									<label>Заточка{this.props.pieceConfig.isActive('synth') ? '(a)' : ''}</label>
-								</td>
-								<td>
-									<InputRange
-										min={0}
-										max={piece.synthMax}
-										value={this.getPieceConfigFor('synth')}
-										onChange={this.onRangeChange}
-										codeName={'synth'}
-									/>
-								</td>
-							</tr>
+							<StatCustomizer
+								statName="synth"
+								stat={piece.synth}
+								value={this.getPieceConfigFor('synth')}
+								isActive={this.props.pieceConfig.isActive('synth')}
+								onRangeChange={this.onRangeChange}
+							/>
 						</tbody>
 					</table>
 

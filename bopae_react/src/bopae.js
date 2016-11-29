@@ -15,11 +15,11 @@ class Bopae {
 }
 
 class BopaePiece {
-	constructor(num, icon, stats, synthMax) {
+	constructor(num, icon, stats, synth) {
 		this.num = num
 		this.icon = icon
 		this.stats = stats
-		this.synthMax = synthMax
+		this.synth = synth
 	}
 	static getBGPath(num) {
 		return `${process.env.PUBLIC_URL}/img/bopae/background${num}.png`
@@ -51,7 +51,7 @@ class BopaePieceConfig {
 	}
 	get(piece, statName) {
 		if (statName in this.stats) return this.stats[statName]
-		return statName === 'synth' ? piece.synthMax : piece.stats[statName].max
+		return statName === 'synth' ? piece.synth.max : piece.stats[statName].max
 	}
 	isActive(statName) {
 		return this.activeStats.indexOf(statName) !== -1
@@ -100,10 +100,10 @@ class BopaeDBConv {
 	}
 
 	convert(dbBopaes) {
-		return dbBopaes.map(this.convertBopae.bind(this))
+		return dbBopaes.map(this.convertBopae)
 	}
 
-	convertBopae(bopae, index) {
+	convertBopae = (bopae, index) => {
 		let statsForNums = [[], [], [], [], [], [], [], []]
 		for (let statName in bopae.pieces) {
 			if (statName !== "synth") {
@@ -121,7 +121,8 @@ class BopaeDBConv {
 		for (let i=0; i<8; i++) {
 			statsForNums[i].sort(sortStats)
 			let stats = statsForNums[i].reduce(reduceStats, {})
-			pieces[i] = new BopaePiece(i, bopae.icon, stats, bopae.pieces.synth[i])
+			let synth = this.makeStat(0, bopae.pieces.synth[i], false)
+			pieces[i] = new BopaePiece(i, bopae.icon, stats, synth)
 		}
 
 		let bonuses = {3:{}, 5:{}, 8:{}}
@@ -136,14 +137,17 @@ class BopaeDBConv {
 		return new Bopae(bopae.name[this.lang], bopae.icon, bopae.obtaining[this.lang], pieces, bonuses)
 	}
 
-	convertStat(str) {
+	convertStat = (str) => {
 		let isBase = false
 		if (str.startsWith('#')) {
 			isBase = true
 			str = str.substr(1)
 		}
 		let [min, max] = str.split('-')
-		return {min: +min, max: +max, isBase}
+		return this.makeStat(+min, +max, isBase)
+	}
+	makeStat(min, max, isBase) {
+		return {min, max, isBase}
 	}
 }
 
