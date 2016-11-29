@@ -45,6 +45,7 @@ main .main-wrap{
 }
 main section{
 	width: 50%;
+	min-height: 300px;
 	display: inline-block;
 	vertical-align: middle;
 	text-align: center;

@@ -47,17 +47,48 @@ class BopaePart extends PureComponent {
 }
 
 class BopaeCircle extends PureComponent {
+	constructor(){
+		super()
+		this.state = {
+			hoveredPieceNum: null
+		}
+	}
+	handleHover = (num) => {
+		this.setState({hoveredPieceNum: num})
+	}
 	render() {
+		let pieces = this.props.pieces
+		// var hoveredPieceNum = this.state.hoveredPieceNum
+		var hoveredPieceNum = this.props.selectedNum //убрать это
+		let pieceName = ''
+		var helpLabelClassName = ''
+		var helpClassName = 'hidden'
+		if(hoveredPieceNum !== null) {
+			// pieceName = pieces[hoveredPieceNum].bopaeName 
+			helpClassName = 'help piece-' + hoveredPieceNum 
+		}
+		pieceName = 'Легендарного героя равнины 45 ур.'//убрать это
+		if(pieceName.length > 18) helpLabelClassName = 'too-long'
 		return (
 			<div className="bopae-circle" style={{width: PART_WIDTH*2, height: PART_WIDTH*2}}>
+				<div className="bopae-circle-help">
+					<div className={helpClassName}>
+						<div className="arrow"></div>
+						<div className="plate"></div>
+						<label className={helpLabelClassName ? helpLabelClassName : ''}>
+							{pieceName}
+						</label>
+					</div>
+				</div>
 				<img alt="background" className="bopae-bg-image" src={Bopae.getBGPath()} />
-				{this.props.pieces.map((piece, num) =>
+				{pieces.map((piece, num) =>
 					<BopaePart
 						key={num}
 						num={num}
 						icon={piece && piece.getIconPath()}
 						selected={this.props.selectedNum === num}
 						onClick={(e) => this.props.onClick(num)}
+						onMouseOver={(e) => this.handleHover(num)}
 					/>
 				)}
 			</div>
