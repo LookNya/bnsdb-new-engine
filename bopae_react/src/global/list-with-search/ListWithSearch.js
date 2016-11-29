@@ -43,7 +43,7 @@ class ListWithSearch extends PureComponent {
 								searchFilter={this.state.searchFilter}
 								onSearchChange={this.onSearchChange}
 							/>
-							<div className="items-wrap">
+							<div className="items-wrap webkit-scroll-fix">
 								{this.props.data.map((bopae, i) =>
 									<ListItem
 										key={i}

@@ -87,3 +87,6 @@ select {
 select option{
 	color: initial;
 }
+.webkit-scroll-fix{
+	-webkit-overflow-scrolling: touch;
+}
