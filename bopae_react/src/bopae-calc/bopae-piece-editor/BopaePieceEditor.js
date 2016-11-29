@@ -31,7 +31,7 @@ class BopaePieceEditor extends PureComponent {
 					<table>
 						<tbody>
 							<tr className="stat-cust-wrap title">
-								<td colSpan={2}>
+								<td colSpan={3}>
 									Основные статы
 								</td>
 							</tr>
@@ -48,7 +48,7 @@ class BopaePieceEditor extends PureComponent {
 								)
 							}
 							<tr className="stat-cust-wrap title">
-								<td colSpan={2}>
+								<td colSpan={3}>
 									Дополнительные статы <span>выберите два</span> {/*TODO менять подсказку в зависимости от количества выбранного*/}
 								</td>
 							</tr>
@@ -101,22 +101,50 @@ class BopaePieceEditor extends PureComponent {
 
 class StatCustomizer extends PureComponent {
 	render() {
+		let className = 'stat-cust-wrap '
+		if(!this.props.isActive && !this.props.stat.isBase) className += 'inactive'
+
 		if(this.props.stat.isBase){
 			return (
-				<tr className="stat-cust-wrap">
+				<tr className={className}>
 					<td>
 						<label>{this.props.statName}</label>
 					</td>
-					<td>
+					<td colSpan={2}>
 						{this.props.stat.min}—{this.props.stat.max}
+					</td>
+				</tr>
+			)
+		} else if(this.props.statName!='synth'){
+			return (
+				<tr className={className}>
+					<td>
+						<label>{this.props.statName}</label>
+					</td>
+					<td colSpan={2}>
+						<InputRange
+							min={this.props.stat.min}
+							max={this.props.stat.max}
+							value={this.props.value}
+							onChange={this.props.onRangeChange.bind(this)}
+							codeName={this.props.statName}
+						/>
 					</td>
 				</tr>
 			)
 		} else {
 			return (
-				<tr className="stat-cust-wrap">
+				<tr className="stat-cust-wrap synth">
 					<td>
-						<label>{this.props.statName}{this.props.isActive ? '(a)' : ''}</label>
+						<label>{this.props.statName}</label>
+					</td>
+					<td className="select-cell">
+							<select>
+							<option value="grapefruit">Grapefruit</option>
+							<option value="lime">Lime</option>
+							<option selected value="coconut">Coconut</option>
+							<option value="mango">Mango</option>
+						</select>
 					</td>
 					<td>
 						<InputRange

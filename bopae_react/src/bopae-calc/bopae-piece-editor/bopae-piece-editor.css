@@ -23,6 +23,18 @@
 	vertical-align: middle;
 	padding: 9px 4px;
 }
+.stat-cust-wrap.synth .input-range .min{
+	width: 19px;
+}
+.stat-cust-wrap.synth .select-cell{
+	padding: 0;
+}
+.stat-cust-wrap.inactive{
+	opacity: 0.5;
+}
+.stat-cust-wrap.inactive .thumb{
+	filter: grayscale(70%);
+}
 .stat-cust-wrap.title td{
 	font-weight: bold;
 	padding: 4px;
