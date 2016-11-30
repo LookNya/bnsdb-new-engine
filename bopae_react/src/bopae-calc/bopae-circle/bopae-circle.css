@@ -19,20 +19,25 @@
 
 .bopae-circle .bopae-piece img {
 	position: absolute;
-	transition: transform 0.2s ease, opacity 0.2s ease;
+	transition: all 0.2s ease;
 }
 .bopae-circle .bopae-piece.selected img {
-	filter: drop-shadow(0 0 4px green);
+	filter: drop-shadow(0 0 4px #8149d6);
 }
-.bopae-circle .bopae-piece:hover img {
-	filter: drop-shadow(0 0 4px yellow);
+.bopae-circle:hover .bopae-piece:not(:hover) img {
+	filter: brightness(50%);
 }
-.bopae-circle .bopae-piece.empty img,
-.bopae-circle .bopae-piece:not(:hover) img {
+.bopae-circle .bopae-piece.empty:not(.selected) img,
+.bopae-circle .bopae-piece:not(.selected) img{
 	transform: none !important;
 }
 .bopae-circle .bopae-piece.empty:not(.selected):not(:hover) img {
 	opacity: 0;
+	transform: none !important;
+}
+.bopae-circle:hover .bopae-piece.empty:hover img {
+	filter: drop-shadow(0 0 4px green);
+	transform: none !important;
 }
 
 .bopae-circle .bopae-piece-mask {
@@ -43,6 +48,9 @@
 	fill: none;
 }
 
+.bopae-circle .bopae-piece.selected .bopae-piece-help{
+	opacity: 0!important;
+}
 .bopae-piece-help{
 	position: absolute;
 	top:0;
