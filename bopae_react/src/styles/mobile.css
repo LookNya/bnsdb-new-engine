@@ -32,8 +32,24 @@
 	.list-with-search .piece-detail .piece{
 		width: 20px;
 	}
+	.bopae-piece-editor .controls-wrap{
+		text-align: center;
+	}
+	.bopae-piece-editor .controls-wrap button{
+		white-space: normal;
+		width: 45%;
+	}
 }
 @media (max-width: 767px) {
+	h2{
+		font-size: 18px;
+	}
+	h3{
+		font-size: 16px;
+	}
+	body{
+		font-size: 13px;
+	}
 	html{
 		overflow: hidden;
 	}
@@ -75,9 +91,20 @@
 	}
 	.bopae-calc{
 		white-space: nowrap;
+		height: inherit;
 	}
+	.bopae-calc section,
+	.bopae-calc section .bopae-list,
+	.bopae-calc section .bopae-piece-editor{
+		height: inherit
+	}
+
 	.bopae-calc .bopae-piece-help{
 		display: none;
+	}
+	.list-with-search .list-item label{
+		padding-top: 8px;
+		padding-left: 7px; 
 	}
 	.list-with-search .item-table .icon-cell {
 		width: 0;

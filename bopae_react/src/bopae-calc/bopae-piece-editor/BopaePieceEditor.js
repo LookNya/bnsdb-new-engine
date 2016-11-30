@@ -24,68 +24,71 @@ class BopaePieceEditor extends PureComponent {
 			let piece = this.props.selectedBopae.pieces[this.props.selectedPieceNum]
 			//если выбран кусок, показываем его редактор
 			return (
-				<div className="bopae-piece-editor margin-left">
-					<h2>{this.props.selectedBopae.name}#{this.props.selectedPieceNum+1}</h2>
-					<h3>Бонусы от сета</h3>
-					<BopaeSets bopae={this.props.selectedBopae} piecesCount={this.props.selectedBopaePiecesCount}/>
-					<table>
-						<tbody>
-							<tr className="stat-cust-wrap title">
-								<td colSpan={3}>
-									Основные статы
-								</td>
-							</tr>
-							{
-								piece.mapStats((statName, stat) =>
-									stat.isBase &&
-										<StatCustomizer
-											key={statName}
-											statName={statName}
-											stat={stat}
-											value={this.getPieceConfigFor(statName)}
-											onRangeChange={this.onRangeChange}
-										/>
-								)
-							}
-							<tr className="stat-cust-wrap title">
-								<td colSpan={3}>
-									Дополнительные статы <span>выберите два</span> {/*TODO менять подсказку в зависимости от количества выбранного*/}
-								</td>
-							</tr>
-							{
-								piece.mapStats((statName, stat) =>
-									!stat.isBase &&
-										<StatCustomizer
-											key={statName}
-											statName={statName}
-											stat={stat}
-											value={this.getPieceConfigFor(statName)}
-											isActive={this.props.pieceConfig.isActive(statName)}
-											onRangeChange={this.onRangeChange}
-										/>
-								)
-							}
-							<StatCustomizer
-								statName="synth"
-								stat={piece.synth}
-								value={this.getPieceConfigFor('synth')}
-								isActive={this.props.pieceConfig.isActive('synth')}
-								onRangeChange={this.onRangeChange}
-							/>
-						</tbody>
-					</table>
-
-					<div className="bottom-controls">
-						<button className="togglable">Использовать эту скрижаль везде</button>
+				<div className="bopae-piece-editor margin-left flexed">
+					<div className="head-wrap">
+						<h2>{this.props.selectedBopae.name}#{this.props.selectedPieceNum+1}</h2>
+						<h3>Бонусы от сета</h3>
+						<BopaeSets bopae={this.props.selectedBopae} piecesCount={this.props.selectedBopaePiecesCount}/>
+					</div>
+					<div className="stats-wrap webkit-scroll-fix">
+						<table>
+							<tbody>
+								<tr className="stat-cust-wrap title">
+									<td colSpan={3}>
+										Основные статы
+									</td>
+								</tr>
+								{
+									piece.mapStats((statName, stat) =>
+										stat.isBase &&
+											<StatCustomizer
+												key={statName}
+												statName={statName}
+												stat={stat}
+												value={this.getPieceConfigFor(statName)}
+												onRangeChange={this.onRangeChange}
+											/>
+									)
+								}
+								<tr className="stat-cust-wrap title">
+									<td colSpan={3}>
+										Дополнительные статы <span>выберите два</span> {/*TODO менять подсказку в зависимости от количества выбранного*/}
+									</td>
+								</tr>
+								{
+									piece.mapStats((statName, stat) =>
+										!stat.isBase &&
+											<StatCustomizer
+												key={statName}
+												statName={statName}
+												stat={stat}
+												value={this.getPieceConfigFor(statName)}
+												isActive={this.props.pieceConfig.isActive(statName)}
+												onRangeChange={this.onRangeChange}
+											/>
+									)
+								}
+								<StatCustomizer
+									statName="synth"
+									stat={piece.synth}
+									value={this.getPieceConfigFor('synth')}
+									isActive={this.props.pieceConfig.isActive('synth')}
+									onRangeChange={this.onRangeChange}
+								/>
+							</tbody>
+						</table>
+					</div>
+					<div className="controls-wrap">
 						<button className="togglable">Использовать эту скрижаль на свободных кусках</button>
+						<button className="togglable">Использовать эту скрижаль везде</button>
 					</div>
 				</div>
 			)
 		} else if(this.props.selectedBopae){
 			//если выбрана бопая, показываем предложение замостить весь блин ею
 			return (
-				<div className="bopae-piece-editor margin-left">
-					<h2>Равнины изобилия 45 #3</h2>
+				<div className="bopae-piece-editor margin-left one-butt">
+					<button className="togglable huge">Заполнить всю триграмму кусочками {this.props.selectedBopae.name}</button>
 				</div>
 			)
 		} else {
@@ -111,11 +114,11 @@ class StatCustomizer extends PureComponent {
 						<label>{this.props.statName}</label>
 					</td>
 					<td colSpan={2}>
-						{this.props.stat.min}—{this.props.stat.max}
+						{this.props.stat.min}&ndash;{this.props.stat.max}
 					</td>
 				</tr>
 			)
-		} else if(this.props.statName!='synth'){
+		} else if(this.props.statName!=='synth'){
 			return (
 				<tr className={className}>
 					<td>

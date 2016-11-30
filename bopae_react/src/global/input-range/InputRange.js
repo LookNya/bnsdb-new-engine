@@ -69,6 +69,11 @@ class InputRange extends PureComponent {
 			style.borderTopRightRadius = '4px'
 			style.borderBottomRightRadius = '4px'
 		}
+		if(min === max){
+			style.left = '100%'
+			style.borderTopLeftRadius = ''
+			style.borderBottomLeftRadius = ''
+		}
 		return  (
 			<div className="input-range">
 				<table>

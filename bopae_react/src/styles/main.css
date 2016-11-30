@@ -28,6 +28,12 @@ button.togglable{
 	color: #ebe5fb;
 	transition: border-color 0.1s;
 }
+button.togglable.huge{
+	font-size: 24px;
+	line-height: 32px;
+	padding: 15px 21px;
+	border-width: 3px;
+}
 button.togglable.selected{
 	background: #391252;
 	border-color: #a76cff;
@@ -79,13 +85,17 @@ input{
 }
 select {
    background: transparent;
-   height: 29px;
+   height: 24px;
    overflow: hidden;
 	 color: #ebe5fb;
 	 border-radius: 4px;
+	 cursor: pointer;
 }
 select option{
-	color: initial;
+	background: rgba(0, 0, 0, 0.75);
+}
+select option:hover{
+	background: #391252;
 }
 .webkit-scroll-fix{
 	-webkit-overflow-scrolling: touch;

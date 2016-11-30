@@ -1,17 +1,17 @@
 .list-with-search{
 	background: rgba(0, 0, 0, 0.5);
+	position: relative;
+	height: inherit;
 }
 .list-with-search .items-wrap{
-	height: 524px;
 	overflow-x: hidden;
 	overflow-y: auto;
+	position: absolute;
+	top: 36px;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
-/*.list-with-search .items-wrap::-webkit-scrollbar-thumb{
-	visibility: hidden;
-}
-.list-with-search .items-wrap:hover::-webkit-scrollbar-thumb{
-	visibility: visible;
-}*/
 .list-with-search .item-table{
 	table-layout: fixed;
 	width: 100%;

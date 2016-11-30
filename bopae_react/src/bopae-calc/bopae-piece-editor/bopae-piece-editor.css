@@ -3,7 +3,6 @@
 	background: rgba(0, 0, 0, 0.75);
 	padding: 15px;
 	position: relative;
-	padding-bottom: 44px;
 }
 .bopae-piece-editor h2,
 .bopae-piece-editor h3 {
@@ -50,11 +49,29 @@
 .bopae-piece-editor button{
 	margin-left: 12px;
 }
-.bopae-piece-editor .bottom-controls{
-	position: absolute;
-	bottom: 0;
-	padding-bottom: 10px;
-}
-.bopae-piece-editor .bottom-controls button:nth-child(1){
+
+.bopae-piece-editor .controls-wrap button:nth-child(1){
 	margin-left: 0;
+}
+.bopae-piece-editor.one-butt button{
+	position: absolute;
+	top: 50%;
+	left: 20px;
+	right: 20px;
+	margin: -50px 0 0 0;
+}
+.bopae-piece-editor.flexed{
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: space-between;
+}
+
+.bopae-piece-editor .stats-wrap{
+	overflow-y: auto;
+	padding-bottom: 5px;
+}
+.bopae-piece-editor .controls-wrap{
+	padding-top: 15px;
+	height: auto;
 }

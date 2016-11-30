@@ -4,9 +4,6 @@ import ReactDOM from 'react-dom'
 //собственно модули
 import BopaeCalc from './bopae-calc/BopaeCalc'
 import BottomTabs from './bottom-tabs/BottomTabs'
-import BopaeCircle from './bopae-calc/bopae-circle/BopaeCircle'
-import BopaeCircle2 from './bopae-calc/bopae-circle/BopaeCircle2'
-import BopaeCircle3 from './bopae-calc/bopae-circle/BopaeCircle3'
 //глобальные штучки-дрючки
 import './styles/reset.css'
 import './styles/utils.css'
@@ -42,16 +39,16 @@ class App extends PureComponent{
 	}
 	// Евенты
 	setupEvents(){
-		window.addEventListener('resize', this.updateLayout.bind(this))
+		window.addEventListener('resize', this.updateLayout)
 	}
 	clearEvents(){
-		window.removeEventListener('resize', this.updateLayout.bind(this))
+		window.removeEventListener('resize', this.updateLayout)
 	}
 	onPageChange = (page) => {
 		this.setState({selectedPage: page})
 	}
 
-	updateLayout(){
+	updateLayout = (e) => {
 		let layout = 'desktop',
 			w = window,
 			d = document,
@@ -67,7 +64,7 @@ class App extends PureComponent{
 			layout = 'desktop'
 		}
 		d.body.scrollTop = 0
-		this.setState({layout: layout, selectedPage: 0})
+		this.setState({layout: layout, selectedPage: 0, screenHeight: height})
 	}
 	render(){
 		return(
@@ -82,7 +79,11 @@ class App extends PureComponent{
 				<main>
 					<div className="main-bg"></div>
 					<div className="main-wrap">
-						<BopaeCalc bopaes={bopaes} selectedPage={this.state.selectedPage}/>
+						<BopaeCalc 
+							bopaes={bopaes} 
+							selectedPage={this.state.selectedPage}
+							layout={this.state.layout}
+						/>
 					</div>
 				</main>
 				<footer>
