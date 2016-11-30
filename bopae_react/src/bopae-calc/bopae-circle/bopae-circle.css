@@ -1,6 +1,7 @@
 .bopae-circle {
 	position: relative;
 	margin: 44px 0 88px;
+	user-select: none;
 }
 
 .bopae-circle .bopae-piece {
@@ -8,6 +9,7 @@
 	position: absolute;
 	transition: z-index 0s ease 0.2s;
 	z-index: 1;
+	cursor: pointer;
 }
 .bopae-circle .bopae-piece.selected {
 	z-index: 2;
