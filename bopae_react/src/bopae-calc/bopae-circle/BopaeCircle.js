@@ -18,6 +18,22 @@ function centerOffset(num) {
 	return [[w/2,w], [0,w], [0,w/2], [0,0], [w/2,0], [w,0], [w,w/2], [w,w]][num]
 }
 
+class BopaePartHelp extends PureComponent {
+	render() {
+		let pieceName = this.props.piece ? this.props.piece.bopae.name : ''
+		let helpLabelClassName = pieceName.length > 18 ? 'too-long' : ''
+		return (
+			<div className={'bopae-piece-help' + (this.props.piece ? '' : ' hidden')}>
+				<div className="arrow"></div>
+				<div className="plate"></div>
+				<label className={helpLabelClassName}>
+					{pieceName}
+				</label>
+			</div>
+		)
+	}
+}
+
 class BopaePartMask extends PureComponent {
 	render() {
 		let [x0, y0] = centerOffset(this.props.num)
@@ -40,20 +56,11 @@ class BopaePart extends PureComponent {
 		let [hoverDX, hoverDY] = [Math.cos(angle)*HOVER_DELTA_PX, Math.sin(angle)*HOVER_DELTA_PX]
 		let transform = `translate(${hoverDX}px,${hoverDY}px)`
 		let className = `bopae-piece${this.props.selected ? ' selected' : ''}${this.props.piece ? '' : ' empty'} piece-${this.props.num}`
-
 		let pieceIcon = this.props.piece ? this.props.piece.getIconPath() : BopaePiece.getBGPath(this.props.num)
-		let pieceName = this.props.piece ? this.props.piece.bopae.name : ''
-		let helpLabelClassName = pieceName.length > 18 ? 'too-long' : ''
 
 		return (
 			<div className={className} style={{left: w-x0, top: w-y0, width: w, height: w}} onClick={this.onClick}>
-				<div className={'bopae-piece-help' + (!this.props.piece ? ' hidden' : '')}>
-					<div className="arrow"></div>
-					<div className="plate"></div>
-					<label className={helpLabelClassName}>
-						{pieceName}
-					</label>
-				</div>
+				<BopaePartHelp piece={this.props.piece} />
 				<BopaePartMask num={this.props.num} />
 				<img style={{transform}} alt={'bopae-'+this.props.num} src={pieceIcon} />
 			</div>
