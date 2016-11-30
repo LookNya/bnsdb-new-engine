@@ -31,28 +31,31 @@ class BopaePartMask extends PureComponent {
 }
 
 class BopaePart extends PureComponent {
+	onClick = (e) => {
+		this.props.onClick(this.props.num)
+	}
 	render() {
 		let w = PART_WIDTH, angle = num2rad(this.props.num)
 		let [x0, y0] = centerOffset(this.props.num)
 		let [hoverDX, hoverDY] = [Math.cos(angle)*HOVER_DELTA_PX, Math.sin(angle)*HOVER_DELTA_PX]
 		let transform = `translate(${hoverDX}px,${hoverDY}px)`
-		let className = `bopae-piece${this.props.selected ? ' selected' : ''}${this.props.icon ? '' : ' empty'} piece-${this.props.num}`
+		let className = `bopae-piece${this.props.selected ? ' selected' : ''}${this.props.piece ? '' : ' empty'} piece-${this.props.num}`
 
-		let pieceName = ''
-		var helpLabelClassName = ''
-		pieceName = 'Легендарного героя равнины 45 ур.'//убрать это
-		if(pieceName.length > 18) helpLabelClassName = 'too-long'
+		let pieceIcon = this.props.piece ? this.props.piece.getIconPath() : BopaePiece.getBGPath(this.props.num)
+		let pieceName = this.props.piece ? this.props.piece.bopae.name : ''
+		let helpLabelClassName = pieceName.length > 18 ? 'too-long' : ''
+
 		return (
-			<div className={className} style={{left: w-x0, top: w-y0, width: w, height: w}} onClick={this.props.onClick}>
-				<div className="bopae-piece-help">
+			<div className={className} style={{left: w-x0, top: w-y0, width: w, height: w}} onClick={this.onClick}>
+				<div className={'bopae-piece-help' + (!this.props.piece ? ' hidden' : '')}>
 					<div className="arrow"></div>
 					<div className="plate"></div>
-					<label className={helpLabelClassName ? helpLabelClassName : ''}>
+					<label className={helpLabelClassName}>
 						{pieceName}
 					</label>
 				</div>
 				<BopaePartMask num={this.props.num} />
-				<img style={{transform}} alt={'bopae-'+this.props.num} src={this.props.icon || BopaePiece.getBGPath(this.props.num)} />
+				<img style={{transform}} alt={'bopae-'+this.props.num} src={pieceIcon} />
 			</div>
 		)
 	}
@@ -68,9 +71,9 @@ class BopaeCircle extends PureComponent {
 					<BopaePart
 						key={num}
 						num={num}
-						icon={piece && piece.getIconPath()}
+						piece={piece}
 						selected={this.props.selectedNum === num}
-						onClick={(e) => this.props.onClick(num)}
+						onClick={this.props.onClick}
 					/>
 				)}
 			</div>

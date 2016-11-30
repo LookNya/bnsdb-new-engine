@@ -5,6 +5,8 @@ class Bopae {
 		this.obtaining = obtaining
 		this.pieces = pieces
 		this.bonuses = bonuses
+		for (let piece of this.pieces)
+			piece.bopae = this
 	}
 	static getBGPath() {
 		return `${process.env.PUBLIC_URL}/img/bopae/background.png`
@@ -16,6 +18,7 @@ class Bopae {
 
 class BopaePiece {
 	constructor(num, icon, stats, synth) {
+		this.bopae = null
 		this.num = num
 		this.icon = icon
 		this.stats = stats
