@@ -59,7 +59,7 @@ class BopaePieceConfig {
 	update(statName, value) {
 		let newStats = {...this.stats, [statName]: value}
 		let newActiveStats = this.activeStats
-		if (this.activeStats[this.activeStats.length-1] !== statName) {
+		if (statName !== 'synth' && this.activeStats[this.activeStats.length-1] !== statName) {
 			newActiveStats = this.activeStats.slice()
 			let ind = newActiveStats.indexOf(statName)
 			if (ind !== -1) newActiveStats.splice(ind, 1)
