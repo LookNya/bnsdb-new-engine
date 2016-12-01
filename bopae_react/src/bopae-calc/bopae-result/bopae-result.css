@@ -1,3 +1,40 @@
 .bopae-result{
-	height: 100px;
+	height: inherit;
+	background: rgba(0, 0, 0, 0.75);
+	padding: 15px;
+}
+.bopae-result .stat-names .separator{
+	width: 50px;
+}
+.bopae-result .stat-names td:not(.separator){
+	font-weight: bold;
+	padding: 4px;
+	background: #391252;
+	letter-spacing: 0.6px;
+	min-width: 140px;
+}
+.bopae-result .stat-values td:not(.separator){
+	padding: 9px 4px;
+}
+.bopae-result span{
+	padding-left: 8px;
+}
+.bopae-result span.minus{
+	color: #f83939;
+}
+.bopae-result span.minus:before{
+	content: '-'
+}
+.bopae-result span.plus{
+	color: #02a902;
+}
+.bopae-result span.plus:before{
+	content: '+'
+}
+.bopae-result .tip{
+	font-style: italic;
+	padding: 20px 0 44px;
+	opacity: 0.2;
+	text-align: center;
+	font-size: 18px;
 }

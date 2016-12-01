@@ -71,3 +71,14 @@ footer{
 	margin: auto;
 	position: relative;
 }
+h2,
+h3 {
+	margin-top: 0;
+	white-space: normal;
+}
+h3 {
+	padding-bottom: 15px;
+}
+h2{
+	padding-bottom: 11px;
+}
