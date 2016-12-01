@@ -13,21 +13,94 @@ import './styles/mobile.css'
 import bopaeDB from './bopae.json'
 import { BopaeDBConv } from './bopae.js'
 
-let bopaes = new BopaeDBConv('ru', bopaeDB.l10n).convert(bopaeDB.bopaes)
-window.bopaes = bopaes
 
-let testPieces = bopaes[0].pieces.slice()
-testPieces[4] = null
-testPieces[5] = null
+
+// redux stuff
+import { createStore, combineReducers } from 'redux'
+import { connect } from 'react-redux'
+
+// initial data
+const langInitialState = 'ru' //navigator.language || navigator.userLanguage
+const uiInitialState = {
+	layout: 'desktop',
+	selectedPage: 0,
+	screenHeight: 0
+}
+const bopaeCalcInitialState = {
+	db: bopaeDB
+}
+
+// reducers
+let reducers = {
+	lang: function(state=langInitialState, action) {
+		switch(action.type) {
+		case 'CHANGE_LANG':
+			return {...state, lang: action.lang}
+		default:
+			return state
+		}
+	},
+	ui: function(state=uiInitialState, action) {
+		switch(action.type) {
+		case 'UPDATE_LAYOUT':
+			return {
+				...state.ui,
+				layout: action.layout,
+				screenHeight: action.screenHeight
+			}
+		case 'SELECT_PAGE':
+			return {
+				...state.ui,
+				selectedPage: action.selectedPage
+			}
+		default:
+			return state
+		}
+	},
+	bopaeCalc: function(state=bopaeCalcInitialState, action) {
+		return state
+	}
+}
+
+// actions
+function changeLang(lang) {
+	return {type: 'CHANGE_LANG', lang}
+}
+
+function updateLayout(layout, screenHeight) {
+	return {type: 'UPDATE_LAYOUT', layout, screenHeight}
+}
+function selectPage(pageNum) {
+	return {type: 'SELECT_PAGE', selectedPage: pageNum}
+}
+
+// store
+let store = createStore(combineReducers(reducers))
+
+
 
 class App extends PureComponent{
-	constructor() {
-		super()
-		this.state = {
-			selectedPage: 0,
-			layout: ''
+	updateLayout() {
+		let layout = 'desktop'
+		let d = document
+		let width = window.innerWidth || d.documentElement.clientWidth || d.body.clientWidth
+		let height = window.innerHeight|| d.documentElement.clientHeight|| d.body.clientHeight
+
+		if(width < 700){
+			layout = 'mobile'
+		} else if(width < 1200){
+			layout = 'tablet'
+		} else {
+			layout = 'desktop'
 		}
+
+		if (layout != 'mobile')
+			store.dispatch(selectPage(0))
+
+		d.body.scrollTop = 0 //TODO: а этого тут вообще быть не должно, потому что оно должно быть правильной высоты
+		store.dispatch(updateLayout(layout, height))
 	}
+
 	componentWillMount() {
 		this.updateLayout()
 	}
@@ -37,35 +110,21 @@ class App extends PureComponent{
 	componentWillUnmount() {
 		this.clearEvents()
 	}
+
 	// Евенты
 	setupEvents(){
-		window.addEventListener('resize', this.updateLayout)
+		window.addEventListener('resize', this.onResize)
 	}
 	clearEvents(){
-		window.removeEventListener('resize', this.updateLayout)
+		window.removeEventListener('resize', this.onResize)
+	}
+	onResize = (e) => {
+		this.updateLayout()
 	}
 	onPageChange = (page) => {
-		this.setState({selectedPage: page})
+		store.dispatch(selectPage(page))
 	}
 
-	updateLayout = (e) => {
-		let layout = 'desktop',
-			w = window,
-			d = document,
-			documentElement = d.documentElement,
-			body = d.getElementsByTagName('body')[0],
-			width = w.innerWidth || documentElement.clientWidth || body.clientWidth,
-			height = w.innerHeight|| documentElement.clientHeight|| body.clientHeight
-		if(width < 700){
-			layout = 'mobile'
-		} else if(width < 1200){
-			layout = 'tablet'
-		} else {
-			layout = 'desktop'
-		}
-		d.body.scrollTop = 0
-		this.setState({layout: layout, selectedPage: 0, screenHeight: height})
-	}
 	render(){
 		return(
 			<div className="app">
@@ -80,9 +139,9 @@ class App extends PureComponent{
 					<div className="main-bg"></div>
 					<div className="main-wrap">
 						<BopaeCalc 
-							bopaes={bopaes} 
-							selectedPage={this.state.selectedPage}
-							layout={this.state.layout}
+							bopaes={this.props.bopaes}
+							selectedPage={this.props.selectedPage}
+							layout={this.props.layout}
 						/>
 					</div>
 				</main>
@@ -92,7 +151,7 @@ class App extends PureComponent{
 					</div>
 				</footer>
 				<BottomTabs
-					selectedPage={this.state.selectedPage}
+					selectedPage={this.props.selectedPage}
 					onPageChange={this.onPageChange}
 				/>
 			</div>
@@ -100,7 +159,18 @@ class App extends PureComponent{
 	}
 }
 
+function mapStateToProps(state) {
+	//TODO: reselect here
+	return {
+		layout: state.ui.layout,
+		selectedPage: state.ui.selectedPage,
+		bopaes: new BopaeDBConv(state.lang, state.bopaeCalc.db.l10n).convert(state.bopaeCalc.db.bopaes)
+	}
+}
+
+const App2 = connect(mapStateToProps)(App)
+
 ReactDOM.render(
-	<App/>,
+	<App2 store={store} />,
 	document.getElementById('root')
 )
