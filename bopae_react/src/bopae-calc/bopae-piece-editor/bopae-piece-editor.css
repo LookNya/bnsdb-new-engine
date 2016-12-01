@@ -53,7 +53,7 @@
 .bopae-piece-editor .controls-wrap button:nth-child(1){
 	margin-left: 0;
 }
-.bopae-piece-editor.one-butt button{
+.bopae-piece-editor.one-label .tips-wrap{
 	position: absolute;
 	top: 50%;
 	left: 20px;
@@ -74,4 +74,15 @@
 .bopae-piece-editor .controls-wrap{
 	padding-top: 15px;
 	height: auto;
+}
+
+.bopae-piece-editor .tips-wrap button{
+	margin: 0;
+}
+.bopae-piece-editor .tips-wrap p{
+	font-style: italic;
+	padding-bottom: 20px;
+	font-size: 20px;
+	opacity: 0.2;
+	text-align: center;
 }

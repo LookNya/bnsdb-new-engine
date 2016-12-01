@@ -87,15 +87,21 @@ class BopaePieceEditor extends PureComponent {
 		} else if(this.props.selectedBopae){
 			//если выбрана бопая, показываем предложение замостить весь блин ею
 			return (
-				<div className="bopae-piece-editor margin-left one-butt">
-					<button className="togglable huge">Заполнить всю триграмму кусочками {this.props.selectedBopae.name}</button>
+				<div className="bopae-piece-editor margin-left one-label">
+					<div className="tips-wrap">
+						<button className="togglable huge">Заполнить всю триграмму кусочками {this.props.selectedBopae.name}</button>
+						</div>
 				</div>
 			)
 		} else {
 			//если ничего не выбрано, показываем предложение выбрать
 			return (
-				<div className="bopae-piece-editor margin-left">
-					<h2>Равнины изобилия 45 #3</h2>
+				<div className="bopae-piece-editor margin-left one-label">
+					<div className="tips-wrap">
+						<p>Выберите нужный кусочек скрижали чтобы преступить к редактированию.</p>
+						<p>Выберите скрижаль из списка, чтобы заполнить ее кусочками весь калькулятор.</p>
+						<p></p>
+					</div>
 				</div>
 			)
 		}
