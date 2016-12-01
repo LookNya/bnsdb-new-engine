@@ -97,7 +97,6 @@ class App extends PureComponent{
 		if (layout != 'mobile')
 			store.dispatch(selectPage(0))
 
-		d.body.scrollTop = 0 //TODO: а этого тут вообще быть не должно, потому что оно должно быть правильной высоты
 		store.dispatch(updateLayout(layout, height))
 	}
 
