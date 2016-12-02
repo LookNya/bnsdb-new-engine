@@ -3,9 +3,7 @@ import './bottom-tabs.css'
 
 class BottomTabs extends PureComponent {
 	handleClick = (e) =>{
-		var page = e.target.dataset.page
-		console.log(page)
-		this.props.onPageChange(page)
+		this.props.onPageChange(+e.target.dataset.page)
 	}
 	render(){
 		let classnames = 'tab f_l '

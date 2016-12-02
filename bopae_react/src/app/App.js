@@ -2,10 +2,16 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 //собственно модули
-import BopaeCalc from './bopae-calc/BopaeCalc'
-import BottomTabs from './bottom-tabs/BottomTabs'
+import BopaeCalc from '../bopae-calc/BopaeCalc'
+import BottomTabs from '../bottom-tabs/BottomTabs'
+//глобальные штучки-дрючки
+import './styles/reset.css'
+import './styles/utils.css'
+import './styles/main.css'
+import './styles/page.css'
+import './styles/mobile.css'
 
-import { BopaeDBConv } from './bopae.js'
+import { BopaeDBConv } from '../bopae.js'
 import { updateLayout, selectPage } from './actions.js'
 
 
@@ -27,7 +33,6 @@ class App extends PureComponent{
 		//if (layout !== 'mobile')
 		//	store.dispatch(selectPage(0))
 
-		//store.dispatch(updateLayout(layout, height))
 		this.props.onLayoutUpdate(layout, height)
 	}
 

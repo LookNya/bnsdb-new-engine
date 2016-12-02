@@ -2,18 +2,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 //редуксовы нужды
-import { createStore } from 'redux'
-//глобальные штучки-дрючки
-import './styles/reset.css'
-import './styles/utils.css'
-import './styles/main.css'
-import './styles/page.css'
-import './styles/mobile.css'
+import { createStore, combineReducers } from 'redux'
 
-import App from './App.js'
-import rootReducer from './reducers.js'
 
-let store = createStore(rootReducer)
+import { lang, ui } from  './app/reducers.js'
+import bopaeCalc from './bopae-calc/reducers.js'
+
+let store = createStore(combineReducers({lang, ui, bopaeCalc}))
+
+
+import App from './app/App.js'
 
 ReactDOM.render(
 	<App store={store} />,
