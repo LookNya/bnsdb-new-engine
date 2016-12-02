@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import BopaeSets from '../../global/bopae-sets/BopaeSets'
+//import BopaeSets from '../../global/bopae-sets/BopaeSets'
 import './bopae-result.css'
 
 class BopaeResult extends PureComponent {
