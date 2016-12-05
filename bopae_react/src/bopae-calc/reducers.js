@@ -1,4 +1,4 @@
-import bopaeDB from '../bopae.json'
+import bopaeDB from './lib/bopae.json'
 
 const initialState = {
 	db: bopaeDB

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { Bopae, BopaePiece } from '../../bopae.js'
+import { Bopae, BopaePiece } from '../lib/bopae.js'
 import './bopae-circle.css'
 
 const PART_WIDTH = 128

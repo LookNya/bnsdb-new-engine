@@ -11,7 +11,7 @@ import bopaeCalc from './bopae-calc/reducers.js'
 let store = createStore(combineReducers({lang, ui, bopaeCalc}))
 
 
-import App from './app/App.js'
+import App from './app/components/App.js'
 
 ReactDOM.render(
 	<App store={store} />,

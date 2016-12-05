@@ -1,11 +1,12 @@
 import React, { PureComponent } from 'react'
-import BopaeList from './bopae-list/BopaeList'
-import BopaeResult from './bopae-result/BopaeResult'
-import BopaeCircle from './bopae-circle/BopaeCircle'
-import BopaePieceEditor from './bopae-piece-editor/BopaePieceEditor'
-import { BopaesConfig, BopaePieceConfig } from '../bopae.js'
+import BopaeList from './BopaeList'
+import BopaeResult from './BopaeResult'
+import BopaeCircle from './BopaeCircle'
+import BopaePieceEditor from './BopaePieceEditor'
+import { BopaesConfig, BopaePieceConfig } from '../lib/bopae.js'
 
 import './bopae-calc.css'
+
 
 class BopaeCalc extends PureComponent {
 	constructor() {

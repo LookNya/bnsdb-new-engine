@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import './bopae-piece-editor.css'
 
-import BopaeSets from '../../global/bopae-sets/BopaeSets'
+import BopaeSets from './BopaeSets'
 import InputRange from '../../global/input-range/InputRange'
 
 class BopaePieceEditor extends PureComponent {
