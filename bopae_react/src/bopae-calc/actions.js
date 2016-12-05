@@ -1,3 +1,11 @@
+export function bopaeSelect(bopae) {
+	return {type: 'BOPAE_SELECT', bopae}
+}
+
+export function pieceNumSelect(num) {
+	return {type: 'PIECE_NUM_SELECT', num}
+}
+
 export function pieceChoice(bopae, num) {
 	return {type: 'PIECE_CHOICE', bopae, num}
 }

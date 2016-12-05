@@ -1,9 +1,37 @@
 import bopaeDB from './lib/bopae.json'
+import { BopaesConfig } from './lib/bopae.js'
+
 
 const initialState = {
-	db: bopaeDB
+	db: bopaeDB,
+	choosenPieces: Array(8).fill(null),
+	piecesConfig: new BopaesConfig(),
+	selectedNum: null,
+	selectedBopae: null,
 }
 
 export default function reducer(state=initialState, action) {
-	return state
+	switch(action.type) {
+
+	case 'BOPAE_SELECT':
+		return {...state, selectedBopae: action.bopae}
+
+	case 'PIECE_NUM_SELECT':
+		return {...state, selectedNum: action.num}
+
+	case 'PIECE_CHOICE':
+		let choosenPieces = state.choosenPieces.slice()
+		choosenPieces[action.num] = action.bopae.pieces[action.num]
+		return {...state, choosenPieces}
+
+	case 'ALL_PIECES_CHOICE':
+		return {...state, choosenPieces: action.bopae.pieces.slice()}
+
+	case 'PIECE_CONFIG_UPDATE':
+		let {bopae, num, statName, statValue} = action
+		return {...state, piecesConfig: state.piecesConfig.updatePieceConfig(bopae, num, statName, statValue)}
+
+	default:
+		return state
+	}
 }

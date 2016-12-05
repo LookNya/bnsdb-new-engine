@@ -5,11 +5,6 @@ import BopaeSets from './BopaeSets'
 import InputRange from '../../global/input-range/InputRange'
 
 class BopaePieceEditor extends PureComponent {
-	constructor() {
-		super()
-		this.state = {}
-	}
-
 	getPieceConfigFor(statName) {
 		let piece = this.props.selectedBopae.pieces[this.props.selectedPieceNum]
 		return this.props.pieceConfig.get(piece, statName)
