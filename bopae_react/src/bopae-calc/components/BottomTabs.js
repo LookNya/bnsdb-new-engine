@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
-import { connect } from 'react-redux'
-import { selectPage } from '../../app/actions'
 import './bottom-tabs.css'
+
 
 class BottomTabs extends PureComponent {
 	handleClick = (e) =>{
@@ -20,16 +19,4 @@ class BottomTabs extends PureComponent {
 	}
 }
 
-function mapStateToProps(state) {
-	return {
-		selectedPage: state.ui.selectedPage
-	}
-}
-
-function mapDispatchToProps(dispatch) {
-	return {
-		onPageChange: (page) => dispatch(selectPage(page)),
-	}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(BottomTabs)
+export default BottomTabs

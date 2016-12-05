@@ -1,13 +1,10 @@
 import React, { PureComponent } from 'react'
-import { connect } from 'react-redux'
 
 import BopaeList from './BopaeList'
 import BopaeResult from './BopaeResult'
 import BopaeCircle from './BopaeCircle'
 import BopaePieceEditor from './BopaePieceEditor'
 import { BopaesConfig, BopaePieceConfig } from '../lib/bopae.js'
-
-import { BopaeDBConv } from '../../bopae-calc/lib/bopae.js'
 
 import './bopae-calc.css'
 
@@ -123,18 +120,4 @@ class BopaeCalc extends PureComponent {
 	}
 }
 
-
-function mapStateToProps(state) {
-	//TODO: reselect here
-	return {
-		layout: state.ui.layout,
-		selectedPage: state.ui.selectedPage,
-		bopaes: new BopaeDBConv(state.lang, state.bopaeCalc.db.l10n).convert(state.bopaeCalc.db.bopaes)
-	}
-}
-
-function mapDispatchToProps(dispatch) {
-	return {}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(BopaeCalc)
+export default BopaeCalc

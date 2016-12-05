@@ -1,17 +1,14 @@
 //реактовы нужды
 import React, { PureComponent } from 'react'
-import { connect } from 'react-redux'
 //собственно модули
-import BopaeCalc from '../../bopae-calc/components/BopaeCalc'
-import BottomTabs from '../../bopae-calc/components/BottomTabs'
+import BopaeCalc from '../../bopae-calc/containers/BopaeCalc'
+import BottomTabs from '../../bopae-calc/containers/BottomTabs'
 //глобальные штучки-дрючки
 import '../styles/reset.css'
 import '../styles/utils.css'
 import '../styles/main.css'
 import '../styles/page.css'
 import '../styles/mobile.css'
-
-import { updateLayout } from '../actions.js'
 
 
 class App extends PureComponent{
@@ -80,17 +77,4 @@ class App extends PureComponent{
 	}
 }
 
-function mapStateToProps(state) {
-	return {
-		layout: state.ui.layout,
-		selectedPage: state.ui.selectedPage,
-	}
-}
-
-function mapDispatchToProps(dispatch) {
-	return {
-		onLayoutUpdate: (layout, height) => dispatch(updateLayout(layout, height)),
-	}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default App
