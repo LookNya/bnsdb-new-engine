@@ -6,12 +6,8 @@ export function pieceNumSelect(num) {
 	return {type: 'PIECE_NUM_SELECT', num}
 }
 
-export function pieceChoice(bopae, num) {
-	return {type: 'PIECE_CHOICE', bopae, num}
-}
-
-export function allPiecesChoice(bopae) {
-	return {type: 'ALL_PIECES_CHOICE', bopae}
+export function piecesChoice(bopae, nums) {
+	return {type: 'PIECES_CHOICE', bopae, nums}
 }
 
 export function pieceConfigUpdate(bopae, num, statName, statValue) {

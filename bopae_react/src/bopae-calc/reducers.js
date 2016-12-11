@@ -19,13 +19,11 @@ export default function reducer(state=initialState, action) {
 	case 'PIECE_NUM_SELECT':
 		return {...state, selectedNum: action.num}
 
-	case 'PIECE_CHOICE':
+	case 'PIECES_CHOICE':
 		let choosenPieces = state.choosenPieces.slice()
-		choosenPieces[action.num] = action.bopae.pieces[action.num]
+		for (let num of action.nums)
+			choosenPieces[num] = action.bopae.pieces[num]
 		return {...state, choosenPieces}
-
-	case 'ALL_PIECES_CHOICE':
-		return {...state, choosenPieces: action.bopae.pieces.slice()}
 
 	case 'PIECE_CONFIG_UPDATE':
 		let {bopae, num, statName, statValue} = action

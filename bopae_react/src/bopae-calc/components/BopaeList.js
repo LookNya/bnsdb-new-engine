@@ -10,8 +10,8 @@ class BopaeList extends PureComponent {
 		return  <div className="bopae-list">
 							<ListWithSearch
 								data={this.props.db}
-								selectedPieceNum={this.props.selectedPieceNum}
 								selectedBopae={this.props.selectedBopae}
+								selectedPieceNum={this.props.selectedPieceNum}
 								onItemChange={this.props.onBopaeChange}
 							/>
 						</div>
