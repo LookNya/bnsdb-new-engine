@@ -3,7 +3,9 @@
 	margin: 44px 0 88px;
 	user-select: none;
 }
-
+.bopae-circle .bopae-bg-image{
+	opacity: 0.5
+}
 .bopae-circle .bopae-piece {
 	pointer-events: none;
 	position: absolute;
@@ -22,6 +24,9 @@
 .bopae-circle .bopae-piece img {
 	position: absolute;
 	transition: all 0.2s ease;
+}
+.bopae-circle .bopae-piece.selected.empty img{
+	transform: none !important;
 }
 .bopae-circle .bopae-piece.selected img {
 	filter: drop-shadow(0 0 4px #8149d6);
