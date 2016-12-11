@@ -13,11 +13,11 @@ class BopaePieceEditor extends PureComponent {
 	onRangeChange = (value, statName) => {
 		this.props.onPieceConfigChange(statName, value)
 	}
-	onCurBopaeForEmptySelect = () => {
-		this.props.onCurBopaeForEmptySelect()
+	onCurBopaeForEmptyChoice = () => {
+		this.props.onCurBopaeForEmptyChoice()
 	}
-	onCurBopaeForAllSelect = () => {
-		this.props.onCurBopaeForAllSelect()
+	onCurBopaeForAllChoice = () => {
+		this.props.onCurBopaeForAllChoice()
 	}
 
 	render() {
@@ -80,10 +80,10 @@ class BopaePieceEditor extends PureComponent {
 						</table>
 					</div>
 					<div className="controls-wrap">
-						<button className="togglable" onClick={this.onCurBopaeForEmptySelect}>
+						<button className="togglable" onClick={this.onCurBopaeForEmptyChoice}>
 							Использовать эту скрижаль на свободных кусках
 						</button>
-						<button className="togglable" onClick={this.onCurBopaeForAllSelect}>
+						<button className="togglable" onClick={this.onCurBopaeForAllChoice}>
 							Использовать эту скрижаль везде
 						</button>
 					</div>
@@ -94,7 +94,7 @@ class BopaePieceEditor extends PureComponent {
 			return (
 				<div className="bopae-piece-editor margin-left one-label">
 					<div className="tips-wrap">
-						<button className="togglable huge" onClick={this.onCurBopaeForAllSelect}>
+						<button className="togglable huge" onClick={this.onCurBopaeForAllChoice}>
 							Заполнить всю триграмму кусочками {this.props.selectedBopae.name}
 						</button>
 						</div>

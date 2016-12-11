@@ -43,14 +43,14 @@ class BopaeCalc extends PureComponent {
 	onBopaeForCurPieceClear = (num) => {
 		this.props.onPiecesChoice(null, [num])
 	}
-	onCurBopaeForEmptySelect = () => {
+	onCurBopaeForEmptyChoice = () => {
 		let nums = []
 		for (let i=0; i<8; i++)
 			if (this.props.choosenPieces[i] === null)
 				nums.push(i)
 		this.props.onPiecesChoice(this.props.selectedBopae, nums)
 	}
-	onCurBopaeForAllSelect = () => {
+	onCurBopaeForAllChoice = () => {
 		this.props.onPiecesChoice(this.props.selectedBopae, [0, 1, 2, 3, 4, 5, 6, 7])
 	}
 	onPieceConfigChange = (statName, value) => {
@@ -93,8 +93,8 @@ class BopaeCalc extends PureComponent {
 						selectedBopaePiecesCount={this.countPiecesOf(this.props.selectedBopae)}
 						pieceConfig={this.getPieceConfig(this.props.selectedNum)}
 						onPieceConfigChange={this.onPieceConfigChange}
-						onCurBopaeForEmptySelect={this.onCurBopaeForEmptySelect}
-						onCurBopaeForAllSelect={this.onCurBopaeForAllSelect}
+						onCurBopaeForEmptyChoice={this.onCurBopaeForEmptyChoice}
+						onCurBopaeForAllChoice={this.onCurBopaeForAllChoice}
 					/>
 				</section>
 
