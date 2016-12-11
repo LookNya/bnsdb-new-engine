@@ -50,6 +50,10 @@ class BopaePart extends PureComponent {
 	onClick = (e) => {
 		this.props.onClick(this.props.num)
 	}
+	onContextMenu = (e) => {
+		e.preventDefault()
+		this.props.onContextMenu(this.props.num)
+	}
 	render() {
 		let w = PART_WIDTH, angle = num2rad(this.props.num)
 		let [x0, y0] = centerOffset(this.props.num)
@@ -59,7 +63,7 @@ class BopaePart extends PureComponent {
 		let pieceIcon = this.props.piece ? this.props.piece.getIconPath() : BopaePiece.getBGPath(this.props.num)
 
 		return (
-			<div className={className} style={{left: w-x0, top: w-y0, width: w, height: w}} onClick={this.onClick}>
+			<div className={className} style={{left: w-x0, top: w-y0, width: w, height: w}} onClick={this.onClick} onContextMenu={this.onContextMenu}>
 				<BopaePartHelp piece={this.props.piece} />
 				<BopaePartMask num={this.props.num} />
 				<img style={{transform}} alt={'bopae-'+this.props.num} src={pieceIcon} />
@@ -81,6 +85,7 @@ class BopaeCircle extends PureComponent {
 						piece={piece}
 						selected={this.props.selectedNum === num}
 						onClick={this.props.onClick}
+						onContextMenu={this.props.onContextMenu}
 					/>
 				)}
 			</div>

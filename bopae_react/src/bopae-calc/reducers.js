@@ -22,7 +22,7 @@ export default function reducer(state=initialState, action) {
 	case 'PIECES_CHOICE':
 		let choosenPieces = state.choosenPieces.slice()
 		for (let num of action.nums)
-			choosenPieces[num] = action.bopae.pieces[num]
+			choosenPieces[num] = action.bopae && action.bopae.pieces[num]
 		return {...state, choosenPieces}
 
 	case 'PIECE_CONFIG_UPDATE':

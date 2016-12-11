@@ -40,8 +40,8 @@ class BopaeCalc extends PureComponent {
 		if (this.props.selectedNum !== null)
 			this.props.onPiecesChoice(bopae, [this.props.selectedNum])
 	}
-	onBopaeForPieceSelect = (bopae, num) => {
-		this.props.onPiecesChoice(bopae, [num])
+	onBopaeForCurPieceClear = (num) => {
+		this.props.onPiecesChoice(null, [num])
 	}
 	onCurBopaeForEmptySelect = () => {
 		let nums = []
@@ -64,10 +64,11 @@ class BopaeCalc extends PureComponent {
 
 				<section>
 					<figure>
-						<BopaeCircle 
+						<BopaeCircle
 							pieces={this.props.choosenPieces}
 							selectedNum={this.props.selectedNum}
 							onClick={this.onPieceClick}
+							onContextMenu={this.onBopaeForCurPieceClear}
 						/>
 					</figure>
 				</section>
