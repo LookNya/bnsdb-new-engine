@@ -84,6 +84,21 @@ class BopaesConfig {
 		if (!pieceConfig) return BopaePieceConfig.default
 		return pieceConfig
 	}
+	getStatsSum() {
+		let sum = {}
+		for (let bopaeName in this.bopaesConfig) { //eslint-disable-line guard-for-in
+			let piecesConfig = this.bopaesConfig[bopaeName]
+			for (let num in piecesConfig) { //eslint-disable-line guard-for-in
+				let pieceConfig = piecesConfig[num]
+				for (let statName of pieceConfig.activeStats) {
+					let statValue = pieceConfig.stats[statName]
+					if (!(statName in sum)) sum[statName] = 0
+					sum[statName] += statValue
+				}
+			}
+		}
+		return sum
+	}
 	updatePieceConfig(bopae, num, statName, statValue) {
 		let bopaeConfig = this.bopaesConfig[bopae.name] || {}
 		let pieceConfig = bopaeConfig[num] || BopaePieceConfig.default

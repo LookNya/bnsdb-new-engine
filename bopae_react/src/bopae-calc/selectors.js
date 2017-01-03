@@ -15,7 +15,7 @@ export const getCurrentL10n = createSelector(
 	[getLang, getL10n],
 	(lang, l10n) => {
 		let res = {stats:{}}
-		for (let statName in l10n.stats)
+		for (let statName in l10n.stats) //eslint-disable-line guard-for-in
 			res.stats[statName] = l10n.stats[statName][lang]
 		return res
 	}

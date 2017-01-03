@@ -20,24 +20,6 @@ class BopaeResult extends PureComponent {
 		return res
 	}
 
-	ext_getStatsSum() {
-		//TODO: double claculation, use selector
-		//TODO: move to BopaesConfig
-		let sum = {}
-		for (let bopaeName in this.props.piecesConfig.bopaesConfig) { //eslint-disable-line guard-for-in
-			let piecesConfig = this.props.piecesConfig.bopaesConfig[bopaeName]
-			for (let num in piecesConfig) { //eslint-disable-line guard-for-in
-				let pieceConfig = piecesConfig[num]
-				for (let statName of pieceConfig.activeStats) {
-					let statValue = pieceConfig.stats[statName]
-					if (!(statName in sum)) sum[statName] = 0
-					sum[statName] += statValue
-				}
-			}
-		}
-		return sum
-	}
-
 	getStatGain(statName) {
 		let num = this.props.selectedPieceNum
 		if (num === null) return 0
@@ -49,8 +31,8 @@ class BopaeResult extends PureComponent {
 
 	mapStatsSum(func) {
 		let res = []
-		let sum = this.ext_getStatsSum()
-		for (let statName in this.props.l10nStats) {
+		let sum = this.props.piecesConfig.getStatsSum()
+		for (let statName in this.props.l10nStats) { //eslint-disable-line guard-for-in
 			let l10nName = this.props.l10nStats[statName]
 			let value = sum[l10nName] || 0
 			let gain = this.getStatGain(l10nName)
