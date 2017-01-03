@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import BopaeCalc from '../components/BopaeCalc'
-import { getBopaes } from '../selectors'
+import { getBopaes, getCurrentL10n } from '../selectors'
 import { bopaeSelect, pieceNumSelect, piecesChoice, pieceConfigUpdate } from '../actions'
 
 
@@ -8,6 +8,7 @@ function mapStateToProps(state) {
 	return {
 		layout:        state.ui.layout,
 		selectedPage:  state.ui.selectedPage,
+		l10n:          getCurrentL10n(state),
 		bopaes:        getBopaes(state),
 		choosenPieces: state.bopaeCalc.choosenPieces,
 		piecesConfig:  state.bopaeCalc.piecesConfig,

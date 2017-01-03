@@ -20,10 +20,9 @@ class BopaeResult extends PureComponent {
 		return res
 	}
 
-	mapStatsSum(func) {
+	ext_getStatsSum() {
 		//TODO: double claculation, use selector
 		//TODO: move to BopaesConfig
-		let res = []
 		let sum = {}
 		for (let bopaeName in this.props.piecesConfig.bopaesConfig) { //eslint-disable-line guard-for-in
 			let piecesConfig = this.props.piecesConfig.bopaesConfig[bopaeName]
@@ -36,8 +35,27 @@ class BopaeResult extends PureComponent {
 				}
 			}
 		}
-		for (let statName in sum) //eslint-disable-line guard-for-in
-			res.push(func(statName, sum[statName]))
+		return sum
+	}
+
+	getStatGain(statName) {
+		let num = this.props.selectedPieceNum
+		if (num === null) return 0
+		let piece = this.props.choosenPieces[num]
+		if (piece === null) return 0
+		let config = this.props.piecesConfig.getPieceConfig(piece.bopae, num)
+		return config.isActive(statName) ? config.get(piece, statName) : 0
+	}
+
+	mapStatsSum(func) {
+		let res = []
+		let sum = this.ext_getStatsSum()
+		for (let statName in this.props.l10nStats) {
+			let l10nName = this.props.l10nStats[statName]
+			let value = sum[l10nName] || 0
+			let gain = this.getStatGain(l10nName)
+			res.push(func(statName, l10nName, value, gain))
+		}
 		return res
 	}
 
@@ -55,12 +73,12 @@ class BopaeResult extends PureComponent {
 				<div className="tip">Нет активных сетов</div>
 				<table>
 					<tbody>
-					<tr className="stat-names">
-						{this.mapStatsSum((name, value) => <td key={name}>{name}</td>)}
-					</tr>
-					<tr className="stat-values">
-						{this.mapStatsSum((name, value) => <td key={name}>{value} <span className="minus">120</span></td>)}
-					</tr>
+						{this.mapStatsSum((name, l10nName, value, gain) =>
+							<tr key={name} className="stat-values">
+								<td>{l10nName}</td>
+								<td>{value} {gain!==0 && <span className={gain<0 ? "minus" : "plus"}>{gain}</span>}</td>
+							</tr>
+						)}
 					</tbody>
 				</table>
 			</div>

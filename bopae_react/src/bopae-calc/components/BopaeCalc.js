@@ -75,9 +75,11 @@ class BopaeCalc extends PureComponent {
 
 				<section>
 					<BopaeResult
+						l10nStats={this.props.l10n.stats}
 						bopaes={this.props.bopaes}
 						choosenPieces={this.props.choosenPieces}
-						piecesConfig={this.props.piecesConfig} />
+						piecesConfig={this.props.piecesConfig}
+						selectedPieceNum={this.props.selectedNum} />
 				</section>
 
 				<section>
