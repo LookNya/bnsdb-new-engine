@@ -40,6 +40,47 @@ class BopaeResult extends PureComponent {
 		}
 		return res
 	}
+	generateStatTable() {
+		let res = []
+		let sum = this.props.piecesConfig.getStatsSum()
+		var l10nStats = this.props.l10nStats
+		var statNames = Object.keys(l10nStats) // eslint-disable-next-line
+		for(let i=0; i<statNames.length; i=i+2){ 
+			let statName_0 = statNames[i]
+			let statName_1 = statNames[i+1]
+
+			let l10nName_0 = l10nStats[statName_0]
+			let l10nName_1 = l10nStats[statName_1]
+
+			let value_0 = sum[l10nName_0] || 0
+			let value_1 = sum[l10nName_1] || 0
+
+			let gain_0 = this.getStatGain(l10nName_0)
+			let gain_1 = this.getStatGain(l10nName_1)
+
+			res.push(this.generateStatNamesRow([statName_0, statName_1], [l10nName_0, l10nName_1], [value_0, value_1], [gain_0, gain_1]))
+			res.push(this.generateStatValuesRow([statName_0, statName_1], [l10nName_0, l10nName_1], [value_0, value_1], [gain_0, gain_1]))
+		}
+		return res
+	}
+	generateStatNamesRow(names, l10nNames, values, gains, i){
+		return(
+			<tr key={names.join('')+'names'} className="stat-names">
+				<td>{l10nNames[0]}</td>
+				<td className="separator"></td>
+				<td className={l10nNames[1] ? "": "hidden"}>{l10nNames[1]}</td>
+			</tr>
+		)
+	}
+	generateStatValuesRow(names, l10nNames, values, gains, i){
+		return(
+			<tr key={names.join('')+'values'} className="stat-values">
+				<td>{values[0]} {gains[0]!==0 && <span className={gains[0]<0 ? "minus" : "plus"}>{gains[0]}</span>}</td>
+				<td className="separator"></td>
+				<td className={l10nNames[1] ? "": "hidden"}>{values[1]} {gains[1]!==0 && <span className={gains[1]<0 ? "minus" : "plus"}>{gains[1]}</span>}</td>
+			</tr>
+		)
+	}
 
 	render() {
 		return (
@@ -47,20 +88,17 @@ class BopaeResult extends PureComponent {
 				<h2>Суммарно</h2>
 				<h3>Бонусы сетов</h3>
 				{this.mapBopaeCounts((bopae, count) =>
-					<div key={bopae.name}>
-						{bopae.name}:
+					<div key={bopae.name} className="set-descr-item">
+						<h4>{bopae.name}</h4>
 						<BopaeSets bopae={bopae} piecesCount={count}/>
 					</div>
 				)}
 				<div className="tip">Нет активных сетов</div>
-				<table>
+				<table className="stats-table">
 					<tbody>
-						{this.mapStatsSum((name, l10nName, value, gain) =>
-							<tr key={name} className="stat-values">
-								<td>{l10nName}</td>
-								<td>{value} {gain!==0 && <span className={gain<0 ? "minus" : "plus"}>{gain}</span>}</td>
-							</tr>
-						)}
+						{
+							this.generateStatTable()
+						}
 					</tbody>
 				</table>
 			</div>

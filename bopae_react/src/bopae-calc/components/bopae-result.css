@@ -3,6 +3,18 @@
 	background: rgba(0, 0, 0, 0.75);
 	padding: 15px;
 }
+.bopae-result .set-descr-item{
+	display: inline-block;
+	max-width: 50%;
+	overflow: hidden;
+}
+.bopae-result .stats-table{
+	table-layout: fixed;
+	width: 100%;
+}
+.bopae-result .set-descr-item h4{
+	padding: 0 20px 8px 0;
+}
 .bopae-result .stat-names .separator{
 	width: 50px;
 }
