@@ -13,6 +13,9 @@ class BopaePieceEditor extends PureComponent {
 	onRangeChange = (value, statName) => {
 		this.props.onPieceConfigChange(statName, value)
 	}
+	onSynthStatChange = (statName) => {
+		this.props.onPieceConfigChange('synthStat', statName)
+	}
 	onCurBopaeForEmptyChoice = () => {
 		this.props.onCurBopaeForEmptyChoice()
 	}
@@ -72,9 +75,12 @@ class BopaePieceEditor extends PureComponent {
 								<StatCustomizer
 									statName="synth"
 									stat={piece.synth}
+									l10nStats={this.props.l10nStats}
+									synthStat={this.props.pieceConfig.synthStat || 'health'}
 									value={this.getPieceConfigFor('synth')}
 									isActive={this.props.pieceConfig.isActive('synth')}
 									onRangeChange={this.onRangeChange}
+									onSynthStatChange={this.onSynthStatChange}
 								/>
 							</tbody>
 						</table>
@@ -116,6 +122,10 @@ class BopaePieceEditor extends PureComponent {
 }
 
 class StatCustomizer extends PureComponent {
+	onSynthStatChange = (e) => {
+		this.props.onSynthStatChange(e.target.value)
+	}
+
 	render() {
 		let className = 'stat-cust-wrap '
 		if(!this.props.isActive && !this.props.stat.isBase) className += 'inactive'
@@ -142,7 +152,7 @@ class StatCustomizer extends PureComponent {
 							min={this.props.stat.min}
 							max={this.props.stat.max}
 							value={this.props.value}
-							onChange={this.props.onRangeChange.bind(this)}
+							onChange={this.props.onRangeChange}
 							codeName={this.props.statName}
 						/>
 					</td>
@@ -155,11 +165,10 @@ class StatCustomizer extends PureComponent {
 						<label>{this.props.statName}</label>
 					</td>
 					<td className="select-cell">
-							<select>
-							<option value="grapefruit">Grapefruit</option>
-							<option value="lime">Lime</option>
-							<option selected value="coconut">Coconut</option>
-							<option value="mango">Mango</option>
+						<select value={this.props.synthStat} onChange={this.onSynthStatChange}>
+							{Object.keys(this.props.l10nStats).map(name =>
+								<option key={name} value={name}>{this.props.l10nStats[name]}</option>
+							)}
 						</select>
 					</td>
 					<td>
@@ -167,7 +176,7 @@ class StatCustomizer extends PureComponent {
 							min={this.props.stat.min}
 							max={this.props.stat.max}
 							value={this.props.value}
-							onChange={this.props.onRangeChange.bind(this)}
+							onChange={this.props.onRangeChange}
 							codeName={this.props.statName}
 						/>
 					</td>

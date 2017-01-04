@@ -93,6 +93,7 @@ class BopaeCalc extends PureComponent {
 
 				<section>
 					<BopaePieceEditor
+						l10nStats={this.props.l10n.stats}
 						selectedPieceNum={this.props.selectedNum}
 						selectedBopae={this.props.selectedBopae}
 						selectedBopaePiecesCount={this.countPiecesOf(this.props.selectedBopae)}

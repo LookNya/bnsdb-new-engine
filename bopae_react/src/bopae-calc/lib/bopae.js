@@ -48,8 +48,9 @@ class BopaePiece {
 class BopaePieceConfig {
 	static maxActiveStats = 2
 	static default = new BopaePieceConfig()
-	constructor(stats={}, activeStats=[]) {
+	constructor(stats={}, synthStat=null, activeStats=[]) {
 		this.stats = stats
+		this.synthStat = synthStat
 		this.activeStats = activeStats
 	}
 	get(piece, statName) {
@@ -60,16 +61,20 @@ class BopaePieceConfig {
 		return this.activeStats.indexOf(statName) !== -1
 	}
 	update(statName, value) {
-		let newStats = {...this.stats, [statName]: value}
-		let newActiveStats = this.activeStats
-		if (statName !== 'synth' && this.activeStats[this.activeStats.length-1] !== statName) {
-			newActiveStats = this.activeStats.slice()
-			let ind = newActiveStats.indexOf(statName)
-			if (ind !== -1) newActiveStats.splice(ind, 1)
-			if (newActiveStats.length === BopaePieceConfig.maxActiveStats) newActiveStats.shift()
-			newActiveStats.push(statName)
+		let newStats=this.stats, synthStat=this.synthStat, newActiveStats=this.activeStats
+		if (statName === 'synthStat') {
+			synthStat = value
+		} else {
+			newStats = {...this.stats, [statName]: value}
+			if (statName !== 'synth' && this.activeStats[this.activeStats.length-1] !== statName) {
+				newActiveStats = this.activeStats.slice()
+				let ind = newActiveStats.indexOf(statName)
+				if (ind !== -1) newActiveStats.splice(ind, 1)
+				if (newActiveStats.length === BopaePieceConfig.maxActiveStats) newActiveStats.shift()
+				newActiveStats.push(statName)
+			}
 		}
-		return new BopaePieceConfig(newStats, newActiveStats)
+		return new BopaePieceConfig(newStats, synthStat, newActiveStats)
 	}
 }
 
