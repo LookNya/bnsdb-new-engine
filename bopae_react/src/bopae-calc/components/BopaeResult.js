@@ -26,7 +26,7 @@ class BopaeResult extends PureComponent {
 		let piece = this.props.choosenPieces[num]
 		if (piece === null) return 0
 		let config = this.props.piecesConfig.getPieceConfig(piece.bopae, num)
-		return config.isActive(statName) ? config.get(piece, statName) : 0
+		return config.getWithSynth(piece, statName)
 	}
 
 	mapStatsSum(func) {

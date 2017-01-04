@@ -76,7 +76,7 @@ class BopaePieceEditor extends PureComponent {
 									statName="synth"
 									stat={piece.synth}
 									l10nStats={this.props.l10nStats}
-									synthStat={this.props.pieceConfig.synthStat || 'health'}
+									synthStat={this.props.pieceConfig.synthStat}
 									value={this.getPieceConfigFor('synth')}
 									isActive={this.props.pieceConfig.isActive('synth')}
 									onRangeChange={this.onRangeChange}
@@ -167,7 +167,7 @@ class StatCustomizer extends PureComponent {
 					<td className="select-cell">
 						<select value={this.props.synthStat} onChange={this.onSynthStatChange}>
 							{Object.keys(this.props.l10nStats).map(name =>
-								<option key={name} value={name}>{this.props.l10nStats[name]}</option>
+								<option key={name} value={this.props.l10nStats[name]}>{this.props.l10nStats[name]}</option>
 							)}
 						</select>
 					</td>

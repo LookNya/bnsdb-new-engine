@@ -48,7 +48,7 @@ class BopaePiece {
 class BopaePieceConfig {
 	static maxActiveStats = 2
 	static default = new BopaePieceConfig()
-	constructor(stats={}, synthStat=null, activeStats=[]) {
+	constructor(stats={}, synthStat='Крит', activeStats=[]) {
 		this.stats = stats
 		this.synthStat = synthStat
 		this.activeStats = activeStats
@@ -56,6 +56,11 @@ class BopaePieceConfig {
 	get(piece, statName) {
 		if (statName in this.stats) return this.stats[statName]
 		return statName === 'synth' ? piece.synth.max : piece.stats[statName].max
+	}
+	getWithSynth(piece, statName) {
+		let val = this.isActive(statName) ? this.get(piece, statName) : 0
+		let synth = this.synthStat===statName && 'synth' in this.stats ? this.stats.synth : 0
+		return val + synth
 	}
 	isActive(statName) {
 		return this.activeStats.indexOf(statName) !== -1
@@ -99,6 +104,10 @@ class BopaesConfig {
 					let statValue = pieceConfig.stats[statName]
 					if (!(statName in sum)) sum[statName] = 0
 					sum[statName] += statValue
+				}
+				if ('synth' in pieceConfig.stats) {
+					if (!(pieceConfig.synthStat in sum)) sum[pieceConfig.synthStat] = 0
+					sum[pieceConfig.synthStat] += pieceConfig.stats.synth
 				}
 			}
 		}
