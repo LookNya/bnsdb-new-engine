@@ -3,6 +3,8 @@ import BopaeSets from './BopaeSets'
 import './bopae-result.css'
 
 class BopaeResult extends PureComponent {
+	tableStats = ['health', 'crit', 'acc', 'def', 'evade', 'block', 'critDef', 'pierce']
+
 	getBopaeCounts() {
 		let counts = new Map()
 		for (let piece of this.props.choosenPieces) {
@@ -53,7 +55,8 @@ class BopaeResult extends PureComponent {
 	mapBopaeCounts(func, ifEmpty) {
 		let res = []
 		for (let [bopae, count] of this.getBopaeCounts())
-			res.push(func(bopae, count))
+			if (count >= 3)
+				res.push(func(bopae, count))
 		return res.length===0 && ifEmpty ? ifEmpty : res
 	}
 
@@ -61,7 +64,7 @@ class BopaeResult extends PureComponent {
 		let res = []
 		let [sums, gains] = this.getSumAndGain()
 		let l10nStats = this.props.l10nStats
-		let statNames = Object.keys(l10nStats)
+		let statNames = this.tableStats
 		for (let i=0; i<statNames.length; i+=2) {
 			let statName_0 = statNames[i]
 			let statName_1 = statNames[i+1]
