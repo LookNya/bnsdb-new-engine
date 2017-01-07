@@ -1,5 +1,5 @@
 .list-with-search{
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.75);
 	position: relative;
 	height: inherit;
 }
@@ -91,7 +91,8 @@
 	padding: 40px 15px;
 	text-align: center;
 	font-style: italic;
-	opacity: 0.6;
+	font-size: 18px;
+	opacity: 0.2;
 }
 .list-with-search .piece-detail{
 	font-size: 11px;

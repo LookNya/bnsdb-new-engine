@@ -3,6 +3,7 @@ import './bopae-piece-editor.css'
 
 import BopaeSets from './BopaeSets'
 import InputRange from '../../global/input-range/InputRange'
+import formatNum from '../../utils/beautiful-long-numbers.js'
 
 class BopaePieceEditor extends PureComponent {
 	getPieceConfigFor(statName) {
@@ -137,7 +138,7 @@ class StatCustomizer extends PureComponent {
 						<label>{this.props.statName}</label>
 					</td>
 					<td colSpan={2}>
-						{this.props.stat.min}&ndash;{this.props.stat.max}
+						{formatNum(this.props.stat.min)} &ndash; {formatNum(this.props.stat.max)}
 					</td>
 				</tr>
 			)

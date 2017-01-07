@@ -20,13 +20,13 @@
 }
 .bopae-result .stat-names td:not(.separator){
 	font-weight: bold;
-	padding: 4px;
+	padding: 5px;
 	background: #391252;
 	letter-spacing: 0.6px;
 	min-width: 140px;
 }
 .bopae-result .stat-values td:not(.separator){
-	padding: 9px 4px;
+	padding: 9px 5px;
 }
 .bopae-result span{
 	padding-left: 8px;
@@ -45,8 +45,9 @@
 }
 .bopae-result .tip{
 	font-style: italic;
-	padding: 20px 0 44px;
+	padding: 43px 0 44px;
 	opacity: 0.2;
 	text-align: center;
 	font-size: 18px;
+	height: 128px;
 }

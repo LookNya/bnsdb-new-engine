@@ -21,6 +21,9 @@
 	main section .margin-left{
 		margin-left: 10px;
 	}
+	main section .margin-bottom{
+		margin-bottom: 0;
+	}
 	.list-with-search .item-table .icon-cell {
 		width: 66px;
 	}

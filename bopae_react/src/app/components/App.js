@@ -55,7 +55,7 @@ class App extends PureComponent{
 			<div className="app">
 				<header>
 					<div className="main-wrap center-content">
-						<div className="logo">BnS Character Calculator</div>
+						<div className="logo">BnS Soulshield Calculator</div>
 						<nav>
 						</nav>
 					</div>

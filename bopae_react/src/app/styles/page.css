@@ -53,6 +53,9 @@ main section{
 main section .margin-left{
 	margin-left: 20px;
 }
+main section .margin-bottom{
+	margin-bottom: 20px;
+}
 main section>*{
 	text-align: initial;
 }

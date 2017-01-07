@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import BopaeSets from './BopaeSets'
 import './bopae-result.css'
+import formatNum from '../../utils/beautiful-long-numbers.js'
 
 class BopaeResult extends PureComponent {
 	tableStats = ['health', 'crit', 'acc', 'def', 'evade', 'block', 'critDef', 'pierce']
@@ -95,16 +96,16 @@ class BopaeResult extends PureComponent {
 	generateStatValuesRow(names, l10nNames, values, gains, i){
 		return(
 			<tr key={names.join('')+'values'} className="stat-values">
-				<td>{values[0]} {gains[0]!==0 && <span className={gains[0]<0 ? "minus" : "plus"}>{gains[0]}</span>}</td>
+				<td>{formatNum(values[0])} {gains[0]!==0 && <span className={gains[0]<0 ? "minus" : "plus"}>{formatNum(gains[0])}</span>}</td>
 				<td className="separator"></td>
-				<td className={l10nNames[1] ? "": "hidden"}>{values[1]} {gains[1]!==0 && <span className={gains[1]<0 ? "minus" : "plus"}>{gains[1]}</span>}</td>
+				<td className={l10nNames[1] ? "": "hidden"}>{formatNum(values[1])} {gains[1]!==0 && <span className={gains[1]<0 ? "minus" : "plus"}>{formatNum(gains[1])}</span>}</td>
 			</tr>
 		)
 	}
 
 	render() {
 		return (
-			<div className="bopae-result margin-left">
+			<div className="bopae-result margin-left margin-bottom">
 				<h2>Суммарно</h2>
 				<h3>Бонусы сетов</h3>
 				{this.mapBopaeCounts((bopae, count) =>

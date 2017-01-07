@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import formatNum from '../../utils/beautiful-long-numbers.js'
 import './bopae-sets.css'
 
 class BopaeSets extends PureComponent {
@@ -22,7 +23,7 @@ class BopaeSets extends PureComponent {
 							: null
 						}
 						<td className="set-stat">
-							<span className="dots-after">{stats[stat]}</span>
+							<span className="dots-after">{formatNum(stats[stat])}</span>
 						</td>
 						<td className="set-name">
 							{stat.toLowerCase()}
